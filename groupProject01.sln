@@ -15,6 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "groupProject01.UWP", "group
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "groupProject01.Windows", "groupProject01\groupProject01.Windows\groupProject01.Windows.csproj", "{3259C323-CF84-458B-842E-33C229CF748A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B0B3B634-3C2B-4F8F-A7DB-A9FD619010F2}"
+	ProjectSection(SolutionItems) = preProject
+		HowTo.txt = HowTo.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		groupProject01\groupProject01\groupProject01.projitems*{014f3e28-4baa-4ea3-8bfa-8e17b9ae0bde}*SharedItemsImports = 4

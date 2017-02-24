@@ -1,0 +1,3 @@
+Good for first picking up xamarin: https://developer.xamarin.com/guides/xamarin-forms/getting-started/
+Refrence to all the visual (xaml) objects: https://developer.xamarin.com/guides/xamarin-forms/xaml/
+UI: https://developer.xamarin.com/guides/xamarin-forms/user-interface/
