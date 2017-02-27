@@ -9,9 +9,19 @@ namespace groupProject01
 {
 	public partial class MainPage : ContentPage
 	{
+        ICredentials service;
 		public MainPage()
 		{
 			InitializeComponent();
+            service = DependencyService.Get<ICredentials>();
 		}
-	}
+        void OnRetrieve(object sender, EventArgs e)
+        {
+            textField.Text =service.getPrefs("test");
+        }
+        void OnSave(object sender, EventArgs e)
+        {
+            service.setPrefs("test", textField.Text);
+        }
+    }
 }
