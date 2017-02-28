@@ -13,6 +13,7 @@ namespace groupProject01
 		public MainPage()
 		{
 			InitializeComponent();
+            //error on iphone
             service = DependencyService.Get<ICredentials>();
 		}
         void OnRetrieve(object sender, EventArgs e)
