@@ -6,3 +6,6 @@ UI: https://developer.xamarin.com/guides/xamarin-forms/user-interface/
 ----GITHUB----
 Github's how to: https://guides.github.com/activities/hello-world/
 Online interactive learning: https://try.github.io
+
+--NonImplemented--
+throw new NotImplementedException();

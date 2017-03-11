@@ -26,6 +26,7 @@ namespace groupProject01.Droid
             var prefEditor = prefs.Edit();
             prefEditor.PutString(key, value);
             prefEditor.Commit();
+            
         }
 
         string ICredentials.getPrefs(string key)

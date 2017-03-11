@@ -23,6 +23,7 @@ namespace groupProject01
         void OnSave(object sender, EventArgs e)
         {
             service.setPrefs("test", textField.Text);
+            
         }
     }
 }
