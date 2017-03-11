@@ -14,10 +14,14 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)CalData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ICredentials.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListsPage.xaml.cs">
+      <DependentUpon>ListsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)NotesData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListsData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ServerHandeler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SettingsData.cs" />
   </ItemGroup>
@@ -27,6 +31,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

@@ -19,6 +19,7 @@ namespace groupProject01
         void OnRetrieve(object sender, EventArgs e)
         {
             textField.Text =service.getPrefs("test");
+            
         }
         void OnSave(object sender, EventArgs e)
         {
