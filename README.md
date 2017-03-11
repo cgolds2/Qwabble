@@ -1,10 +1,11 @@
 # groupProject01
-created by:
-
+Created by:<br>
 Connor Goldsmith<br>
 Sarah Sicard<br>
 Ryan Smith<br>
-Caroline J~~~~~ //todo Caroline pls spell ur name here<br>
+Caroline Jarecke<br>
 
-This is a project for out CSC 3380 class,
-multi-platform mobile app using Xamarin
+This project is designed to be a multi-platform mobile app that works as a tool to organize activites and duties in apartments. 
+We will be using Xamarin in order to devleop this app.
+
+This project is for CSC 3380, Object Oriented Design at Louisiana State University. 
