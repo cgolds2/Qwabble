@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace groupProject01
 {
-	public partial class ListsPage : ContentPage
+	public partial class CalendarPage : ContentPage
 	{
-		public ListsPage ()
+		public CalendarPage ()
 		{
 			InitializeComponent ();
 		}

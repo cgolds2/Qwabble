@@ -4,7 +4,8 @@ using System.Text;
 
 namespace groupProject01
 {
-    class CalData
+    class CalendarData
     {
+        
     }
 }
