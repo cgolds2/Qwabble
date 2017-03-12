@@ -10,9 +10,9 @@ namespace groupProject01
         /// <summary>
         /// This is the base class, not to be instanciated explictly
         /// </summary>
-        private class ListsBase
+         public class ListsBase
         {
-            ListsBase()
+            protected ListsBase()
             {
                 throw new NotImplementedException();
             }
@@ -25,9 +25,9 @@ namespace groupProject01
         /// <summary>
         /// This is the Grocery List class.
         /// </summary>
-        class GroceryList : ListsBase
+       public class GroceryList : ListsBase
         {
-            GroceryList()
+             public GroceryList()
             {
                 throw new NotImplementedException();
             }
