@@ -36,6 +36,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)HomeData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MessagingData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -77,7 +77,7 @@ namespace groupProject01
             /// </summary>
             SharedItemsList()
             {
-                throw new NonImplementedException();
+                throw new NotImplementedException();
             }
             
         }

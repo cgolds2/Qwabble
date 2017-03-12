@@ -11,14 +11,29 @@ namespace groupProject01
         normal = 1,
         dark = 2,
     }
-    public enum keys
+    public enum keysInt
     {
-        userName = "userName";
-        password = "password";
+       userName = 1,
+       password = 2,
 
     }
+   
      class SettingsData
     {
+        public string getStringFromKey(keysInt keyInt)
+        {
+            switch ((int)keyInt)
+            {
+                case 1:
+                    return "username";
+                case 2:
+                    return "password";
+                default:
+                    return "";
+
+            }
+        }
+
         private ICredentials credService;
          SettingsData(){
             //this will run whenever the page is loaded
@@ -31,8 +46,8 @@ namespace groupProject01
 
         #region CREDENTIALS 
         //2 versions of setCredentials, one uses enums, one allows custom keys
-        public void setCredentials(keys key, string value){
-            credService.setPrefs(key, value);
+        public void setCredentials(keysInt key, string value){
+            credService.setPrefs(getStringFromKey(key), value);
         }
         public void setCredentials(string key, string value){
             credService.setPrefs(key, value);
@@ -48,14 +63,14 @@ namespace groupProject01
         public string getPassword()
         {
             if(password==null){
-				getCredentials(keys.password);
+				getCredentials(getStringFromKey(keysInt.password));
             }
             return password;
         }
         public string getUserName()
         {
             if(userName==null){
-                getCredentials(keys.userName);
+                getCredentials(getStringFromKey(keysInt.userName));
             }
             return userName;
         }
