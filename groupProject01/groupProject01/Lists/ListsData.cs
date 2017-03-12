@@ -10,7 +10,7 @@ namespace groupProject01
         /// <summary>
         /// This is the base class, not to be instanciated explictly
         /// </summary>
-         public class ListsBase
+        public class ListsBase
         {
             protected ListsBase()
             {
@@ -25,14 +25,14 @@ namespace groupProject01
         /// <summary>
         /// This is the Grocery List class.
         /// </summary>
-       public class GroceryList : ListsBase
+        public class GroceryList : ListsBase
         {
-             public GroceryList()
+            public GroceryList()
             {
                 throw new NotImplementedException();
             }
 
-            
+
             /// <summary>
             /// assigns the roommate responsible for buying the item
             /// </summary>
@@ -79,10 +79,21 @@ namespace groupProject01
             {
                 throw new NotImplementedException();
             }
-            
+
         }
+
+        public void refreshLists()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void editItem()
+        {
+            throw new NotImplementedException();
+        }
+
+        
     }
-   
 
    
 }
