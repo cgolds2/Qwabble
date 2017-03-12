@@ -15,11 +15,7 @@ namespace groupProject01
             protected ListsBase()
             {
                 throw new NotImplementedException();
-            }
-            public int add()
-            {
-                throw new NotImplementedException();
-            }
+            }            
         }
 
         /// <summary>
@@ -92,7 +88,30 @@ namespace groupProject01
             throw new NotImplementedException();
         }
 
-        
+        /// <summary>
+        /// This allows the user to add lists. 
+        /// </summary>
+        public int addList()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// This allows the user to hide lists. Only allowed on public lists.
+        /// </summary>
+        public int hideList()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// This allows the user to delete lists. Only allowed on private lists.
+        /// </summary>
+        public int deleteList()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 
    
