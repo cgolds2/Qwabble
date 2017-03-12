@@ -12,8 +12,10 @@ namespace groupProject01
 		public App ()
 		{
 			InitializeComponent();
+            //starts up the app by calling the globaldata constructor
+            GlobalData gd = new GlobalData();
 
-			MainPage = new groupProject01.MainPage();
+			//MainPage = new groupProject01.MainPage();
 		}
 
 		protected override void OnStart ()

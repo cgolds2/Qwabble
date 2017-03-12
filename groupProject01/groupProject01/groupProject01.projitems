@@ -9,77 +9,79 @@
     <Import_RootNamespace>groupProject01</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)CalendarData.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ICredentials.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ListsPage.xaml.cs">
-      <DependentUpon>ListsPage.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)Calendars\CalendarData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Calendars\CalendarPage.xaml.cs">
       <SubType>Code</SubType>
+      <DependentUpon>CalendarPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Home\HomeData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Home\HomePage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Home\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ListsData.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MessagingPage.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Home\RoomatesData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Home\RoomatesPage.xaml.cs">
+      <DependentUpon>RoomatesPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Lists\ListsData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lists\ListsPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>ListsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\MessagingData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\MessagingPage.xaml.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MessagingPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)CalendarPage.xaml.cs">
-      <DependentUpon>CalendarPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="$(MSBuildThisFileDirectory)Other\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)HomePage.xaml.cs">
-      <DependentUpon>HomePage.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)Settings\GlobalData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings\ICredentials.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings\RestService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings\ServerHandeler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingsData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingsPage.xaml.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)HomeData.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MessagingData.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)RestService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ServerHandeler.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SettingsData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Calendars\CalendarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Home\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListsPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Home\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MessagingPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Lists\ListsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SettingsPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Messaging\MessagingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CalendarPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Other\App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Settings\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)HomePage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Home\RoomatesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

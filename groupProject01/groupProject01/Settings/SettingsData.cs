@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace groupProject01
 {
- 
+    #region ENUMS
     public enum theme
     {
         normal = 1,
@@ -17,9 +17,20 @@ namespace groupProject01
        password = 2,
 
     }
-   
-     class SettingsData
+    #endregion
+
+    class SettingsData
     {
+
+        private ICredentials credService;
+        public SettingsData()
+        {
+            //this will run whenever the page is loaded
+            credService = DependencyService.Get<ICredentials>();
+        }
+
+
+
         public string getStringFromKey(keysInt keyInt)
         {
             switch ((int)keyInt)
@@ -34,17 +45,13 @@ namespace groupProject01
             }
         }
 
-        private ICredentials credService;
-         SettingsData(){
-            //this will run whenever the page is loaded
-            credService = DependencyService.Get<ICredentials>();
-        }
+        #region CREDENTIALS 
+
 
         //TODO dont hardcode this...really thought DONT put this in production
         private string userName = "testUser";
         private string password = "password1234"; //the 4 makes it safe
 
-        #region CREDENTIALS 
         //2 versions of setCredentials, one uses enums, one allows custom keys
         public void setCredentials(keysInt key, string value){
             credService.setPrefs(getStringFromKey(key), value);

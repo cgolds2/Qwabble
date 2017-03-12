@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace groupProject01
+namespace groupProject01.Home
 {
-	public partial class HomePage : ContentPage
+	public partial class RoomatesPage : ContentPage
 	{
-		public HomePage ()
+		public RoomatesPage ()
 		{
 			InitializeComponent ();
 		}
