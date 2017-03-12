@@ -15,28 +15,29 @@ namespace groupProject01
 			InitializeComponent ();
 		}
 
-        public void addItem()
+        public void onAddItemClicked(object Sender, EventArgs e)
         {
+            addItem();
             throw new NotImplementedException();
         }
 
-        public void deleteItem()
+        public void onDeleteItemClicked(object Sender, EventArgs e)
         {
+            deleteItem();
             throw new NotImplementedException();
         }
 
-        public void completeItem()
+        public void onCompleteItemClicked(object Sender, EventArgs e)
         {
+            completeItem();
             throw new NotImplementedException();
-            //TODO make sure not accessible during shared items view
         }
         
-        /// <summary>
-        /// This sets which roommate is in charge of the specific task.
-        /// </summary>
-        public void modifyOwner()
+        public void onChangeOwnerClicked()
         {
+            modifyOwner();
             throw new NotImplementedException();
         }
-	}
+
+    }
 }

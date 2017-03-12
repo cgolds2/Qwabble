@@ -14,6 +14,7 @@
       <SubType>Code</SubType>
       <DependentUpon>CalendarPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Lists\ViewListItemData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Home\HomeData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Home\HomePage.xaml.cs">
       <SubType>Code</SubType>
@@ -40,6 +41,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\MessagingPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>MessagingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\ViewMessagingData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\ViewMessagingPage.xaml.cs">
+      <DependentUpon>ViewMessagingPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Other\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -92,6 +98,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Lists\ViewListItemPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Messaging\ViewMessagingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

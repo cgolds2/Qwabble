@@ -15,6 +15,7 @@ namespace groupProject01
 		{
 			InitializeComponent();
 		}
+
         public void onRoomateClicked(object sender, EventArgs e)
         {
             throw new NotImplementedException();
