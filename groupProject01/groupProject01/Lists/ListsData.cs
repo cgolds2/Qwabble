@@ -6,6 +6,15 @@ namespace groupProject01
 {
     class ListsData
     {
+        public ListsData()
+        {
+            refreshAll();
+        }
+
+        public void refreshAll()
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// This is the base class, not to be instanciated explictly

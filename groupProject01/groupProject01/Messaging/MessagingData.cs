@@ -12,7 +12,12 @@ namespace groupProject01
 	{
 		public MessagingData ()
 		{
-			
+            refreshAll();
 		}
+
+        public void refreshAll()
+        {
+            throw new NotImplementedException();
+        }
 	}
 }
