@@ -35,6 +35,10 @@ namespace groupProject01
         {
             throw new NotImplementedException();
         }
+        /// <summary>
+        /// Changes the status of the roommate- in, out, or geofence
+        /// </summary>
+        /// <param name="s"></param>
         public void changeStatus(status s)
         {
             throw new NotImplementedException();
