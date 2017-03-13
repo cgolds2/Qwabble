@@ -12,14 +12,17 @@ namespace groupProject01
         ICredentials service;
 		public MainPage()
 		{
-			InitializeComponent();
             //error on iphone
+			InitializeComponent();
             service = DependencyService.Get<ICredentials>();
 		}
-        void OnRetrieve(object sender, EventArgs e)
+
+        async void OnRetrieve(object sender, EventArgs e)
         {
-            textField.Text =service.getPrefs("test");
-            
+            RestService r = new RestService();
+            string test = await (r.GetCall("null"));
+            textField.Text = service.getPrefs("test");
+
         }
         void OnSave(object sender, EventArgs e)
         {

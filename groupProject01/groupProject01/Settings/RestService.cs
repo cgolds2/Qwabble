@@ -21,11 +21,11 @@ public class RestService
         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
     }
 
-    public async Task<string> GetCall(string url)
+    public  async Task<string> GetCall(string url)
     {
-
+        string uri = "https://www.w3schools.com/php/test_get.php?subject=PHP&web=W3schools.com";
         // RestUrl = http://developer.xamarin.com:8081/api/todoitems{0}
-        var uri = new Uri(string.Format(url, string.Empty));
+        //var uri = new Uri(string.Format(url, string.Empty));
         string response = "Could not connect to server";// = await client.GetAsync(uri);
         try
         {
