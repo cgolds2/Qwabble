@@ -21,7 +21,8 @@ namespace groupProject01
         {
             RestService r = new RestService();
             string test = await (r.GetCall("null"));
-            textField.Text = service.getPrefs("test");
+            textField.Text = test;
+            //textField.Text = service.getPrefs("test");
 
         }
         void OnSave(object sender, EventArgs e)
