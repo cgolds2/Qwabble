@@ -27,8 +27,13 @@ namespace groupProject01
         {
             //this will run whenever the page is loaded
             credService = DependencyService.Get<ICredentials>();
+            refreshAll();
         }
 
+        public void refreshAll()
+        {
+            throw new NotImplementedException();
+        }
 
 
         public string getStringFromKey(keysInt keyInt)
