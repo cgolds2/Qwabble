@@ -41,6 +41,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Other\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Other\CustomFormBase.xaml.cs">
+      <DependentUpon>CustomFormBase.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Settings\GlobalData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\ICredentials.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\RestService.cs" />
@@ -83,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Home\RoomatesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Other\CustomFormBase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
