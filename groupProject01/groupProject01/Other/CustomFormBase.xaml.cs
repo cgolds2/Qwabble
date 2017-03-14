@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace groupProject01
+namespace groupProject01.Other
 {
-	public partial class ViewMessagingPage
+	public partial class CustomFormBase : ContentPage
 	{
-		public ViewMessagingPage ()
+		public CustomFormBase ()
 		{
 			InitializeComponent ();
 		}

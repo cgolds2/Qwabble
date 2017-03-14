@@ -22,20 +22,18 @@ namespace groupProject01
 
         public void onHideListClicked(object Sender, EventArgs e)
         {
-            hideList();
             throw new NotImplementedException();
         }
 
         public void onDeleteListClicked(object Sender, EventArgs e)
         {
-            deleteList();
             throw new NotImplementedException();
         }
 
-        public void onAddListClicked(obj Sender, EventArgs e)
+        public void onAddListClicked(object Sender, EventArgs e)
         {
             //TODO pass in type of list- private vs public?
-            addList();
+            
             throw new NotImplementedException();
         }
 	}

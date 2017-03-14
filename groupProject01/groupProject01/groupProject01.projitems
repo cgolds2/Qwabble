@@ -33,22 +33,17 @@
       <SubType>Code</SubType>
       <DependentUpon>ListsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Lists\ViewListItemPage.xaml.cs">
-      <DependentUpon>ViewListItemPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\MessagingData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\MessagingPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>MessagingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Messaging\ViewMessagingData.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Messaging\ViewMessagingPage.xaml.cs">
-      <DependentUpon>ViewMessagingPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Other\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Other\CustomFormBase.xaml.cs">
+      <DependentUpon>CustomFormBase.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Settings\GlobalData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\ICredentials.cs" />
@@ -97,13 +92,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Lists\ViewListItemPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Messaging\ViewMessagingPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Other\CustomFormBase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

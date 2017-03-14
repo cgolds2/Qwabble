@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.IO;
 
 public class RestService
 {
@@ -20,13 +23,35 @@ public class RestService
         client.MaxResponseContentBufferSize = 256000;
         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
     }
-
-    public async Task<string> GetCall(string url)
+  
+    public  async Task<string> GetCall(string url2)
     {
 
-        // RestUrl = http://developer.xamarin.com:8081/api/todoitems{0}
-        var uri = new Uri(string.Format(url, string.Empty));
-        string response = "Could not connect to server";// = await client.GetAsync(uri);
+        try {
+            string url = "https://www.w3schools.com/php/test_get.php?subject=PHP&web=W3schools.com";
+
+            string html = string.Empty;
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.AutomaticDecompression = DecompressionMethods.GZip;
+
+            using (HttpWebResponse response2 = (HttpWebResponse)request.GetResponse())
+            using (Stream stream = response2.GetResponseStream())
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                html = reader.ReadToEnd();
+            }
+
+            Console.WriteLine(html);
+            return html;
+        }
+        catch (Exception e)
+        { }
+        string uri = "https://www.w3schools.com/php/test_get.php?subject=PHP&web=W3schools.com";
+            // RestUrl = http://developer.xamarin.com:8081/api/todoitems{0}
+            //var uri = new Uri(string.Format(url, string.Empty));
+            string response = "Could not connect to server";// = await client.GetAsync(uri);
+        
         try
         {
             response = (await client.GetAsync(uri)).ToString();
@@ -38,7 +63,7 @@ public class RestService
         }
 
         return response;
-    }
+        }
 
     public async Task PostCall(string body, string uri)
     {
