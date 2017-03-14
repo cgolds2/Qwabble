@@ -1,6 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="groupProject01.Other.CustomFormBase">
-	<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             x:Class="groupProject01.Other.CustomFormBase"
+             Title="{Title}">
+	<Grid VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="100" />
+                </Grid.RowDefinitions>
+                <Button>Button 1</Button>
+                <Button Grid.Column="1">Button 2</Button>
+                <Button Grid.Column="2">Button 3</Button>
+                <Button Grid.Column="3">Button 4</Button>
+                <Button Grid.Column="4">Button 5</Button>
+        </Grid>
+
 </ContentPage>
