@@ -1,10 +1,11 @@
-﻿using System;
+﻿using groupProject01.Other;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace groupProject01
 {
-    class GlobalData
+    public class GlobalData
     {
         #region DataPagesVars
         public SettingsData settingsDataInstance;
@@ -12,28 +13,28 @@ namespace groupProject01
         public MessagingData messagingDataInstance;
         public ListsData listsDataInstance;
         public CalendarData calendarDataInstance;
+        public UserObject currentUser;
         #endregion
 
         #region GlobalVariables
-        public string Username = "";
-        public int UserID = 0;
-        public int apartmentID = 0;
         public string serverURI = "72.ojfbgkabergiw";
         #endregion
 
         public GlobalData()
         {
-            Username = settingsDataInstance.getUserName();
             instantiateDataPages();
+            currentUser.Username = settingsDataInstance.getUserName();
             HomePage hp = new HomePage();
         }
         public void instantiateDataPages()
         {
-         SettingsData settingsDataInstance = new SettingsData();
-         HomeData homeDataInstance = new HomeData();
-         MessagingData messagingDataInstance= new MessagingData();
-         ListsData listsDataInstance = new ListsData();
-         CalendarData calendarDataInstance = new CalendarData();
+            SettingsData settingsDataInstance = new SettingsData();
+            HomeData homeDataInstance = new HomeData();
+            MessagingData messagingDataInstance = new MessagingData();
+            ListsData listsDataInstance = new ListsData();
+            CalendarData calendarDataInstance = new CalendarData();
+            currentUser = new UserObject();
+        }
     }
-    }
+
 }

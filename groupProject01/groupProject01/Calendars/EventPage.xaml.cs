@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace groupProject01.Lists
+namespace groupProject01.Calendars
 {
-	public partial class ListItemPage : ContentPage
+	public partial class EventPage : ContentPage
 	{
-		public ListItemPage ()
+		public EventPage ()
 		{
 			InitializeComponent ();
 		}

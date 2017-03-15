@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace groupProject01
 {
-	public class MessagingData : ContentPage
+	public class MessagingData
 	{
 		public MessagingData ()
 		{
@@ -19,5 +19,77 @@ namespace groupProject01
         {
             throw new NotImplementedException();
         }
+
+        
 	}
+    public class MessageObject {
+        private string _text = "";
+        private int _senderID = 0;
+        private int _recieverID = 0;
+        private int _messageID = 0;
+
+        public string Text
+        {
+            get
+            {
+                return _text;
+            }
+
+            set
+            {
+                _text = value;
+            }
+        }
+
+        public int SenderID
+        {
+            get
+            {
+                return _senderID;
+            }
+
+            set
+            {
+                _senderID = value;
+            }
+        }
+
+        public int RecieverID
+        {
+            get
+            {
+                return _recieverID;
+            }
+
+            set
+            {
+                _recieverID = value;
+            }
+        }
+
+        public int MessageID
+        {
+            get
+            {
+                return _messageID;
+            }
+
+            set
+            {
+                _messageID = value;
+            }
+        }
+
+        public MessageObject()
+        {
+            
+        }
+
+        public void sendToServer(GlobalData gdFile)
+        {
+
+        }
+
+    }
+
 }

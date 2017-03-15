@@ -19,7 +19,7 @@ namespace groupProject01
     }
     #endregion
 
-    class SettingsData
+    public class SettingsData
     {
 
         private ICredentials credService;

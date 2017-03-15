@@ -14,6 +14,14 @@
       <SubType>Code</SubType>
       <DependentUpon>CalendarPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Calendars\EventPage.xaml.cs">
+      <DependentUpon>EventPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Lists\ListItemPage.xaml.cs">
+      <DependentUpon>ListItemPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Lists\ViewListItemData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Home\HomeData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Home\HomePage.xaml.cs">
@@ -34,6 +42,10 @@
       <DependentUpon>ListsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\MessagingData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\MessagingItemPage.xaml.cs">
+      <DependentUpon>MessagingItemPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\MessagingPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>MessagingPage.xaml</DependentUpon>
@@ -45,6 +57,7 @@
       <DependentUpon>CustomFormBase.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Other\UserObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\GlobalData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\ICredentials.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\RestService.cs" />
@@ -93,6 +106,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Other\CustomFormBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Messaging\MessagingItemPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Lists\ListItemPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Calendars\EventPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
