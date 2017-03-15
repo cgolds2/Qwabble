@@ -15,25 +15,52 @@ namespace groupProject01
 			InitializeComponent ();
 		}
 
-        public void onListTypeClicked(object Sender, EventArgs e)
+        /// <summary>
+        /// This will make hide, add, and delete visible on the form. The user will not be allowed to select any lists from this view.
+        /// </summary>
+        /// <param name="sender"> reference to the edit button </param>
+        /// <param name="e"> the event data </param>
+        public void onEditClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //enable view and actions of hide, add, delete
+            //hide.Enabled   = true;
+            //add.Enabled    = true;
+            //delete.Enabled = true;
+
+            //dont allow to select any lists
+            //listTemplate.Enabled = false;
         }
 
-        public void onHideListClicked(object Sender, EventArgs e)
+        /// <summary>
+        /// This is an event handler to see if a button was clicked and do the appropriate action for the button type.
+        /// </summary>
+        /// <param name="sender"> reference to the object that raised the event </param>
+        /// <param name="e"> event data </param>
+        public void onVisibilityClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
-        }
+            // TODO make sure the button sends the appropriate information for sender
+            Button btn = (Button)sender;
 
-        public void onDeleteListClicked(object Sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void onAddListClicked(object Sender, EventArgs e)
-        {
-            //TODO pass in type of list- private vs public?
-            
+            //When hide is clicked, the list will be hidden for user. This option will only be available if list was not created by user.
+            if(btn.Tag == "HideList")
+            {
+                //hide particular list for only this user-- this means we need to pass in list_id with this
+                //make sure only works for lists not created by user
+            }
+            //When delete list is clicked, the form will delete the list. This option will only be available for lists created by user. 
+            else if(btn.Tag == "DeleteList")
+            {
+                //make sure list was created by user
+                //delete the list from all user views
+            }
+            /*when add list is clicked, the form will create a new list, allowing user to set it as private vs public, select the type of list(?), and put in the necessary beginning information (title and item fields: not limited for initial creation)*/
+            else if(btn.Tag == "AddList")
+            {
+                //ask user if they would like list to be private vs public -- new menu?
+                //select the type of list from preselected (grocery, shared items, chores, repairs) or custom
+                //bring to initial screen that allows them to use title and put in items
+                //allow user to click done and make visible for the appropriate people (see: private vs public)
+            }
             throw new NotImplementedException();
         }
 	}
