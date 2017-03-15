@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace groupProject01.Lists
+namespace groupProject01.Messaging
 {
-	public partial class ListItemPage : ContentPage
+	public partial class MessagingItemPage : ContentPage
 	{
-		public ListItemPage ()
+		public MessagingItemPage ()
 		{
 			InitializeComponent ();
 		}

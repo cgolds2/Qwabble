@@ -10,7 +10,7 @@ namespace groupProject01
         weekly = 2,
         monthly = 3,
     }
-    class CalendarData
+    public class CalendarData
     {
         public CalendarData()
         {
@@ -31,5 +31,9 @@ namespace groupProject01
         {
             throw new NotImplementedException();
         }
+    }
+    public class EventObject
+    {
+
     }
 }
