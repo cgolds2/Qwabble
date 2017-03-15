@@ -1,4 +1,5 @@
-﻿using groupProject01.Other;
+﻿using groupProject01;
+using groupProject01.Other;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,9 @@ namespace groupProject01
         public MessagingData messagingDataInstance;
         public ListsData listsDataInstance;
         public CalendarData calendarDataInstance;
-        public UserObject currentUser;
+        public Other.test;
+        public Other.UserObject currentUser;
+        
         #endregion
 
         #region GlobalVariables
