@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
+
+using Xamarin.Forms;
 
 namespace groupProject01.Other
 {
+
     public class UserObject
     {
+
         private string _username = "";
         private int _userID = 0;
         private int _apartmentID = 0;
@@ -55,3 +61,4 @@ namespace groupProject01.Other
         }
     }
 }
+

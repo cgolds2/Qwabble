@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace groupProject01
+namespace groupProject01.Messaging
 {
 	public partial class MessagingItemPage : ContentPage
 	{
