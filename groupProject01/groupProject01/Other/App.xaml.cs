@@ -14,8 +14,8 @@ namespace groupProject01
 			InitializeComponent();
             //starts up the app by calling the globaldata constructor
             //GlobalData gd = new GlobalData();
-
-			MainPage = new groupProject01.MainPage();
+            Other.CustomFormBase cb = new Other.CustomFormBase();
+			//MainPage = new groupProject01.MainPage();
 		}
 
 		protected override void OnStart ()

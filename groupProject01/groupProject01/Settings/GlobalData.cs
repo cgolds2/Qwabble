@@ -11,11 +11,19 @@ namespace groupProject01
         public HomeData homeDataInstance;
         public MessagingData messagingDataInstance;
         public ListsData listsDataInstance;
-        public CalendarData calendarDataInstance; 
+        public CalendarData calendarDataInstance;
+        #endregion
+
+        #region GlobalVariables
+        public string Username = "";
+        public int UserID = 0;
+        public int apartmentID = 0;
+        public string serverURI = "72.ojfbgkabergiw";
         #endregion
 
         public GlobalData()
         {
+            Username = settingsDataInstance.getUserName();
             instantiateDataPages();
             HomePage hp = new HomePage();
         }
