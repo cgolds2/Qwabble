@@ -16,7 +16,7 @@ namespace groupProject01
 		}
 
         /// <summary>
-        /// This will bring up a menu which will allow the sender to put in info about guest and will push this info to all roommates.
+         /// This will bring up a menu which will allow the sender to put in info about guest they are bringing over and will push this info to all roommates.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
