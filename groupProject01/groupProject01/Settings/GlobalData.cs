@@ -14,7 +14,6 @@ namespace groupProject01
         public MessagingData messagingDataInstance;
         public ListsData listsDataInstance;
         public CalendarData calendarDataInstance;
-        public Other.test;
         public Other.UserObject currentUser;
         
         #endregion

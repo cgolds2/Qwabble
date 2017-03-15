@@ -6,8 +6,9 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace groupProject01
+namespace groupProject01.Other
 {
+
     public class UserObject
     {
 
@@ -59,10 +60,5 @@ namespace groupProject01
 
         }
     }
+}
 
-    public class test
-    {
-    public test() { 
-    UserObject t = new UserObject(); }
-    }
-    }
