@@ -22,7 +22,6 @@
       <DependentUpon>ListItemPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Lists\ViewListItemData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Home\HomeData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Home\HomePage.xaml.cs">
       <SubType>Code</SubType>
