@@ -12,7 +12,7 @@ namespace groupProject01.Lists
 	{
 		public ListItemPage ()
 		{
-			InitializeComponent ();
+            InitializeComponent ();
 		}
 	}
 }

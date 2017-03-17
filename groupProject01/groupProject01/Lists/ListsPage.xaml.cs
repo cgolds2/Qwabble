@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +12,21 @@ namespace groupProject01
 {
 	public partial class ListsPage : ContentPage
 	{
-		public ListsPage ()
+        public ObservableCollection<VeggieViewModel> veggies { get; set; }
+
+        public ListsPage ()
 		{
+           
 			InitializeComponent ();
-		}
+
+            veggies = new ObservableCollection<VeggieViewModel>();
+            veggies.Add(new VeggieViewModel { Name = "Tomato", Type = "Fruit", On = true });
+            veggies.Add(new VeggieViewModel { Name = "Romaine", Type = "Vegetable", On = false });
+            veggies.Add(new VeggieViewModel { Name = "Zucchini", Type = "Vegetable", On = true });
+            lstView.ItemsSource = veggies;
+
+        }
+    
 
         public void onListTypeClicked(object Sender, EventArgs e)
         {
@@ -37,4 +50,10 @@ namespace groupProject01
             throw new NotImplementedException();
         }
 	}
+    public class VeggieViewModel
+    {
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public bool On { get; set; }
+    }
 }
