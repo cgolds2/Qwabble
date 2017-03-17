@@ -14,6 +14,7 @@ namespace groupProject01
 		{
             //error on iphone
 			InitializeComponent();
+
             service = DependencyService.Get<ICredentials>();
 		}
 
