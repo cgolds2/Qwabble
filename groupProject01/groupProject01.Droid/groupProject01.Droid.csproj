@@ -128,6 +128,7 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Lists\" />
     <Folder Include="Settings\" />
   </ItemGroup>
   <Import Project="..\groupProject01\groupProject01.projitems" Label="Shared" Condition="Exists('..\groupProject01\groupProject01.projitems')" />

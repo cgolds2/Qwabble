@@ -52,6 +52,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Other\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Other\CustomSwitch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Other\CustomFormBase.xaml.cs">
       <DependentUpon>CustomFormBase.xaml</DependentUpon>
       <SubType>Code</SubType>

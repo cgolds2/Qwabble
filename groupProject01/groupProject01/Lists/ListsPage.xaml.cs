@@ -10,14 +10,17 @@ using Xamarin.Forms;
 
 namespace groupProject01
 {
-	public partial class ListsPage : ContentPage
-	{
+    public partial class ListsPage : ContentPage
+    {
         public ObservableCollection<VeggieViewModel> veggies { get; set; }
 
-        public ListsPage ()
-		{
-           
-			InitializeComponent ();
+       
+
+
+        public ListsPage()
+        {
+
+            InitializeComponent();
 
             veggies = new ObservableCollection<VeggieViewModel>();
             veggies.Add(new VeggieViewModel { Name = "Tomato", Type = "Fruit", On = true });
@@ -26,7 +29,12 @@ namespace groupProject01
             lstView.ItemsSource = veggies;
 
         }
-    
+
+        void SwitchToggled(object sender, EventArgs e)
+        {
+            // Do stuff
+        }
+
 
         public void onListTypeClicked(object Sender, EventArgs e)
         {
@@ -46,14 +54,20 @@ namespace groupProject01
         public void onAddListClicked(object Sender, EventArgs e)
         {
             //TODO pass in type of list- private vs public?
-            
+
             throw new NotImplementedException();
         }
-	}
+    }
+
+   
+
     public class VeggieViewModel
     {
         public string Name { get; set; }
         public string Type { get; set; }
         public bool On { get; set; }
     }
+
+
+
 }
