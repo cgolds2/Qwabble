@@ -23,9 +23,9 @@ namespace groupProject01
             InitializeComponent();
 
             veggies = new ObservableCollection<VeggieViewModel>();
-            veggies.Add(new VeggieViewModel { Name = "Tomato", Type = "Fruit", On = true });
-            veggies.Add(new VeggieViewModel { Name = "Romaine", Type = "Vegetable", On = false });
-            veggies.Add(new VeggieViewModel { Name = "Zucchini", Type = "Vegetable", On = true });
+            veggies.Add(new VeggieViewModel { Name = "Grocery", On = true, ID = 1 });
+            veggies.Add(new VeggieViewModel { Name = "Romaine", On = false, ID = 2 });
+            veggies.Add(new VeggieViewModel { Name = "Zucchini", On = true, ID = 3 });
             lstView.ItemsSource = veggies;
 
         }
@@ -64,7 +64,7 @@ namespace groupProject01
     public class VeggieViewModel
     {
         public string Name { get; set; }
-        public string Type { get; set; }
+        public int ID { get; set; }
         public bool On { get; set; }
     }
 

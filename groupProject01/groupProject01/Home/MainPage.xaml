@@ -11,6 +11,10 @@
   <Entry x:Name="textField" Text="1-855-XAMARIN" />
   <Button x:Name="Save" Text="Save" Clicked="OnSave" />
   <Button x:Name="Retrieve" Text="Retrieve" Clicked="OnRetrieve" />
+    <Button x:Name="List" Text="List" Clicked="OnList" />
+    <Button x:Name="Settings" Text="Settings" Clicked="OnSetting" />
+    <Button x:Name="Calendar" Text="Calendar" Clicked="OnCalendar" />
+    <Button x:Name="Messaging" Text="Messaging" Clicked="OnMessaging" />
   </StackLayout>
   </ContentPage.Content>
 </ContentPage>

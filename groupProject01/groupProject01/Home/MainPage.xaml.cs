@@ -23,6 +23,7 @@ namespace groupProject01
             RestService r = new RestService();
             string test = await (r.GetCall("null"));
             textField.Text = test;
+          await Navigation.PushAsync(new groupProject01.ListsPage());
             //textField.Text = service.getPrefs("test");
 
         }
@@ -30,6 +31,26 @@ namespace groupProject01
         {
             service.setPrefs("test", textField.Text);
             
+        }
+        async void OnSetting(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new groupProject01.SettingsPage());
+
+        }
+        async void OnList(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new groupProject01.ListsPage());
+
+        }
+        async void OnCalendar(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new groupProject01.CalendarPage());
+
+        }
+        async void OnMessaging(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new groupProject01.MessagingPage());
+
         }
     }
 }

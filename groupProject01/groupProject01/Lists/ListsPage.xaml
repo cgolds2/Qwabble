@@ -15,7 +15,7 @@
            
                 <Label Text = "{Binding Name}"  HorizontalOptions="Start"/>
               
-              <local:CustomSwitch IsToggled="{Binding On}" HorizontalOptions="End" Toggled ="SwitchToggled" ID ="1"/>
+              <local:CustomSwitch IsToggled="{Binding On}" HorizontalOptions="End" Toggled ="SwitchToggled" ID ="{Binding ID}"/>
 
            
             </StackLayout>
