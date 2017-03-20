@@ -12,7 +12,7 @@ namespace groupProject01
 {
     public partial class ListsPage : ContentPage
     {
-        public ObservableCollection<VeggieViewModel> veggies { get; set; }
+        public ObservableCollection<ListsViewModel> lists { get; set; }
 
        
 
@@ -22,13 +22,16 @@ namespace groupProject01
 
             InitializeComponent();
 
-            veggies = new ObservableCollection<VeggieViewModel>();
-            veggies.Add(new VeggieViewModel { Name = "Grocery", On = true, ID = 1 });
-            veggies.Add(new VeggieViewModel { Name = "Romaine", On = false, ID = 2 });
-            veggies.Add(new VeggieViewModel { Name = "Zucchini", On = true, ID = 3 });
-            lstView.ItemsSource = veggies;
+            lists = new ObservableCollection<ListsViewModel>();
+            lists.Add(new ListsViewModel { Name = "Grocery", On = true, ID = 0 });
+            lists.Add(new ListsViewModel { Name = "Shared Items", On = false, ID = 1 });
+            lists.Add(new ListsViewModel { Name = "Chores", On = true, ID = 2 });
+            lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = 3 });
+            lstView.ItemsSource = lists;
 
         }
+
+
 
         void SwitchToggled(object sender, EventArgs e)
         {
@@ -61,7 +64,7 @@ namespace groupProject01
 
    
 
-    public class VeggieViewModel
+    public class ListsViewModel
     {
         public string Name { get; set; }
         public int ID { get; set; }
