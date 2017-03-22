@@ -15,7 +15,7 @@ namespace groupProject01.Lists
         public ObservableCollection<ListsViewModel> items { get; set; }
 
 
-        public ListItemPage (int ListID )
+        public ListItemPage (int ListID, ListsData ld )
 		{
             InitializeComponent ();
 

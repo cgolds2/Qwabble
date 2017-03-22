@@ -10,8 +10,10 @@ namespace groupProject01
 	public partial class MainPage : ContentPage
 	{
         ICredentials service;
-		public MainPage()
+        GlobalData _gd;
+		public MainPage(GlobalData gd)
 		{
+            _gd = gd;
             //error on iphone
 			InitializeComponent();
 
@@ -23,7 +25,7 @@ namespace groupProject01
             RestService r = new RestService();
             string test = await (r.GetCall("null"));
             textField.Text = test;
-          await Navigation.PushAsync(new groupProject01.ListsPage());
+          //await Navigation.PushAsync(new groupProject01.ListsPage());
             //textField.Text = service.getPrefs("test");
 
         }
@@ -39,7 +41,7 @@ namespace groupProject01
         }
         async void OnList(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new groupProject01.ListsPage());
+            await Navigation.PushModalAsync(new groupProject01.ListsPage(_gd));
 
         }
         async void OnCalendar(object sender, EventArgs e)

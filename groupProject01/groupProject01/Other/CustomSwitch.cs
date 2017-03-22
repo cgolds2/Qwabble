@@ -8,9 +8,9 @@ namespace groupProject01
     public class CustomSwitch : Switch
     {
         public static readonly BindableProperty IDProperty =
-            BindableProperty.Create("ID", typeof(int), typeof(Switch), 0);
+            BindableProperty.Create("ID", typeof(int), typeof(Switch), -1);
 
-        public int ID
+        public int ID 
         {
             get { return (int)GetValue(IDProperty); }
             set { SetValue(IDProperty, value); }
