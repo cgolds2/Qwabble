@@ -13,20 +13,17 @@ namespace groupProject01
     public partial class ListsPage : ContentPage
     {
         public ObservableCollection<ListsViewModel> lists { get; set; }
+        private GlobalData _gd;
 
        
 
 
-        public ListsPage()
+        public ListsPage(GlobalData gd)
         {
 
             InitializeComponent();
-
-            lists = new ObservableCollection<ListsViewModel>();
-            lists.Add(new ListsViewModel { Name = "Grocery", On = true, ID = 0 });
-            lists.Add(new ListsViewModel { Name = "Shared Items", On = false, ID = 1 });
-            lists.Add(new ListsViewModel { Name = "Chores", On = true, ID = 2 });
-            lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = 3 });
+            _gd = gd;
+           lists =  _gd.ListsDataInstance.lists;
             lstView.ItemsSource = lists;
 
         }
@@ -35,9 +32,24 @@ namespace groupProject01
 
         void SwitchToggled(object sender, EventArgs e)
         {
-            // Do stuff
+            
+            int index = ((CustomSwitch)sender).ID;
+            if (index != -1)
+            {
+                //index is -1 when loading, false toggle event
+                DisplayAlert("Switch","Switch","Ok");
+                // Do stuff
+
+            }
         }
 
+
+
+        void OnTap(object sender, ItemTappedEventArgs e)
+        {
+            int index = ((ListsViewModel)e.Item).ID;
+            //DisplayAlert("Item Tapped", ((ListsViewModel)e.Item).ID.ToString(), "Ok");
+        }
 
         public void onListTypeClicked(object Sender, EventArgs e)
         {
@@ -64,12 +76,7 @@ namespace groupProject01
 
    
 
-    public class ListsViewModel
-    {
-        public string Name { get; set; }
-        public int ID { get; set; }
-        public bool On { get; set; }
-    }
+
 
 
 

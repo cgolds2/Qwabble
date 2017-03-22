@@ -13,13 +13,14 @@ namespace groupProject01
 		{
 			InitializeComponent();
             //starts up the app by calling the globaldata constructor
-            //GlobalData gd = new GlobalData();
+            GlobalData gd = new GlobalData();
 
             //ListPage = new groupProject01.ListPage();
             // Other.CustomFormBase cb = new Other.CustomFormBase();
             //MainPage = new groupProject01.ListsPage();
            // MainPage = new NavigationPage(new groupProject01.MainPage());
-            MainPage = new groupProject01.MainPage();
+           
+            MainPage = new groupProject01.MainPage(gd);
 		}
 
 		protected override void OnStart ()

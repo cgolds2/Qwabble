@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,10 @@ namespace groupProject01
 {
     public class ListsData
     {
+        public ObservableCollection<ListsViewModel> lists { get; set; }
+        public ObservableCollection<ListsViewModel> items { get; set; }
+     
+
         public ListsData()
         {
             refreshAll();
@@ -13,7 +18,13 @@ namespace groupProject01
 
         public void refreshAll()
         {
-            throw new NotImplementedException();
+            lists = new ObservableCollection<ListsViewModel>();
+            lists = new ObservableCollection<ListsViewModel>();
+            lists.Add(new ListsViewModel { Name = "Grocery", On = true, ID = lists.Count });
+            lists.Add(new ListsViewModel { Name = "Shared Items", On = false, ID = lists.Count });
+            lists.Add(new ListsViewModel { Name = "Chores", On = true, ID = lists.Count });
+            lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = lists.Count });
+            //throw new NotImplementedException();
         }
 
 
@@ -122,5 +133,11 @@ namespace groupProject01
             throw new NotImplementedException();
         }
 
+    }
+    public class ListsViewModel
+    {
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public bool On { get; set; }
     }
 }
