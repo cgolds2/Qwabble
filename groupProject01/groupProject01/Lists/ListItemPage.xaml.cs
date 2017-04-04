@@ -7,33 +7,33 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace groupProject01.Lists
+namespace groupProject01
 {
 
     public partial class ListItemPage : ContentPage
 	{
         public ObservableCollection<ListsViewModel> items { get; set; }
+        private GlobalData _gd;
 
-
-        public ListItemPage (int ListID, ListsData ld )
+        public ListItemPage (int ListID, GlobalData gd)
 		{
             InitializeComponent ();
-
-            items = new ObservableCollection<ListsViewModel>();
-            items.Add(new ListsViewModel { Name = "Bananas", On = true, ID = 0 });
-            items.Add(new ListsViewModel { Name = "Shared Items", On = false, ID = 1 });
-            items.Add(new ListsViewModel { Name = "Chores", On = true, ID = 2 });
-            items.Add(new ListsViewModel { Name = "Repairs", On = true, ID = 3 });
+            _gd = gd;
+            _gd.ListsDataInstance.getItemsInList(ListID);
+            items = _gd.ListsDataInstance.items;
             lstView.ItemsSource = items;
         }
 
-        
-	}
-
-    public class ListsViewModel
+       async void OnTap(object sender, ItemTappedEventArgs e)
     {
-        public string Name { get; set; }
-        public int ID { get; set; }
-        public bool On { get; set; }
+       
+        //DisplayAlert("Item Tapped", ((ListsViewModel)e.Item).ID.ToString(), "Ok");
     }
+    void SwitchToggled(object sender, EventArgs e)
+    {
+
+     
+    }   
+	}
+  
 }

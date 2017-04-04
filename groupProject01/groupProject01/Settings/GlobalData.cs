@@ -38,7 +38,7 @@ namespace groupProject01
 
         public GlobalData()
         {
-            ListsDataInstance.lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = 3 });
+           // ListsDataInstance.lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = 3 });
             //currentUser.Username = settingsDataInstance.getUserName();
 
         }

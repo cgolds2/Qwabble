@@ -45,9 +45,10 @@ namespace groupProject01
 
 
 
-        void OnTap(object sender, ItemTappedEventArgs e)
+       async void OnTap(object sender, ItemTappedEventArgs e)
         {
             int index = ((ListsViewModel)e.Item).ID;
+            await Navigation.PushAsync(new groupProject01.ListItemPage(index, _gd));
             //DisplayAlert("Item Tapped", ((ListsViewModel)e.Item).ID.ToString(), "Ok");
         }
 

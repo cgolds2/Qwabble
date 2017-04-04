@@ -19,7 +19,7 @@ namespace groupProject01
         public void refreshAll()
         {
             lists = new ObservableCollection<ListsViewModel>();
-            lists = new ObservableCollection<ListsViewModel>();
+            //lists = new ObservableCollection<ListsViewModel>();
             lists.Add(new ListsViewModel { Name = "Grocery", On = true, ID = lists.Count });
             lists.Add(new ListsViewModel { Name = "Shared Items", On = false, ID = lists.Count });
             lists.Add(new ListsViewModel { Name = "Chores", On = true, ID = lists.Count });
@@ -27,6 +27,19 @@ namespace groupProject01
             //throw new NotImplementedException();
         }
 
+        public void getItemsInList(int ListID)
+        {
+            items = new ObservableCollection<ListsViewModel>();
+            items.Add(new ListsViewModel { Name = "Bananas", On = true, ID = lists.Count });
+            items.Add(new ListsViewModel { Name = "Apple", On = false, ID = lists.Count });
+            items.Add(new ListsViewModel { Name = "Orange", On = true, ID = lists.Count });
+            items.Add(new ListsViewModel { Name = "Guava", On = true, ID = lists.Count });
+            if(ListID == 1)
+            {
+                items.Add(new ListsViewModel { Name = "Custom", On = false, ID = lists.Count });
+
+            }
+        }
 
         public void refreshLists()
         {

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="groupProject01.Lists.ListItemPage"
+             x:Class="groupProject01.ListItemPage"
                           xmlns:local="clr-namespace:groupProject01"
->
-	<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+     Title="Notes">
+
   <ContentPage.Content>
-    <ListView  x:Name="lstView" RowHeight="60">
+    <ListView  x:Name="lstView" RowHeight="60" ItemTapped="OnTap">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
