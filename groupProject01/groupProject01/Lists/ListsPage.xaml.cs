@@ -25,6 +25,7 @@ namespace groupProject01
             _gd = gd;
            lists =  _gd.ListsDataInstance.lists;
             lstView.ItemsSource = lists;
+            
 
         }
 
@@ -34,6 +35,7 @@ namespace groupProject01
         {
             
             int index = ((CustomSwitch)sender).ID;
+            //((CustomSwitch)sender).IsVisible = false;
             if (index != -1)
             {
                 //index is -1 when loading, false toggle event
