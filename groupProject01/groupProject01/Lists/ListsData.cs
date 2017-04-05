@@ -19,8 +19,8 @@ namespace groupProject01
         public void refreshAll()
         {
             lists = new ObservableCollection<ListsViewModel>();
-            //lists = new ObservableCollection<ListsViewModel>();
-            lists.Add(new ListsViewModel { Name = "Grocery", On = true, ID = lists.Count });
+            
+            lists.Add(new ListsViewModel { Name = "Grocery", On = true, ID = lists.Count, IsSwitchVisible = true });
             lists.Add(new ListsViewModel { Name = "Shared Items", On = false, ID = lists.Count });
             lists.Add(new ListsViewModel { Name = "Chores", On = true, ID = lists.Count });
             lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = lists.Count });
@@ -152,5 +152,6 @@ namespace groupProject01
         public string Name { get; set; }
         public int ID { get; set; }
         public bool On { get; set; }
+        public bool IsSwitchVisible { get; set; }
     }
 }
