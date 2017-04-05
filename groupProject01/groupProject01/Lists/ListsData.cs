@@ -30,10 +30,10 @@ namespace groupProject01
         public void getItemsInList(int ListID)
         {
             items = new ObservableCollection<ListsViewModel>();
-            items.Add(new ListsViewModel { Name = "Bananas", On = true, ID = lists.Count });
-            items.Add(new ListsViewModel { Name = "Apple", On = false, ID = lists.Count });
-            items.Add(new ListsViewModel { Name = "Orange", On = true, ID = lists.Count });
-            items.Add(new ListsViewModel { Name = "Guava", On = true, ID = lists.Count });
+            items.Add(new ListsViewModel { Name = "Bananas", On = true, ID = items.Count });
+            items.Add(new ListsViewModel { Name = "Apple", On = false, ID = items.Count });
+            items.Add(new ListsViewModel { Name = "Orange", On = true, ID = items.Count });
+            items.Add(new ListsViewModel { Name = "Guava", On = true, ID = items.Count });
             if(ListID == 1)
             {
                 items.Add(new ListsViewModel { Name = "Custom", On = false, ID = lists.Count });
