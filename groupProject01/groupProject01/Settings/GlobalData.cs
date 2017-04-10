@@ -3,6 +3,7 @@ using groupProject01.Other;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace groupProject01
 {
@@ -12,7 +13,7 @@ namespace groupProject01
         public SettingsData settingsDataInstance;
         public HomeData homeDataInstance;
         public MessagingData messagingDataInstance;
-        public ListsData listsDataInstance;
+        public ListsData listsDataInstance = new ListsData();
         public CalendarData calendarDataInstance;
         public Other.UserObject currentUser;
         
@@ -20,23 +21,28 @@ namespace groupProject01
 
         #region GlobalVariables
         public string serverURI = "72.ojfbgkabergiw";
+
+        public ListsData ListsDataInstance
+        {
+            get
+            {
+                return listsDataInstance;
+            }
+
+            set
+            {
+                listsDataInstance = value;
+            }
+        }
         #endregion
 
         public GlobalData()
         {
-            instantiateDataPages();
-            currentUser.Username = settingsDataInstance.getUserName();
-            HomePage hp = new HomePage();
+           // ListsDataInstance.lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = 3 });
+            //currentUser.Username = settingsDataInstance.getUserName();
+
         }
-        public void instantiateDataPages()
-        {
-            SettingsData settingsDataInstance = new SettingsData();
-            HomeData homeDataInstance = new HomeData();
-            MessagingData messagingDataInstance = new MessagingData();
-            ListsData listsDataInstance = new ListsData();
-            CalendarData calendarDataInstance = new CalendarData();
-            currentUser = new UserObject();
-        }
+      
     }
 
 }

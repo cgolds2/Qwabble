@@ -18,6 +18,10 @@
       <DependentUpon>EventPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Lists\ListItemDetail.xaml.cs">
+      <DependentUpon>ListItemDetail.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Lists\ListItemPage.xaml.cs">
       <DependentUpon>ListItemPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -52,6 +56,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Other\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Other\CustomSwitch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Other\CustomFormBase.xaml.cs">
       <DependentUpon>CustomFormBase.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -124,6 +129,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Messaging\MessagingItemPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Lists\ListItemDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

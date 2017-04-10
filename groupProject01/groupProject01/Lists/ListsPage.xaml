@@ -2,6 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="groupProject01.ListsPage"
+             xmlns:local="clr-namespace:groupProject01"
              Title="Notes">
-    
+
+
+  <ContentPage.Content>
+    <ListView  x:Name="lstView" RowHeight="60" ItemTapped="OnTap">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout  BackgroundColor="Gray">
+           
+                <Label Text = "{Binding Name}"  HorizontalOptions="Start"/>
+              
+              <local:CustomSwitch IsToggled="{Binding On}" HorizontalOptions="End" Toggled ="SwitchToggled" ID ="{Binding ID}"  IsVisible="{Binding IsSwitchVisible}"/>
+
+           
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </ContentPage.Content>
 </ContentPage>
