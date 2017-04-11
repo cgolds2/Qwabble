@@ -25,7 +25,7 @@ namespace groupProject01
         }
 
        async void OnTap(object sender, ItemTappedEventArgs e)
-    {
+        {
             int index = ((ListsViewModel)e.Item).ID;
             await Navigation.PushAsync(new groupProject01.Lists.ListItemDetail(index, _gd));
             //DisplayAlert("Item Tapped", ((ListsViewModel)e.Item).ID.ToString(), "Ok");

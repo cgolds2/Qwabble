@@ -14,7 +14,7 @@ namespace groupProject01
         public HomeData homeDataInstance;
         public MessagingData messagingDataInstance = new MessagingData();
         public ListsData listsDataInstance = new ListsData();
-        public CalendarData calendarDataInstance;
+        public CalendarData calendarDataInstance = new CalendarData();
         public Other.UserObject currentUser;
         
         #endregion
@@ -45,6 +45,19 @@ namespace groupProject01
             set
             {
                 messagingDataInstance = value;
+            }
+        }
+
+        public CalendarData CalendarDataInstance
+        {
+            get
+            {
+                return calendarDataInstance;
+            }
+
+            set
+            {
+                calendarDataInstance = value;
             }
         }
         #endregion

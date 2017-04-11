@@ -10,17 +10,18 @@ using Xamarin.Forms;
 
 namespace groupProject01
 {
-    public partial class ListsPage : ContentPage        //ListsPage class
+    public partial class ListsPage : ContentPage                        //ListsPage class
     {
-        public ObservableCollection<ListsViewModel> lists { get; set; } //creates an instance of lists
-        private GlobalData _gd;         //global variable GlobalData
+        public ObservableCollection<ListsViewModel> lists { get; set; } //initializes a collection that notifies when items are added, removed, or refreshed
+        private GlobalData _gd;                                         //instantiates global variable GlobalData to store the global data
 
-        public ListsPage(GlobalData gd) //lists page constructor
+        public ListsPage(GlobalData gd)                                 //ListsPage constructor
         {
-            InitializeComponent();      //loads the UI elements
-            _gd = gd;                   //sets private instance of global data
-           lists =  _gd.listsDataInstance.lists; //gets the lists data from data file
-            lstView.ItemsSource = lists;         //sets the UI
+            InitializeComponent();                                      //initializes UI objects with values provided, initializes elements
+            _gd = gd;                                                   //sets private instance of global data
+           lists =  _gd.ListsDataInstance.lists;                        //gets the lists data from data file
+            //POSSIBLE ERROR- CHECK IF THIS IS SUPPOSED TO BE ListsDataInstance OR listsDataInstance
+            lstView.ItemsSource = lists;                                //sets the source of items to template and display
         }
 
 
