@@ -12,7 +12,7 @@ namespace groupProject01
         #region DataPagesVars
         public SettingsData settingsDataInstance;
         public HomeData homeDataInstance;
-        public MessagingData messagingDataInstance;
+        public MessagingData messagingDataInstance = new MessagingData();
         public ListsData listsDataInstance = new ListsData();
         public CalendarData calendarDataInstance;
         public Other.UserObject currentUser;
@@ -32,6 +32,19 @@ namespace groupProject01
             set
             {
                 listsDataInstance = value;
+            }
+        }
+
+        public MessagingData MessagingDataInstance
+        {
+            get
+            {
+                return messagingDataInstance;
+            }
+
+            set
+            {
+                messagingDataInstance = value;
             }
         }
         #endregion

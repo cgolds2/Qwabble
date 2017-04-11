@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,34 +8,35 @@ using Newtonsoft.Json;
 
 namespace groupProject01
 {
-	public partial class MainPage : ContentPage
+	public partial class MainPage : ContentPage                 //MainPage class
 	{
-        ICredentials service;
-        GlobalData _gd;
-		public MainPage(GlobalData gd)
+        ICredentials service;                                   //service global variable intialized
+        GlobalData _gd;                                         //global data global variable initialized
+
+		public MainPage(GlobalData gd)                          //MainPage Constructor
 		{
             _gd = gd;
-            //error on iphone
 			InitializeComponent();
-
-            service = DependencyService.Get<ICredentials>();
+            service = DependencyService.Get<ICredentials>();   //how to call platform-specific code
 		}
 
-        async void OnRetrieve(object sender, EventArgs e)
+        async void OnRetrieve(object sender, EventArgs e)       //OnRetrieve method
         {
-            RestService r = new RestService();
-            string test = await (r.GetCall("getUserInfo.php?username=test&userID=1"));
-            dynamic jsonDe = JsonConvert.DeserializeObject(test);
-            textField.Text = jsonDe.name;
+
+            RestService r = new RestService(); //getter and poster for server
+            string test = await (r.GetCall("getUserInfo.php?username=test&userID=1")); //TESTING
+            dynamic jsonDe = JsonConvert.DeserializeObject(test); //TESTING
+            textField.Text = jsonDe.name;   //TESTING- set label
             //await Navigation.PushAsync(new groupProject01.ListsPage());
             //textField.Text = service.getPrefs("test");
 
         }
-        void OnSave(object sender, EventArgs e)
+
+        void OnSave(object sender, EventArgs e)                 //OnSave method
         {
-            service.setPrefs("test", textField.Text);
-            
+            service.setPrefs("test", textField.Text);           //testing if things save
         }
+
         async void OnSetting(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new groupProject01.SettingsPage());
@@ -54,7 +55,8 @@ namespace groupProject01
         async void OnMessaging(object sender, EventArgs e)
         {
 
-            await Navigation.PushModalAsync(new groupProject01.MessagingPage());
+            await Navigation.PushModalAsync(new groupProject01.MessagingPage(_gd));
+
 
         }
     }

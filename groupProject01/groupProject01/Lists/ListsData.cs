@@ -7,8 +7,8 @@ namespace groupProject01
 {
     public class ListsData
     {
-        public ObservableCollection<ListsViewModel> lists { get; set; }
-        public ObservableCollection<ListsViewModel> items { get; set; }
+        public ObservableCollection<ListsViewModel> lists { get; set; } //creates an instance of lists
+        public ObservableCollection<ListsViewModel> items { get; set; } //creates an instance of items
      
 
         public ListsData()
@@ -24,7 +24,6 @@ namespace groupProject01
             lists.Add(new ListsViewModel { Name = "Shared Items", On = false, ID = lists.Count });
             lists.Add(new ListsViewModel { Name = "Chores", On = true, ID = lists.Count });
             lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = lists.Count });
-            //throw new NotImplementedException();
         }
 
         public void getItemsInList(int ListID)
@@ -37,13 +36,7 @@ namespace groupProject01
             if(ListID == 1)
             {
                 items.Add(new ListsViewModel { Name = "Custom", On = false, ID = lists.Count });
-
             }
-        }
-
-        public void refreshLists()
-        {
-            throw new NotImplementedException();
         }
 
         public void editItem()
