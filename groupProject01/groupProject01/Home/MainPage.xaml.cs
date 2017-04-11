@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Newtonsoft.Json;
 
 namespace groupProject01
 {
@@ -23,9 +24,10 @@ namespace groupProject01
         async void OnRetrieve(object sender, EventArgs e)
         {
             RestService r = new RestService();
-            string test = await (r.GetCall("null"));
-            textField.Text = test;
-          //await Navigation.PushAsync(new groupProject01.ListsPage());
+            string test = await (r.GetCall("getUserInfo.php?username=test&userID=1"));
+            dynamic jsonDe = JsonConvert.DeserializeObject(test);
+            textField.Text = jsonDe.name;
+            //await Navigation.PushAsync(new groupProject01.ListsPage());
             //textField.Text = service.getPrefs("test");
 
         }
@@ -51,6 +53,7 @@ namespace groupProject01
         }
         async void OnMessaging(object sender, EventArgs e)
         {
+
             await Navigation.PushModalAsync(new groupProject01.MessagingPage());
 
         }

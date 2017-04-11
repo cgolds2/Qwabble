@@ -23,12 +23,12 @@ public class RestService
         client.MaxResponseContentBufferSize = 256000;
         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
     }
-  
-    public  async Task<string> GetCall(string url2)
+
+    public async Task<string> GetCall(string url2)
     {
 
         try {
-            string url = "https://www.w3schools.com/php/test_get.php?subject=PHP&web=W3schools.com";
+            string url = "http://172.16.42.4/" + url2;
 
             string html = string.Empty;
 
@@ -45,25 +45,27 @@ public class RestService
             Console.WriteLine(html);
             return html;
         }
+
         catch (Exception e)
-        { }
-        string uri = "https://www.w3schools.com/php/test_get.php?subject=PHP&web=W3schools.com";
-            // RestUrl = http://developer.xamarin.com:8081/api/todoitems{0}
-            //var uri = new Uri(string.Format(url, string.Empty));
-            string response = "Could not connect to server";// = await client.GetAsync(uri);
-        
-        try
-        {
-            response = (await client.GetAsync(uri)).ToString();
+        { return ""; } }
+        //string uri = "http://172.16.42.4/createUser.php";
+        //    // RestUrl = http://developer.xamarin.com:8081/api/todoitems{0}
+        //    //var uri = new Uri(string.Format(url, string.Empty));
+        //    string response = "Could not connect to server";// = await client.GetAsync(uri);
 
-        }
-        catch (Exception ex)
-        {
-            Debug.WriteLine(@"				ERROR {0}", ex.Message);
-        }
+        //try
+        //{
+        //    response = (await client.GetAsync(uri)).ToString();
 
-        return response;
-        }
+        //}
+        //catch (Exception ex)
+        //{
+        //    Debug.WriteLine(@"				ERROR {0}", ex.Message);
+        //}
+
+        //return response;
+    
+
 
     public async Task PostCall(string body, string uri)
     {
