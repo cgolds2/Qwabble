@@ -1,24 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="groupProject01.Other.CustomFormBase">
-	<Grid>
-                <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-    
-                <Grid.RowDefinitions>
-                        <RowDefinition Height="100" />
-                </Grid.RowDefinitions>
-                <Button>Button 1</Button>
-                <Button Grid.Column="1">Button 2</Button>
-                <Button Grid.Column="2">Button 3</Button>
-                <Button Grid.Column="3">Button 4</Button>
-                <Button Grid.Column="4">Button 5</Button>
-        </Grid>
-
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="groupProject01.Other.CustomFormBase">
+	<ContentPage.Content>
+		<AbsoluteLayout>
+			<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.08" 
+			AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+			<Label Text="Page name" TextColor="#ffffff" FontSize="28" 
+			LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".55,.015,150,100" 
+			AbsoluteLayout.LayoutFlags="PositionProportional" />
+			<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,.11" 
+			AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+		</AbsoluteLayout>
+	</ContentPage.Content>
 </ContentPage>
