@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,76 +9,39 @@ using Xamarin.Forms;
 
 namespace groupProject01
 {
-	public partial class CalendarPage
+	public partial class CalendarPage : ContentPage                           //begins the CalendarPage class
 	{
-		public CalendarPage ()
+        public ObservableCollection<CalendarViewModel> calendar { get; set; } //declares calendars ObservableCollection that will notify when calendars are added, removed, and refreshed
+        private GlobalData _gd;                                              //declares global variable GlobalData to store the global data
+
+        public CalendarPage (GlobalData gd)                                  //CalendarPage constructor
 		{
-			InitializeComponent ();
-		}
-
-        /// <summary>
-        /// Lets user select between month view, week view, and day view.
-        /// </summary>
-        /// <param name="Sender"></param>
-        /// <param name="e"></param>
-        public void onSelectCalendarViewClicked(object Sender, EventArgs e)
-        {
-            throw new NotImplementedException();
+			InitializeComponent ();                                          //initializes UI objects with values provided, initializes elements
+            _gd = gd;                                                        //sets private instance of global data
+            calendar = _gd.CalendarDataInstance.calendar;                    //gets the calendar data from the data file
+            calView.ItemsSource = calendar;                                  //sets the source of items to template and display
         }
 
         /// <summary>
-        /// Lets user select between viewing private and public calendars
+        /// Listener that fires when a calendar item is tapped.
         /// </summary>
-        /// <param name="Sender"></param>
+        /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void onViewAccessClicked(object Sender, EventArgs e)
+        async void OnTap(object sender, ItemTappedEventArgs e)
         {
-            throw new NotImplementedException();
+            int index = ((CalendarViewModel)e.Item).ID;                           //gets the ID of the calendar item
+            await Navigation.PushAsync(new groupProject01.EventPage(index, _gd)); //opens the event page as current page continues to run
         }
 
-        /// <summary>
-        /// Directs user to new event page.
-        /// </summary>
-        /// <param name="Sender"></param>
-        /// <param name="e"></param>
-        public void onCreateNewEventClicked(object Sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
-        /// <summary>
-        /// Directs user to invite guests page.
-        /// </summary>
-        /// <param name="Sender"></param>
-        /// <param name="e"></param>
-        public void onInviteGuestsClicked(object Sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Directs user to the schedule chore page.
-        /// </summary>
-        /// <param name="Sender"></param>
-        /// <param name="e"></param>
-        public void onScheduleChoreClicked(object Sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Directs user to the reserve laundry machine page.
-        /// </summary>
-        /// <param name="Sender"></param>
-        /// <param name="e"></param>
-        public void onReserveLaundryMachines(object Sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void onReserveQuietTime(object Sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        /* METHODS TO ADD:
+         * changeCalendarView
+         * changeViewAccess (private vs public)
+         * createNewEvent
+         * inviteNewGuest(s)
+         * scheduleChore
+         * reserveLaundryMachines
+         * reserveQuiettime
+         */
 	}
 }

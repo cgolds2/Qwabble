@@ -7,35 +7,39 @@ namespace groupProject01
 {
     public class ListsData
     {
-        public ObservableCollection<ListsViewModel> lists { get; set; } //creates an instance of lists
-        public ObservableCollection<ListsViewModel> items { get; set; } //creates an instance of items
-     
+        public ObservableCollection<ListsViewModel> lists { get; set; } //declares lists ObservableCollection that will notify when lists are added, removed, and refreshed
+        public ObservableCollection<ListsViewModel> items { get; set; } //declares listitem ObservableCollection that will notify when items are added, removed, and refreshed
+
 
         public ListsData()
         {
             refreshAll();
         }
 
-        public void refreshAll()
+        public void refreshAll()                                        //refreshes all data on the page
         {
-            lists = new ObservableCollection<ListsViewModel>();
-            
-            lists.Add(new ListsViewModel { Name = "Grocery", On = true, ID = lists.Count, IsSwitchVisible = true });
-            lists.Add(new ListsViewModel { Name = "Shared Items", On = false, ID = lists.Count });
-            lists.Add(new ListsViewModel { Name = "Chores", On = true, ID = lists.Count });
-            lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = lists.Count });
+            lists = new ObservableCollection<ListsViewModel>();         //instantiates lists ObservableCollection that will notify when lists are added, removed, and refreshed
+
+
+            //HARD-CODED, WILL CHANGE WITH STUFF FROM SERVER
+            lists.Add(new ListsViewModel { Name = "Grocery", On = true, ID = lists.Count, IsSwitchVisible = true });    //adds the grocery list to the page
+            lists.Add(new ListsViewModel { Name = "Shared Items", On = false, ID = lists.Count });                      //adds the shared items list to the page
+            lists.Add(new ListsViewModel { Name = "Chores", On = true, ID = lists.Count });                             //adds the chores list to the page
+            lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = lists.Count });                            //adds the repairs list to the page
         }
 
-        public void getItemsInList(int ListID)
+        public void getItemsInList(int ListID)                          //gets all items for a specific list
         {
-            items = new ObservableCollection<ListsViewModel>();
-            items.Add(new ListsViewModel { Name = "Bananas", On = true, ID = items.Count });
-            items.Add(new ListsViewModel { Name = "Apple", On = false, ID = items.Count });
-            items.Add(new ListsViewModel { Name = "Orange", On = true, ID = items.Count });
-            items.Add(new ListsViewModel { Name = "Guava", On = true, ID = items.Count });
-            if(ListID == 1)
+            items = new ObservableCollection<ListsViewModel>();         //instantiates listitem ObservableCollection that will notify when items are added, removed, and refreshed
+
+            //HARD-CODED, WILL CHANGE WITH STUFF FROM SERVER
+            items.Add(new ListsViewModel { Name = "Bananas", On = true, ID = items.Count });            //adds the bananas item to the page
+            items.Add(new ListsViewModel { Name = "Apple", On = false, ID = items.Count });             //adds the apples item to the page
+            items.Add(new ListsViewModel { Name = "Orange", On = true, ID = items.Count });             //adds the orange item to the page
+            items.Add(new ListsViewModel { Name = "Guava", On = true, ID = items.Count });              //adds the guava item to the page
+            if (ListID == 1)                                                                            //tests if list specific items work
             {
-                items.Add(new ListsViewModel { Name = "Custom", On = false, ID = lists.Count });
+                items.Add(new ListsViewModel { Name = "Custom", On = false, ID = lists.Count });        //adds specific item for last list
             }
         }
 
