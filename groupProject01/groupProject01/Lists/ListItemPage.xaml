@@ -6,7 +6,7 @@
      Title="Notes">
 
   <ContentPage.Content>
-    <ListView  x:Name="lstView" RowHeight="60" ItemTapped="OnTap">
+    <ListView x:Name="lstView" RowHeight="60" ItemTapped="OnTap">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
