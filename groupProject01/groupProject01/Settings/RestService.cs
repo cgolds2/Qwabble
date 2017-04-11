@@ -11,20 +11,20 @@ using System.IO;
 
 public class RestService
 {
-    HttpClient client;
+    //HttpClient client;
 
 
-    public RestService()
-    {
-        var authData = string.Format("{0}:{1}", "test", "pswd");
-        var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
+    //public RestService()
+    //{
+    //    var authData = string.Format("{0}:{1}", "test", "pswd");
+    //    var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
 
-        client = new HttpClient();
-        client.MaxResponseContentBufferSize = 256000;
-        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
-    }
+    //    client = new HttpClient();
+    //    client.MaxResponseContentBufferSize = 256000;
+    //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
+    //}
 
-    public async Task<string> GetCall(string url2)
+    public static async Task<string> GetCall(string url2)
     {
 
         try {
@@ -67,8 +67,15 @@ public class RestService
     
 
 
-    public async Task PostCall(string body, string uri)
+    public static async Task PostCall(string body, string uri)
     {
+        var authData = string.Format("{0}:{1}", "test", "pswd");
+        var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
+
+        client = new HttpClient();
+        client.MaxResponseContentBufferSize = 256000;
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
+
         // RestUrl = http://developer.xamarin.com:8081/api/todoitems{0}
 
         try
