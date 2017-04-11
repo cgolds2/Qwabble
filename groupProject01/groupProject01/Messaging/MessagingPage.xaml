@@ -10,7 +10,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout BackgorundColor="Gray">
+                        <StackLayout BackgroundColor="Gray">
                             <Label Text = "{Binding Name}" HorizontalOptions="Start"/>
                         </StackLayout>
                     </ViewCell>
