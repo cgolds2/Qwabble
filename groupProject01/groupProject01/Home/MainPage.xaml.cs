@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Newtonsoft.Json;
 
 namespace groupProject01
 {
@@ -21,9 +22,14 @@ namespace groupProject01
 
         async void OnRetrieve(object sender, EventArgs e)       //OnRetrieve method
         {
-            RestService r = new RestService();                  //getter and poster for server
-            string test = await (r.GetCall("null"));        //TESTING
-            textField.Text = test;                              //TESTING- set label
+
+            RestService r = new RestService(); //getter and poster for server
+            string test = await (r.GetCall("getUserInfo.php?username=test&userID=1")); //TESTING
+            dynamic jsonDe = JsonConvert.DeserializeObject(test); //TESTING
+            textField.Text = jsonDe.name;   //TESTING- set label
+            //await Navigation.PushAsync(new groupProject01.ListsPage());
+            //textField.Text = service.getPrefs("test");
+
         }
 
         void OnSave(object sender, EventArgs e)                 //OnSave method
@@ -48,7 +54,9 @@ namespace groupProject01
         }
         async void OnMessaging(object sender, EventArgs e)
         {
+
             await Navigation.PushModalAsync(new groupProject01.MessagingPage(_gd));
+
 
         }
     }
