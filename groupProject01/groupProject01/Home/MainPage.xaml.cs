@@ -54,13 +54,13 @@ namespace groupProject01
         }
         async void OnCalendar(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new groupProject01.CalendarPage());
+            await Navigation.PushModalAsync(new groupProject01.CalendarPage(_gd));
 
         }
         async void OnMessaging(object sender, EventArgs e)
         {
 
-            await Navigation.PushModalAsync(new groupProject01.MessagingPage());
+            await Navigation.PushModalAsync(new groupProject01.MessagingPage(_gd));
 
         }
     }

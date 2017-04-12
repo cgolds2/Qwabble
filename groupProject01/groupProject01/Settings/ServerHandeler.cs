@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace groupProject01
 {
@@ -13,6 +14,12 @@ namespace groupProject01
         public static Boolean pingServer()
         {
             throw new NotImplementedException();
+        }
+
+
+        public void sendList(ListItemObject ldata)
+        {
+
         }
 
         #region HTTP POST

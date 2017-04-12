@@ -22,11 +22,11 @@ namespace groupProject01
 
 
             //HARD-CODED, WILL CHANGE WITH STUFF FROM SERVER
-            lists.Add(new ListOfListsObject { Name = "Grocery", On = true, ID = lists.Count });    //adds the grocery list to the page
-            lists.Add(new ListOfListsObject { Name = "Shared Items", On = false, ID = lists.Count });                      //adds the shared items list to the page
-            lists.Add(new ListOfListsObject { Name = "Chores", On = true, ID = lists.Count });                             //adds the chores list to the page
-            lists.Add(new ListOfListsObject { Name = "Repairs", On = true, ID = lists.Count });                            //adds the repairs list to the page
-            lists.Add(new ListOfListsObject { Name = "Other" , On = true, ID = lists.Count });                             //adds the other list to the page
+            lists.Add(new ListOfListsObject { Name = "Grocery", ID = lists.Count });    //adds the grocery list to the page
+            lists.Add(new ListOfListsObject { Name = "Shared Items", ID = lists.Count });                      //adds the shared items list to the page
+            lists.Add(new ListOfListsObject { Name = "Chores",ID = lists.Count });                             //adds the chores list to the page
+            lists.Add(new ListOfListsObject { Name = "Repairs",  ID = lists.Count });                            //adds the repairs list to the page
+            lists.Add(new ListOfListsObject { Name = "Other" , ID = lists.Count });                             //adds the other list to the page
         }
 
         public void getItemsInList(int ListID)                       //gets all items for a specific list
@@ -82,9 +82,9 @@ namespace groupProject01
         public int ID { get; set; }                     //unique id for the object
         public int Type { get; set; }                   //specifies type of list - toggleable (1) and not toggleable(0)
 
-        //POSSIBLY GET RID OF
-        public bool On { get; set; }                    //watches value of trigger
-        public bool IsSwitchVisible { get; set; }       //watches visibility of trigger
+        ////POSSIBLY GET RID OF
+        //public bool On { get; set; }                    //watches value of trigger
+        //public bool IsSwitchVisible { get; set; }       //watches visibility of trigger
     }
 
 
