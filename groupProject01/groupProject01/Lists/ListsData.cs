@@ -7,35 +7,40 @@ namespace groupProject01
 {
     public class ListsData
     {
-        public ObservableCollection<ListsViewModel> lists { get; set; } //creates an instance of lists
-        public ObservableCollection<ListsViewModel> items { get; set; } //creates an instance of items
-     
+        public ObservableCollection<ListOfListsObject> lists { get; set; } //declares lists ObservableCollection that will notify when lists are added, removed, and refreshed
+        public ObservableCollection<ListItemObject> items { get; set; } //declares listitem ObservableCollection that will notify when items are added, removed, and refreshed
+
 
         public ListsData()
         {
             refreshAll();
         }
 
-        public void refreshAll()
+        public void refreshAll()                                        //refreshes all data on the page
         {
-            lists = new ObservableCollection<ListsViewModel>();
-            
-            lists.Add(new ListsViewModel { Name = "Grocery", On = true, ID = lists.Count, IsSwitchVisible = true });
-            lists.Add(new ListsViewModel { Name = "Shared Items", On = false, ID = lists.Count });
-            lists.Add(new ListsViewModel { Name = "Chores", On = true, ID = lists.Count });
-            lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = lists.Count });
+            lists = new ObservableCollection<ListOfListsObject>();         //instantiates lists ObservableCollection that will notify when lists are added, removed, and refreshed
+
+
+            //HARD-CODED, WILL CHANGE WITH STUFF FROM SERVER
+            lists.Add(new ListOfListsObject { Name = "Grocery", On = true, ID = lists.Count });    //adds the grocery list to the page
+            lists.Add(new ListOfListsObject { Name = "Shared Items", On = false, ID = lists.Count });                      //adds the shared items list to the page
+            lists.Add(new ListOfListsObject { Name = "Chores", On = true, ID = lists.Count });                             //adds the chores list to the page
+            lists.Add(new ListOfListsObject { Name = "Repairs", On = true, ID = lists.Count });                            //adds the repairs list to the page
+            lists.Add(new ListOfListsObject { Name = "Other" , On = true, ID = lists.Count });                             //adds the other list to the page
         }
 
-        public void getItemsInList(int ListID)
+        public void getItemsInList(int ListID)                       //gets all items for a specific list
         {
-            items = new ObservableCollection<ListsViewModel>();
-            items.Add(new ListsViewModel { Name = "Bananas", On = true, ID = items.Count });
-            items.Add(new ListsViewModel { Name = "Apple", On = false, ID = items.Count });
-            items.Add(new ListsViewModel { Name = "Orange", On = true, ID = items.Count });
-            items.Add(new ListsViewModel { Name = "Guava", On = true, ID = items.Count });
-            if(ListID == 1)
+            items = new ObservableCollection<ListItemObject>();         //instantiates listitem ObservableCollection that will notify when items are added, removed, and refreshed
+
+            //HARD-CODED, WILL CHANGE WITH STUFF FROM SERVER
+            items.Add(new ListItemObject { Name = "Bananas", On = true, ID = items.Count });            //adds the bananas item to the page
+            items.Add(new ListItemObject { Name = "Apple", On = false, ID = items.Count });             //adds the apples item to the page
+            items.Add(new ListItemObject { Name = "Orange", On = true, ID = items.Count });             //adds the orange item to the page
+            items.Add(new ListItemObject { Name = "Guava", On = true, ID = items.Count });              //adds the guava item to the page
+            if (ListID == 1)                                                                            //tests if list specific items work
             {
-                items.Add(new ListsViewModel { Name = "Custom", On = false, ID = lists.Count });
+                items.Add(new ListItemObject { Name = "Custom", On = false, ID = lists.Count });        //adds specific item for last list
             }
         }
 
@@ -44,107 +49,51 @@ namespace groupProject01
             throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// This allows the user to add lists. 
-        /// </summary>
-        public int addList()
+        public int addItem()
         {
             throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// This allows the user to hide lists. Only allowed on public lists.
-        /// </summary>
-        public int hideList()
+        public int deleteItem()
         {
             throw new NotImplementedException();
         }
-
-        /// <summary>
-        /// This allows the user to delete lists. Only allowed on private lists.
-        /// </summary>
+        
         public int deleteList()
         {
             throw new NotImplementedException();
         }
 
+        //****commented out due to time constraints****//
+        //public int hidelist()
+        //{
+        //    throw new notimplementedexception();
+        //}
+
     }
 
-    /// <summary>
-    /// This is the base class, not to be instanciated explictly
-    /// </summary>
-    public class ListsBase
+
+    //dif types of lists
+    //0 - notes
+    //
+    public class ListOfListsObject                      //the object class for the list of lists which allows the user to select which list they would like to view              
     {
-        protected ListsBase()
-        {
-            throw new NotImplementedException();
-        }
-    }
-    /// <summary>
-    /// This is the Grocery List class.
-    /// </summary>
-    public class GroceryList : ListsBase
-    {
-        
-        public GroceryList()
-        {
-            throw new NotImplementedException();
-        }
+        public string Name { get; set; }                //name of the object
+        public int ID { get; set; }                     //unique id for the object
+        public int Type { get; set; }                   //specifies type of list - toggleable (1) and not toggleable(0)
 
-
-        /// <summary>
-        /// assigns the roommate responsible for buying the item
-        /// </summary>
-        public void setBuyer()
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    /// <summary>
-    /// This is the Chores List class.
-    /// </summary>
-    class ChoresList : ListsBase
-    {
-        ChoresList()
-        {
-            throw new NotImplementedException();
-        }
-
-        //assign method? -> would that be in base list?
+        //POSSIBLY GET RID OF
+        public bool On { get; set; }                    //watches value of trigger
+        public bool IsSwitchVisible { get; set; }       //watches visibility of trigger
     }
 
 
-    /// <summary>
-    /// This is the repairs list class.
-    /// </summary>
-    class RepairsList : ListsBase
+    public class ListItemObject                        //the object class for the items in a certain list                    
     {
-        RepairsList()
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    /// <summary>
-    /// This is the Shared Items list class.
-    /// </summary>
-    class SharedItemsList : ListsBase
-    {
-        /// <summary>
-        /// This creates a new shared items list.
-        /// </summary>
-        SharedItemsList()
-        {
-            throw new NotImplementedException();
-        }
-
-    }
-    public class ListsViewModel
-    {
-        public string Name { get; set; }
-        public int ID { get; set; }
-        public bool On { get; set; }
-        public bool IsSwitchVisible { get; set; }
+        public string Name { get; set; }                //name of the object
+        public int ID { get; set; }                     //unique id for the object
+        public bool On { get; set; }                    //watches value of trigger- true or false
+        public bool IsSwitchVisible { get; set; }       //watches visibility of trigger
+        public int Type { get; set; }                   //specifies type of item- noAdditionalInfo (0) or AdditionalInfo(1)
     }
 }
