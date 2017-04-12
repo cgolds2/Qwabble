@@ -12,7 +12,7 @@ namespace groupProject01
 {
     public partial class ListsPage : ContentPage                        //ListsPage class
     {
-        public ObservableCollection<ListsViewModel> lists { get; set; } //initializes a collection that notifies when items are added, removed, or refreshed
+        public ObservableCollection<ListOfListsObject> lists { get; set; } //initializes a collection that notifies when items are added, removed, or refreshed
         private GlobalData _gd;                                         //instantiates global variable GlobalData to store the global data
 
         public ListsPage(GlobalData gd)                                 //ListsPage constructor
@@ -50,20 +50,13 @@ namespace groupProject01
        /// <param name="e"></param>
        async void OnTap(object sender, ItemTappedEventArgs e)
         {
-            int index = ((ListsViewModel)e.Item).ID;    //gets the ID of the list item (sender=row)
+            int index = ((ListOfListsObject)e.Item).ID;                                    //gets the ID of the list item (sender=row)
             await Navigation.PushAsync(new groupProject01.ListItemPage(index, _gd)); //viewing the list item page even while other things occur
-            //DisplayAlert("Item Tapped", ((ListsViewModel)e.Item).ID.ToString(), "Ok"); TESTING
+            //DisplayAlert("Item Tapped", ((ListsObject)e.Item).ID.ToString(), "Ok"); TESTING
         }
 
         public void onDeleteListClicked(object Sender, EventArgs e)
         {
-            throw new NotImplementedException();
-        }
-
-        public void onAddListClicked(object Sender, EventArgs e)
-        {
-            //TODO pass in type of list- private vs public?
-
             throw new NotImplementedException();
         }
     }
