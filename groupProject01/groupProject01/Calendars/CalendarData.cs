@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace groupProject01
@@ -16,7 +17,7 @@ namespace groupProject01
 
         public void refreshAll()                                             //refreshes all data on the page
         {
-            calendar = new ObservableCollection<CalendarViewMode>();         //instantiates calendars ObservableCollection that will notify when calendars are added, removed, and refreshed
+            calendar = new ObservableCollection<CalendarViewModel>();         //instantiates calendars ObservableCollection that will notify when calendars are added, removed, and refreshed
 
             //HARD-CODED, WILL CHANGE
             calendar.Add(new CalendarViewModel { Name = "View Calendar", ID = calendar.Count });              //adds the View Calendar option to the page

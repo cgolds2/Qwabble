@@ -31,7 +31,7 @@ namespace groupProject01
 
         public void getItemsInList(int ListID)                       //gets all items for a specific list
         {
-            items = new ObservableCollection<ListsObject>();         //instantiates listitem ObservableCollection that will notify when items are added, removed, and refreshed
+            items = new ObservableCollection<ListItemObject>();         //instantiates listitem ObservableCollection that will notify when items are added, removed, and refreshed
 
             //HARD-CODED, WILL CHANGE WITH STUFF FROM SERVER
             items.Add(new ListItemObject { Name = "Bananas", On = true, ID = items.Count });            //adds the bananas item to the page
