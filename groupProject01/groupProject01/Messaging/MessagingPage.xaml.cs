@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,50 +9,38 @@ using Xamarin.Forms;
 
 namespace groupProject01
 {
-	public partial class MessagingPage
+	public partial class MessagingPage : ContentPage        //MessagingPage class
 	{
-		public MessagingPage ()
+        public ObservableCollection<MessagingViewModel> messages { get; set; } //creates an instance of messages
+        private GlobalData _gd;                             //global variable GlobalData initialzed
+        
+        public MessagingPage (GlobalData gd)                //MessagingPage constructor
 		{
-			InitializeComponent ();
+			InitializeComponent ();                          //loads the UI elements
+            _gd = gd;                                        //sets private instance of global data
+            messages = _gd.MessagingDataInstance.messages;   //gets the messaging data from the data file
+            msgView.ItemsSource = messages;                  //sets the messaging UI
 		}
 
+        async void OnTap(object sender, ItemTappedEventArgs e)      //a listener that fires when a message is tapped
+        {
+            int index = ((MessagingViewModel)e.Item).ID;    //gets the ID of the messaging item (sender=row)
+            await Navigation.PushAsync(new groupProject01.Messaging.MessagingItemPage(index,_gd)); //viewing the messaging item page even while other things occur
+            //DisplayAlert("Item Tapped", ((ListsObject)e.Item).ID.ToString(), "Ok"); TESTING
+        }
+
+
+
+
+
+
+
         /// <summary>
-         /// This will bring up a menu which will allow the sender to put in info about guest they are bringing over and will push this info to all roommates.
+        /// This will bring up a menu which will allow the sender to put in info about guest they are bringing over and will push this info to all roommates.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void onGuestClicked(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        
-        /// <summary>
-        /// This will bring up a chat based on which channel is selected (all, specific roommate names).
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void onChatClicked(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Redirects the sender to their phone's dialer and automatically fills in specified roommates phone number.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void onRedirectToDialer(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Sends a push notification to all roommates (even with notifications muted).
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void onUrgentMessageClicked(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
