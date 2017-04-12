@@ -19,8 +19,7 @@ namespace groupProject01
         {
             InitializeComponent();                                      //initializes UI objects with values provided, initializes elements
             _gd = gd;                                                   //sets private instance of global data
-           lists =  _gd.ListsDataInstance.lists;                        //gets the lists data from data file
-            //POSSIBLE ERROR- CHECK IF THIS IS SUPPOSED TO BE ListsDataInstance OR listsDataInstance
+            lists =  _gd.ListsDataInstance.lists;                       //gets the lists data from data file
             lstView.ItemsSource = lists;                                //sets the source of items to template and display
         }
 

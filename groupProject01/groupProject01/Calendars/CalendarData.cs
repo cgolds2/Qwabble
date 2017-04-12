@@ -4,12 +4,6 @@ using System.Text;
 
 namespace groupProject01
 {
-    public enum view
-    {
-        daily = 1,
-        weekly = 2,
-        monthly = 3,
-    }
     public class CalendarData
     {
         public ObservableCollection<CalendarViewMode> calendar { get; set; } //declares calendars ObservableCollection that will notify when calendars are added, removed, and refreshed
@@ -25,10 +19,20 @@ namespace groupProject01
             calendar = new ObservableCollection<CalendarViewMode>();       //instantiates calendars ObservableCollection that will notify when calendars are added, removed, and refreshed
 
             //HARD-CODED, WILL CHANGE
-            calendar.Add(new CalendarViewModel { Name = "Public", ID = calendar.Count });   //adds the public calendar to the page
-            calendar.Add(new CalendarViewModel { Name = "Private", ID = calendar.Count });  //adds the private calendar to the page
+            calendar.Add(new CalendarViewModel { Name = "View Calendar", ID = calendar.Count });      //adds the View Calendar option to the page
+            calendar.Add(new CalendarViewModel { Name = "Create New Event", ID = calendar.Count });   //adds the public calendar to the page
+            calendar.Add(new CalendarViewModel { Name = "View Calendar", ID = calendar.Count });   //adds the public calendar to the page
+            calendar.Add(new CalendarViewModel { Name = "View Calendar", ID = calendar.Count });   //adds the public calendar to the page
+            /* METHODS TO ADD:
+            * createNewEvent
+            * scheduleNewGuest(s)
+            * scheduleChore
+            * reserveLaundryMachines
+            * reserveQuiettime
+            */
         }
 
+        //make different objects for each type, be able to access all
         public void getEventsInCalendar(int CalendarID)                     //gets all events for a specific calendar
         {
             events = new ObservableCollection<CalendarViewModel>();        //instantiates events ObservableCollection that will notify when events are added, removed, and refreshed
@@ -41,23 +45,18 @@ namespace groupProject01
                 events.Add(new CalendarViewModel { Name = "Custom Event", ID = events.Count });      //puts this on CalendarID == 1 page
             }
         }
-
-        public void loadCalendar()
-        {
-            throw new NotImplementedException();
-        }
-        public void changeView(view v)
-        {
-            throw new NotImplementedException();
-        }
     }
     public class EventObject
     {
-
+        //sets dif events?
+        //does individual events in a nice pretty way
+        //like calendar view model, do messaging as well
+        //CONNOR IN CHARGE OF LISTOBJECT
     }
     public class CalendarViewModel
     {
         public string Name { get; set; }
         public int ID { get; set; }
+       //TODO public DateTime {get;set;} <- DEAL WITH THIS 
     }
 }

@@ -56,13 +56,15 @@ namespace groupProject01
             throw new NotImplementedException();
         }
 
+
+        //commented out due to time constraints
         /// <summary>
-        /// This allows the user to hide lists. Only allowed on public lists.
+        /// this allows the user to hide lists.only allowed on public lists.
         /// </summary>
-        public int hideList()
-        {
-            throw new NotImplementedException();
-        }
+        //public int hidelist()
+        //{
+        //    throw new notimplementedexception();
+        //}
 
         /// <summary>
         /// This allows the user to delete lists. Only allowed on private lists.
