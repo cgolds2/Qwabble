@@ -12,22 +12,17 @@ namespace groupProject01
 	public partial class MessagingPage : ContentPage        //MessagingPage class
 	{
         public ObservableCollection<MessagingViewModel> messages { get; set; } //creates an instance of messages
-        private GlobalData _gd;                 //global variable GlobalData initialzed
+        private GlobalData _gd;                             //global variable GlobalData initialzed
         
-        public MessagingPage (GlobalData gd)            //MessagingPage constructor
+        public MessagingPage (GlobalData gd)                //MessagingPage constructor
 		{
-			InitializeComponent ();                     //loads the UI elements
-            _gd = gd;                                   //sets private instance of global data
-            messages = _gd.messagingDataInstance.messages;   //gets the messaging data from the data file
-            msgView.ItemsSource = messages;             //sets the messaging UI
+			InitializeComponent ();                          //loads the UI elements
+            _gd = gd;                                        //sets private instance of global data
+            messages = _gd.MessagingDataInstance.messages;   //gets the messaging data from the data file
+            msgView.ItemsSource = messages;                  //sets the messaging UI
 		}
 
-        /// <summary>
-        /// Listener that fires when a message is tapped.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        async void OnTap(object sender, ItemTappedEventArgs e)
+        async void OnTap(object sender, ItemTappedEventArgs e)      //a listener that fires when a message is tapped
         {
             int index = ((MessagingViewModel)e.Item).ID;    //gets the ID of the messaging item (sender=row)
             await Navigation.PushAsync(new groupProject01.Messaging.MessagingItemPage(index,_gd)); //viewing the messaging item page even while other things occur

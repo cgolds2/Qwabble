@@ -19,7 +19,7 @@ namespace groupProject01
             InitializeComponent();                                      //initializes UI objects with values provided, initializes elements
             _gd = gd;                                                   //sets private instance of global data
             _gd.CalendarDataInstance.getEventsInCalendar(ListID);       //fills the page with all the events in the specified calendar
-            events = _gd.ListsDataInstance.events;                      //gets the lists data from data file
+            events = _gd.CalendarDataInstance.events;                      //gets the lists data from data file
             calView.ItemsSource = events;                               //sets the source of items to template and display
         }
 
