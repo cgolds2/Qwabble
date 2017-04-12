@@ -35,10 +35,8 @@ namespace groupProject01
 
 
         /* METHODS TO ADD:
-         * changeCalendarView
-         * changeViewAccess (private vs public)
          * createNewEvent
-         * inviteNewGuest(s)
+         * scheduleNewGuest(s)
          * scheduleChore
          * reserveLaundryMachines
          * reserveQuiettime
