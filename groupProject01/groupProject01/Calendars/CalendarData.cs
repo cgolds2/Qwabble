@@ -6,30 +6,25 @@ namespace groupProject01
 {
     public class CalendarData
     {
-        public ObservableCollection<CalendarViewMode> calendar { get; set; } //declares calendars ObservableCollection that will notify when calendars are added, removed, and refreshed
-        public ObservableCollection<CalendarViewModel> events { get; set; }  //declares events ObservableCollection that will notify when events are added, removed, and refreshed
+        public ObservableCollection<CalendarViewModel> calendar { get; set; } //declares calendars ObservableCollection that will notify when calendars are added, removed, and refreshed
+        public ObservableCollection<CalendarViewModel> events { get; set; }   //declares events ObservableCollection that will notify when events are added, removed, and refreshed
 
-        public CalendarData()                                               //constructor for the Calendar Data page
+        public CalendarData()                                                 //constructor for the Calendar Data page
         {
-            refreshAll();                                                   //refreshes all data on the page
+            refreshAll();                                                     //refreshes all data on the page
         }
 
-        public void refreshAll()                                            //refreshes all data on the page
+        public void refreshAll()                                             //refreshes all data on the page
         {
-            calendar = new ObservableCollection<CalendarViewMode>();       //instantiates calendars ObservableCollection that will notify when calendars are added, removed, and refreshed
+            calendar = new ObservableCollection<CalendarViewMode>();         //instantiates calendars ObservableCollection that will notify when calendars are added, removed, and refreshed
 
             //HARD-CODED, WILL CHANGE
-            calendar.Add(new CalendarViewModel { Name = "View Calendar", ID = calendar.Count });      //adds the View Calendar option to the page
-            calendar.Add(new CalendarViewModel { Name = "Create New Event", ID = calendar.Count });   //adds the public calendar to the page
-            calendar.Add(new CalendarViewModel { Name = "View Calendar", ID = calendar.Count });   //adds the public calendar to the page
-            calendar.Add(new CalendarViewModel { Name = "View Calendar", ID = calendar.Count });   //adds the public calendar to the page
-            /* METHODS TO ADD:
-            * createNewEvent
-            * scheduleNewGuest(s)
-            * scheduleChore
-            * reserveLaundryMachines
-            * reserveQuiettime
-            */
+            calendar.Add(new CalendarViewModel { Name = "View Calendar", ID = calendar.Count });              //adds the View Calendar option to the page
+            calendar.Add(new CalendarViewModel { Name = "Create New Event", ID = calendar.Count });           //adds the Create New Event to the page
+            calendar.Add(new CalendarViewModel { Name = "Schedule New Guests", ID = calendar.Count });        //adds the Schedule New Guests to the page
+            calendar.Add(new CalendarViewModel { Name = "Schedule Chore", ID = calendar.Count });             //adds the Schedule Chore to the page
+            calendar.Add(new CalendarViewModel { Name = "Reserve Laundry Machines", ID = calendar.Count });   //adds the Reserve Laundry Machines to the page
+            calendar.Add(new CalendarViewModel { Name = "Reserve Quiet Time", ID = calendar.Count });         //adds the Reserve Quiet Time to the page
         }
 
         //make different objects for each type, be able to access all

@@ -31,7 +31,7 @@ namespace groupProject01
         {
             int index = ((MessagingViewModel)e.Item).ID;    //gets the ID of the messaging item (sender=row)
             await Navigation.PushAsync(new groupProject01.Messaging.MessagingItemPage(index,_gd)); //viewing the messaging item page even while other things occur
-            //DisplayAlert("Item Tapped", ((ListsViewModel)e.Item).ID.ToString(), "Ok"); TESTING
+            //DisplayAlert("Item Tapped", ((ListsObject)e.Item).ID.ToString(), "Ok"); TESTING
         }
 
 
