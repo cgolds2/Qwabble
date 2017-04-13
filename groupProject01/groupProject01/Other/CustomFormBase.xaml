@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	x:Class="groupProject01.Other.CustomFormBase">
+	x:Class="groupProject01.Other.CustomFormBase"
+	xmlns:local="clr-namespace:groupProject01">
 	<ContentPage.Content>
 		<AbsoluteLayout>
-			<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.08" 
-			AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
-			<Label Text="Page name" TextColor="#ffffff" FontSize="28" 
-			LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".55,.015,150,100" 
-			AbsoluteLayout.LayoutFlags="PositionProportional" />
+			<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.075" 
+				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+			<Label Text="Page name" TextColor="#ffffff" FontSize="24" 
+				LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".55,.015,150,100" 
+				AbsoluteLayout.LayoutFlags="PositionProportional" />
 			<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,.11" 
-			AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+			<Button Text="Home" FontSize="15" BackgroundColor="#60ab60" BorderRadius="100" 
+				BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".5,.995,68,68" 
+				AbsoluteLayout.LayoutFlags="PositionProportional" />
+			<Button Text="Lists" FontSize="15" BackgroundColor="#60ab60" BorderWidth="2" 
+				BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.995,68,68" 
+				AbsoluteLayout.LayoutFlags="PositionProportional"/>
+   		 	<Button Text="Calendar" FontSize="15" BackgroundColor="#60ab60" BorderWidth="2" 
+				BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.995,68,68" 
+				AbsoluteLayout.LayoutFlags="PositionProportional"/>
+			<Button Text="Messaging" FontSize="15" BackgroundColor="#60ab60" BorderWidth="2" 
+				BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.995,68,68" 
+				AbsoluteLayout.LayoutFlags="PositionProportional" />
+			<Button Text="Settings" FontSize="15" BackgroundColor="#60ab60" BorderWidth="2" 
+				BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.995,68,68" 
+				AbsoluteLayout.LayoutFlags="PositionProportional"/>
 		</AbsoluteLayout>
 	</ContentPage.Content>
 </ContentPage>

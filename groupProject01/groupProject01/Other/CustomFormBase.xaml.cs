@@ -14,5 +14,6 @@ namespace groupProject01.Other
 		{
 			InitializeComponent ();
 		}
+
 	}
 }

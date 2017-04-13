@@ -12,6 +12,14 @@ namespace groupProject01
 	{
         ICredentials service;
         GlobalData _gd;
+
+		public MainPage()
+		{
+			//error on iphone
+			InitializeComponent();
+
+			service = DependencyService.Get<ICredentials>();
+		}
 		public MainPage(GlobalData gd)
 		{
             _gd = gd;
@@ -53,8 +61,9 @@ namespace groupProject01
         }
         async void OnMessaging(object sender, EventArgs e)
         {
+			await Navigation.PushModalAsync(new NavigationPage(new groupProject01.Other.CustomFormBase()));
 
-            await Navigation.PushModalAsync(new groupProject01.MessagingPage());
+            //await Navigation.PushModalAsync(new groupProject01.MessagingPage());
 
         }
     }
