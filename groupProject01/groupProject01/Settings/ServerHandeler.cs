@@ -6,6 +6,8 @@ using System.IO;
 using System.Net;
 using System.Text;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
+
 
 namespace groupProject01
 {
@@ -17,9 +19,12 @@ namespace groupProject01
         }
 
 
-        public void sendList(ListItemObject ldata)
+        public static Task<String> sendList(ListItemObject ldata)
         {
-
+            string uri = "";
+            string jsonString = JsonConvert.SerializeObject(ldata);
+           return RestService.PostCall(jsonString, uri);
+            
         }
 
         #region HTTP POST

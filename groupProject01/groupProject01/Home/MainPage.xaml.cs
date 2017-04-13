@@ -25,8 +25,12 @@ namespace groupProject01
         {
             try
             {
-                RestService r = new RestService();
-                string test = await (r.GetCall("createUser.php?username=whatever&password=password123&email=anythingelse@ryansafag.gov"));
+                ListItemObject l = new ListItemObject();
+                l.Name = "Test";
+                l.ID = 0;
+                l.Type = 0;
+                //RestService r = new RestService();
+                string test = await (ServerHandeler.sendList(l));
                 dynamic jsonDe = JsonConvert.DeserializeObject(test);
                 textField.Text = jsonDe.name;
             }
