@@ -44,6 +44,11 @@
       <SubType>Code</SubType>
       <DependentUpon>ListsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Login\LoginData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Login\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\MessagingData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\MessagingItemPage.xaml.cs">
       <DependentUpon>MessagingItemPage.xaml</DependentUpon>
@@ -135,6 +140,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Lists\ListItemDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Login\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

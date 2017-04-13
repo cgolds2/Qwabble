@@ -21,13 +21,8 @@ namespace groupProject01
             calendar = _gd.CalendarDataInstance.calendar;                    //gets the calendar data from the data file
             calView.ItemsSource = calendar;                                  //sets the source of items to template and display
         }
-
-        /// <summary>
-        /// Listener that fires when a calendar item is tapped.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        async void OnTap(object sender, ItemTappedEventArgs e)
+        
+        async void OnTap(object sender, ItemTappedEventArgs e)                    //Lister that fires when a calendar item is tapped
         {
             int index = ((CalendarViewModel)e.Item).ID;                           //gets the ID of the calendar item
             await Navigation.PushAsync(new groupProject01.EventPage(index, _gd)); //opens the event page as current page continues to run
