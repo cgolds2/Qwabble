@@ -29,12 +29,6 @@ namespace groupProject01
             //DisplayAlert("Item Tapped", ((ListsObject)e.Item).ID.ToString(), "Ok"); TESTING
         }
 
-
-
-
-
-
-
         /// <summary>
         /// This will bring up a menu which will allow the sender to put in info about guest they are bringing over and will push this info to all roommates.
         /// </summary>

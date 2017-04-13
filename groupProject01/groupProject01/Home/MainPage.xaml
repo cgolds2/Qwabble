@@ -4,18 +4,21 @@
              xmlns:local="clr-namespace:groupProject01"
              x:Class="groupProject01.MainPage">
   <ContentPage.Content>
-  <StackLayout VerticalOptions="StartAndExpand">
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-  <Entry x:Name="textField" Text="1-855-XAMARIN" />
-  <Button x:Name="Save" Text="Save" Clicked="OnSave" />
-  <Button x:Name="Retrieve" Text="Retrieve" Clicked="OnRetrieve" />
-    <Button x:Name="List" Text="List" Clicked="OnList" />
-    <Button x:Name="Settings" Text="Settings" Clicked="OnSetting" />
-    <Button x:Name="Calendar" Text="Calendar" Clicked="OnCalendar" />
-    <Button x:Name="Messaging" Text="Messaging" Clicked="OnMessaging" />
-    <!-- <Button x:Name="Home" Text="Home" Clicked="OnHome"/> -->
+    <StackLayout VerticalOptions="StartAndExpand">
+	    <Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+        
+        <Entry x:Name="textField" Text="1-855-XAMARIN" />
+        
+        
+        
+        <Button x:Name="Save" Text="Save" Clicked="OnSave" />
+        <Button x:Name="Retrieve" Text="Retrieve" Clicked="OnRetrieve" />
+        <Button x:Name="List" Text="List" Clicked="OnList" />
+        <Button x:Name="Settings" Text="Settings" Clicked="OnSetting" />
+        <Button x:Name="Calendar" Text="Calendar" Clicked="OnCalendar" />
+        <Button x:Name="Messaging" Text="Messaging" Clicked="OnMessaging" />
+        <Button x:Name="Home" Text="Home" Clicked="OnHome" />
+        <Button x:Name="Login" Text="Login" Clicked="OnLogIn" />
         </StackLayout>
   </ContentPage.Content>
 </ContentPage>
