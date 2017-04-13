@@ -23,32 +23,7 @@ namespace groupProject01
             lstView.ItemsSource = lists;                                //sets the source of items to template and display
         }
 
-
-
-        /// <summary>
-        /// Fires when switch is turned on or off.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void SwitchToggled(object sender, EventArgs e) 
-        {
-            int index = ((CustomSwitch)sender).ID;  //gets the ID of the cell that is toggled (sender=switch)
-            if (index != -1)                        //when user toggles switch
-            {
-                //index is -1 when loading, false toggle event
-                DisplayAlert("Switch","Switch","Ok");       //TESTING
-                // Do stuff
-            }
-        }
-
-
-
-       /// <summary>
-       /// Listener that fires when a list is tapped
-       /// </summary>
-       /// <param name="sender"></param>
-       /// <param name="e"></param>
-       async void OnTap(object sender, ItemTappedEventArgs e)
+       async void OnTap(object sender, ItemTappedEventArgs e)                       //Listener that fires when a list is tapped
         {
             int index = ((ListOfListsObject)e.Item).ID;                                    //gets the ID of the list item (sender=row)
             await Navigation.PushAsync(new groupProject01.ListItemPage(index, _gd)); //viewing the list item page even while other things occur

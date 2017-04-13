@@ -44,23 +44,23 @@ namespace groupProject01
         }
         async void OnSetting(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new groupProject01.SettingsPage());
+            await Navigation.PushAsync(new groupProject01.SettingsPage());
 
         }
         async void OnList(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new groupProject01.ListsPage(_gd)));
+            await Navigation.PushAsync(new NavigationPage(new groupProject01.ListsPage(_gd)));
 
         }
         async void OnCalendar(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new groupProject01.CalendarPage(_gd));
+            await Navigation.PushAsync(new groupProject01.CalendarPage(_gd));
 
         }
         async void OnMessaging(object sender, EventArgs e)
         {
 
-            await Navigation.PushModalAsync(new groupProject01.MessagingPage(_gd));
+            await Navigation.PushAsync(new groupProject01.MessagingPage(_gd));
 
         }
     }

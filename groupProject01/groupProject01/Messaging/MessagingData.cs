@@ -11,8 +11,8 @@ namespace groupProject01
 {
 	public class MessagingData
 	{
-        public ObservableCollection<MessagingViewModel> messages { get; set; } //creates an instance of messages
-        public ObservableCollection<MessagingViewModel> msgItems { get; set; } //creates an instance of msgItems
+        public ObservableCollection<MessagingObject> messages { get; set; } //creates an instance of messages
+        public ObservableCollection<MessagingObject> msgItems { get; set; } //creates an instance of msgItems
 
 		public MessagingData ()
 		{
@@ -24,10 +24,10 @@ namespace groupProject01
         /// </summary>
         public void refreshAll()
         {
-            messages = new ObservableCollection<MessagingViewModel>();
+            messages = new ObservableCollection<MessagingObject>();
 
-            messages.Add(new MessagingViewModel { Name = "General", ID = messages.Count });
-            messages.Add(new MessagingViewModel { Name = "Guest Alert", ID = messages.Count });
+            messages.Add(new MessagingObject { Name = "General", ID = messages.Count });
+            messages.Add(new MessagingObject { Name = "Guest Alert", ID = messages.Count });
         }
 
         /// <summary>
@@ -36,12 +36,12 @@ namespace groupProject01
         /// <param name="MessageID"></param>
         public void getItemsInMessage(int MessageID)
         {
-            msgItems = new ObservableCollection<MessagingViewModel>();
-            msgItems.Add(new MessagingViewModel { Name = "Message1", ID = msgItems.Count });
-            msgItems.Add(new MessagingViewModel { Name = "Message2", ID = msgItems.Count });
+            msgItems = new ObservableCollection<MessagingObject>();
+            msgItems.Add(new MessagingObject { Name = "Message1", ID = msgItems.Count });
+            msgItems.Add(new MessagingObject { Name = "Message2", ID = msgItems.Count });
             if (MessageID == 1)
             {
-                msgItems.Add(new MessagingViewModel { Name = "Custom", ID = msgItems.Count });
+                msgItems.Add(new MessagingObject { Name = "Custom", ID = msgItems.Count });
             }
         }
     }
@@ -114,7 +114,7 @@ namespace groupProject01
         }
 
     }
-    public class MessagingViewModel
+    public class MessagingObject
     {
         public string Name { get; set; }
         public int ID { get; set; }
