@@ -72,11 +72,5 @@ namespace groupProject01
             await Navigation.PushAsync(new groupProject01.HomePage(_gd));
 
         }
-        async void OnLogIn(object sender, EventArgs e)
-        {
-
-            await Navigation.PushAsync(new groupProject01.LoginPage(_gd));
-
-        }
     }
 }
