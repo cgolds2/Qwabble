@@ -14,7 +14,6 @@ namespace groupProject01.Lists
 		{
 			InitializeComponent ();
             lblLabel.Text = currentItem.Name;
-
         }
 	}
 }

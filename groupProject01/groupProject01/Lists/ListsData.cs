@@ -84,7 +84,7 @@ namespace groupProject01
 
         ////POSSIBLY GET RID OF
         //public bool On { get; set; }                    //watches value of trigger
-        //public bool IsSwitchVisible { get; set; }       //watches visibility of trigger
+        public bool IsSwitchVisible { get; set; }       //watches visibility of trigger
     }
 
 
@@ -95,5 +95,6 @@ namespace groupProject01
         public bool On { get; set; }                    //watches value of trigger- true or false
         public bool IsSwitchVisible { get; set; }       //watches visibility of trigger
         public int Type { get; set; }                   //specifies type of item- noAdditionalInfo (0) or AdditionalInfo(1)
+        public string data { get; set; }
     }
 }

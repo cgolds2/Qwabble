@@ -24,7 +24,7 @@ public class RestService
     //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
     //}
 
-    public static async Task<string> GetCall(string url2)
+    public static async Task<string> GetCall(string url)
     {
 
         try
@@ -36,8 +36,6 @@ public class RestService
             client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
-
-            string url = "http://172.16.42.4/" + url2;
 
             string html = string.Empty;
 
@@ -64,7 +62,7 @@ public class RestService
 
 
 
-    public static async Task<String> PostCall(string body, string uri)
+    public static async Task<string> PostCall(string body, string url)
     {
         try
         {
@@ -79,7 +77,6 @@ public class RestService
             var content = new StringContent(body, Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = null;
-            string url = "http://172.16.42.4/" + uri;
             response = await client.PostAsync(url, content);
 
             Debug.WriteLine(response);
