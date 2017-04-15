@@ -9,7 +9,7 @@ using System.Text;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
-
+using Newtonsoft.Json.Linq;
 
 namespace groupProject01
 {
@@ -24,8 +24,12 @@ namespace groupProject01
 
          public async static Task<string> sendList(ListItemObject ldata, GlobalData gd)
         {
+            //createNote(username, userID, apartmentID, noteName, listType, noteText)
             string jsonString = JsonConvert.SerializeObject(ldata);
-            string result = await (RestService.PostCall(jsonString, baseuri+ "createNote.php"));
+            JObject ob = JObject.Parse(jsonString);
+            ob["username"] = gd.CurrentUser.Username;
+            ob["userID"] = gd.CurrentUser.UserID;
+            string result = await (RestService.PostCall(ob.ToString(), baseuri+ "createNote.php"));
            return result;
             
         }
