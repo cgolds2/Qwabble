@@ -4,22 +4,50 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Threading;
 using System.Text;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+using Newtonsoft.Json.Linq;
 
 namespace groupProject01
 {
     class ServerHandeler
     {
+        public static string baseuri = "http://172.16.42.4/";
         public static Boolean pingServer()
         {
             throw new NotImplementedException();
         }
 
 
-        public void sendList(ListItemObject ldata)
+         public async static Task<string> sendList(ListItemObject ldata, GlobalData gd)
         {
+            //createNote(username, userID, apartmentID, noteName, listType, noteText)
+            string jsonString = JsonConvert.SerializeObject(ldata);
+            JObject ob = JObject.Parse(jsonString);
+            ob["username"] = gd.CurrentUser.Username;
+            ob["userID"] = gd.CurrentUser.UserID;
+            string result = await (RestService.PostCall(ob.ToString(), baseuri+ "createNote.php"));
+           return result;
+            
+        }
 
+        async public static Task<List<ListItemObject>> getList(int ID,GlobalData gd)
+        {
+            Other.UserObject u = gd.CurrentUser;
+            int ApartmentID = u.ApartmentID;
+            string get = baseuri + "getNotes.php?apartmentID=" + ApartmentID;
+            string text = await(RestService.GetCall(get));
+            List<ListItemObject> ret = new List<ListItemObject>();
+            string[] result = Regex.Split(text, "\r\n|\r|\n");
+            foreach(string s in result){
+                ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(s);
+                ret.Add(deserializedProduct);
+            }
+          //  ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(output);
+            return ret;
         }
 
         #region HTTP POST

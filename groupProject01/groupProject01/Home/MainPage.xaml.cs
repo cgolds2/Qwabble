@@ -23,17 +23,22 @@ namespace groupProject01
 
         async void OnRetrieve(object sender, EventArgs e)
         {
-            try
-            {
-                RestService r = new RestService();
-                string test = await (r.GetCall("createUser.php?username=whatever&password=password123&email=anythingelse@ryansafag.gov"));
-                dynamic jsonDe = JsonConvert.DeserializeObject(test);
-                textField.Text = jsonDe.name;
-            }
-            catch (Exception ex)
-            {
-                textField.Text = ex.Message;
-            }
+            List<ListItemObject> lis = await (ServerHandeler.getList(1, _gd));
+            //try
+            //{
+            //    ListItemObject l = new ListItemObject();
+            //    l.Name = "Test";
+            //    l.ID = 0;
+            //    l.Type = 0;
+            //    //RestService r = new RestService();
+            //    string test = await (ServerHandeler.sendList(l));
+            //    dynamic jsonDe = JsonConvert.DeserializeObject(test);
+            //    textField.Text = jsonDe.name;
+            //}
+            //catch (Exception ex)
+            //{
+            //    textField.Text = ex.Message;
+            //}
            
 
         }

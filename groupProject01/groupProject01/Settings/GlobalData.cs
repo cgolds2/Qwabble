@@ -15,7 +15,7 @@ namespace groupProject01
         private MessagingData messagingDataInstance = new MessagingData();
         private ListsData listsDataInstance = new ListsData();
         private CalendarData calendarDataInstance = new CalendarData();
-        private Other.UserObject currentUser;
+        private Other.UserObject currentUser=new Other.UserObject();
         
         #endregion
 
@@ -58,6 +58,19 @@ namespace groupProject01
             set
             {
                 calendarDataInstance = value;
+            }
+        }
+
+        public Other.UserObject CurrentUser
+        {
+            get
+            {
+                return currentUser;
+            }
+
+            set
+            {
+                currentUser = value;
             }
         }
         #endregion
