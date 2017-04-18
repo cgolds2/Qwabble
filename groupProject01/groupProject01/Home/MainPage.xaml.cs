@@ -52,7 +52,7 @@ namespace groupProject01
         }
         async void OnList(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NavigationPage(new groupProject01.ListsPage(_gd)));
+            await Navigation.PushAsync(new groupProject01.ListsPage(_gd));
 
         }
         async void OnCalendar(object sender, EventArgs e)
@@ -70,6 +70,12 @@ namespace groupProject01
         {
 
             await Navigation.PushAsync(new groupProject01.HomePage(_gd));
+
+        }
+        async void OnLogin(object sender, EventArgs e)
+        {
+
+            await Navigation.PushAsync(new groupProject01.LoginPage(_gd));
 
         }
     }

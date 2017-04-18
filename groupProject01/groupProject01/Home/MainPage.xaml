@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:groupProject01"
-             x:Class="groupProject01.MainPage">
+             x:Class="groupProject01.MainPage"
+             Title="Qwabble">
+    
   <ContentPage.Content>
     <StackLayout VerticalOptions="StartAndExpand">
 	    <Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
@@ -13,11 +15,12 @@
         
         <Button x:Name="Save" Text="Save" Clicked="OnSave" />
         <Button x:Name="Retrieve" Text="Retrieve" Clicked="OnRetrieve" />
-        <Button x:Name="List" Text="List" Clicked="OnList" />
+        <Button x:Name="Lists" Text="Lists" Clicked="OnList" />
         <Button x:Name="Settings" Text="Settings" Clicked="OnSetting" />
         <Button x:Name="Calendar" Text="Calendar" Clicked="OnCalendar" />
         <Button x:Name="Messaging" Text="Messaging" Clicked="OnMessaging" />
-            <Button x:Name="Home" Text="Home" Clicked="OnHome" />
+        <Button x:Name="Home" Text="Home" Clicked="OnHome" />
+        <Button x:Name="Login" Text="Login" Clicked="OnLogin" />
         </StackLayout>
   </ContentPage.Content>
 </ContentPage>
