@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json.Linq;
+using groupProject01.Other;
 
 namespace groupProject01
 {
@@ -29,17 +30,15 @@ namespace groupProject01
          * 
          */
 
-         /*
-          * createUser(username,password) // returns user id
-          * getUserInfo(username / userID) //2 different statments for either I guess
-          * getAllUsers(apartmentID)
-          * 
-          * addUserToApartment(userID) //returns apartment # of the user, could be post
-          * createApartment(userID (creator/owner), name, location) //return apartment ID
-          * getApartments(location)
-          * 
-          * 
-          */
+        /*
+
+         * getAllUsers(apartmentID)
+         * addUserToApartment(userID) //returns apartment # of the user, could be post
+         * createApartment(userID (creator/owner), name, location) //return apartment ID
+         * getApartments(location)
+         * 
+         * 
+         */
 
         //LIST
         //createNote(username, userID, apartmentID, noteName, listType, noteText, )
@@ -93,7 +92,7 @@ namespace groupProject01
             int ApartmentID = u.ApartmentID;
             string get = baseuri + "getEvents.php?apartmentID=" + ApartmentID;
             string text = await (RestService.GetCall(get));
-            List<ListItemObject> ret = new List<ListItemObject>();
+            List<EventObject> ret = new List<EventObject>();
             string[] result = Regex.Split(text, "\r\n|\r|\n");
             foreach (string s in result)
             {
@@ -113,7 +112,7 @@ namespace groupProject01
             JObject ob = JObject.Parse(jsonString);
             ob["apartmentID"] = gd.CurrentUser.ApartmentID;
             ob["userID"] = gd.CurrentUser.UserID;
-            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createNote.php"));
+            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createGroupMessage.php"));
             return result;
 
         }
@@ -122,9 +121,9 @@ namespace groupProject01
         {
             Other.UserObject u = gd.CurrentUser;
             int ApartmentID = u.ApartmentID;
-            string get = baseuri + "getNotes.php?apartmentID=" + ApartmentID;
+            string get = baseuri + "getMessages.php?apartmentID=" + ApartmentID;
             string text = await (RestService.GetCall(get));
-            List<ListItemObject> ret = new List<ListItemObject>();
+            List<MessageObject> ret = new List<MessageObject>();
             string[] result = Regex.Split(text, "\r\n|\r|\n");
             foreach (string s in result)
             {
@@ -136,32 +135,25 @@ namespace groupProject01
         }
 
         //USER - NOT IMPLEMENTED
-        public async static Task<string> sendEvent(EventObject edata, GlobalData gd, int calID)
+        //createUser(username,password) // returns user id
+        public async static Task<string> createUser(UserObject u)
         {
             //createNote(username, userID, apartmentID, noteName, listType, noteText)
-            string jsonString = JsonConvert.SerializeObject(ldata);
+            string jsonString = JsonConvert.SerializeObject(u);
             JObject ob = JObject.Parse(jsonString);
-            ob["username"] = gd.CurrentUser.Username;
-            ob["userID"] = gd.CurrentUser.UserID;
-            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createNote.php"));
+            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createUser.php"));
             return result;
 
         }
 
-        async public static Task<List<EventObject>> getCalendar(int calID, GlobalData gd)
+
+        //getUserInfo(username / userID) //2 different statments for either I guess
+        async public static Task<UserObject> getUserInfo(int userID)
         {
-            Other.UserObject u = gd.CurrentUser;
-            int ApartmentID = u.ApartmentID;
-            string get = baseuri + "getNotes.php?apartmentID=" + ApartmentID;
+            string get = baseuri + "getNotes.php?username=" + userID;
             string text = await (RestService.GetCall(get));
-            List<ListItemObject> ret = new List<ListItemObject>();
-            string[] result = Regex.Split(text, "\r\n|\r|\n");
-            foreach (string s in result)
-            {
-                ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(s);
-                ret.Add(deserializedProduct);
-            }
-            //  ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(output);
+            UserObject ret = new UserObject();
+            UserObject deserializedProduct = JsonConvert.DeserializeObject<UserObject>(text);
             return ret;
         }
 
