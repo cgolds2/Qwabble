@@ -11,7 +11,7 @@ namespace groupProject01
 {
 	public partial class MessagingPage : ContentPage        //MessagingPage class
 	{
-        public ObservableCollection<MessagingViewModel> messages { get; set; } //creates an instance of messages
+        public ObservableCollection<MessagingObject> messages { get; set; } //creates an instance of messages
         private GlobalData _gd;                             //global variable GlobalData initialzed
         
         public MessagingPage (GlobalData gd)                //MessagingPage constructor
@@ -24,25 +24,9 @@ namespace groupProject01
 
         async void OnTap(object sender, ItemTappedEventArgs e)      //a listener that fires when a message is tapped
         {
-            int index = ((MessagingViewModel)e.Item).ID;    //gets the ID of the messaging item (sender=row)
-            await Navigation.PushAsync(new groupProject01.Messaging.MessagingItemPage(index,_gd)); //viewing the messaging item page even while other things occur
-            //DisplayAlert("Item Tapped", ((ListsObject)e.Item).ID.ToString(), "Ok"); TESTING
-        }
-
-
-
-
-
-
-
-        /// <summary>
-        /// This will bring up a menu which will allow the sender to put in info about guest they are bringing over and will push this info to all roommates.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void onGuestClicked(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
+            //int index = ((MessagingObject)e.Item).ID;    //gets the ID of the messaging item (sender=row)
+            //await Navigation.PushAsync(new groupProject01.Messaging.MessagingItemPage(index,_gd)); //viewing the messaging item page even while other things occur
+            DisplayAlert("Item Tapped", ((MessagingObject)e.Item).ID.ToString(), "Ok"); //TESTING
         }
 	}
 }

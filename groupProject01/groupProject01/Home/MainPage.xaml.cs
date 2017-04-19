@@ -12,10 +12,13 @@ namespace groupProject01
 	{
         ICredentials service;
         GlobalData _gd;
+
+
+
+
 		public MainPage(GlobalData gd)
 		{
             _gd = gd;
-            //error on iphone
 			InitializeComponent();
 
             service = DependencyService.Get<ICredentials>();
@@ -49,23 +52,35 @@ namespace groupProject01
         }
         async void OnSetting(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new groupProject01.SettingsPage());
+            await Navigation.PushAsync(new groupProject01.SettingsPage());
 
         }
         async void OnList(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new groupProject01.ListsPage(_gd)));
+            await Navigation.PushAsync(new groupProject01.ListsPage(_gd));
 
         }
         async void OnCalendar(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new groupProject01.CalendarPage(_gd));
+            await Navigation.PushAsync(new groupProject01.CalendarPage(_gd));
 
         }
         async void OnMessaging(object sender, EventArgs e)
         {
 
-            await Navigation.PushModalAsync(new groupProject01.MessagingPage(_gd));
+            await Navigation.PushAsync(new groupProject01.MessagingPage(_gd));
+
+        }
+        async void OnHome(object sender, EventArgs e)
+        {
+
+            await Navigation.PushAsync(new groupProject01.HomePage(_gd));
+
+        }
+        async void OnLogin(object sender, EventArgs e)
+        {
+
+            await Navigation.PushAsync(new groupProject01.LoginPage(_gd));
 
         }
     }

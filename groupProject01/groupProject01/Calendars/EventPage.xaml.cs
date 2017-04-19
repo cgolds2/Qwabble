@@ -11,7 +11,7 @@ namespace groupProject01
 {
 	public partial class EventPage : ContentPage
 	{
-        public ObservableCollection<CalendarViewModel> events { get; set; } //declares events ObservableCollection that will notify when events are added, removed, and refreshed
+        public ObservableCollection<EventObject> events { get; set; } //declares events ObservableCollection that will notify when events are added, removed, and refreshed
         private GlobalData _gd;                                             //instantiates global variable GlobalData to store the global data
 
         public EventPage(int ListID, GlobalData gd)                                 //EventsPage constructor
@@ -27,8 +27,8 @@ namespace groupProject01
         //ontap for events? shouldn't we just allow edit?
         async void OnTap(object sender, ItemTappedEventArgs e)
         {
-            int index = ((CalendarViewModel)e.Item).ID;
-            //do something
+            int index = ((CalendarOptionObject)e.Item).ID;
+            //show details in fill-outable form
         }
     }
 }

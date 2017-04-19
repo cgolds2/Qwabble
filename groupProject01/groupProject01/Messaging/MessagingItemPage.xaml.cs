@@ -11,7 +11,7 @@ namespace groupProject01.Messaging
 {
 	public partial class MessagingItemPage : ContentPage
 	{
-        public ObservableCollection<MessagingViewModel> msgItems { get; set; }
+        public ObservableCollection<MessagingObject> msgItems { get; set; }
         private GlobalData _gd;
 
 		public MessagingItemPage (int ListID, GlobalData gd)
