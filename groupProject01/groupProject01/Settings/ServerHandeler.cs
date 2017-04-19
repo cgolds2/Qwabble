@@ -97,7 +97,7 @@ namespace groupProject01
             string[] result = Regex.Split(text, "\r\n|\r|\n");
             foreach (string s in result)
             {
-                ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(s);
+                EventObject deserializedProduct = JsonConvert.DeserializeObject<EventObject>(s);
                 ret.Add(deserializedProduct);
             }
             //  ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(output);
@@ -118,7 +118,7 @@ namespace groupProject01
 
         }
         //getMessages(apartmentID)
-        async public static Task<List<EventObject>> getMessages(GlobalData gd)
+        async public static Task<List<MessageObject>> getMessages(GlobalData gd)
         {
             Other.UserObject u = gd.CurrentUser;
             int ApartmentID = u.ApartmentID;
@@ -128,7 +128,7 @@ namespace groupProject01
             string[] result = Regex.Split(text, "\r\n|\r|\n");
             foreach (string s in result)
             {
-                ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(s);
+                MessageObject deserializedProduct = JsonConvert.DeserializeObject<MessageObject>(s);
                 ret.Add(deserializedProduct);
             }
             //  ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(output);
