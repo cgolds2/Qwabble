@@ -10,165 +10,147 @@ using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json.Linq;
+using groupProject01.Other;
 
 namespace groupProject01
 {
     class ServerHandeler
     {
-        public static string baseuri = "http://172.16.42.4/";
+        public static string baseuri = "http://192.168.3.3/";
         public static Boolean pingServer()
         {
             throw new NotImplementedException();
         }
 
+        /*
+         * requestToJoinApartment(userID, ApartmentID)
+         * createPersonalMessage(senderID, ReceiverID, MSGText) //adds message for DMing someone
+         */
 
-         public async static Task<string> sendList(ListItemObject ldata, GlobalData gd)
+        /*
+         * getAllUsers(apartmentID)
+         * addUserToApartment(userID) //returns apartment # of the user, could be post
+         * createApartment(userID (creator/owner), name, location) //return apartment ID
+         * getApartments(location)
+         */
+
+        //LIST
+        //createList(username, userID, apartmentID, listName, listType, listText, )
+        public async static Task<string> sendList(ListItemObject ldata, GlobalData gd)
         {
-            //createNote(username, userID, apartmentID, noteName, listType, noteText)
+            //createList(username, userID, apartmentID, listName, listType, listText)
             string jsonString = JsonConvert.SerializeObject(ldata);
             JObject ob = JObject.Parse(jsonString);
             ob["username"] = gd.CurrentUser.Username;
+            ob["apartmentID"] = gd.CurrentUser.ApartmentID;
             ob["userID"] = gd.CurrentUser.UserID;
-            string result = await (RestService.PostCall(ob.ToString(), baseuri+ "createNote.php"));
-           return result;
-            
-        }
+            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createNote.php"));
+            return result;
 
-        async public static Task<List<ListItemObject>> getList(int ID,GlobalData gd)
+        }
+        //getNotes(apartmentID)
+        async public static Task<List<ListItemObject>> getList(GlobalData gd)
         {
             Other.UserObject u = gd.CurrentUser;
             int ApartmentID = u.ApartmentID;
             string get = baseuri + "getNotes.php?apartmentID=" + ApartmentID;
-            string text = await(RestService.GetCall(get));
+            string text = await (RestService.GetCall(get));
             List<ListItemObject> ret = new List<ListItemObject>();
             string[] result = Regex.Split(text, "\r\n|\r|\n");
-            foreach(string s in result){
+            foreach (string s in result)
+            {
                 ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(s);
                 ret.Add(deserializedProduct);
             }
-          //  ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(output);
+            //  ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(output);
             return ret;
         }
 
-        #region HTTP POST
-        public static void requestToJoinApartment(string userID, string ApartmentID)
+        //CAL
+        //createEvent(username, startDate, endDate, eventName, userID, apartmentID)
+        public async static Task<string> sendEvent(EventObject edata, GlobalData gd)
         {
+            //createList(username, userID, apartmentID, listName, listType, listText)
+            string jsonString = JsonConvert.SerializeObject(edata);
+            JObject ob = JObject.Parse(jsonString);
+            ob["username"] = gd.CurrentUser.Username;
+            ob["userID"] = gd.CurrentUser.UserID;
+            ob["apartmentID"] = gd.CurrentUser.ApartmentID;
+            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createEvent.php"));
+            return result;
+
+        }
+        //getEvents(apartmentID)
+        async public static Task<List<EventObject>> getCalendar(GlobalData gd)
+        {
+            Other.UserObject u = gd.CurrentUser;
+            int ApartmentID = u.ApartmentID;
+            string get = baseuri + "getEvents.php?apartmentID=" + ApartmentID;
+            string text = await (RestService.GetCall(get));
+            List<EventObject> ret = new List<EventObject>();
+            string[] result = Regex.Split(text, "\r\n|\r|\n");
+            foreach (string s in result)
+            {
+                EventObject deserializedProduct = JsonConvert.DeserializeObject<EventObject>(s);
+                ret.Add(deserializedProduct);
+            }
+            //  ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(output);
+            return ret;
+        }
+
+        //MESSAGE
+        //createGroupMessage(userID, MSGText,apartmentID) //adds group message
+        public async static Task<string> sendMessage(MessageObject mdata, GlobalData gd)
+        {
+            //createList(username, userID, apartmentID, listName, listType, listText)
+            string jsonString = JsonConvert.SerializeObject(mdata);
+            JObject ob = JObject.Parse(jsonString);
+            ob["apartmentID"] = gd.CurrentUser.ApartmentID;
+            ob["userID"] = gd.CurrentUser.UserID;
+            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createGroupMessage.php"));
+            return result;
+
+        }
+        //getMessages(apartmentID)
+        async public static Task<List<MessageObject>> getMessages(GlobalData gd)
+        {
+            Other.UserObject u = gd.CurrentUser;
+            int ApartmentID = u.ApartmentID;
+            string get = baseuri + "getMessages.php?apartmentID=" + ApartmentID;
+            string text = await (RestService.GetCall(get));
+            List<MessageObject> ret = new List<MessageObject>();
+            string[] result = Regex.Split(text, "\r\n|\r|\n");
+            foreach (string s in result)
+            {
+                MessageObject deserializedProduct = JsonConvert.DeserializeObject<MessageObject>(s);
+                ret.Add(deserializedProduct);
+            }
+            //  ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(output);
+            return ret;
+        }
+
+        //USER - NOT IMPLEMENTED
+        //createUser(username,password) // returns user id
+        public async static Task<string> createUser(UserObject u)
+        {
+            //createList(username, userID, apartmentID, listName, listType, listText)
+            string jsonString = JsonConvert.SerializeObject(u);
+            JObject ob = JObject.Parse(jsonString);
+            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createUser.php"));
+            return result;
 
         }
 
-        public static void editMessage(int MessageID)
-        {
 
+        //getUserInfo(username / userID) //2 different statments for either I guess
+        async public static Task<UserObject> getUserInfo(int userID)
+        {
+            string get = baseuri + "getNotes.php?username=" + userID;
+            string text = await (RestService.GetCall(get));
+            UserObject ret = new UserObject();
+            UserObject deserializedProduct = JsonConvert.DeserializeObject<UserObject>(text);
+            return ret;
         }
 
-        public static void editNote(int NoteID)
-        {
-
-        }
-
-        public static void editUser(int UserID)
-        {
-
-        }
-
-        public static void editEvent(int EventID)
-        {
-
-        }
-
-        #endregion
-
-        #region HTTP GET
-        /// <summary>
-        /// Returns the new note id
-        /// </summary>
-        public static int createNote(string name, string userID, string apartmentID, string notesTextInBody)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Returns the new event id
-        /// </summary>
-        public static int createEvent(string date, string name, string userID, string apartmentID)
-        {
-            throw new NotImplementedException();
-        }
-        /// <summary>
-        /// Returns the new message id
-        /// </summary>
-        public static int createPersonalMessage(string senderID, string ReceiverID, string MSGText)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Returns the new message id
-        /// </summary>
-        public static int createGroupMessage(string userID, string MSGText)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Returns the new user id
-        /// </summary>
-        public static int createUser(string username, string password)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static string getUsername(string userID)
-        {
-
-            throw new NotImplementedException();
-        }
-
-        public static int getUserID(string username)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static List<String> getAllUsers(string apartmentID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static List<String> getNotes(string userID)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Returns the new roomate-number (ex: owner is 1)
-        /// </summary>
-        public static int addUserToApartment(string userID)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Returns the new apartment id
-        /// </summary>
-        public static int createApartment(string userID, string name, string location)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static List<String> getApartments(string location)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static List<String> getMessages(string userID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static List<String> getEvents(string userID)
-        {
-            throw new NotImplementedException();
-        }
-        #endregion
     }
 }

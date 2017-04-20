@@ -18,7 +18,6 @@
       <DependentUpon>EventPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)LoginData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Lists\ListItemDetail.xaml.cs">
       <DependentUpon>ListItemDetail.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -45,6 +44,11 @@
       <SubType>Code</SubType>
       <DependentUpon>ListsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Login\LoginData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Login\LoginPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\MessagingData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\MessagingItemPage.xaml.cs">
       <DependentUpon>MessagingItemPage.xaml</DependentUpon>
@@ -67,14 +71,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Settings\ICredentials.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\RestService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\ServerHandeler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings\ServerTester.xaml.cs">
+      <DependentUpon>ServerTester.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingsData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingsPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +95,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Lists\ListsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Login\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -144,7 +152,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)LoginPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Settings\ServerTester.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

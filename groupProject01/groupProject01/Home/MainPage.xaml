@@ -6,6 +6,7 @@
              Title="Qwabble">
     
   <ContentPage.Content>
+    <ScrollView>
     <StackLayout VerticalOptions="StartAndExpand">
 	    <Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
         
@@ -21,6 +22,8 @@
         <Button x:Name="Messaging" Text="Messaging" Clicked="OnMessaging" />
         <Button x:Name="Home" Text="Home" Clicked="OnHome" />
         <Button x:Name="Login" Text="Login" Clicked="OnLogin" />
-        </StackLayout>
+                <Button x:Name="Server" Text="TestServer" Clicked="OnServer" />
+            </StackLayout>
+    </ScrollView>
   </ContentPage.Content>
 </ContentPage>
