@@ -67,10 +67,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Settings\ICredentials.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\RestService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\ServerHandeler.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Settings\ServerTester.xaml.cs">
-      <DependentUpon>ServerTester.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingsData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingsPage.xaml.cs">
       <SubType>Code</SubType>
@@ -149,12 +145,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)LoginPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Settings\ServerTester.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
