@@ -130,10 +130,12 @@ namespace groupProject01.Settings
                 g.CurrentUser.UserID = 1;
                 g.CurrentUser.ApartmentID = 1;
 
-                MessagingObject m = new MessagingObject();
-                m.messageName = "MessageName";
-                m.messageID = 1;
-                m.messageText = "THIS IS THE TEXT OF OUR MESSAGE";
+                MessageObject m = new MessageObject();
+                m.MessageName = "MessageName";
+                m.SenderID = 1;
+                m.RecieverID = 2;
+                m.MessageID = 3;
+                m.MessageText = "THIS IS THE TEXT OF OUR MESSAGE";
 
                 string text = await(ServerHandeler.sendMessage(m, g));
                 Output.Text = text;
