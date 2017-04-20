@@ -72,24 +72,25 @@ namespace groupProject01.Settings
         {
             try
             {
-                Other.GlobalData g = new GlobalDate();
+                GlobalData g = new GlobalData();
                 g.CurrentUser = new UserObject();
                 g.CurrentUser.Username = "MyTestName";
                 g.CurrentUser.UserID = 1;
                 g.CurrentUser.ApartmentID = 1;
 
-                EventObject e = new EventObject();
-                e.eventID = 1;
-                e.senderID = 1;
-                e.eventName = "PARTTYYYYY";
+                EventObject eve = new EventObject();
+                eve.eventID = 1;
+                eve.senderID = 1;
+                eve.eventName = "PARTTYYYYY";
                 //startDate and endDate not done
-                e.AdditionalInfo = "its at lsu";
+                eve.AdditionalInfo = "its at lsu";
 
-                Output.Text = ServerHandeler.sendEvent(e, g);
+                string text = await(ServerHandeler.sendEvent(eve, g));
+                Output.Text = text;
             }
-            catch (Exception e)
+            catch (Exception except)
             {
-                Output.Text = e.Message;
+                Output.Text = except.Message;
             }
         }
 
@@ -98,23 +99,23 @@ namespace groupProject01.Settings
         {
             try
             {
-                Other.GlobalData g = new GlobalDate();
+                GlobalData g = new GlobalData();
                 g.CurrentUser = new UserObject();
                 g.CurrentUser.ApartmentID = 1;
 
 
-                List<EventObject> e = await(ServerHandeler.getCalendar(g));
+                List<EventObject> eve = await(ServerHandeler.getCalendar(g));
                 string outputString = "";
-                foreach (ListItemObject ev in e)
+                foreach (EventObject ev in eve)
                 {
-                    outputString += ev.EventText;
+                    outputString += ev.eventName;
                 }
 
                 Output.Text = outputString;
             }
-            catch (Exception e)
+            catch (Exception except)
             {
-                Output.Text = e.Message;
+                Output.Text = except.Message;
             }
         }
 
@@ -123,7 +124,7 @@ namespace groupProject01.Settings
         {
             try
             {
-                Other.GlobalData g = new GlobalDate();
+                GlobalData g = new GlobalData();
                 g.CurrentUser = new UserObject();
                 g.CurrentUser.Username = "MyTestName";
                 g.CurrentUser.UserID = 1;
@@ -134,11 +135,12 @@ namespace groupProject01.Settings
                 m.messageID = 1;
                 m.messageText = "THIS IS THE TEXT OF OUR MESSAGE";
 
-                Output.Text = ServerHandeler.sendList(l, g);
+                string text = await(ServerHandeler.sendMessage(m, g));
+                Output.Text = text;
             }
-            catch (Exception e)
+            catch (Exception except)
             {
-                Output.Text = e.Message;
+                Output.Text = except.Message;
             }
         }
 

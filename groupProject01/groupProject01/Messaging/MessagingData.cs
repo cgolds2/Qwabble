@@ -26,8 +26,8 @@ namespace groupProject01
         {
             messages = new ObservableCollection<MessagingObject>();
 
-            messages.Add(new MessagingObject { messageName = "General", ID = messages.Count });
-            messages.Add(new MessagingObject { messageName = "Guest Alert", ID = messages.Count });
+            messages.Add(new MessagingObject { messageName = "General", messageID = messages.Count });
+            messages.Add(new MessagingObject { messageName = "Guest Alert", messageID = messages.Count });
         }
 
         /// <summary>
@@ -37,8 +37,8 @@ namespace groupProject01
         public void getItemsInMessage(int MessageID)
         {
             msgItems = new ObservableCollection<MessagingObject>();
-            msgItems.Add(new MessagingObject { messageName = "Message1", ID = msgItems.Count });
-            msgItems.Add(new MessagingObject { messageName = "Message2", ID = msgItems.Count });
+            msgItems.Add(new MessagingObject { messageName = "Message1", messageID = msgItems.Count });
+            msgItems.Add(new MessagingObject { messageName = "Message2", messageID = msgItems.Count });
             if (MessageID == 1)
             {
                 msgItems.Add(new MessagingObject { messageName = "Custom", messageID = msgItems.Count });

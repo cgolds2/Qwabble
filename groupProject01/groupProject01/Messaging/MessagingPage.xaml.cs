@@ -26,7 +26,7 @@ namespace groupProject01
         {
             //int index = ((MessagingObject)e.Item).ID;    //gets the ID of the messaging item (sender=row)
             //await Navigation.PushAsync(new groupProject01.Messaging.MessagingItemPage(index,_gd)); //viewing the messaging item page even while other things occur
-            DisplayAlert("Item Tapped", ((MessagingObject)e.Item).ID.ToString(), "Ok"); //TESTING
+            DisplayAlert("Item Tapped", ((MessagingObject)e.Item).messageID.ToString(), "Ok"); //TESTING
         }
 	}
 }
