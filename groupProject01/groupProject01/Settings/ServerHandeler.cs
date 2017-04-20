@@ -23,21 +23,15 @@ namespace groupProject01
         }
 
         /*
-         * // adds note with creator tagged
-       
          * requestToJoinApartment(userID, ApartmentID)
          * createPersonalMessage(senderID, ReceiverID, MSGText) //adds message for DMing someone
-         * 
          */
 
         /*
-
          * getAllUsers(apartmentID)
          * addUserToApartment(userID) //returns apartment # of the user, could be post
          * createApartment(userID (creator/owner), name, location) //return apartment ID
          * getApartments(location)
-         * 
-         * 
          */
 
         //LIST
