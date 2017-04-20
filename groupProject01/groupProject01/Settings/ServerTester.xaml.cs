@@ -79,9 +79,13 @@ namespace groupProject01.Settings
                 g.CurrentUser.ApartmentID = 1;
 
                 EventObject e = new EventObject();
-                //e
+                e.eventID = 1;
+                e.senderID = 1;
+                e.eventName = "PARTTYYYYY";
+                //startDate and endDate not done
+                e.AdditionalInfo = "its at lsu";
 
-                Output.Text = ServerHandeler.sendList(l, g);
+                Output.Text = ServerHandeler.sendEvent(e, g);
             }
             catch (Exception e)
             {
@@ -89,6 +93,7 @@ namespace groupProject01.Settings
             }
         }
 
+        //THIS IS listed as get calendar in serverhandler.cs
         async void onGetEvent(object sender, EventArgs e)
         {
             try
@@ -98,7 +103,7 @@ namespace groupProject01.Settings
                 g.CurrentUser.ApartmentID = 1;
 
 
-                List<EventObject> e = ServerHandeler.getList(g);
+                List<EventObject> e = await(ServerHandeler.getCalendar(g));
                 string outputString = "";
                 foreach (ListItemObject ev in e)
                 {
@@ -113,6 +118,7 @@ namespace groupProject01.Settings
             }
         }
 
+        //TODO Connor go over this with Sarah, have questions about messages
         async void onSendMessage(object sender, EventArgs e)
         {
             try
