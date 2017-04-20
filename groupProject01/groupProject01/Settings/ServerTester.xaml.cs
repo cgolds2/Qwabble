@@ -14,23 +14,5 @@ namespace groupProject01.Settings
 		{
 			InitializeComponent ();
 		}
-        async void onSendList(object sender, EventArgs e)
-        {
-            try
-            {
-            Other.GlobalData g = new GlobalDate();
-            g.CurrentUser = new UserObject();
-            g.CurrentUser.Username = "MyTestName";
-            g.CurrentUser.UserID = 1;
-            ListItemObject l = new ListItemObject();
-            l.noteName = "MyTestNote";
-            WHATEVERTEXTBOX.text = ServerHandeler.sendList(l, g);
-            }catch(Exception e)
-            {
-                WHATEVERTEXTBOX.text = e.Message;
-
-            }
-
-        }
     }
 }

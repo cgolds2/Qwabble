@@ -11,7 +11,7 @@ namespace groupProject01
 {
 	public partial class MessagingPage : ContentPage        //MessagingPage class
 	{
-        public ObservableCollection<MessagingObject> messages { get; set; } //creates an instance of messages
+        public ObservableCollection<MessageObject> messages { get; set; } //creates an instance of messages
         private GlobalData _gd;                             //global variable GlobalData initialzed
         
         public MessagingPage (GlobalData gd)                //MessagingPage constructor
@@ -24,9 +24,9 @@ namespace groupProject01
 
         async void OnTap(object sender, ItemTappedEventArgs e)      //a listener that fires when a message is tapped
         {
-            //int index = ((MessagingObject)e.Item).ID;    //gets the ID of the messaging item (sender=row)
+            //int index = ((MessageObject)e.Item).ID;    //gets the ID of the messaging item (sender=row)
             //await Navigation.PushAsync(new groupProject01.Messaging.MessagingItemPage(index,_gd)); //viewing the messaging item page even while other things occur
-            DisplayAlert("Item Tapped", ((MessagingObject)e.Item).ID.ToString(), "Ok"); //TESTING
+            DisplayAlert("Item Tapped", ((MessageObject)e.Item).ID.ToString(), "Ok"); //TESTING
         }
 	}
 }
