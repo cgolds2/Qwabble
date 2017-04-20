@@ -17,12 +17,20 @@
 				<!-- START PAGE CODE ****************************************************** -->
 
 				<AbsoluteLayout>
-				<Label Text = "incoming message" BackgroundColor="Gray" LineBreakMode="WordWrap" HeightRequest="60" FontSize="12" 
-					FontFamily="Verdana" HorizontalOptions="Start"/>
+				<BoxView Color="#38ad89" AbsoluteLayout.LayoutBounds="0,0,600,60" />
+				<Label Text = "{Binding outName}" VerticalTextAlignment="10" FontSize="10" TextColor="#2a2a2a"
+					FontFamily="Verdana" HorizontalOptions="Start" Margin="60,5"/>
+				<BoxView Color="Purple" AbsoluteLayout.LayoutBounds="10,10,40,40" />
+				<Label Text="{Binding outMsg}" FontSize="14" Margin="60,18,5,0" />
+
 				</AbsoluteLayout>
 				<AbsoluteLayout>
-				<Label Text = "outcoming message" BackgroundColor="Gray" HeightRequest="60" FontSize="20" 
-					FontFamily="Verdana" HorizontalOptions="Start"/>
+				<BoxView Color="#bca68d" AbsoluteLayout.LayoutBounds="0,0,600,60" />
+				<Label Text = "{Binding inName}" VerticalTextAlignment="10" FontSize="10" TextColor="#2a2a2a"
+					FontFamily="Verdana" HorizontalOptions="Start" Margin="60,5"/>
+				<BoxView Color="Blue" AbsoluteLayout.LayoutBounds="10,10,40,40" />
+				<Label Text="{Binding inMsg}" FontSize="14" Margin="60,18,5,0" />
+
 				</AbsoluteLayout>
 
 				<!-- END PAGE CODE ****************************************************** -->
