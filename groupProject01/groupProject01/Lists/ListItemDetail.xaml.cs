@@ -13,7 +13,9 @@ namespace groupProject01.Lists
 		public ListItemDetail (ListItemObject currentItem, GlobalData gd)
 		{
 			InitializeComponent ();
-           // lblLabel.Text = currentItem.Name;
+
+            lblLabel.Text = currentItem.listName;
+
         }
 	}
 }

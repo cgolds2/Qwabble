@@ -26,7 +26,9 @@ namespace groupProject01
 
        async void OnTap(object sender, ItemTappedEventArgs e)
         {
-            int index = ((ListItemObject)e.Item).ID;
+
+            int index = ((ListItemObject)e.Item).ListID;
+
             var item = items[index]; //items.get(index)
             await Navigation.PushAsync(new groupProject01.Lists.ListItemDetail(item, _gd));
         }

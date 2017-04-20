@@ -13,6 +13,7 @@ namespace groupProject01
 	public partial class CalendarPage : ContentPage                           //begins the CalendarPage class
 	{
 
+
 		public CalendarPage ()
 		{
 			InitializeComponent ();
@@ -57,9 +58,24 @@ namespace groupProject01
         /// <param name="Sender"></param>
         /// <param name="e"></param>
         public void onViewAccessClicked(object Sender, EventArgs e)
-        {
-            throw new NotImplementedException();
+        public ObservableCollection<CalendarOptionObject> calendar { get; set; } //declares calendars ObservableCollection that will notify when calendars are added, removed, and refreshed
+        private GlobalData _gd;                                              //declares global variable GlobalData to store the global data
+
+        public CalendarPage (GlobalData gd)                                  //CalendarPage constructor
+		{
+			InitializeComponent ();                                          //initializes UI objects with values provided, initializes elements
+            _gd = gd;                                                        //sets private instance of global data
+            calendar = _gd.CalendarDataInstance.options;                    //gets the calendar data from the data file
+            calView.ItemsSource = calendar;                                  //sets the source of items to template and display
         }
+        
+        async void OnTap(object sender, ItemTappedEventArgs e)                    //Lister that fires when a calendar item is tapped
+
+        {
+            int index = ((CalendarOptionObject)e.Item).ID;                           //gets the ID of the calendar item
+            await Navigation.PushAsync(new groupProject01.EventPage(index, _gd)); //opens the event page as current page continues to run
+        }
+
 
         /// <summary>
         /// Directs user to new event page.

@@ -5,6 +5,7 @@
              xmlns:local="clr-namespace:groupProject01">
 
 
+
 	<ContentPage.Content>
 	  <StackLayout BackgroundColor="#dddddd" >
 		<StackLayout VerticalOptions="Start">
@@ -26,6 +27,7 @@
           <ViewCell>
             <StackLayout  BackgroundColor="#dddddd" >
                 <Label Text = "{Binding Name}" Margin="20,15,0,0" FontSize="20" HorizontalOptions="Start"/>
+
             </StackLayout>
           </ViewCell>
         </DataTemplate>

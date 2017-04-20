@@ -11,8 +11,10 @@ namespace groupProject01
 {
 	public class MessagingData
 	{
-        public ObservableCollection<MessagingObject> messages { get; set; } //creates an instance of messages
-        public ObservableCollection<MessagingObject> msgItems { get; set; } //creates an instance of msgItems
+
+        public ObservableCollection<MessageObject> messages { get; set; } //creates an instance of messages
+        public ObservableCollection<MessageObject> msgItems { get; set; } //creates an instance of msgItems
+
 
 		public MessagingData ()
 		{
@@ -24,10 +26,12 @@ namespace groupProject01
         /// </summary>
         public void refreshAll()
         {
-            messages = new ObservableCollection<MessagingObject>();
 
-            messages.Add(new MessagingObject { Name = "General", ID = messages.Count });
-            messages.Add(new MessagingObject { Name = "Guest Alert", ID = messages.Count });
+            messages = new ObservableCollection<MessageObject>();
+
+            //messages.Add(new MessageObject { MessageName = "General", ID = messages.Count });
+            //messages.Add(new MessageObject { MessageName = "Guest Alert", ID = messages.Count });
+
         }
 
         /// <summary>
@@ -36,22 +40,25 @@ namespace groupProject01
         /// <param name="MessageID"></param>
         public void getItemsInMessage(int MessageID)
         {
-            msgItems = new ObservableCollection<MessagingObject>();
-            msgItems.Add(new MessagingObject { Name = "Message1", ID = msgItems.Count });
-            msgItems.Add(new MessagingObject { Name = "Message2", ID = msgItems.Count });
+
+            msgItems = new ObservableCollection<MessageObject>();
+            msgItems.Add(new MessageObject { MessageName = "Message1", MessageID = msgItems.Count });
+            msgItems.Add(new MessageObject { MessageName = "Message2", MessageID = msgItems.Count });
             if (MessageID == 1)
             {
-                msgItems.Add(new MessagingObject { Name = "Custom", ID = msgItems.Count });
+                msgItems.Add(new MessageObject { MessageName = "Custom", MessageID = msgItems.Count });
             }
         }
     }
     public class MessageObject {
+        private int iD = 0;
         private string _text = "";
         private int _senderID = 0;
         private int _recieverID = 0;
         private int _messageID = 0;
+        private string _name = "";
 
-        public string Text
+        public string MessageText
         {
             get
             {
@@ -100,6 +107,19 @@ namespace groupProject01
             set
             {
                 _messageID = value;
+            }
+        }
+
+        public string MessageName
+        {
+            get
+            {
+                return _name;
+            }
+
+            set
+            {
+                _name = value;
             }
         }
 

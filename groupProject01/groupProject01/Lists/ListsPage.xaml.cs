@@ -41,63 +41,18 @@ namespace groupProject01
 
         #endregion
 
-        public ListsPage()
-		{
 
-			InitializeComponent();
-			//_gd = gd;
-			ObservableCollection<ListOfListsObject> lists = new ObservableCollection<ListOfListsObject>();
-
-			lists.Add(new ListOfListsObject { Name = "Grocery" });
-			lists.Add(new ListOfListsObject { Name = "Shared Items" });
-			lists.Add(new ListOfListsObject { Name = "Chores"});
-			lists.Add(new ListOfListsObject { Name = "Repairs" });
-			//lists.Add(new ListOfListsObject { Name = "Grocery" });
-			//lists.Add(new ListOfListsObject { Name = "Shared Items" });
-			//lists.Add(new ListOfListsObject { Name = "Chores" });
-			//lists.Add(new ListOfListsObject { Name = "Repairs" });
-			//lists.Add(new ListOfListsObject { Name = "Grocery" });
-			//lists.Add(new ListOfListsObject { Name = "Shared Items" });
-			//lists.Add(new ListOfListsObject { Name = "Chores" });
-			//lists.Add(new ListOfListsObject { Name = "Repairs" });
-			//lists = _gd.ListsDataInstance.lists;
-			lstView.ItemsSource = lists;
-
-
-		}
-        //public ListsPage(GlobalData gd)
-        //{
-
-        //    InitializeComponent();
-        //    _gd = gd;
-        //   lists =  _gd.ListsDataInstance.lists;
-        //    lstView.ItemsSource = lists;
-            
-
-        //}
-
-
-
-        void SwitchToggled(object sender, EventArgs e)
+        public ListsPage(GlobalData gd)                                 //ListsPage constructor
         {
-            
-            int index = ((CustomSwitch)sender).ID;
-            //((CustomSwitch)sender).IsVisible = false;
-            if (index != -1)
-            {
-                //index is -1 when loading, false toggle event
-                DisplayAlert("Switch","Switch","Ok");
-                // Do stuff
-
-            }
+            InitializeComponent();                                      //initializes UI objects with values provided, initializes elements
+            _gd = gd;                                                   //sets private instance of global data
+            lists =  _gd.ListsDataInstance.lists;                       //gets the lists data from data file
+            lstView.ItemsSource = lists;                                //sets the source of items to template and display
         }
-
-
-
 
        async void OnTap(object sender, ItemTappedEventArgs e)                       //Listener that fires when a list is tapped
         {
-            int index = ((ListOfListsObject)e.Item).ID;                                    //gets the ID of the list item (sender=row)
+            int index = ((ListOfListsObject)e.Item).ListOfListID;                                    //gets the ID of the list item (sender=row)
             await Navigation.PushAsync(new groupProject01.ListItemPage(index, _gd)); //viewing the list item page even while other things occur
             //DisplayAlert("Item Tapped", ((ListsObject)e.Item).ID.ToString(), "Ok"); TESTING
         }

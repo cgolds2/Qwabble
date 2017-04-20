@@ -22,11 +22,13 @@ namespace groupProject01
 
 
             //HARD-CODED, WILL CHANGE WITH STUFF FROM SERVER
-            lists.Add(new ListOfListsObject { Name = "Grocery", ID = lists.Count });    //adds the grocery list to the page
-            lists.Add(new ListOfListsObject { Name = "Shared Items", ID = lists.Count });                      //adds the shared items list to the page
-            lists.Add(new ListOfListsObject { Name = "Chores",ID = lists.Count });                             //adds the chores list to the page
-            lists.Add(new ListOfListsObject { Name = "Repairs",  ID = lists.Count });                            //adds the repairs list to the page
-            lists.Add(new ListOfListsObject { Name = "Other" , ID = lists.Count });                             //adds the other list to the page
+
+            lists.Add(new ListOfListsObject { Name = "Grocery", ListOfListID = lists.Count });    //adds the grocery list to the page
+            lists.Add(new ListOfListsObject { Name = "Shared Items", ListOfListID = lists.Count });                      //adds the shared items list to the page
+            lists.Add(new ListOfListsObject { Name = "Chores",ListOfListID = lists.Count });                             //adds the chores list to the page
+            lists.Add(new ListOfListsObject { Name = "Repairs",  ListOfListID = lists.Count });                            //adds the repairs list to the page
+            lists.Add(new ListOfListsObject { Name = "Other" , ListOfListID = lists.Count });                             //adds the other list to the page
+
         }
 
         public void getItemsInList(int ListID)                       //gets all items for a specific list
@@ -34,13 +36,15 @@ namespace groupProject01
             items = new ObservableCollection<ListItemObject>();         //instantiates listitem ObservableCollection that will notify when items are added, removed, and refreshed
 
             //HARD-CODED, WILL CHANGE WITH STUFF FROM SERVER
-            items.Add(new ListItemObject { noteName = "Bananas", On = true, ID = items.Count });            //adds the bananas item to the page
-            items.Add(new ListItemObject { noteName = "Apple", On = false, ID = items.Count });             //adds the apples item to the page
-            items.Add(new ListItemObject { noteName = "Orange", On = true, ID = items.Count });             //adds the orange item to the page
-            items.Add(new ListItemObject { noteName = "Guava", On = true, ID = items.Count });              //adds the guava item to the page
-            if (ListID == 1)                                                                            //tests if list specific items work
+
+            items.Add(new ListItemObject { listName = "Bananas", On = true, ListID = items.Count });            //adds the bananas item to the page
+            items.Add(new ListItemObject { listName = "Apple", On = false, ListID = items.Count });             //adds the apples item to the page
+            items.Add(new ListItemObject { listName = "Orange", On = true, ListID = items.Count });             //adds the orange item to the page
+            items.Add(new ListItemObject { listName = "Guava", On = true, ListID = items.Count });              //adds the guava item to the page
+            if (ListID == 1)              //tests if list specific items work
             {
-                items.Add(new ListItemObject { noteName = "Custom", On = false, ID = lists.Count });        //adds specific item for last list
+                items.Add(new ListItemObject { listName = "Custom", On = false, ListID = lists.Count });        //adds specific item for last list
+
             }
         }
 
@@ -79,7 +83,9 @@ namespace groupProject01
     public class ListOfListsObject                      //the object class for the list of lists which allows the user to select which list they would like to view              
     {
         public string Name { get; set; }                //name of the object
-        public int ID { get; set; }                     //unique id for the object
+
+        public int ListOfListID { get; set; }                     //unique ListOfListID for the object
+
         public int Type { get; set; }                   //specifies type of list - toggleable (1) and not toggleable(0)
 
         ////POSSIBLY GET RID OF
@@ -90,12 +96,14 @@ namespace groupProject01
 
     public class ListItemObject                        //the object class for the items in a certain list                    
     {
-        //createNote(username, userID, apartmentID, noteName, listType, noteText, )
-        public string noteName { get; set; }                //name of the object
-        public int ID { get; set; }                     //unique id for the object
+
+        //createList(username, userID, apartmentID, listName, listType, listText, )
+        public string listName { get; set; }                //name of the object
+        public int ListID { get; set; }                     //unique ListID for the object
         public bool On { get; set; }                    //watches value of trigger- true or false
         public bool IsSwitchVisible { get; set; }       //watches visibility of trigger
         public int listType { get; set; }                   //specifies type of item- noAdditionalInfo (0) or AdditionalInfo(1)
-        public string noteText { get; set; }
+        public string listText { get; set; }
+
     }
 }
