@@ -11,8 +11,10 @@ namespace groupProject01
 {
 	public class MessagingData
 	{
+
         public ObservableCollection<MessageObject> messages { get; set; } //creates an instance of messages
         public ObservableCollection<MessageObject> msgItems { get; set; } //creates an instance of msgItems
+
 
 		public MessagingData ()
 		{
@@ -24,10 +26,12 @@ namespace groupProject01
         /// </summary>
         public void refreshAll()
         {
+
             messages = new ObservableCollection<MessageObject>();
 
             //messages.Add(new MessageObject { MessageName = "General", ID = messages.Count });
             //messages.Add(new MessageObject { MessageName = "Guest Alert", ID = messages.Count });
+
         }
 
         /// <summary>
@@ -36,6 +40,7 @@ namespace groupProject01
         /// <param name="MessageID"></param>
         public void getItemsInMessage(int MessageID)
         {
+
             msgItems = new ObservableCollection<MessageObject>();
             msgItems.Add(new MessageObject { MessageName = "Message1", MessageID = msgItems.Count });
             msgItems.Add(new MessageObject { MessageName = "Message2", MessageID = msgItems.Count });
@@ -129,5 +134,9 @@ namespace groupProject01
         }
 
     }
-
+    public class MessagingObject
+    {
+        public string Name { get; set; }
+        public int ID { get; set; }
+    }
 }

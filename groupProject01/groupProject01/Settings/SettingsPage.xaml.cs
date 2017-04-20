@@ -14,7 +14,30 @@ namespace groupProject01
 		{
 			InitializeComponent ();
 		}
+        #region BottomBarStuff
 
+        public void OnHome(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnList(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnCalendar(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnMessaging(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnSetting(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
         public void onPushNotificationClicked(object Sender, EventArgs e)
         {
             throw new NotImplementedException();

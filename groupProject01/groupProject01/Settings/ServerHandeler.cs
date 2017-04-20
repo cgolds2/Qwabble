@@ -10,17 +10,20 @@ using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json.Linq;
+
 using groupProject01.Other;
 
 namespace groupProject01
 {
     class ServerHandeler
     {
+
         public static string baseuri = "http://192.168.3.3/";
         public static Boolean pingServer()
         {
             throw new NotImplementedException();
         }
+
 
         /*
          * requestToJoinApartment(userID, ApartmentID)
@@ -54,6 +57,7 @@ namespace groupProject01
             Other.UserObject u = gd.CurrentUser;
             int ApartmentID = u.ApartmentID;
             string get = baseuri + "getNotes.php?apartmentID=" + ApartmentID;
+
             string text = await (RestService.GetCall(get));
             List<ListItemObject> ret = new List<ListItemObject>();
             string[] result = Regex.Split(text, "\r\n|\r|\n");

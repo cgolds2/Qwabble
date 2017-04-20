@@ -15,6 +15,33 @@ namespace groupProject01
         public ObservableCollection<ListOfListsObject> lists { get; set; } //initializes a collection that notifies when items are added, removed, or refreshed
         private GlobalData _gd;                                         //instantiates global variable GlobalData to store the global data
 
+
+        #region BottomBarStuff
+
+        public void OnHome(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnList(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnCalendar(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnMessaging(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnSetting(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+
         public ListsPage(GlobalData gd)                                 //ListsPage constructor
         {
             InitializeComponent();                                      //initializes UI objects with values provided, initializes elements

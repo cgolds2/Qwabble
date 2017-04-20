@@ -38,6 +38,7 @@ namespace groupProject01
             events = new ObservableCollection<EventObject>();        //instantiates events ObservableCollection that will notify when events are added, removed, and refreshed
 
             //HARD-CODED, WILL CHANGE
+
             events.Add(new EventObject { eventName = "AppearOnAll", eventID = events.Count, senderID = 1, startDate= todayWithTime, endDate= todayWithTime, AdditionalInfo = "HELLO I AM ADDITIONAL INFO WHO ARE YOU" });     //adds the first event to the page
             if(CalendarID == 0)                                 //adds the following events to the View Calendar page
             {
@@ -54,6 +55,7 @@ namespace groupProject01
     }
     public class EventObject
     {
+
         //createEvent(username, startDate, endDate, eventName, userID, apartmentID)
         public int eventID { get; set; }
         public int senderID { get; set; }
@@ -61,6 +63,7 @@ namespace groupProject01
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
         //TODO should we implement this?
+
         public string AdditionalInfo { get; set; }
     }
     public class CalendarOptionObject

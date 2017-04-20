@@ -10,6 +10,7 @@ namespace groupProject01
 {
 	public partial class MainPage : ContentPage
 	{
+
         ICredentials service;
         GlobalData _gd;
 

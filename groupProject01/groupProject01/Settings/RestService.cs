@@ -78,6 +78,7 @@ public class RestService
 
             HttpResponseMessage response = null;
             response = await client.PostAsync(url, content);
+
             var responseString = await response.Content.ReadAsStringAsync();
 
             Debug.WriteLine(responseString);
@@ -86,6 +87,7 @@ public class RestService
         }
         catch (Exception ex)
         {
+
             return ex.Message;
         }
 

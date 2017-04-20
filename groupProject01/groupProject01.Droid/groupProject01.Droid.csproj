@@ -129,6 +129,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\Icon.png" />
+    <AndroidResource Include="Resources\Drawable\calbtn.png" />
+    <AndroidResource Include="Resources\Drawable\homebtn.png" />
+    <AndroidResource Include="Resources\Drawable\msgbtn.png" />
+    <AndroidResource Include="Resources\Drawable\notebtn.png" />
+    <AndroidResource Include="Resources\Drawable\setbtn.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />

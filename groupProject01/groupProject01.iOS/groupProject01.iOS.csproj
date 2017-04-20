@@ -115,6 +115,21 @@
     <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\calbtn.png" />
+    <BundleResource Include="Resources\calbtn%402x.png" />
+    <BundleResource Include="Resources\calbtn%403x.png" />
+    <BundleResource Include="Resources\homebtn.png" />
+    <BundleResource Include="Resources\homebtn%402x.png" />
+    <BundleResource Include="Resources\homebtn%403x.png" />
+    <BundleResource Include="Resources\msgbtn.png" />
+    <BundleResource Include="Resources\msgbtn%402x.png" />
+    <BundleResource Include="Resources\msgbtn%403x.png" />
+    <BundleResource Include="Resources\notebtn.png" />
+    <BundleResource Include="Resources\notebtn%402x.png" />
+    <BundleResource Include="Resources\notebtn%403x.png" />
+    <BundleResource Include="Resources\setbtn.png" />
+    <BundleResource Include="Resources\setbtn%402x.png" />
+    <BundleResource Include="Resources\setbtn%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
