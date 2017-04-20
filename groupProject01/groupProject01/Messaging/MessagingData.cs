@@ -26,8 +26,8 @@ namespace groupProject01
         {
             messages = new ObservableCollection<MessagingObject>();
 
-            messages.Add(new MessagingObject { Name = "General", ID = messages.Count });
-            messages.Add(new MessagingObject { Name = "Guest Alert", ID = messages.Count });
+            messages.Add(new MessagingObject { messageName = "General", ID = messages.Count });
+            messages.Add(new MessagingObject { messageName = "Guest Alert", ID = messages.Count });
         }
 
         /// <summary>
@@ -37,11 +37,11 @@ namespace groupProject01
         public void getItemsInMessage(int MessageID)
         {
             msgItems = new ObservableCollection<MessagingObject>();
-            msgItems.Add(new MessagingObject { Name = "Message1", ID = msgItems.Count });
-            msgItems.Add(new MessagingObject { Name = "Message2", ID = msgItems.Count });
+            msgItems.Add(new MessagingObject { messageName = "Message1", ID = msgItems.Count });
+            msgItems.Add(new MessagingObject { messageName = "Message2", ID = msgItems.Count });
             if (MessageID == 1)
             {
-                msgItems.Add(new MessagingObject { Name = "Custom", ID = msgItems.Count });
+                msgItems.Add(new MessagingObject { messageName = "Custom", messageID = msgItems.Count });
             }
         }
     }
@@ -116,7 +116,8 @@ namespace groupProject01
     }
     public class MessagingObject
     {
-        public string Name { get; set; }
-        public int ID { get; set; }
+        public string messageName { get; set; }
+        public int messageID { get; set; }
+        public string messageText { get; set; }
     }
 }
