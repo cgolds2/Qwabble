@@ -52,6 +52,14 @@ namespace groupProject01
 			lists.Add(new ListOfListsObject { Name = "Shared Items" });
 			lists.Add(new ListOfListsObject { Name = "Chores"});
 			lists.Add(new ListOfListsObject { Name = "Repairs" });
+			//lists.Add(new ListOfListsObject { Name = "Grocery" });
+			//lists.Add(new ListOfListsObject { Name = "Shared Items" });
+			//lists.Add(new ListOfListsObject { Name = "Chores" });
+			//lists.Add(new ListOfListsObject { Name = "Repairs" });
+			//lists.Add(new ListOfListsObject { Name = "Grocery" });
+			//lists.Add(new ListOfListsObject { Name = "Shared Items" });
+			//lists.Add(new ListOfListsObject { Name = "Chores" });
+			//lists.Add(new ListOfListsObject { Name = "Repairs" });
 			//lists = _gd.ListsDataInstance.lists;
 			lstView.ItemsSource = lists;
 

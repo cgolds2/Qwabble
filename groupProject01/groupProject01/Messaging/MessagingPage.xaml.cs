@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +9,17 @@ using Xamarin.Forms;
 
 namespace groupProject01
 {
-	public partial class MessagingPage
+	public partial class MessagingPage : ContentPage        //MessagingPage class
 	{
-		public MessagingPage ()
+        public ObservableCollection<MessagingObject> messages { get; set; } //creates an instance of messages
+        private GlobalData _gd;                             //global variable GlobalData initialzed
+        
+        public MessagingPage (GlobalData gd)                //MessagingPage constructor
 		{
-			InitializeComponent ();
+			InitializeComponent ();                          //loads the UI elements
+            _gd = gd;                                        //sets private instance of global data
+            messages = _gd.MessagingDataInstance.messages;   //gets the messaging data from the data file
+            //msgView.ItemsSource = messages;                  //sets the messaging UI
 		}
 
         /// <summary>
@@ -36,10 +43,10 @@ namespace groupProject01
         {
             throw new NotImplementedException();
         }
-        public void OnCalendar(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+		public void OnCalendar(object sender, EventArgs e)
+		{
+		}
+
         public void OnMessaging(object sender, EventArgs e)
         {
             throw new NotImplementedException();

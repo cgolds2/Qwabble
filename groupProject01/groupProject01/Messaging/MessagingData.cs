@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -10,18 +11,40 @@ namespace groupProject01
 {
 	public class MessagingData
 	{
+        public ObservableCollection<MessagingObject> messages { get; set; } //creates an instance of messages
+        public ObservableCollection<MessagingObject> msgItems { get; set; } //creates an instance of msgItems
+
 		public MessagingData ()
 		{
             refreshAll();
 		}
 
+        /// <summary>
+        /// Refreshes all lists by creating a new instance and adding the necessary things.
+        /// </summary>
         public void refreshAll()
         {
-            throw new NotImplementedException();
+            messages = new ObservableCollection<MessagingObject>();
+
+            messages.Add(new MessagingObject { Name = "General", ID = messages.Count });
+            messages.Add(new MessagingObject { Name = "Guest Alert", ID = messages.Count });
         }
 
-        
-	}
+        /// <summary>
+        /// Fills the Message with the necessary data.
+        /// </summary>
+        /// <param name="MessageID"></param>
+        public void getItemsInMessage(int MessageID)
+        {
+            msgItems = new ObservableCollection<MessagingObject>();
+            msgItems.Add(new MessagingObject { Name = "Message1", ID = msgItems.Count });
+            msgItems.Add(new MessagingObject { Name = "Message2", ID = msgItems.Count });
+            if (MessageID == 1)
+            {
+                msgItems.Add(new MessagingObject { Name = "Custom", ID = msgItems.Count });
+            }
+        }
+    }
     public class MessageObject {
         private string _text = "";
         private int _senderID = 0;
@@ -91,5 +114,9 @@ namespace groupProject01
         }
 
     }
-
+    public class MessagingObject
+    {
+        public string Name { get; set; }
+        public int ID { get; set; }
+    }
 }
