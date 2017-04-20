@@ -83,5 +83,11 @@ namespace groupProject01
             await Navigation.PushAsync(new groupProject01.LoginPage(_gd));
 
         }
+        async void OnServer(object sender, EventArgs e)
+        {
+
+            await Navigation.PushAsync(new groupProject01.ServerTester());
+
+        }
     }
 }
