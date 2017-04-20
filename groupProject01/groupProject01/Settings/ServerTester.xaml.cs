@@ -121,7 +121,6 @@ namespace groupProject01.Settings
             }
         }
 
-        //TODO Connor go over this with Sarah, have questions about messages
         async void onSendMessage(object sender, EventArgs e)
         {
             try
@@ -141,6 +140,30 @@ namespace groupProject01.Settings
 
                 string text = await(ServerHandeler.sendMessage(m, g));
                 Output.Text = text;
+            }
+            catch (Exception except)
+            {
+                Output.Text = except.Message;
+            }
+        }
+
+        async void onGetMessage(object sender, EventArgs e)
+        {
+            try
+            {
+                GlobalData g = new GlobalData();
+                g.CurrentUser = new UserObject();
+                g.CurrentUser.ApartmentID = 1;
+
+
+                List<MessageObject> msg = await (ServerHandeler.getMessages(g));
+                string outputString = "";
+                foreach (MessageObject m in msg)
+                {
+                    outputString += m.MessageName;
+                }
+
+                Output.Text = outputString;
             }
             catch (Exception except)
             {
