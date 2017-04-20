@@ -51,7 +51,7 @@ namespace groupProject01
         }
         async void OnList(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new groupProject01.ListsPage(_gd)));
+            await Navigation.PushModalAsync(new NavigationPage(new groupProject01.ListsPage()));
 
         }
         async void OnCalendar(object sender, EventArgs e)

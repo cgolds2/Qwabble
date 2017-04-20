@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="groupProject01.ListsPage"
@@ -11,11 +11,11 @@
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout  BackgroundColor="Gray">
+            <StackLayout Padding="20,10,0,0" BackgroundColor="#">
            
-                <Label Text = "{Binding Name}"  HorizontalOptions="Start"/>
+                <Label Text = "{Binding Name}" FontSize="20" FontFamily="Verdana" HorizontalOptions="Start"/>
               
-              <local:CustomSwitch IsToggled="{Binding On}" HorizontalOptions="End" Toggled ="SwitchToggled" ID ="{Binding ID}"  IsVisible="{Binding IsSwitchVisible}"/>
+              <!--<local:CustomSwitch IsToggled="{Binding On}" HorizontalOptions="End" Toggled ="SwitchToggled" ID ="{Binding ID}"  IsVisible="{Binding IsSwitchVisible}"/>-->
 
            
             </StackLayout>

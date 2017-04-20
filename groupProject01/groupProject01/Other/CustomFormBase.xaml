@@ -12,20 +12,20 @@
 				AbsoluteLayout.LayoutFlags="PositionProportional" />
 			<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,.11" 
 				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
-			<Button Text="Home" FontSize="15" BackgroundColor="#60ab60" BorderRadius="100" 
-				BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".5,.995,68,68" 
+			<Button Text="Home" FontSize="15" BackgroundColor="#60cc60" BorderRadius="30" 
+				BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".5,.996,68,68" 
 				AbsoluteLayout.LayoutFlags="PositionProportional" />
-			<Button Text="Lists" FontSize="15" BackgroundColor="#60ab60" BorderWidth="2" 
-				BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.995,68,68" 
+			<Button Text="Lists" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
+				BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.996,68,68" 
 				AbsoluteLayout.LayoutFlags="PositionProportional"/>
-   		 	<Button Text="Calendar" FontSize="15" BackgroundColor="#60ab60" BorderWidth="2" 
-				BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.995,68,68" 
+   		 	<Button Text="Calendar" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
+				BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.996,68,68" 
 				AbsoluteLayout.LayoutFlags="PositionProportional"/>
-			<Button Text="Messaging" FontSize="15" BackgroundColor="#60ab60" BorderWidth="2" 
-				BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.995,68,68" 
+			<Button Text="Messaging" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
+				BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.996,68,68" 
 				AbsoluteLayout.LayoutFlags="PositionProportional" />
-			<Button Text="Settings" FontSize="15" BackgroundColor="#60ab60" BorderWidth="2" 
-				BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.995,68,68" 
+			<Button Text="Settings" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
+				BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.996,68,68" 
 				AbsoluteLayout.LayoutFlags="PositionProportional"/>
 		</AbsoluteLayout>
 	</ContentPage.Content>

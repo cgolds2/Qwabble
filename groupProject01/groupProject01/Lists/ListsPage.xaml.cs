@@ -17,17 +17,32 @@ namespace groupProject01
 
        
 
+		public ListsPage()
+		{
 
-        public ListsPage(GlobalData gd)
-        {
+			InitializeComponent();
+			//_gd = gd;
+			ObservableCollection<ListsViewModel> lists = new ObservableCollection<ListsViewModel>();
 
-            InitializeComponent();
-            _gd = gd;
-           lists =  _gd.ListsDataInstance.lists;
-            lstView.ItemsSource = lists;
+			lists.Add(new ListsViewModel { Name = "Grocery", On = false, ID = lists.Count });
+			lists.Add(new ListsViewModel { Name = "Shared Items", On = false, ID = lists.Count });
+			lists.Add(new ListsViewModel { Name = "Chores", On = true, ID = lists.Count });
+			lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = lists.Count });
+			//lists = _gd.ListsDataInstance.lists;
+			lstView.ItemsSource = lists;
+
+
+		}
+        //public ListsPage(GlobalData gd)
+        //{
+
+        //    InitializeComponent();
+        //    _gd = gd;
+        //   lists =  _gd.ListsDataInstance.lists;
+        //    lstView.ItemsSource = lists;
             
 
-        }
+        //}
 
 
 
