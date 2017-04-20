@@ -70,7 +70,71 @@ namespace groupProject01.Settings
 
         async void onSendEvent(object sender, EventArgs e)
         {
+            try
+            {
+                Other.GlobalData g = new GlobalDate();
+                g.CurrentUser = new UserObject();
+                g.CurrentUser.Username = "MyTestName";
+                g.CurrentUser.UserID = 1;
+                g.CurrentUser.ApartmentID = 1;
 
+                EventObject e = new EventObject();
+                //e
+
+                Output.Text = ServerHandeler.sendList(l, g);
+            }
+            catch (Exception e)
+            {
+                Output.Text = e.Message;
+            }
         }
+
+        async void onGetEvent(object sender, EventArgs e)
+        {
+            try
+            {
+                Other.GlobalData g = new GlobalDate();
+                g.CurrentUser = new UserObject();
+                g.CurrentUser.ApartmentID = 1;
+
+
+                List<EventObject> e = ServerHandeler.getList(g);
+                string outputString = "";
+                foreach (ListItemObject ev in e)
+                {
+                    outputString += ev.EventText;
+                }
+
+                Output.Text = outputString;
+            }
+            catch (Exception e)
+            {
+                Output.Text = e.Message;
+            }
+        }
+
+        async void onSendMessage(object sender, EventArgs e)
+        {
+            try
+            {
+                Other.GlobalData g = new GlobalDate();
+                g.CurrentUser = new UserObject();
+                g.CurrentUser.Username = "MyTestName";
+                g.CurrentUser.UserID = 1;
+                g.CurrentUser.ApartmentID = 1;
+
+                MessagingObject m = new MessagingObject();
+                m.messageName = "MessageName";
+                m.messageID = 1;
+                m.messageText = "THIS IS THE TEXT OF OUR MESSAGE";
+
+                Output.Text = ServerHandeler.sendList(l, g);
+            }
+            catch (Exception e)
+            {
+                Output.Text = e.Message;
+            }
+        }
+
     }
 }
