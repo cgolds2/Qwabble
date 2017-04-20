@@ -16,7 +16,7 @@ namespace groupProject01
 {
     class ServerHandeler
     {
-        public static string baseuri = "http://172.16.42.4/";
+        public static string baseuri = "http://192.168.3.3/";
         public static Boolean pingServer()
         {
             throw new NotImplementedException();
@@ -42,8 +42,9 @@ namespace groupProject01
             string jsonString = JsonConvert.SerializeObject(ldata);
             JObject ob = JObject.Parse(jsonString);
             ob["username"] = gd.CurrentUser.Username;
+            ob["apartmentID"] = gd.CurrentUser.ApartmentID;
             ob["userID"] = gd.CurrentUser.UserID;
-            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createList.php"));
+            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createNote.php"));
             return result;
 
         }

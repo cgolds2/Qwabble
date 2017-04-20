@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using groupProject01;
+using groupProject01.Settings;
 using Xamarin.Forms;
+using groupProject01.Other;
 
 namespace groupProject01.Settings
 {
@@ -19,28 +21,26 @@ namespace groupProject01.Settings
         {
             try
             {
-                Other.GlobalData g = new GlobalDate();
-                g.CurrentUser = new UserObject();
+
+                GlobalData g = new GlobalData();
+                g.CurrentUser = new Other.UserObject();
                 g.CurrentUser.Username = "MyTestName";
                 g.CurrentUser.UserID = 1;
                 g.CurrentUser.ApartmentID = 1;
-                g.CurrentUser.ListName = "List Name";
-                g.CurrentUser.ListType = 0;
-                g.CurrentUser.ListText = "THIS IS THE TEXT OF OUR LIST, NOT NOTE";
+
 
                 ListItemObject l = new ListItemObject();
                 l.listName = "MyTestNote";
+                l.listName = "List Name";
+                l.listText = "THIS IS THE TEXT OF OUR LIST, NOT NOTE";
                 //l.listName = g.CurrentUser.ListName;
-                l.listID = 1;
-                l.On = 1;
-                l.IsSwitchVisible = 1;
+                l.ListID = 1;
                 l.listType = 1;
-                l.listText = "THIS IS THE TEXT OF OUR LIST";
-
-                Output.Text = ServerHandeler.sendList(l, g);
-            }catch(Exception e)
+                string test = await (ServerHandeler.sendList(l, g));
+                Output.Text = test;
+            }catch(Exception ex)
             {
-                Output.Text = e.Message;
+                Output.Text = ex.Message;
             }
         }
 
@@ -48,23 +48,23 @@ namespace groupProject01.Settings
         {
             try
             {
-                Other.GlobalData g = new GlobalDate();
+                GlobalData g = new GlobalData();
                 g.CurrentUser = new UserObject();
                 g.CurrentUser.ApartmentID = 1;
              
 
-                List<ListItemObject> l = ServerHandeler.getList(g);
+                List<ListItemObject> l = await(ServerHandeler.getList(g));
                 string outputString = "";
                 foreach (ListItemObject li in l)
                 {
-                    outputString += li.ListText;
+                    outputString += li.listText;
                 }
-
+            
                 Output.Text = outputString;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Output.Text = e.Message;
+                Output.Text = ex.Message;
             }
         }
 
