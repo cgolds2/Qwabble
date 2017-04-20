@@ -25,7 +25,7 @@ namespace groupProject01
 
        async void OnTap(object sender, ItemTappedEventArgs e)                       //Listener that fires when a list is tapped
         {
-            int index = ((ListOfListsObject)e.Item).ID;                                    //gets the ID of the list item (sender=row)
+            int index = ((ListOfListsObject)e.Item).ListOfListID;                                    //gets the ID of the list item (sender=row)
             await Navigation.PushAsync(new groupProject01.ListItemPage(index, _gd)); //viewing the list item page even while other things occur
             //DisplayAlert("Item Tapped", ((ListsObject)e.Item).ID.ToString(), "Ok"); TESTING
         }

@@ -78,14 +78,11 @@ public class RestService
 
             HttpResponseMessage response = null;
             response = await client.PostAsync(url, content);
+            var responseString = await response.Content.ReadAsStringAsync();
 
-            Debug.WriteLine(response);
-            if (response.IsSuccessStatusCode)
-            {
-                return  (@"				TodoItem successfully saved.");
-            }
-            return "false";
-
+            Debug.WriteLine(responseString);
+            return responseString;
+           
         }
         catch (Exception ex)
         {
