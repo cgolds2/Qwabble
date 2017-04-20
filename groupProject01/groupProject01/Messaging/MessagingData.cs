@@ -26,8 +26,8 @@ namespace groupProject01
         {
             messages = new ObservableCollection<MessageObject>();
 
-            //messages.Add(new MessageObject { Name = "General", ID = messages.Count });
-            //messages.Add(new MessageObject { Name = "Guest Alert", ID = messages.Count });
+            //messages.Add(new MessageObject { MessageName = "General", ID = messages.Count });
+            //messages.Add(new MessageObject { MessageName = "Guest Alert", ID = messages.Count });
         }
 
         /// <summary>
@@ -37,11 +37,11 @@ namespace groupProject01
         public void getItemsInMessage(int MessageID)
         {
             msgItems = new ObservableCollection<MessageObject>();
-            msgItems.Add(new MessageObject { Name = "Message1", ID = msgItems.Count });
-            msgItems.Add(new MessageObject { Name = "Message2", ID = msgItems.Count });
+            msgItems.Add(new MessageObject { MessageName = "Message1", MessageID = msgItems.Count });
+            msgItems.Add(new MessageObject { MessageName = "Message2", MessageID = msgItems.Count });
             if (MessageID == 1)
             {
-                msgItems.Add(new MessageObject { Name = "Custom", ID = msgItems.Count });
+                msgItems.Add(new MessageObject { MessageName = "Custom", MessageID = msgItems.Count });
             }
         }
     }
@@ -53,7 +53,7 @@ namespace groupProject01
         private int _messageID = 0;
         private string _name = "";
 
-        public string Text
+        public string MessageText
         {
             get
             {
@@ -105,7 +105,7 @@ namespace groupProject01
             }
         }
 
-        public string Name
+        public string MessageName
         {
             get
             {
@@ -115,19 +115,6 @@ namespace groupProject01
             set
             {
                 _name = value;
-            }
-        }
-
-        public int ID
-        {
-            get
-            {
-                return iD;
-            }
-
-            set
-            {
-                iD = value;
             }
         }
 

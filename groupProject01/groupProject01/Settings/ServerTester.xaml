@@ -3,20 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="groupProject01.Settings.ServerTester">
   <ScrollView>
-    <StackLayout VerticalOptions="StartAndExpand">
-      <Editor x:Name ="myText">
-      </Editor>
+    <StackLayout VerticalOptions="StartAndExpand" >
 
 
 
-      <Button x:Name="Save" Text="Save" Clicked="onSendList" />
-      <Button x:Name="Retrieve" Text="Retrieve" Clicked="onGetList" />
-      <Button x:Name="Lists" Text="Lists" Clicked="onSendEvent" />
-      <Button x:Name="Settings" Text="Settings" Clicked="onGetCal" />
-      <Button x:Name="Calendar" Text="Calendar" Clicked="onSendMessage" />
-      <Button x:Name="Messaging" Text="Messaging" Clicked="onGetMessage" />
-      <Button x:Name="Home" Text="Home" Clicked="OnHome" />
-      <Button x:Name="Login" Text="Login" Clicked="OnLogin" />
-    </StackLayout>
+            <Button x:Name="SendList" Text="Send List" Clicked="onSendList" />
+            <Button x:Name="GetList" Text="Get List" Clicked="onGetList" />
+      <Button x:Name="GetEvent" Text="Get Event" Clicked="onGetEvent" />
+            <Button x:Name="SendEvent" Text="Send Event" Clicked="onSendEvent" />
+            <!--<Button x:Name="GetCal" Text="Get Cal" Clicked="onGetCal" />-->
+            <Button x:Name="SendMessage" Text="Send Message" Clicked="onSendMessage" />
+            <!--<Button x:Name="GetMessage" Text="Get Message" Clicked="onGetMessage" />-->
+      <Editor x:Name ="Output" />
+        </StackLayout>
   </ScrollView>
 </ContentPage>
