@@ -10,12 +10,12 @@ namespace groupProject01
     public class GlobalData
     {
         #region DataPagesVars
-        public SettingsData settingsDataInstance;
-        public HomeData homeDataInstance;
-        public MessagingData messagingDataInstance;
-        public ListsData listsDataInstance = new ListsData();
-        public CalendarData calendarDataInstance;
-        public Other.UserObject currentUser;
+        private SettingsData settingsDataInstance;
+        private HomeData homeDataInstance;
+        private MessagingData messagingDataInstance = new MessagingData();
+        private ListsData listsDataInstance = new ListsData();
+        private CalendarData calendarDataInstance = new CalendarData();
+        private Other.UserObject currentUser=new Other.UserObject();
         
         #endregion
 
@@ -34,11 +34,49 @@ namespace groupProject01
                 listsDataInstance = value;
             }
         }
+
+        public MessagingData MessagingDataInstance
+        {
+            get
+            {
+                return messagingDataInstance;
+            }
+
+            set
+            {
+                messagingDataInstance = value;
+            }
+        }
+
+        public CalendarData CalendarDataInstance
+        {
+            get
+            {
+                return calendarDataInstance;
+            }
+
+            set
+            {
+                calendarDataInstance = value;
+            }
+        }
+
+        public Other.UserObject CurrentUser
+        {
+            get
+            {
+                return currentUser;
+            }
+
+            set
+            {
+                currentUser = value;
+            }
+        }
         #endregion
 
         public GlobalData()
         {
-           // ListsDataInstance.lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = 3 });
             //currentUser.Username = settingsDataInstance.getUserName();
 
         }

@@ -11,24 +11,31 @@ using System.IO;
 
 public class RestService
 {
-    HttpClient client;
+    //HttpClient client;
 
 
-    public RestService()
+    //public RestService()
+    //{
+    //    var authData = string.Format("{0}:{1}", "test", "pswd");
+    //    var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
+
+    //    client = new HttpClient();
+    //    client.MaxResponseContentBufferSize = 256000;
+    //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
+    //}
+
+    public static async Task<string> GetCall(string url)
     {
-        var authData = string.Format("{0}:{1}", "test", "pswd");
-        var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
 
-        client = new HttpClient();
-        client.MaxResponseContentBufferSize = 256000;
-        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
-    }
+        try
+        {
+            HttpClient client;
+            var authData = string.Format("{0}:{1}", "test", "pswd");
+            var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
 
-    public async Task<string> GetCall(string url2)
-    {
-
-        try {
-            string url = "http://172.16.42.4/" + url2;
+            client = new HttpClient();
+            client.MaxResponseContentBufferSize = 256000;
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
 
             string html = string.Empty;
 
@@ -47,49 +54,44 @@ public class RestService
         }
 
         catch (Exception e)
-        { return ""; } }
-        //string uri = "http://172.16.42.4/createUser.php";
-        //    // RestUrl = http://developer.xamarin.com:8081/api/todoitems{0}
-        //    //var uri = new Uri(string.Format(url, string.Empty));
-        //    string response = "Could not connect to server";// = await client.GetAsync(uri);
-
-        //try
-        //{
-        //    response = (await client.GetAsync(uri)).ToString();
-
-        //}
-        //catch (Exception ex)
-        //{
-        //    Debug.WriteLine(@"				ERROR {0}", ex.Message);
-        //}
-
-        //return response;
-    
+        {
+            return "";
+        }
+    }
 
 
-    public async Task PostCall(string body, string uri)
+
+
+    public static async Task<string> PostCall(string body, string url)
     {
-        // RestUrl = http://developer.xamarin.com:8081/api/todoitems{0}
-
         try
         {
+            HttpClient client;
+            var authData = string.Format("{0}:{1}", "test", "pswd");
+            var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
+
+            client = new HttpClient();
+            client.MaxResponseContentBufferSize = 256000;
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
+
             var content = new StringContent(body, Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = null;
+            response = await client.PostAsync(url, content);
 
-            response = await client.PostAsync(uri, content);
-
-
+            Debug.WriteLine(response);
             if (response.IsSuccessStatusCode)
             {
-                Debug.WriteLine(@"				TodoItem successfully saved.");
+                return  (@"				TodoItem successfully saved.");
             }
+            return "false";
 
         }
         catch (Exception ex)
         {
-            Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            return  ex.Message;
         }
+   
     }
 
 }

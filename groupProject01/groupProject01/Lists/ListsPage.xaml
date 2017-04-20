@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="groupProject01.ListsPage"
+<<<<<<< HEAD
              xmlns:local="clr-namespace:groupProject01">
 	
 	<ContentPage.Content>
@@ -14,6 +15,19 @@
                 <Label Text = "{Binding Name}" FontSize="20" FontFamily="Verdana" HorizontalOptions="Start"/>
               
            
+=======
+             xmlns:local="clr-namespace:groupProject01"
+             Title="Lists">
+
+
+  <ContentPage.Content>
+    <ListView  x:Name="lstView" RowHeight="60" ItemTapped="OnTap">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout  BackgroundColor="Gray">
+                <Label Text = "{Binding Name}"  HorizontalOptions="Start"/>
+>>>>>>> master
             </StackLayout>
           </ViewCell>
         </DataTemplate>

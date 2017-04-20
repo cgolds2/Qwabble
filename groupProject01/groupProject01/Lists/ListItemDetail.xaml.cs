@@ -10,11 +10,10 @@ namespace groupProject01.Lists
 {
 	public partial class ListItemDetail : ContentPage
 	{
-		public ListItemDetail (int ListID, GlobalData gd)
+		public ListItemDetail (ListItemObject currentItem, GlobalData gd)
 		{
 			InitializeComponent ();
-            lblLabel.Text = ListID.ToString();
-
+            lblLabel.Text = currentItem.Name;
         }
 	}
 }

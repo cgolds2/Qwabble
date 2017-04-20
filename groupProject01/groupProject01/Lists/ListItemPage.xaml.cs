@@ -12,7 +12,7 @@ namespace groupProject01
 
     public partial class ListItemPage : ContentPage
 	{
-        public ObservableCollection<ListsViewModel> items { get; set; }
+        public ObservableCollection<ListItemObject> items { get; set; }
         private GlobalData _gd;
 
         public ListItemPage (int ListID, GlobalData gd)
@@ -25,10 +25,10 @@ namespace groupProject01
         }
 
        async void OnTap(object sender, ItemTappedEventArgs e)
-    {
-            int index = ((ListsViewModel)e.Item).ID;
-            await Navigation.PushAsync(new groupProject01.Lists.ListItemDetail(index, _gd));
-            //DisplayAlert("Item Tapped", ((ListsViewModel)e.Item).ID.ToString(), "Ok");
+        {
+            int index = ((ListItemObject)e.Item).ID;
+            var item = items[index]; //items.get(index)
+            await Navigation.PushAsync(new groupProject01.Lists.ListItemDetail(item, _gd));
         }
     void SwitchToggled(object sender, EventArgs e)
     {
