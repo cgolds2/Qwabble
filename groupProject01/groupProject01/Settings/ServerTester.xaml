@@ -9,10 +9,11 @@
 
             <Button x:Name="SendList" Text="Send List" Clicked="onSendList" />
             <Button x:Name="GetList" Text="Get List" Clicked="onGetList" />
-            <!--<Button x:Name="SendEvent" Text="Send Event" Clicked="onSendEvent" />
-            <Button x:Name="GetCal" Text="Get Cal" Clicked="onGetCal" />
+      <Button x:Name="GetEvent" Text="Get Event" Clicked="onGetEvent" />
+            <Button x:Name="SendEvent" Text="Send Event" Clicked="onSendEvent" />
+            <!--<Button x:Name="GetCal" Text="Get Cal" Clicked="onGetCal" />-->
             <Button x:Name="SendMessage" Text="Send Message" Clicked="onSendMessage" />
-            <Button x:Name="GetMessage" Text="Get Message" Clicked="onGetMessage" />-->
+            <!--<Button x:Name="GetMessage" Text="Get Message" Clicked="onGetMessage" />-->
       <Editor x:Name ="Output" />
         </StackLayout>
   </ScrollView>

@@ -70,6 +70,7 @@ namespace groupProject01.Settings
 
         async void onSendEvent(object sender, EventArgs e)
         {
+
             try
             {
                 GlobalData g = new GlobalData();
@@ -97,6 +98,7 @@ namespace groupProject01.Settings
         //THIS IS listed as get calendar in serverhandler.cs
         async void onGetEvent(object sender, EventArgs e)
         {
+            //NOT IMPLEMENTED SERVER SIDE
             try
             {
                 GlobalData g = new GlobalData();
