@@ -12,7 +12,7 @@ namespace groupProject01
 {
 	public partial class CalendarPage : ContentPage                           //begins the CalendarPage class
 	{
-<<<<<<< HEAD
+
 		public CalendarPage ()
 		{
 			InitializeComponent ();
@@ -71,17 +71,17 @@ namespace groupProject01
             throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// Directs user to invite guests page.
-        /// </summary>
-        /// <param name="Sender"></param>
-        /// <param name="e"></param>
-        public void onInviteGuestsClicked(object Sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-=======
-        public ObservableCollection<CalendarOptionObject> calendar { get; set; } //declares calendars ObservableCollection that will notify when calendars are added, removed, and refreshed
-        private GlobalData _gd;                                              //declares global variable GlobalData to store the global data
+		/// <summary>
+		/// Directs user to invite guests page.
+		/// </summary>
+		/// <param name="Sender"></param>
+		/// <param name="e"></param>
+		public void onInviteGuestsClicked(object Sender, EventArgs e)
+		{
+			throw new NotImplementedException();
+		}
+ 		public ObservableCollection<CalendarOptionObject> calendar; //declares calendars ObservableCollection that will notify when calendars are added, removed, and refreshed
+ private GlobalData _gd;                                              //declares global variable GlobalData to store the global data
 
         public CalendarPage (GlobalData gd)                                  //CalendarPage constructor
 		{
@@ -89,7 +89,6 @@ namespace groupProject01
             _gd = gd;                                                        //sets private instance of global data
             calendar = _gd.CalendarDataInstance.options;                    //gets the calendar data from the data file
             calView.ItemsSource = calendar;                                  //sets the source of items to template and display
->>>>>>> master
         }
         
         async void OnTap(object sender, ItemTappedEventArgs e)                    //Lister that fires when a calendar item is tapped

@@ -15,7 +15,7 @@ namespace groupProject01
         public ObservableCollection<ListOfListsObject> lists { get; set; } //initializes a collection that notifies when items are added, removed, or refreshed
         private GlobalData _gd;                                         //instantiates global variable GlobalData to store the global data
 
-<<<<<<< HEAD
+
         #region BottomBarStuff
 
         public void OnHome(object sender, EventArgs e)
@@ -46,12 +46,12 @@ namespace groupProject01
 
 			InitializeComponent();
 			//_gd = gd;
-			ObservableCollection<ListsViewModel> lists = new ObservableCollection<ListsViewModel>();
+			ObservableCollection<ListOfListsObject> lists = new ObservableCollection<ListOfListsObject>();
 
-			lists.Add(new ListsViewModel { Name = "Grocery", On = false, ID = lists.Count });
-			lists.Add(new ListsViewModel { Name = "Shared Items", On = false, ID = lists.Count });
-			lists.Add(new ListsViewModel { Name = "Chores", On = true, ID = lists.Count });
-			lists.Add(new ListsViewModel { Name = "Repairs", On = true, ID = lists.Count });
+			lists.Add(new ListOfListsObject { Name = "Grocery" });
+			lists.Add(new ListOfListsObject { Name = "Shared Items" });
+			lists.Add(new ListOfListsObject { Name = "Chores"});
+			lists.Add(new ListOfListsObject { Name = "Repairs" });
 			//lists = _gd.ListsDataInstance.lists;
 			lstView.ItemsSource = lists;
 
@@ -86,16 +86,6 @@ namespace groupProject01
 
 
 
-       async void OnTap(object sender, ItemTappedEventArgs e)
-=======
-        public ListsPage(GlobalData gd)                                 //ListsPage constructor
->>>>>>> master
-        {
-            InitializeComponent();                                      //initializes UI objects with values provided, initializes elements
-            _gd = gd;                                                   //sets private instance of global data
-            lists =  _gd.ListsDataInstance.lists;                       //gets the lists data from data file
-            lstView.ItemsSource = lists;                                //sets the source of items to template and display
-        }
 
        async void OnTap(object sender, ItemTappedEventArgs e)                       //Listener that fires when a list is tapped
         {

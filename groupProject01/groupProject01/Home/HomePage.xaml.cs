@@ -10,19 +10,16 @@ namespace groupProject01
 {
 	public partial class HomePage : ContentPage
 	{
-        private GlobalData _gd;                                             //instantiates global variable GlobalData to store the global data
+		private GlobalData _gd;                                             //instantiates global variable GlobalData to store the global data
 
-        public HomePage (GlobalData gd)
+		public HomePage(GlobalData gd)
 		{
-<<<<<<< HEAD
+
 			InitializeComponent();
 		}
-        #region BottomBarStuff
-=======
-			InitializeComponent();                                      //initializes UI objects with values provided, initializes elements
-            _gd = gd;                                                   //sets private instance of global data
-        }
->>>>>>> master
+		#region BottomBarStuff
+
+	
 
         public void OnHome(object sender, EventArgs e)
         {

@@ -10,10 +10,10 @@ namespace groupProject01
 {
 	public partial class MainPage : ContentPage
 	{
-        ICredentials service;
-        GlobalData _gd;
+		ICredentials service;
+		GlobalData _gd;
 
-<<<<<<< HEAD
+
 		public MainPage()
 		{
 			//error on iphone
@@ -21,86 +21,75 @@ namespace groupProject01
 
 			service = DependencyService.Get<ICredentials>();
 		}
-=======
 
-
-
->>>>>>> master
 		public MainPage(GlobalData gd)
 		{
-            _gd = gd;
+			_gd = gd;
 			InitializeComponent();
 
-            service = DependencyService.Get<ICredentials>();
+			service = DependencyService.Get<ICredentials>();
 		}
 
-        async void OnRetrieve(object sender, EventArgs e)
-        {
-            List<ListItemObject> lis = await (ServerHandeler.getList(1, _gd));
-            //try
-            //{
-            //    ListItemObject l = new ListItemObject();
-            //    l.Name = "Test";
-            //    l.ID = 0;
-            //    l.Type = 0;
-            //    //RestService r = new RestService();
-            //    string test = await (ServerHandeler.sendList(l));
-            //    dynamic jsonDe = JsonConvert.DeserializeObject(test);
-            //    textField.Text = jsonDe.name;
-            //}
-            //catch (Exception ex)
-            //{
-            //    textField.Text = ex.Message;
-            //}
-           
+		async void OnRetrieve(object sender, EventArgs e)
+		{
+			List<ListItemObject> lis = await (ServerHandeler.getList(1, _gd));
+			//try
+			//{
+			//    ListItemObject l = new ListItemObject();
+			//    l.Name = "Test";
+			//    l.ID = 0;
+			//    l.Type = 0;
+			//    //RestService r = new RestService();
+			//    string test = await (ServerHandeler.sendList(l));
+			//    dynamic jsonDe = JsonConvert.DeserializeObject(test);
+			//    textField.Text = jsonDe.name;
+			//}
+			//catch (Exception ex)
+			//{
+			//    textField.Text = ex.Message;
+			//}
 
-        }
-        void OnSave(object sender, EventArgs e)
-        {
-            service.setPrefs("test", textField.Text);
-            
-        }
-        async void OnSetting(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new groupProject01.SettingsPage());
 
-        }
-        async void OnList(object sender, EventArgs e)
-        {
-<<<<<<< HEAD
-            await Navigation.PushModalAsync(new NavigationPage(new groupProject01.ListsPage()));
-=======
-            await Navigation.PushAsync(new groupProject01.ListsPage(_gd));
->>>>>>> master
+		}
+		void OnSave(object sender, EventArgs e)
+		{
+			service.setPrefs("test", textField.Text);
 
-        }
-        async void OnCalendar(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new groupProject01.CalendarPage(_gd));
+		}
+		async void OnSetting(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new groupProject01.SettingsPage());
 
-        }
-        async void OnMessaging(object sender, EventArgs e)
-        {
+		}
+		async void OnList(object sender, EventArgs e)
+		{
+			await Navigation.PushModalAsync(new NavigationPage(new groupProject01.ListsPage()));
+
+		}
+		async void OnCalendar(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new groupProject01.CalendarPage(_gd));
+
+		}
+		async void OnMessaging(object sender, EventArgs e)
+		{
 			await Navigation.PushModalAsync(new NavigationPage(new groupProject01.Other.CustomFormBase()));
 
-<<<<<<< HEAD
-            //await Navigation.PushModalAsync(new groupProject01.MessagingPage());
-=======
-            await Navigation.PushAsync(new groupProject01.MessagingPage(_gd));
 
-        }
-        async void OnHome(object sender, EventArgs e)
-        {
+			await Navigation.PushAsync(new groupProject01.MessagingPage(_gd));
 
-            await Navigation.PushAsync(new groupProject01.HomePage(_gd));
+		}
+		async void OnHome(object sender, EventArgs e)
+		{
 
-        }
-        async void OnLogin(object sender, EventArgs e)
-        {
+			await Navigation.PushAsync(new groupProject01.HomePage(_gd));
 
-            await Navigation.PushAsync(new groupProject01.LoginPage(_gd));
->>>>>>> master
+		}
+		async void OnLogin(object sender, EventArgs e)
+		{
 
-        }
-    }
+			await Navigation.PushAsync(new groupProject01.LoginPage(_gd));
+
+		}
+	}
 }

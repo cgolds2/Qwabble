@@ -19,7 +19,7 @@
         <Button x:Name="Settings" Text="Settings" Clicked="OnSetting" />
         <Button x:Name="Calendar" Text="Calendar" Clicked="OnCalendar" />
         <Button x:Name="Messaging" Text="Messaging" Clicked="OnMessaging" />
-        <Button x:Name="Home" Text="Home" Clicked="OnHome" />
+       <!-- <Button x:Name="Home" Text="Home" Clicked="OnHome" />-->
         <Button x:Name="Login" Text="Login" Clicked="OnLogin" />
         </StackLayout>
   </ContentPage.Content>
