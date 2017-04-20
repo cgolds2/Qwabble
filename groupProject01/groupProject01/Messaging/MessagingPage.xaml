@@ -15,10 +15,16 @@
 			</StackLayout>
 			<StackLayout VerticalOptions="CenterAndExpand">
 				<!-- START PAGE CODE ****************************************************** -->
+
+				<AbsoluteLayout>
 				<Label Text = "incoming message" BackgroundColor="Gray" LineBreakMode="WordWrap" HeightRequest="60" FontSize="12" 
 					FontFamily="Verdana" HorizontalOptions="Start"/>
+				</AbsoluteLayout>
+				<AbsoluteLayout>
 				<Label Text = "outcoming message" BackgroundColor="Gray" HeightRequest="60" FontSize="20" 
 					FontFamily="Verdana" HorizontalOptions="Start"/>
+				</AbsoluteLayout>
+
 				<!-- END PAGE CODE ****************************************************** -->
 			</StackLayout>
 			<StackLayout VerticalOptions="End">
@@ -27,19 +33,19 @@
 				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
 			<Button Text="Home" FontSize="15" BackgroundColor="#60cc60" BorderRadius="30" 
 				BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70" 
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2"/>
+				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome" />
 			<Button Text="Lists" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
 				BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.3,68,68" 
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2"/>
+				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList"/>
    		 	<Button Text="Calendar" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
 				BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.3,68,68" 
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2"/>
+				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnCalendar"/>
 			<Button Text="Messaging" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
 				BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.3,68,68" 
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2"/>
+				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnMessaging"/>
 			<Button Text="Settings" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
 				BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.996,68,68" 
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2"/>
+				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting"/>
 			</AbsoluteLayout>
 		</StackLayout>
 	</StackLayout>
