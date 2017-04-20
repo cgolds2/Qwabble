@@ -100,7 +100,7 @@ namespace groupProject01
 
         //MESSAGE
         //createGroupMessage(userID, MSGText,apartmentID) //adds group message
-        public async static Task<string> sendMessage(MessageObject mdata, GlobalData gd, int calID)
+        public async static Task<string> sendMessage(MessageObject mdata, GlobalData gd)
         {
             //createList(username, userID, apartmentID, listName, listType, listText)
             string jsonString = JsonConvert.SerializeObject(mdata);
