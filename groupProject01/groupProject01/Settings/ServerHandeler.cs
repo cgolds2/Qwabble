@@ -35,20 +35,20 @@ namespace groupProject01
          */
 
         //LIST
-        //createNote(username, userID, apartmentID, noteName, listType, noteText, )
+        //createList(username, userID, apartmentID, listName, listType, listText, )
         public async static Task<string> sendList(ListItemObject ldata, GlobalData gd)
         {
-            //createNote(username, userID, apartmentID, noteName, listType, noteText)
+            //createList(username, userID, apartmentID, listName, listType, listText)
             string jsonString = JsonConvert.SerializeObject(ldata);
             JObject ob = JObject.Parse(jsonString);
             ob["username"] = gd.CurrentUser.Username;
             ob["userID"] = gd.CurrentUser.UserID;
-            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createNote.php"));
+            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createList.php"));
             return result;
 
         }
         //getNotes(apartmentID)
-        async public static Task<List<ListItemObject>> getList(int listID, GlobalData gd)
+        async public static Task<List<ListItemObject>> getList(GlobalData gd)
         {
             Other.UserObject u = gd.CurrentUser;
             int ApartmentID = u.ApartmentID;
@@ -69,7 +69,7 @@ namespace groupProject01
         //createEvent(username, startDate, endDate, eventName, userID, apartmentID)
         public async static Task<string> sendEvent(EventObject edata, GlobalData gd)
         {
-            //createNote(username, userID, apartmentID, noteName, listType, noteText)
+            //createList(username, userID, apartmentID, listName, listType, listText)
             string jsonString = JsonConvert.SerializeObject(edata);
             JObject ob = JObject.Parse(jsonString);
             ob["username"] = gd.CurrentUser.Username;
@@ -101,7 +101,7 @@ namespace groupProject01
         //createGroupMessage(userID, MSGText,apartmentID) //adds group message
         public async static Task<string> sendMessage(MessageObject mdata, GlobalData gd, int calID)
         {
-            //createNote(username, userID, apartmentID, noteName, listType, noteText)
+            //createList(username, userID, apartmentID, listName, listType, listText)
             string jsonString = JsonConvert.SerializeObject(mdata);
             JObject ob = JObject.Parse(jsonString);
             ob["apartmentID"] = gd.CurrentUser.ApartmentID;
@@ -132,7 +132,7 @@ namespace groupProject01
         //createUser(username,password) // returns user id
         public async static Task<string> createUser(UserObject u)
         {
-            //createNote(username, userID, apartmentID, noteName, listType, noteText)
+            //createList(username, userID, apartmentID, listName, listType, listText)
             string jsonString = JsonConvert.SerializeObject(u);
             JObject ob = JObject.Parse(jsonString);
             string result = await (RestService.PostCall(ob.ToString(), baseuri + "createUser.php"));
