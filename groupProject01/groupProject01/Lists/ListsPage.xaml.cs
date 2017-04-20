@@ -15,9 +15,32 @@ namespace groupProject01
         public ObservableCollection<ListsViewModel> lists { get; set; }
         private GlobalData _gd;
 
-       
+        #region BottomBarStuff
 
-		public ListsPage()
+        public void OnHome(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnList(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnCalendar(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnMessaging(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnSetting(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        public ListsPage()
 		{
 
 			InitializeComponent();

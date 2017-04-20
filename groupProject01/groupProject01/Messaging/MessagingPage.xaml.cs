@@ -25,35 +25,30 @@ namespace groupProject01
             throw new NotImplementedException();
         }
 
-        
-        /// <summary>
-        /// This will bring up a chat based on which channel is selected (all, specific roommate names).
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void onChatClicked(object sender, EventArgs e)
+
+        #region BottomBarStuff
+
+        public void OnHome(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnList(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnCalendar(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnMessaging(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        public void OnSetting(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// Redirects the sender to their phone's dialer and automatically fills in specified roommates phone number.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void onRedirectToDialer(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Sends a push notification to all roommates (even with notifications muted).
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void onUrgentMessageClicked(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-	}
+        #endregion
+    }
 }
