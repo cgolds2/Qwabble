@@ -12,7 +12,7 @@ namespace groupProject01
 	{
 		public SettingsPage ()
 		{
-			InitializeComponent ();
+			            NavigationPage.SetHasNavigationBar(this, false); InitializeComponent();
 		}
         #region BottomBarStuff
 

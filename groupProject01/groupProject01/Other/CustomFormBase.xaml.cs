@@ -12,7 +12,7 @@ namespace groupProject01.Other
 	{
 		public CustomFormBase ()
 		{
-			InitializeComponent ();
+			            NavigationPage.SetHasNavigationBar(this, false); InitializeComponent();
 		}
 
 	}

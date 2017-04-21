@@ -17,7 +17,7 @@ namespace groupProject01
 
         public ListItemPage (int ListID, GlobalData gd)
 		{
-            InitializeComponent ();
+                        NavigationPage.SetHasNavigationBar(this, false); InitializeComponent();
             _gd = gd;
             _gd.ListsDataInstance.getItemsInList(ListID);
             items = _gd.ListsDataInstance.items;

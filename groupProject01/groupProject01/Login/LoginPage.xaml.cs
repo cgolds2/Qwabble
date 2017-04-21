@@ -14,7 +14,7 @@ namespace groupProject01
 
 		public LoginPage (GlobalData gd)
 		{
-			InitializeComponent ();
+			            NavigationPage.SetHasNavigationBar(this, false); InitializeComponent();
             _gd = gd;
 		}
 

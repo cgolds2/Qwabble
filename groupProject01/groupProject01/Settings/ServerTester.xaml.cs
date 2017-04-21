@@ -14,7 +14,7 @@ namespace groupProject01.Settings
 	{
 		public ServerTester ()
 		{
-			InitializeComponent ();
+			            NavigationPage.SetHasNavigationBar(this, false); InitializeComponent();
 		}
 
         async void onSendList(object sender, EventArgs e)

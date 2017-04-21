@@ -17,7 +17,8 @@ namespace groupProject01
         
         public MessagingPage (GlobalData gd)                //MessagingPage constructor
 		{
-			InitializeComponent ();                          //loads the UI elements
+            NavigationPage.SetHasNavigationBar(this, false);
+            InitializeComponent();                          //loads the UI elements
             _gd = gd;                                        //sets private instance of global data
             messages = _gd.MessagingDataInstance.messages;   //gets the messaging data from the data file
 
