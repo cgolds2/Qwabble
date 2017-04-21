@@ -16,6 +16,7 @@ namespace groupProject01
         private ListsData listsDataInstance = new ListsData();
         private CalendarData calendarDataInstance = new CalendarData();
         private Other.UserObject currentUser=new Other.UserObject();
+        private ApartmentObject currentApartment = new ApartmentObject();
         
         #endregion
 
@@ -71,6 +72,19 @@ namespace groupProject01
             set
             {
                 currentUser = value;
+            }
+        }
+
+        public ApartmentObject CurrentApartment
+        {
+            get
+            {
+                return currentApartment;
+            }
+
+            set
+            {
+                currentApartment = value;
             }
         }
         #endregion

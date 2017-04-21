@@ -182,7 +182,7 @@ namespace groupProject01.Settings
                 g.CurrentUser.ApartmentID = 1;
                 string p = "password...hehehe";
                 
-                string text = await (ServerHandeler.createUser(g.CurrentUser));
+                string text = await (ServerHandeler.createUser(g.CurrentUser, p));
                 Output.Text = text;
             }
             catch (Exception except)
@@ -208,6 +208,107 @@ namespace groupProject01.Settings
 
                 outputString += u.Username;
                 Output.Text = outputString;
+            }
+            catch (Exception except)
+            {
+                Output.Text = except.Message;
+            }
+        }
+
+        async void onAddToApartment(object sender, EventArgs e)
+        {
+            try
+            {
+                GlobalData g = new GlobalData();
+                g.CurrentUser = new UserObject();
+                g.CurrentUser.Username = "MyTestName";
+                g.CurrentUser.UserID = 1;
+                g.CurrentUser.ApartmentID = 1;
+
+                int text = await (ServerHandeler.addUserToApartment(g.CurrentUser.UserID, g.CurrentUser.ApartmentID));
+
+                Output.Text = text.ToString();
+            }
+            catch (Exception except)
+            {
+                Output.Text = except.Message;
+            }
+        }
+
+        async void onGetApartments(object sender, EventArgs e)
+        {
+            try
+            {
+                GlobalData g = new GlobalData();
+                g.CurrentUser = new UserObject();
+                g.CurrentUser.Username = "pandassuck";
+                g.CurrentUser.UserID = 1;
+                g.CurrentUser.ApartmentID = 1;
+                g.CurrentApartment = new ApartmentObject();
+                g.CurrentApartment.id = 1;
+                g.CurrentApartment.address = "142 SmileyFace Lane";
+                g.CurrentApartment.owner = 1;
+
+
+                List<ApartmentObject> ap = await (ServerHandeler.getApartments(g.CurrentUser.UserID, g.CurrentUser.ApartmentID));
+
+                string outputString = "";
+                foreach (ApartmentObject apt in ap)
+                {
+                    outputString += apt.id;
+                }
+                Output.Text = outputString;
+            }
+            catch (Exception except)
+            {
+                Output.Text = except.Message;
+            }
+        }
+
+        //not sure if tested correctly
+        async void onGetAllUsers(object sender, EventArgs e)
+        {
+            try
+            {
+                GlobalData g = new GlobalData();
+                g.CurrentUser = new UserObject();
+                g.CurrentUser.Username = "pandassuck";
+                g.CurrentUser.UserID = 1;
+                g.CurrentUser.ApartmentID = 1;
+                g.CurrentApartment = new ApartmentObject();
+                g.CurrentApartment.id = 1;
+                g.CurrentApartment.address = "142 SmileyFace Lane";
+                g.CurrentApartment.owner = 1;
+
+
+                List<UserObject> u = await (ServerHandeler.getAllUsers(g.CurrentApartment.id));
+                string text="";
+                foreach (UserObject use in u)
+                {
+                    text = use.Username;
+                }
+                Output.Text = text;
+            }
+            catch (Exception except)
+            {
+                Output.Text = except.Message;
+            }
+        }
+
+        async void onCreateApartment(object sender, EventArgs e)
+        {
+            try
+            {
+                GlobalData g = new GlobalData();
+                g.CurrentApartment = new ApartmentObject();
+                g.CurrentApartment.id = 1;
+                g.CurrentApartment.address = "142 SmileyFace Lane";
+                g.CurrentApartment.owner = 1;
+
+
+                string text = await (ServerHandeler.createApartment(g.CurrentApartment, g));
+
+                Output.Text = text;
             }
             catch (Exception except)
             {

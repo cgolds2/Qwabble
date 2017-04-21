@@ -11,15 +11,15 @@ namespace groupProject01
 {
 	public partial class MessagingPage : ContentPage        //MessagingPage class
 	{
-        public List<GroupObject> groups { get; set; } //creates an instance of messages
+        public List<GroupObject> groups { get; set; }       //creates an instance of messages
         private GlobalData _gd;                             //global variable GlobalData initialzed
         
         public MessagingPage (GlobalData gd)                //MessagingPage constructor
 		{
 			InitializeComponent ();                          //loads the UI elements
             _gd = gd;                                        //sets private instance of global data
-            groups = _gd.MessagingDataInstance.groups;   //gets the messaging data from the data file
-            msgView.ItemsSource = groups;                  //sets the messaging UI
+            groups = _gd.MessagingDataInstance.groups;       //gets the messaging data from the data file
+            msgView.ItemsSource = groups;                    //sets the messaging UI
 		}
 
         async void OnTap(object sender, ItemTappedEventArgs e)      //a listener that fires when a message is tapped
