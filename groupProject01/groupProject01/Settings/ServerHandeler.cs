@@ -61,7 +61,7 @@ namespace groupProject01
         }
 
         //CAL
-        //createEvent(username, startDate, endDate, eventName, userID, apartmentID)
+        //createEvent(username, startDate, endDate, name, userID, apartmentID)
         public async static Task<string> sendEvent(EventObject edata, GlobalData gd)
         {
             //createList(username, userID, apartmentID, listName, listType, listText)
@@ -164,9 +164,9 @@ namespace groupProject01
             return test;
         }
 
-        async public static Task<List<ApartmentObject>> getApartments(int userID, int apartmentID)
+        async public static Task<List<ApartmentObject>> getApartments()
         {
-            string get = baseuri + "addUserToApartment.php?userID=" + userID + "&apartmentID=" + apartmentID;
+            string get = baseuri + "getApartments.php";
             string text = await (RestService.GetCall(get));
             List<ApartmentObject> ret = new List<ApartmentObject>();
             string[] result = Regex.Split(text, "\r\n|\r|\n");
