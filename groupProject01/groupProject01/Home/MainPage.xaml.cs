@@ -89,5 +89,11 @@ namespace groupProject01
             await Navigation.PushAsync(new groupProject01.Settings.ServerTester());
 
         }
+        async void OnInitial(object sender, EventArgs e)
+        {
+
+            await Navigation.PushAsync(new groupProject01.InitialPage(_gd));
+
+        }
     }
 }

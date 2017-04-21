@@ -4,7 +4,7 @@ using System.Text;
 
 namespace groupProject01
 {
-    class LoginData
+    class Class1
     {
     }
 }
