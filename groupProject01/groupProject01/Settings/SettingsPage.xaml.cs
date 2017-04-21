@@ -15,31 +15,14 @@ namespace groupProject01
 			InitializeComponent ();
 		}
 
-        public void onPushNotificationClicked(object Sender, EventArgs e)
+        void OnLogout(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //TODO logout user
         }
 
-        public void onThemeClicked(object Sender, EventArgs e)
+        void OnCurApartment(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
-        }
-        public void onLogOutClicked(object Sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        public void onChangeAptClicked(object Sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        /// <summary>
-        /// Redirects to current apartment selection.
-        /// </summary>
-        /// <param name="Sender"></param>
-        /// <param name="e"></param>
-        public void onCurrentAptClicked(object Sender, EventArgs e)
-        {
-            throw new NotImplementedException();
+            //TODO show current apartment
         }
     }
 }

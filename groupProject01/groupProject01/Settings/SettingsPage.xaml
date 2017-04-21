@@ -4,5 +4,12 @@
              x:Class="groupProject01.SettingsPage"
              xmlns:local="clr-namespace:groupProject01"
              Title="Settings">
-	<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Button x:Name="Logout" Text="Logout" Clicked="OnLogout" />
+                <Button x:Name="CurApartment" Text="Current Apartment" Clicked="OnCurApartment" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
