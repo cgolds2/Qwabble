@@ -11,8 +11,8 @@ namespace groupProject01
 {
 	public class MessagingData
 	{
-        public List<MessageObject> messages { get; set; } //creates an instance of messages
-        public List<GroupObject> groups { get; set; } //creates an instance of groups
+        public ObservableCollection<MessageObject> messages { get; set; } //creates an instance of messages
+        public List<MessageObject> msgItems { get; set; } //creates an instance of msgItems
 
 		public MessagingData ()
 		{
@@ -24,9 +24,10 @@ namespace groupProject01
         /// </summary>
         public void refreshAll()
         {
-            groups = new List<GroupObject>();
+            messages = new ObservableCollection<MessageObject>();
 
-            groups.Add(new GroupObject());
+            //messages.Add(new MessageObject { MessageName = "General", ID = messages.Count });
+            //messages.Add(new MessageObject { MessageName = "Guest Alert", ID = messages.Count });
         }
 
         /// <summary>
@@ -35,19 +36,17 @@ namespace groupProject01
         /// <param name="MessageID"></param>
         async public void getItemsInMessage(GlobalData gd, int MessageID)
         {
-            messages = await (ServerHandeler.getMessages(gd));
+            msgItems = await (ServerHandeler.getMessages(gd));
 
-            messages = new List<MessageObject>();
-            messages.Add(new MessageObject { MessageName = "Message1", MessageID = messages.Count });
-            messages.Add(new MessageObject { MessageName = "Message2", MessageID = messages.Count });
+            /*msgItems = new ObservableCollection<MessageObject>();
+            msgItems.Add(new MessageObject { MessageName = "Message1", MessageID = msgItems.Count });
+            msgItems.Add(new MessageObject { MessageName = "Message2", MessageID = msgItems.Count });
+            if (MessageID == 1)
+            {
+                msgItems.Add(new MessageObject { MessageName = "Custom", MessageID = msgItems.Count });
+            }*/
         }
     }
-    public class GroupObject
-    {
-        public int GroupID = 0;
-        public string GroupName = "General";
-    }
-
     public class MessageObject {
         private int iD = 0;
         private string _text = "";
