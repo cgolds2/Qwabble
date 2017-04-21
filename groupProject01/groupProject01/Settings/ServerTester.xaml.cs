@@ -171,5 +171,48 @@ namespace groupProject01.Settings
             }
         }
 
+        async void onCreateUser(object sender, EventArgs e)
+        {
+            try
+            {
+                GlobalData g = new GlobalData();
+                g.CurrentUser = new UserObject();
+                g.CurrentUser.Username = "MyTestName";
+                g.CurrentUser.UserID = 1;
+                g.CurrentUser.ApartmentID = 1;
+                string p = "password...hehehe";
+                
+                string text = await (ServerHandeler.createUser(g.CurrentUser));
+                Output.Text = text;
+            }
+            catch (Exception except)
+            {
+                Output.Text = except.Message;
+            }
+        }
+        
+        async void onGetUser(object sender, EventArgs e)
+        {
+            try
+            {
+                GlobalData g = new GlobalData();
+                g.CurrentUser = new UserObject();
+                g.CurrentUser.Username = "pandassuck";
+                g.CurrentUser.UserID = 1;
+                g.CurrentUser.ApartmentID = 1;
+
+
+                UserObject u = await (ServerHandeler.getUserInfo(g.CurrentUser.UserID));
+
+                string outputString = "";
+
+                outputString += u.Username;
+                Output.Text = outputString;
+            }
+            catch (Exception except)
+            {
+                Output.Text = except.Message;
+            }
+        }
     }
 }

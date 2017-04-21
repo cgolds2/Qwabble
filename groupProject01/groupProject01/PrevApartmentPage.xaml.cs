@@ -5,22 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace groupProject01
 {
-	public partial class LoginPage : ContentPage
+	public partial class PrevApartmentPage : ContentPage
 	{
         GlobalData _gd;
-
-		public LoginPage (GlobalData gd)
+		public PrevApartmentPage (GlobalData gd)
 		{
-			InitializeComponent ();
             _gd = gd;
+			InitializeComponent ();
 		}
 
         async void OnSubmit(object sender, EventArgs e)
         {
-            //TODO something to check username and password
+            //check for apartment
             await Navigation.PushAsync(new groupProject01.MainPage(_gd));
             //await Navigation.PushAsync(new groupProject01.HomePage(_gd));
 
