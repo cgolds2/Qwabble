@@ -56,7 +56,7 @@ namespace groupProject01.Other
             }
         }
 
-        public string Email
+        public string email
         {
             get
             {

@@ -56,7 +56,7 @@ namespace groupProject01
         private int _messageID = 0;
         private string _name = "";
 
-        public string MessageText
+        public string MSGText
         {
             get
             {
