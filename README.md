@@ -1,9 +1,9 @@
 # groupProject01:Qwabble
 Created by:<br>
-Connor Goldsmith<br>
-Sarah Sicard<br>
-Ryan Smith<br>
-Caroline Jarecke<br>
+[Connor Goldsmith](https://github.com/cgolds2)<br>
+[Sarah Sicard](https://github.com/ssicard)<br>
+[Ryan Smith](https://github.com/dalaylan)<br>
+[Caroline Jarecke](https://github.com/cjarec1)<br>
 
 This project is designed to be a multi-platform mobile app that works as a tool to organize activites and duties in apartments. 
 We will be using Xamarin in order to devleop this app.
