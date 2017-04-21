@@ -25,4 +25,7 @@ If using the VS simulator, use the groupProject01.Droid Project<br>
 If using iPhone/Mac, see [here](https://developer.xamarin.com/guides/ios/getting_started/installation/mac/)
 
 # Building the Database
-//TODO
+The database is located [in another repository that can be found here](https://github.com/dalaylan/3380-group-project-server-code)<br>
+1. Follow the instructions in the README.txt to build the database
+2. Go to the file [groupProject01/Settings/ServerHandeler.cs](https://github.com/cgolds2/groupProject01/blob/master/groupProject01/groupProject01/Settings/ServerHandeler.cs)
+3. Change the "baseuri" string to point to your server on your local network
