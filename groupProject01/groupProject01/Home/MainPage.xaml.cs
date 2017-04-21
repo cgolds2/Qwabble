@@ -48,7 +48,7 @@ namespace groupProject01
         }
         void OnSave(object sender, EventArgs e)
         {
-            service.setPrefs("test", textField.Text);
+            //service.setPrefs("test", textField.Text);
             
         }
         async void OnSetting(object sender, EventArgs e)
