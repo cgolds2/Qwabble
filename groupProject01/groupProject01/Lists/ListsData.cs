@@ -8,8 +8,7 @@ namespace groupProject01
     public class ListsData
     {
         public ObservableCollection<ListOfListsObject> lists { get; set; } //declares lists ObservableCollection that will notify when lists are added, removed, and refreshed
-        public ObservableCollection<ListItemObject> items { get; set; } //declares listitem ObservableCollection that will notify when items are added, removed, and refreshed
-
+        public List<ListItemObject> items { get; set; } //declares listitem ObservableCollection that will notify when items are added, removed, and refreshed
 
         public ListsData()
         {
@@ -29,9 +28,12 @@ namespace groupProject01
             lists.Add(new ListOfListsObject { Name = "Other" , ListOfListID = lists.Count });                             //adds the other list to the page
         }
 
-        public void getItemsInList(int ListID)                       //gets all items for a specific list
+        async public void getItemsInList(GlobalData gd, int ListOfListID)                       //gets all items for a specific list
         {
-            items = new ObservableCollection<ListItemObject>();         //instantiates listitem ObservableCollection that will notify when items are added, removed, and refreshed
+            //CONNOR QUESTION
+            items = await (ServerHandeler.getList(gd, ListOfListID));
+
+            /*items = new ObservableCollection<ListItemObject>();         //instantiates listitem ObservableCollection that will notify when items are added, removed, and refreshed
 
             //HARD-CODED, WILL CHANGE WITH STUFF FROM SERVER
             items.Add(new ListItemObject { listName = "Bananas", On = true, ListID = items.Count });            //adds the bananas item to the page
@@ -41,18 +43,15 @@ namespace groupProject01
             if (ListID == 1)              //tests if list specific items work
             {
                 items.Add(new ListItemObject { listName = "Custom", On = false, ListID = lists.Count });        //adds specific item for last list
-            }
-        }
-
-        public void editItem()
-        {
-            throw new NotImplementedException();
+            }*/
         }
 
         public int addItem()
         {
             throw new NotImplementedException();
         }
+
+        
 
         public int deleteItem()
         {

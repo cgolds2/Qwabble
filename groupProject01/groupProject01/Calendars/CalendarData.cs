@@ -15,7 +15,7 @@ namespace groupProject01
 
         DateTime todayWithTime;
         public ObservableCollection<CalendarOptionObject> options { get; set; } //declares options ObservableCollection that will notify when options are added, removed, and refreshed
-        public ObservableCollection<EventObject> events { get; set; }   //declares calItems ObservableCollection that will notify when calendar items are added, removed, and refreshed
+        public List<EventObject> events { get; set; }   //declares calItems ObservableCollection that will notify when calendar items are added, removed, and refreshed
 
         public CalendarData()                                                 //constructor for the Calendar Data page
         {
@@ -33,9 +33,11 @@ namespace groupProject01
         }
 
         //make different objects for each type, be able to access all
-        public void getEventsInCalendar(int CalendarID)                     //gets all events for a specific calendar
+        async public void getEventsInCalendar(GlobalData gd, int CalendarID)                     //gets all events for a specific calendar
         {
-            events = new ObservableCollection<EventObject>();        //instantiates events ObservableCollection that will notify when events are added, removed, and refreshed
+            events = await (ServerHandeler.getCalendar(gd));
+
+            /*events = new ObservableCollection<EventObject>();        //instantiates events ObservableCollection that will notify when events are added, removed, and refreshed
 
             //HARD-CODED, WILL CHANGE
             events.Add(new EventObject { eventName = "AppearOnAll", eventID = events.Count, senderID = 1, startDate= todayWithTime, endDate= todayWithTime, AdditionalInfo = "HELLO I AM ADDITIONAL INFO WHO ARE YOU" });     //adds the first event to the page
@@ -49,7 +51,7 @@ namespace groupProject01
                 events.Add(new EventObject { eventName = "Schedule Chore", eventID = events.Count, senderID = 1, startDate = todayWithTime, endDate = todayWithTime, AdditionalInfo = "" });             //adds the Schedule Chore to the New Event page
                 events.Add(new EventObject { eventName = "Reserve Laundry Machines", eventID = events.Count, senderID = 0, startDate = todayWithTime, endDate = todayWithTime, AdditionalInfo = "" });   //adds the Reserve Laundry Machines to the New Event page
                 events.Add(new EventObject { eventName = "Reserve Quiet Time", eventID = events.Count, senderID = 1, startDate = todayWithTime, endDate = todayWithTime, AdditionalInfo = "" });         //adds the Reserve Quiet Time to the New Event page
-            }
+            }*/
         }
     }
     public class EventObject

@@ -12,7 +12,7 @@ namespace groupProject01
 	public class MessagingData
 	{
         public ObservableCollection<MessageObject> messages { get; set; } //creates an instance of messages
-        public ObservableCollection<MessageObject> msgItems { get; set; } //creates an instance of msgItems
+        public List<MessageObject> msgItems { get; set; } //creates an instance of msgItems
 
 		public MessagingData ()
 		{
@@ -34,15 +34,17 @@ namespace groupProject01
         /// Fills the Message with the necessary data.
         /// </summary>
         /// <param name="MessageID"></param>
-        public void getItemsInMessage(int MessageID)
+        async public void getItemsInMessage(GlobalData gd, int MessageID)
         {
-            msgItems = new ObservableCollection<MessageObject>();
+            msgItems = await (ServerHandeler.getMessages(gd));
+
+            /*msgItems = new ObservableCollection<MessageObject>();
             msgItems.Add(new MessageObject { MessageName = "Message1", MessageID = msgItems.Count });
             msgItems.Add(new MessageObject { MessageName = "Message2", MessageID = msgItems.Count });
             if (MessageID == 1)
             {
                 msgItems.Add(new MessageObject { MessageName = "Custom", MessageID = msgItems.Count });
-            }
+            }*/
         }
     }
     public class MessageObject {
