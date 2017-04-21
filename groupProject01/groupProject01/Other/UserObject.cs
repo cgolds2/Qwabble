@@ -15,6 +15,7 @@ namespace groupProject01.Other
         private string _username = "";
         private int _userID = 0;
         private int _apartmentID = 1;
+        private string _email = "";
 
         public string Username
         {
@@ -52,6 +53,19 @@ namespace groupProject01.Other
             set
             {
                 _apartmentID = value;
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                return _email;
+            }
+
+            set
+            {
+                _email = value;
             }
         }
 
