@@ -14,6 +14,7 @@ namespace groupProject01
 
         public InitialPage (GlobalData gd)
 		{
+            _gd = gd;
 			InitializeComponent ();
 		}
 
