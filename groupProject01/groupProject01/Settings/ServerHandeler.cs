@@ -25,17 +25,7 @@ namespace groupProject01
         }
 
 
-        /*
-         * requestToJoinApartment(userID, ApartmentID)
-         * createPersonalMessage(senderID, ReceiverID, MSGText) //adds message for DMing someone
-         */
 
-        /*
-         * getAllUsers(apartmentID)
-         * addUserToApartment(userID) //returns apartment # of the user, could be post
-         * createApartment(userID (creator/owner), name, location) //return apartment ID
-         * getApartments(location)
-         */
 
         //LIST
         //createList(username, userID, apartmentID, listName, listType, listText, )
@@ -156,5 +146,68 @@ namespace groupProject01
             return ret;
         }
 
-    }
+		//addUserToApartment(userID,apartmentID
+		async public static Task<int> addUserToApartment(int userID, int apartmentID)
+		{
+			string get = baseuri + "addUserToApartment.php?userID=" + userID + "&apartmentID="+ apartmentID;
+			string text = await (RestService.GetCall(get));
+            int test = -1;
+            try
+            {
+                test =  Int32.Parse(text)
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return test;
+		}
+
+		async public static Task<List<ApartmentObject>> getApartments(int userID, int apartmentID)
+		{
+			string get = baseuri + "addUserToApartment.php?userID=" + userID + "&apartmentID=" + apartmentID;
+			string text = await (RestService.GetCall(get));
+			List<ApartmentObject> ret = new List<ApartmentObject>();
+			string[] result = Regex.Split(text, "\r\n|\r|\n");
+			foreach (string s in result)
+			{
+				ApartmentObject deserializedProduct = JsonConvert.DeserializeObject<ApartmentObject>(s);
+				ret.Add(deserializedProduct);
+			}
+            return ret;
+		}
+
+		async public static Task<List<UserObject>> getAllUsers(int apartmentID)
+		{
+			string get = baseuri + "getAllUsers.php?&apartmentID=" + apartmentID;
+			string text = await (RestService.GetCall(get));
+			List<UserObject> ret = new List<UserObject>();
+			string[] result = Regex.Split(text, "\r\n|\r|\n");
+			foreach (string s in result)
+			{
+				UserObject deserializedProduct = JsonConvert.DeserializeObject<UserObject>(s);
+				ret.Add(deserializedProduct);
+			}
+			return ret;
+		}
+
+		public async static Task<string> createApartment(ApartmentObject apmt, GlobalData gd)
+		{
+			//createList(username, userID, apartmentID, listName, listType, listText)
+			string jsonString = JsonConvert.SerializeObject(apmt);
+			JObject ob = JObject.Parse(jsonString);
+            ob["userID"] = gd.CurrentUser.UserID;
+            ob["name"] = gd.CurrentUser.Username;
+			string result = await (RestService.PostCall(ob.ToString(), baseuri + "createApartment.php"));
+			return result;
+
+
+
+			/*
+			*/
+
+			/*
+			 * createApartment(userID (creator/owner), name, location) //return apartment ID
+			 */
+		}
 }
