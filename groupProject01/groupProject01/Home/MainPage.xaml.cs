@@ -19,6 +19,8 @@ namespace groupProject01
 
 		public MainPage(GlobalData gd)
 		{
+            NavigationPage.SetHasNavigationBar(this, false);
+
             _gd = gd;
 			InitializeComponent();
 
@@ -54,7 +56,6 @@ namespace groupProject01
         async void OnSetting(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new groupProject01.SettingsPage());
-
         }
         async void OnList(object sender, EventArgs e)
         {
@@ -69,8 +70,7 @@ namespace groupProject01
         async void OnMessaging(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new groupProject01.MessagingPage(_gd));
-
+          await Navigation.PushAsync(new groupProject01.MessagingPage(_gd));
         }
         async void OnHome(object sender, EventArgs e)
         {

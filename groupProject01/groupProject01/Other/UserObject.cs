@@ -14,7 +14,7 @@ namespace groupProject01.Other
 
         private string _username = "";
         private int _userID = 0;
-        private int _apartmentID = 1;
+        private int _apartmentID = 0;
         private string _email = "";
 
         public string Username

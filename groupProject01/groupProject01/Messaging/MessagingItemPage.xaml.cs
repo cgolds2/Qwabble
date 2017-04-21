@@ -18,7 +18,7 @@ namespace groupProject01.Messaging
 
 		public MessagingItemPage (int ListID, GlobalData gd)
 		{
-			InitializeComponent ();
+			            NavigationPage.SetHasNavigationBar(this, false); InitializeComponent();
             _gd = gd;
             _gd.MessagingDataInstance.getItemsInMessage(ListID);
             msgItems = _gd.MessagingDataInstance.msgItems;

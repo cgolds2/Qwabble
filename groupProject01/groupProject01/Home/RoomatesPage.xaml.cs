@@ -12,7 +12,7 @@ namespace groupProject01.Home
 	{
 		public RoomatesPage ()
 		{
-			InitializeComponent ();
+			            NavigationPage.SetHasNavigationBar(this, false); InitializeComponent();
 		}
 	}
 }
