@@ -18,7 +18,6 @@
       <DependentUpon>EventPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)LoginData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Lists\ListItemDetail.xaml.cs">
       <DependentUpon>ListItemDetail.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -80,10 +79,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingsPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -158,7 +153,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)LoginPage.xaml">
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Settings\ServerTester.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

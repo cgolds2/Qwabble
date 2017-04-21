@@ -49,9 +49,9 @@ namespace groupProject01
 		{
 		}
 
-        public void OnMessaging(object sender, EventArgs e)
+        public void OnMessaging(object sender, EventArgs e) { 
 
-            msgView.ItemsSource = messages;                  //sets the messaging UI
+
 		}
 
         async void OnTap(object sender, ItemTappedEventArgs e)      //a listener that fires when a message is tapped
@@ -67,4 +67,5 @@ namespace groupProject01
 
         #endregion
     }
+
 }

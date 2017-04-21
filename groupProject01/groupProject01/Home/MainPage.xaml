@@ -2,36 +2,65 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:groupProject01"
-             x:Class="groupProject01.MainPage"
-             Title="Qwabble">
-    
-  <ContentPage.Content>
+             x:Class="groupProject01.MainPage">
+
 
     <ScrollView>
+    <StackLayout BackgroundColor="#dddddd" >
+      <StackLayout VerticalOptions="Start">
+        <AbsoluteLayout Padding = "0,0,0,-70">
+          <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375"
+          AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
 
-    <StackLayout VerticalOptions="StartAndExpand">
-	    <Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
-        
-        <Entry x:Name="textField" Text="1-855-XAMARIN" />
-        
-        
-        
-        <Button x:Name="Save" Text="Save" Clicked="OnSave" />
-        <Button x:Name="Retrieve" Text="Retrieve" Clicked="OnRetrieve" />
-        <Button x:Name="Lists" Text="Lists" Clicked="OnList" />
-        <Button x:Name="Settings" Text="Settings" Clicked="OnSetting" />
-        <Button x:Name="Calendar" Text="Calendar" Clicked="OnCalendar" />
-        <Button x:Name="Messaging" Text="Messaging" Clicked="OnMessaging" />
+          <Label Text="Page name" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24"
+            LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".55,.7,150,100"
+            AbsoluteLayout.LayoutFlags="PositionProportional" />
+        </AbsoluteLayout>
 
-       <!-- <Button x:Name="Home" Text="Home" Clicked="OnHome" />-->
-        <Button x:Name="Login" Text="Login" Clicked="OnLogin" />
+        <!-- START PAGE CODE ****************************************************** -->
+        <StackLayout VerticalOptions="StartAndExpand">
+
+          <Entry x:Name="textField" Text="1-855-XAMARIN" />
+
+
+
+          <Button x:Name="Save" Text="Save" Clicked="OnSave" />
+          <Button x:Name="Retrieve" Text="Retrieve" Clicked="OnRetrieve" />
+
+          <!-- <Button x:Name="Home" Text="Home" Clicked="OnHome" />-->
+          <Button x:Name="Login" Text="Login" Clicked="OnLogin" />
+          <Button x:Name="Home" Text="Home" Clicked="OnHome" />
+          <Button x:Name="Server" Text="TestServer" Clicked="OnServer" />
         </StackLayout>
 
-        <Button x:Name="Home" Text="Home" Clicked="OnHome" />
-        <Button x:Name="Login" Text="Login" Clicked="OnLogin" />
-                <Button x:Name="Server" Text="TestServer" Clicked="OnServer" />
-            </StackLayout>
-    </ScrollView>
+      </StackLayout>
+    </StackLayout>
 
-  </ContentPage.Content>
+  </ScrollView>
+  <!-- END PAGE CODE ****************************************************** -->
+
+  <StackLayout VerticalOptions="End">
+      <AbsoluteLayout>
+        <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,1"
+          AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+
+
+        <Button Image="homebtn.png"  BackgroundColor="#60cc60" BorderRadius="30"
+          BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70"
+          AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome" />
+        <Button Image="notebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+          BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.3,68,68"
+          AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList"/>
+        <Button Image="calbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+				BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.3,68,68"
+				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnCalendar"/>
+        <Button Image="msgbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+          BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.3,68,68"
+          AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnMessaging"/>
+        <Button Image="setbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+          BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.996,68,68"
+          AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting"/>
+      </AbsoluteLayout>
+    </StackLayout>
+
 </ContentPage>

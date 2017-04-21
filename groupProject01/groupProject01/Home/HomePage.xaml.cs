@@ -34,7 +34,7 @@ namespace groupProject01
         public void OnSetting(object sender, EventArgs e)
         {
             throw new NotImplementedException();
-
+        }
         private GlobalData _gd;                                             //instantiates global variable GlobalData to store the global data
 
         public HomePage (GlobalData gd)
