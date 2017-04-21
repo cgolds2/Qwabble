@@ -2,13 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="groupProject01.SettingsPage"
-             xmlns:local="clr-namespace:groupProject01"
-             Title="Settings">
+             xmlns:local="clr-namespace:groupProject01">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout VerticalOptions="StartAndExpand">
                 <Button x:Name="Logout" Text="Logout" Clicked="OnLogout" />
-                <Button x:Name="CurApartment" Text="Current Apartment" Clicked="OnCurApartment" />
+                <Button x:Name="CurApartment" Text="Current Apartment ID" Clicked="OnCurApartment" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
