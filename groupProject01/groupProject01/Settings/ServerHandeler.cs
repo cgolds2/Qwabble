@@ -42,7 +42,7 @@ namespace groupProject01
 
         }
         //getNotes(apartmentID)
-        async public static Task<List<ListItemObject>> getList(GlobalData gd)
+        async public static Task<List<ListItemObject>> getList(GlobalData gd, int listid)
         {
             Other.UserObject u = gd.CurrentUser;
             int ApartmentID = u.ApartmentID;
@@ -74,6 +74,7 @@ namespace groupProject01
             return result;
 
         }
+
         //getEvents(apartmentID)
         async public static Task<List<EventObject>> getCalendar(GlobalData gd)
         {

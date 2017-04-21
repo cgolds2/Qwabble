@@ -12,14 +12,14 @@ namespace groupProject01
 
     public partial class ListItemPage : ContentPage
 	{
-        public ObservableCollection<ListItemObject> items { get; set; }
+        public List<ListItemObject> items { get; set; }
         private GlobalData _gd;
 
         public ListItemPage (int ListID, GlobalData gd)
 		{
                         NavigationPage.SetHasNavigationBar(this, false); InitializeComponent();
             _gd = gd;
-            _gd.ListsDataInstance.getItemsInList(ListID);
+            _gd.ListsDataInstance.getItemsInList(_gd, ListID);
             items = _gd.ListsDataInstance.items;
             lstView.ItemsSource = items;
         }

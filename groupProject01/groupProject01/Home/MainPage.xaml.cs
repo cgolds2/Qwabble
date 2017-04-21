@@ -29,7 +29,7 @@ namespace groupProject01
 
         async void OnRetrieve(object sender, EventArgs e)
         {
-            List<ListItemObject> lis = await (ServerHandeler.getList(_gd));
+            //List<ListItemObject> lis = await (ServerHandeler.getList(_gd));
             //try
             //{
             //    ListItemObject l = new ListItemObject();

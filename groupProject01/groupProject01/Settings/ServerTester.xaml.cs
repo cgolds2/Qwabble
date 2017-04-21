@@ -53,7 +53,7 @@ namespace groupProject01.Settings
                 g.CurrentUser.ApartmentID = 1;
              
 
-                List<ListItemObject> l = await(ServerHandeler.getList(g));
+                List<ListItemObject> l = await(ServerHandeler.getList(g,1));
                 string outputString = "";
                 foreach (ListItemObject li in l)
                 {
