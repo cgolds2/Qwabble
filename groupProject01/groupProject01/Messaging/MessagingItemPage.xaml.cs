@@ -11,7 +11,7 @@ namespace groupProject01.Messaging
 {
 	public partial class MessagingItemPage : ContentPage
 	{
-        public List<MessageObject> msgItems { get; set; }
+        public List<MessageObject> messages { get; set; }
         private GlobalData _gd;
 
 		public MessagingItemPage (int ListID, GlobalData gd)
@@ -19,8 +19,8 @@ namespace groupProject01.Messaging
 			InitializeComponent ();
             _gd = gd;
             _gd.MessagingDataInstance.getItemsInMessage(_gd, ListID);
-            msgItems = _gd.MessagingDataInstance.msgItems;
-            msgView.ItemsSource = msgItems;
+            messages = _gd.MessagingDataInstance.messages;
+            msgView.ItemsSource = messages;
 		}
         
 	}
