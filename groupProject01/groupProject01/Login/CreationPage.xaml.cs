@@ -33,12 +33,12 @@ namespace groupProject01
             await Navigation.PushAsync(new groupProject01.PrevApartmentPage(_gd));
         }
 
-        public void createUser()
+        async public void createUser()
         {
             _gd.CurrentUser = new UserObject();
             _gd.CurrentUser.Username = usernameTextField.Text;
-            _gd.CurrentUser.Email = emailTextField.Text;
-            ServerHandeler.createUser(_gd.CurrentUser, passwordTextField.Text);
+            _gd.CurrentUser.email = emailTextField.Text;
+            await(ServerHandeler.createUser(_gd.CurrentUser, passwordTextField.Text));
         }
     }
 }

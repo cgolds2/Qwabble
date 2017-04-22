@@ -48,11 +48,7 @@ namespace groupProject01
            
 
         }
-        void OnSave(object sender, EventArgs e)
-        {
-            service.setPrefs("test", textField.Text);
-            
-        }
+        
         async void OnSetting(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new groupProject01.SettingsPage());
