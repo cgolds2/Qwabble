@@ -25,7 +25,7 @@ namespace groupProject01
 
 
         //ontap for events? shouldn't we just allow edit?
-        async void OnTap(object sender, ItemTappedEventArgs e)
+        void OnTap(object sender, ItemTappedEventArgs e)
         {
             int index = ((CalendarOptionObject)e.Item).ID;
             //show details in fill-outable form
