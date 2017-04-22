@@ -32,14 +32,16 @@ namespace groupProject01
         /// <summary>
         /// Fills the Message with the necessary data.
         /// </summary>
-        /// <param name="apartmentID"></param>
-        async public void getItemsInMessage(GlobalData gd, int apartmentID)
+        /// <param name="MessageID"></param>
+        async public void getItemsInMessage(GlobalData gd, int MessageID)
         {
+
             messages = await (ServerHandeler.getMessages(gd));
 
+            /*
             messages = new List<MessageObject>();
-            messages.Add(new MessageObject { MessageName = "Message1", apartmentID = messages.Count });
-            messages.Add(new MessageObject { MessageName = "Message2", apartmentID = messages.Count });
+            messages.Add(new MessageObject { MessageName = "Message1", MessageID = messages.Count });
+            messages.Add(new MessageObject { MessageName = "Message2", MessageID = messages.Count });*/
         }
     }
     public class GroupObject
@@ -53,10 +55,10 @@ namespace groupProject01
         private string _text = "";
         private int _senderID = 0;
         private int _recieverID = 0;
-        private int _apartmentID = 0;
+        private int _messageID = 0;
         private string _name = "";
 
-        public string MSGText
+        public string MessageText
         {
             get
             {
@@ -95,16 +97,16 @@ namespace groupProject01
             }
         }
 
-        public int apartmentID
+        public int MessageID
         {
             get
             {
-                return _apartmentID;
+                return _messageID;
             }
 
             set
             {
-                _apartmentID = value;
+                _messageID = value;
             }
         }
 
