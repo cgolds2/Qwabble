@@ -18,7 +18,12 @@
       <StackLayout VerticalOptions="CenterAndExpand">
         <!-- START PAGE CODE ****************************************************** -->
 
-        <!-- settings n stuff -->
+        <ScrollView>
+          <StackLayout VerticalOptions="StartAndExpand">
+            <Button x:Name="Logout" Text="Logout" Clicked="OnLogout" />
+            <Button x:Name="CurApartment" Text="Current Apartment ID" Clicked="OnCurApartment" />
+          </StackLayout>
+        </ScrollView>
 
         <!-- END PAGE CODE ****************************************************** -->
       </StackLayout>
