@@ -6,4 +6,5 @@
              Title="Home">
     
 	<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+
 </ContentPage>
