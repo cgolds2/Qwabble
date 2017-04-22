@@ -33,7 +33,7 @@ namespace groupProject01
             }
             else                                                                    //if apartmentid is null
             {
-                DisplayAlert("Invalid Apartment ID", "The apartment ID you input is not valid. Please try again.", "OK");   //shows error message
+                await DisplayAlert("Invalid Apartment ID", "The apartment ID you input is not valid. Please try again.", "OK");   //shows error message
             }
         }
 
