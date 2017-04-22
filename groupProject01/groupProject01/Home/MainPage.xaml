@@ -24,12 +24,12 @@
           <Button x:Name="Login" Text="Login" Clicked="OnLogin" />
           <Button x:Name="Server" Text="TestServer" Clicked="OnServer" />-->
 				
-		 <ListView  x:Name="lstView" RowHeight="60" >
+		 <ListView  x:Name="lstView" RowHeight="60" BackgroundColor="#dddddd" >
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout  BackgroundColor="#dddddd" >
-                <Label Text = "{Binding Name}" Margin="20,15,0,0" FontSize="20" HorizontalOptions="Start"/>
+            <StackLayout  BackgroundColor="Black" >
+                <Label Text = "{Binding Notif}" Margin="20,15,0,0" FontSize="20" HorizontalOptions="Start" />
 
             </StackLayout>
           </ViewCell>
