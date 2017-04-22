@@ -11,30 +11,26 @@ namespace groupProject01
 	public partial class HomePage : ContentPage
 	{
 
-		#region BottomBarStuff
+        #region BottomBarButtons
 
-	
+        async public void OnCalendar(object sender, EventArgs e)                          //if home button is pressed
+        {
+            await Navigation.PushAsync(new groupProject01.CalendarPage(_gd));             //direct to home page
+        }
+        async public void OnMessaging(object sender, EventArgs e)                      //if messaging button is pressed
+        {
+            await Navigation.PushAsync(new groupProject01.MessagingPage(_gd));         //direct to messaging page
+        }
+        async public void OnList(object sender, EventArgs e)                          //if lists button is pressed
+        {
+            await Navigation.PushAsync(new groupProject01.ListsPage(_gd));            //if lists button is pressed
+        }
+        async public void OnSetting(object sender, EventArgs e)                       //if setting button is pressed
+        {
+            await Navigation.PushAsync(new groupProject01.SettingsPage(_gd));            //if setting button is pressed
+        }
 
-        public void OnHome(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        public void OnList(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        public void OnCalendar(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        public void OnMessaging(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        public void OnSetting(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
         private GlobalData _gd;                                             //instantiates global variable GlobalData to store the global data
 
         public HomePage (GlobalData gd)
@@ -43,7 +39,6 @@ namespace groupProject01
             _gd = gd;                                                   //sets private instance of global data
         }
 
-        #endregion
         public void onRoomateClicked(object sender, EventArgs e)
         {
             throw new NotImplementedException();
