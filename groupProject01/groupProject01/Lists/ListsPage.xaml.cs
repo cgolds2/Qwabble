@@ -32,7 +32,7 @@ namespace groupProject01
         }
         async public void OnSetting(object sender, EventArgs e)                       //if setting button is pressed
         {
-            await Navigation.PushAsync(new groupProject01.SettingsPage());   //if setting button is pressed
+            await Navigation.PushAsync(new groupProject01.SettingsPage(_gd));   //if setting button is pressed
         }
 
         #endregion
