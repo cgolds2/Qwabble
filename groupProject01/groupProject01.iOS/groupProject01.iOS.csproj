@@ -10,7 +10,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>groupProject01.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>groupProject01.iOS</AssemblyName>
+    <AssemblyName>Quabble</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
