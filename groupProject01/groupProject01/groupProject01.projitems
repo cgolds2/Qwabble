@@ -91,6 +91,7 @@
       <SubType>Code</SubType>
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Other\ApartmentObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Calendars\CalendarPage.xaml">
