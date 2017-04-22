@@ -4,73 +4,86 @@
              xmlns:local="clr-namespace:groupProject01"
              x:Class="groupProject01.MainPage">
 
-<ContentPage.Content>
-	  <StackLayout>
-		<StackLayout VerticalOptions="Start">
-				<AbsoluteLayout Padding = "0,0,0,-106" >
-				<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375" 
-				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
-			<Label Text="Home" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24" 
-				LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100" 
-				AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold"/>
-					</AbsoluteLayout>
-			</StackLayout>
-			<StackLayout VerticalOptions="CenterAndExpand">
-				<!-- START PAGE CODE ****************************************************** -->
+  <ContentPage.Content>
+    <StackLayout>
+      <StackLayout VerticalOptions="Start">
+        <AbsoluteLayout Padding = "0,0,0,-106" >
+          <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375"
+          AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+          <Label Text="Home" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24"
+            LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100"
+            AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold"/>
+        </AbsoluteLayout>
+      </StackLayout>
+      <StackLayout VerticalOptions="CenterAndExpand">
+        <!-- START PAGE CODE ****************************************************** -->
 
-         <!-- <Entry x:Name="textField" Text="1-855-XAMARIN" />
+        <!-- <Entry x:Name="textField" Text="1-855-XAMARIN" />
           <Button x:Name="Save" Text="Save" Clicked="OnSave" />
           <Button x:Name="Retrieve" Text="Retrieve" Clicked="OnRetrieve" />
           <Button x:Name="Login" Text="Login" Clicked="OnLogin" />
           <Button x:Name="Server" Text="TestServer" Clicked="OnServer" />-->
 
-		 <ListView  x:Name="lstView" RowHeight="60" >
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <StackLayout  BackgroundColor="#dddddd" >
-                <Label Text = "{Binding Name}" Margin="20,15,0,0" FontSize="20" HorizontalOptions="Start"/>
+        <ListView  x:Name="lstView" RowHeight="60" >
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <StackLayout  BackgroundColor="#dddddd" >
+                  <Label Text = "{Binding Name}" Margin="20,15,0,0" FontSize="20" HorizontalOptions="Start"/>
 
-            </StackLayout>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
 
 
-				<!-- END PAGE CODE ****************************************************** -->
-			</StackLayout>
+        <!-- END PAGE CODE ****************************************************** -->
+      </StackLayout>
 
-			<StackLayout VerticalOptions="End">
-				<AbsoluteLayout>
-			<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,1" 
-				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
-          <StackLayout HorizontalOptions = "LayoutOptions.FillAndExpand">
-          <Image Source="homebtn.png" VerticalOptions="End" HeightRequest ="1">
-            <Image.GestureRecognizers>
-              <TapGestureRecognizer
-                      Tapped="OnHome"
-                       />
-            </Image.GestureRecognizers>
-          </Image>
+      <StackLayout VerticalOptions="End">
+        <AbsoluteLayout>
+          <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,1"
+            AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
           
-			<!--<Button Image="homebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderRadius="30" 
+       <!-- *** iOS *** -->
+          
+       <Button OnPlatform="iOS" Image="homebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderRadius="30" 
 				BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70" 
 				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome" />
-			<Button Image="notebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
+          <Button OnPlatform="iOS" Image="notebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
 				BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.3,68,68" 
 				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList"/>
-   		 	<Button Image="calbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
+          <Button OnPlatform="iOS" Image="calbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
 				BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.3,68,68" 
 				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnCalendar"/>
-			<Button Image="msgbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
+          <Button OnPlatform="iOS" Image="msgbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
 				BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.3,68,68" 
 				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnMessaging"/>
-			<Button Image="setbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
+          <Button OnPlatform="iOS" Image="setbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2" 
 				BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.996,68,68" 
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting"/>-->
-			</AbsoluteLayout>
-		</StackLayout>
-	</StackLayout>
+				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting"/>
+
+          <!-- *** Android *** -->
+
+          <Button OnPlatform="Android" Text="Home" FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderRadius="30"
+				BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70"
+				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome" />
+          <Button OnPlatform="Android" Text="Notes" FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderWidth="2"
+				BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.3,68,68"
+				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList"/>
+          <Button OnPlatform="Android" Text="Calendar" FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderWidth="2"
+				BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.3,68,68"
+				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnCalendar"/>
+          <Button OnPlatform="Android" Text="Messaging" FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderWidth="2"
+				BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.3,68,68"
+				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnMessaging"/>
+          <Button OnPlatform="Android" Text="Settings" FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderWidth="2"
+				BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.996,68,68"
+				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting"/>
+          
+          </AbsoluteLayout>
+      </StackLayout>
+    </StackLayout>
   </ContentPage.Content>
 </ContentPage>
