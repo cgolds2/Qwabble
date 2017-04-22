@@ -30,10 +30,10 @@ namespace groupProject01.Settings
 
 
                 ListItemObject l = new ListItemObject();
-                l.listName = "MyTestNote";
-                l.listName = "List Name";
-                l.listText = "THIS IS THE TEXT OF OUR LIST, NOT NOTE";
-                //l.listName = g.CurrentUser.ListName;
+                l.noteName = "MyTestNote";
+                l.noteName = "List Name";
+                l.data = "THIS IS THE TEXT OF OUR LIST, NOT NOTE";
+                //l.noteName = g.CurrentUser.noteName;
                 l.ListID = 1;
                 l.listType = 1;
                 string test = await (ServerHandeler.sendList(l, g));
@@ -57,7 +57,7 @@ namespace groupProject01.Settings
                 string outputString = "";
                 foreach (ListItemObject li in l)
                 {
-                    outputString += li.listText;
+                    outputString += li.data;
                 }
             
                 Output.Text = outputString;
@@ -128,14 +128,14 @@ namespace groupProject01.Settings
                 GlobalData g = new GlobalData();
                 g.CurrentUser = new UserObject();
                 g.CurrentUser.Username = "MyTestName";
-                g.CurrentUser.UserID = 1;
-                g.CurrentUser.ApartmentID = 1;
+                g.CurrentUser.UserID = 2;
+                g.CurrentUser.ApartmentID = 3;
 
                 MessageObject m = new MessageObject();
                 m.MessageName = "MessageName";
                 m.SenderID = 1;
                 m.RecieverID = 2;
-                m.MessageID = 3;
+                m.apartmentID = 3;
                 m.MSGText = "THIS IS THE TEXT OF OUR MESSAGE";
 
                 string text = await(ServerHandeler.sendMessage(m, g));
@@ -153,7 +153,7 @@ namespace groupProject01.Settings
             {
                 GlobalData g = new GlobalData();
                 g.CurrentUser = new UserObject();
-                g.CurrentUser.ApartmentID = 1;
+                g.CurrentUser.ApartmentID = 3;
 
 
                 List<MessageObject> msg = await (ServerHandeler.getMessages(g));
@@ -292,8 +292,8 @@ namespace groupProject01.Settings
             {
                 GlobalData g = new GlobalData();
                 g.CurrentApartment = new ApartmentObject();
-                g.CurrentApartment.id = 1;
                 g.CurrentApartment.address = "142 SmileyFace Lane";
+                g.CurrentApartment.APTName = "AHHHHHHHHHHHHGHFHAWREHYGHUYAGHUYEWRHJG";
                 g.CurrentApartment.owner = 1;
 
 
