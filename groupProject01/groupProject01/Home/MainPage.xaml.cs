@@ -19,6 +19,8 @@ namespace groupProject01
 
 		public MainPage(GlobalData gd)
 		{
+            NavigationPage.SetHasNavigationBar(this, false);
+
             _gd = gd;
 			InitializeComponent();
 
@@ -27,7 +29,7 @@ namespace groupProject01
 
         async void OnRetrieve(object sender, EventArgs e)
         {
-            List<ListItemObject> lis = await (ServerHandeler.getList(_gd));
+            //List<ListItemObject> lis = await (ServerHandeler.getList(_gd));
             //try
             //{
             //    ListItemObject l = new ListItemObject();
@@ -46,15 +48,10 @@ namespace groupProject01
            
 
         }
-        void OnSave(object sender, EventArgs e)
-        {
-            //service.setPrefs("test", textField.Text);
-            
-        }
+        
         async void OnSetting(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new groupProject01.SettingsPage());
-
         }
         async void OnList(object sender, EventArgs e)
         {
@@ -69,8 +66,7 @@ namespace groupProject01
         async void OnMessaging(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new groupProject01.MessagingPage(_gd));
-
+          await Navigation.PushAsync(new groupProject01.MessagingPage(_gd));
         }
         async void OnHome(object sender, EventArgs e)
         {
@@ -88,6 +84,12 @@ namespace groupProject01
         {
 
             await Navigation.PushAsync(new groupProject01.Settings.ServerTester());
+
+        }
+        async void OnInitial(object sender, EventArgs e)
+        {
+
+            await Navigation.PushAsync(new groupProject01.InitialPage(_gd));
 
         }
     }

@@ -12,9 +12,9 @@ namespace groupProject01.Lists
 	{
 		public ListItemDetail (ListItemObject currentItem, GlobalData gd)
 		{
-			InitializeComponent ();
+			            NavigationPage.SetHasNavigationBar(this, false); InitializeComponent();
 
-            lblLabel.Text = currentItem.listName;
+            lblLabel.Text = currentItem.noteName;
 
         }
 	}

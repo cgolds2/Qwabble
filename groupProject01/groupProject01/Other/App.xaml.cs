@@ -19,11 +19,11 @@ namespace groupProject01
             // Other.CustomFormBase cb = new Other.CustomFormBase();
             //MainPage = new groupProject01.ListsPage();
             MainPage = new NavigationPage(new groupProject01.MainPage(gd));
-           
-            //MainPage = new groupProject01.MainPage(gd);
-		}
 
-		protected override void OnStart ()
+            //MainPage = new groupProject01.MainPage(gd);
+        }
+
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}

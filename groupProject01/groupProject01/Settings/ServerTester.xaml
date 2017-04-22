@@ -9,12 +9,19 @@
 
             <Button x:Name="SendList" Text="Send List" Clicked="onSendList" />
             <Button x:Name="GetList" Text="Get List" Clicked="onGetList" />
-      <Button x:Name="GetEvent" Text="Get Event" Clicked="onGetEvent" />
             <Button x:Name="SendEvent" Text="Send Event" Clicked="onSendEvent" />
-            <!--<Button x:Name="GetCal" Text="Get Cal" Clicked="onGetCal" />-->
+            <!-- getEvent is getCal in Server Handlers -->
+            <Button x:Name="GetEvent" Text="Get Event" Clicked="onGetEvent" />
             <Button x:Name="SendMessage" Text="Send Message" Clicked="onSendMessage" />
-            <!--<Button x:Name="GetMessage" Text="Get Message" Clicked="onGetMessage" />-->
-      <Editor x:Name ="Output" />
+            <Button x:Name="GetMessage" Text="Get Message" Clicked="onGetMessage" />
+            <Button x:Name="CreateUser" Text="Create User" Clicked="onCreateUser"/>
+            <Button x:Name="GetUserInfo" Text="Get User Info" Clicked="onGetUser"/>
+            <Button x:Name="AddToApartment" Text="Add User to Apartment" Clicked="onAddToApartment"/>
+            <Button x:Name="GetApartments" Text ="Get Apartments" Clicked="onGetApartments" />
+        
+            <Button x:Name="GetAllUsers" Text ="Get All Users" Clicked="onGetAllUsers" />
+            <Button x:Name="CreateApartment" Text="Create Apartment" Clicked="onCreateApartment"/>
+            <Editor x:Name ="Output" />
         </StackLayout>
   </ScrollView>
 </ContentPage>

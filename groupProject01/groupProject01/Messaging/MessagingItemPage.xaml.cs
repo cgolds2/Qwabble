@@ -11,18 +11,16 @@ namespace groupProject01.Messaging
 {
 	public partial class MessagingItemPage : ContentPage
 	{
-
-        public ObservableCollection<MessageObject> msgItems { get; set; }
-
+        public List<MessageObject> messages { get; set; }
         private GlobalData _gd;
 
 		public MessagingItemPage (int ListID, GlobalData gd)
 		{
 			InitializeComponent ();
             _gd = gd;
-            _gd.MessagingDataInstance.getItemsInMessage(ListID);
-            msgItems = _gd.MessagingDataInstance.msgItems;
-            msgView.ItemsSource = msgItems;
+            _gd.MessagingDataInstance.getItemsInMessage(_gd, ListID);
+            messages = _gd.MessagingDataInstance.messages;
+            msgView.ItemsSource = messages;
 		}
         
 	}
