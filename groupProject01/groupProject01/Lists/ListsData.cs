@@ -94,7 +94,7 @@ namespace groupProject01
         public int ListID { get; set; }                     //unique ListID for the object
         public bool On { get; set; }                    //watches value of trigger- true or false
         public bool IsSwitchVisible { get; set; }       //watches visibility of trigger
-        public int listType { get; set; }                   //specifies type of item- noAdditionalInfo (0) or AdditionalInfo(1)
+        public int listType { get; set; }  //RENAME     //specifies type of item- noAdditionalInfo (0) or AdditionalInfo(1)
         public string listText { get; set; }
     }
 }

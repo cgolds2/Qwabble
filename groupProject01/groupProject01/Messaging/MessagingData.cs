@@ -35,11 +35,13 @@ namespace groupProject01
         /// <param name="MessageID"></param>
         async public void getItemsInMessage(GlobalData gd, int MessageID)
         {
+
             messages = await (ServerHandeler.getMessages(gd));
 
+            /*
             messages = new List<MessageObject>();
             messages.Add(new MessageObject { MessageName = "Message1", MessageID = messages.Count });
-            messages.Add(new MessageObject { MessageName = "Message2", MessageID = messages.Count });
+            messages.Add(new MessageObject { MessageName = "Message2", MessageID = messages.Count });*/
         }
     }
     public class GroupObject
