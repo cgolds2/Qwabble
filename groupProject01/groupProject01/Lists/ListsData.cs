@@ -36,13 +36,13 @@ namespace groupProject01
             /*items = new ObservableCollection<ListItemObject>();         //instantiates listitem ObservableCollection that will notify when items are added, removed, and refreshed
 
             //HARD-CODED, WILL CHANGE WITH STUFF FROM SERVER
-            items.Add(new ListItemObject { listName = "Bananas", On = true, ListID = items.Count });            //adds the bananas item to the page
-            items.Add(new ListItemObject { listName = "Apple", On = false, ListID = items.Count });             //adds the apples item to the page
-            items.Add(new ListItemObject { listName = "Orange", On = true, ListID = items.Count });             //adds the orange item to the page
-            items.Add(new ListItemObject { listName = "Guava", On = true, ListID = items.Count });              //adds the guava item to the page
+            items.Add(new ListItemObject { noteName = "Bananas", On = true, ListID = items.Count });            //adds the bananas item to the page
+            items.Add(new ListItemObject { noteName = "Apple", On = false, ListID = items.Count });             //adds the apples item to the page
+            items.Add(new ListItemObject { noteName = "Orange", On = true, ListID = items.Count });             //adds the orange item to the page
+            items.Add(new ListItemObject { noteName = "Guava", On = true, ListID = items.Count });              //adds the guava item to the page
             if (ListID == 1)              //tests if list specific items work
             {
-                items.Add(new ListItemObject { listName = "Custom", On = false, ListID = lists.Count });        //adds specific item for last list
+                items.Add(new ListItemObject { noteName = "Custom", On = false, ListID = lists.Count });        //adds specific item for last list
             }*/
         }
 
@@ -89,12 +89,12 @@ namespace groupProject01
 
     public class ListItemObject                        //the object class for the items in a certain list                    
     {
-        //createList(username, userID, apartmentID, listName, listType, listText, )
-        public string listName { get; set; }                //name of the object
+        //createList(username, userID, apartmentID, noteName, listType, data, )
+        public string noteName { get; set; }                //name of the object
         public int ListID { get; set; }                     //unique ListID for the object
         public bool On { get; set; }                    //watches value of trigger- true or false
         public bool IsSwitchVisible { get; set; }       //watches visibility of trigger
         public int listType { get; set; }                   //specifies type of item- noAdditionalInfo (0) or AdditionalInfo(1)
-        public string listText { get; set; }
+        public string data { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace groupProject01.Lists
 		{
 			            NavigationPage.SetHasNavigationBar(this, false); InitializeComponent();
 
-            lblLabel.Text = currentItem.listName;
+            lblLabel.Text = currentItem.noteName;
 
         }
 	}

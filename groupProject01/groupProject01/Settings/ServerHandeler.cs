@@ -28,10 +28,10 @@ namespace groupProject01
 
 
         //LIST
-        //createList(username, userID, apartmentID, listName, listType, listText, )
+        //createList(username, userID, apartmentID, noteName, listType, data, )
         public async static Task<string> sendList(ListItemObject ldata, GlobalData gd)
         {
-            //createList(username, userID, apartmentID, listName, listType, listText)
+            //createList(username, userID, apartmentID, noteName, listType, data)
             string jsonString = JsonConvert.SerializeObject(ldata);
             JObject ob = JObject.Parse(jsonString);
             ob["username"] = gd.CurrentUser.Username;
@@ -64,7 +64,7 @@ namespace groupProject01
         //createEvent(username, startDate, endDate, name, userID, apartmentID)
         public async static Task<string> sendEvent(EventObject edata, GlobalData gd)
         {
-            //createList(username, userID, apartmentID, listName, listType, listText)
+            //createList(username, userID, apartmentID, noteName, listType, data)
             string jsonString = JsonConvert.SerializeObject(edata);
             JObject ob = JObject.Parse(jsonString);
             ob["username"] = gd.CurrentUser.Username;
@@ -97,7 +97,7 @@ namespace groupProject01
         //createGroupMessage(userID, MSGText,apartmentID) //adds group message
         public async static Task<string> sendMessage(MessageObject mdata, GlobalData gd)
         {
-            //createList(username, userID, apartmentID, listName, listType, listText)
+            //createList(username, userID, apartmentID, noteName, listType, data)
             string jsonString = JsonConvert.SerializeObject(mdata);
             JObject ob = JObject.Parse(jsonString);
             ob["apartmentID"] = gd.CurrentUser.ApartmentID;
@@ -142,8 +142,7 @@ namespace groupProject01
         {
             string get = baseuri + "getUserInfo.php?userID=" + userID;
             string text = await (RestService.GetCall(get));
-            UserObject ret = new UserObject();
-            UserObject deserializedProduct = JsonConvert.DeserializeObject<UserObject>(text);
+            UserObject ret = JsonConvert.DeserializeObject<UserObject>(text);
             return ret;
         }
 
@@ -194,11 +193,10 @@ namespace groupProject01
 
         public async static Task<string> createApartment(ApartmentObject apmt, GlobalData gd)
         {
-            //createList(username, userID, apartmentID, listName, listType, listText)
+            //createList(username, userID, apartmentID, noteName, listType, data)
             string jsonString = JsonConvert.SerializeObject(apmt);
             JObject ob = JObject.Parse(jsonString);
-            ob["userID"] = gd.CurrentUser.UserID;
-            ob["name"] = gd.CurrentUser.Username;
+            ob["owner"] = gd.CurrentUser.UserID;
             string result = await (RestService.PostCall(ob.ToString(), baseuri + "createApartment.php"));
             return result;
 
