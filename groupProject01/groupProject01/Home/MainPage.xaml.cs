@@ -51,7 +51,7 @@ namespace groupProject01
         
         async void OnSetting(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new groupProject01.SettingsPage());
+            await Navigation.PushAsync(new groupProject01.SettingsPage(_gd));
         }
         async void OnList(object sender, EventArgs e)
         {
