@@ -11,7 +11,7 @@
         <AbsoluteLayout>
           <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375"
           AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
-          <Label Text="Messaging" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24"
+          <Label Text="Home" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24"
             LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".55,.7,150,100"
             AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold" />
         </AbsoluteLayout>
@@ -33,7 +33,7 @@
 
           <Button BackgroundColor="#60cc60" BorderRadius="30"
            BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70"
-           AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome">
+           AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList">
             <OnPlatform x:TypeArguments="FileImageSource"
                         iOS="homebtn.png"></OnPlatform>
           </Button>
@@ -64,34 +64,34 @@
 
           <!-- *** Android *** -->
 
-          <Button FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderRadius="30"
+          <Button FontSize="15" BackgroundColor="#60cc60" BorderRadius="30"
 				BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70"
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome">
-            <OnPlatform x:TypeArguments="Text"
+				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting">
+            <OnPlatform x:TypeArguments="x:String"
                         Android="Home"></OnPlatform>
           </Button>
-          <Button FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderWidth="2"
+          <Button FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
 				BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.3,68,68"
 				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList">
-            <OnPlatform x:TypeArguments="Text"
+            <OnPlatform x:TypeArguments="x:String"
                         Android="Notes"></OnPlatform>
           </Button>
-          <Button FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderWidth="2"
+          <Button FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
 				BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.3,68,68"
 				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnCalendar">
-            <OnPlatform x:TypeArguments="Text"
+            <OnPlatform x:TypeArguments="x:String"
                         Android="Calendar"></OnPlatform>
           </Button>
-          <Button FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderWidth="2"
+          <Button FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
 				BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.3,68,68"
 				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnMessaging">
-            <OnPlatform x:TypeArguments="Text"
+            <OnPlatform x:TypeArguments="x:String"
                         Android="Messaging"></OnPlatform>
           </Button>
-          <Button FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderWidth="2"
+          <Button FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
 				BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.996,68,68"
 				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting">
-            <OnPlatform x:TypeArguments="Text"
+            <OnPlatform x:TypeArguments="x:String"
                       Android="Settings"></OnPlatform>
           </Button>
         </AbsoluteLayout>
