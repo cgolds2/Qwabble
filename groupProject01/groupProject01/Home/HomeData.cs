@@ -8,41 +8,18 @@ using Xamarin.Forms;
 
 namespace groupProject01
 {
-    public enum status
-    {
-        inApartment = 1,
-        outApartment = 2,
-        geofence = 3,
-    }
-	public class HomeData
+    public class HomeData
 	{
-		public HomeData ()
+		public HomeData ()          //starts the HomeData constructor
 		{
-            refreshAll();
+            refreshAll();           //refreshes everything on HomePage
 		}
+
         public void refreshAll()
         {
-            loadRoomatesStatus();
-            loadNotifications();
             throw new NotImplementedException();
         }
-        public void loadRoomatesStatus()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void loadNotifications()
-        {
-            throw new NotImplementedException();
-        }
-        /// <summary>
-        /// Changes the status of the roommate- in, out, or geofence
-        /// </summary>
-        /// <param name="s"></param>
-        public void changeStatus(status s)
-        {
-            throw new NotImplementedException();
-        }
+        
 
     }
 }

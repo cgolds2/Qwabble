@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="groupProject01.InitialPage"
+    xmlns:local="clr-namespace:groupProject01">
+  <ContentView.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+
+            <Button x:Name="Login" Text="Log In" Clicked="OnLogin" />
+            <Button x:Name="CreateUser" Text="Create User" Clicked ="OnCreateUser"/>
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentPage>

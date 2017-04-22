@@ -52,7 +52,7 @@ namespace groupProject01
 
         }
         //getNotes(apartmentID)
-        async public static Task<List<ListItemObject>> getList(GlobalData gd)
+        async public static Task<List<ListItemObject>> getList(GlobalData gd, int listid)
         {
             Other.UserObject u = gd.CurrentUser;
             int ApartmentID = u.ApartmentID;
@@ -84,6 +84,7 @@ namespace groupProject01
             return result;
 
         }
+
         //getEvents(apartmentID)
         async public static Task<List<EventObject>> getCalendar(GlobalData gd)
         {
@@ -135,12 +136,12 @@ namespace groupProject01
 
         //USER - NOT IMPLEMENTED
         //createUser(username,password) // returns user id
-        public async static Task<string> createUser(UserObject u)
+        public async static Task<string> createUser(UserObject u, string password)
         {
-            //createList(username, userID, apartmentID, listName, listType, listText)
             string jsonString = JsonConvert.SerializeObject(u);
             JObject ob = JObject.Parse(jsonString);
-            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createUser.php"));
+            ob["password"] = password;
+            string result = await (RestService.PostCall(ob.ToString(), baseuri + "createUserSEC.php"));
             return result;
 
         }
@@ -149,7 +150,7 @@ namespace groupProject01
         //getUserInfo(username / userID) //2 different statments for either I guess
         async public static Task<UserObject> getUserInfo(int userID)
         {
-            string get = baseuri + "getNotes.php?username=" + userID;
+            string get = baseuri + "getUserInfo.php?userID=" + userID;
             string text = await (RestService.GetCall(get));
             UserObject ret = new UserObject();
             UserObject deserializedProduct = JsonConvert.DeserializeObject<UserObject>(text);
