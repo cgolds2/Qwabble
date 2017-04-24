@@ -37,7 +37,7 @@ namespace groupProject01
         }
         async void OnAddItem(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new groupProject01.AddItemPage());
+            await Navigation.PushAsync(new groupProject01.AddItemPage(_gd));
         }
 
         void SwitchToggled(object sender, EventArgs e)
