@@ -13,7 +13,7 @@
           <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375"
           AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
 
-          <Label Text="Page name" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24"
+          <Label Text="Calendar" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24"
             LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".55,.7,150,100"
             AbsoluteLayout.LayoutFlags="PositionProportional" />
         </AbsoluteLayout>

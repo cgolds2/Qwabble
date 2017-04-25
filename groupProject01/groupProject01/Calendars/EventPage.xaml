@@ -12,7 +12,8 @@
           <ViewCell>
             <StackLayout BackgroundColor="Gray">
               <Label Text =" {Binding name} " HorizontalOptions ="Start"/>
-            </StackLayout>
+                            <Button Name="AddEvent" Text="Add Event" Clicked="OnAddEvent"/>
+                        </StackLayout>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
