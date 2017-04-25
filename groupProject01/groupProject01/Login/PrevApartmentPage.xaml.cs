@@ -29,7 +29,7 @@ namespace groupProject01
             if(aptObj != null)                                                      //if apartmentid is not null
             {
                 await ServerHandeler.addUserToApartment(_gd.CurrentUser.UserID, apartmentID);
-                await Navigation.PushAsync(new groupProject01.HomePage(_gd));       //direct to home page
+                await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);       //direct to home page
             }
             else                                                                    //if apartmentid is null
             {

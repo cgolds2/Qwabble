@@ -23,14 +23,14 @@ namespace groupProject01
             createUser();
             //TODO generate apartment id
             //TODO make sure finding apartment id is findable in settings
-            await Navigation.PushAsync(new groupProject01.MainPage(_gd));
+            await Navigation.PushAsync(new groupProject01.MainPage(_gd),false);
 
         }
 
         async void OnPrevApartment(object sender, EventArgs e)
         {
             createUser();
-            await Navigation.PushAsync(new groupProject01.PrevApartmentPage(_gd));
+            await Navigation.PushAsync(new groupProject01.PrevApartmentPage(_gd),false);
         }
 
         async public void createUser()
