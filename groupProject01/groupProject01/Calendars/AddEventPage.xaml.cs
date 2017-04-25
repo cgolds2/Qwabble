@@ -11,9 +11,24 @@ namespace groupProject01
 {
 	public partial class AddEventPage : ContentPage
 	{
-		public AddEventPage ()
+        GlobalData _gd;
+		public AddEventPage (GlobalData gd)
 		{
+            _gd = gd;
 			InitializeComponent ();
 		}
-	}
+
+        async void OnAddEvent(object sender, EventArgs e)
+        {
+            EventObject eve = new EventObject();
+            eve.name = eventNameTextField.Text;
+            //set eventid
+            //how to do dates
+            //go over properties in event
+            eve.AdditionalInfo = eventDetailTextField.Text;
+            
+            ServerHandeler.sendEvent(eve, _gd);
+            await Navigation.PushAsync(new groupProject01.CalendarPage(_gd));
+        }
+    }
 }

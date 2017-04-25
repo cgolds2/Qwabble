@@ -11,7 +11,7 @@
         <DataTemplate>
           <ViewCell>
             <StackLayout BackgroundColor="Gray">
-              <Label Text =" {Binding Name} " HorizontalOptions ="Start"/>
+              <Label Text =" {Binding name} " HorizontalOptions ="Start"/>
                             <Button Name="AddEvent" Text="Add Event" Clicked="OnAddEvent"/>
                         </StackLayout>
           </ViewCell>
