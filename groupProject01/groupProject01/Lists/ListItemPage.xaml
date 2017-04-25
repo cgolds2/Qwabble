@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="groupProject01.ListItemPage"
@@ -12,8 +12,8 @@
           <ViewCell>
             <StackLayout  BackgroundColor="Gray">
 
-              <Label Text = "{Binding Name}"  HorizontalOptions="Start"/>
-
+              <Label Text = "{Binding noteName}"  HorizontalOptions="Start"/>
+              <Label Text = "{Binding data}"  HorizontalOptions="Start"/>
               <local:CustomSwitch IsToggled="{Binding On}" HorizontalOptions="End" Toggled ="SwitchToggled" ID ="{Binding ID}"/>
 
 
