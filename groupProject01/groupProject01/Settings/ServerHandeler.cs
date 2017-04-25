@@ -53,6 +53,7 @@ namespace groupProject01
             string[] result = Regex.Split(text, "\r\n|\r|\n");
             foreach (string s in result)
             {
+                if (s.Equals("")) { continue; }
                 ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(s);
                 ret.Add(deserializedProduct);
             }
@@ -86,6 +87,7 @@ namespace groupProject01
             string[] result = Regex.Split(text, "\r\n|\r|\n");
             foreach (string s in result)
             {
+                if (s.Equals("")) { continue; }
                 EventObject deserializedProduct = JsonConvert.DeserializeObject<EventObject>(s);
                 ret.Add(deserializedProduct);
             }
@@ -117,6 +119,7 @@ namespace groupProject01
             string[] result = Regex.Split(text, "\r\n|\r|\n");
             foreach (string s in result)
             {
+                if (s.Equals("")) { continue; }
                 MessageObject deserializedProduct = JsonConvert.DeserializeObject<MessageObject>(s);
                 ret.Add(deserializedProduct);
             }
@@ -171,6 +174,7 @@ namespace groupProject01
             string[] result = Regex.Split(text, "\r\n|\r|\n");
             foreach (string s in result)
             {
+                if (s.Equals("")) { continue; }
                 ApartmentObject deserializedProduct = JsonConvert.DeserializeObject<ApartmentObject>(s);
                 ret.Add(deserializedProduct);
             }
@@ -185,6 +189,7 @@ namespace groupProject01
             string[] result = Regex.Split(text, "\r\n|\r|\n");
             foreach (string s in result)
             {
+                if (s.Equals("")) { continue; }
                 UserObject deserializedProduct = JsonConvert.DeserializeObject<UserObject>(s);
                 ret.Add(deserializedProduct);
             }
@@ -201,7 +206,7 @@ namespace groupProject01
             return result;
 
 
-            
+
 
             /*
 			 * createApartment(userID (creator/owner), name, location) //return apartment ID
