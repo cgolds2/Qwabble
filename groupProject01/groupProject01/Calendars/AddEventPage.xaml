@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="groupProject01.AddEventPage"
+             xmlns:local="clr-namespace:groupProject01">
+
+    <ContentView.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+            <Label Text="Add Event Page" VerticalOptions="Center" HorizontalOptions="Center" />
+
+            <Entry x:Name="eventNameTextField" Text="Enter your event's name" />
+            <Entry x:Name="startDate" Text="Enter the start date" />
+            <Entry x:Name="endDate" Text="Enter the end date" />
+            <Entry x:Name="eventDetailTextField" Text="Enter extra information for your item" />
+
+            <Button x:Name="AddItem" Text="Add Item" Clicked="OnAddItem" />
+        </StackLayout>
+    </ContentView.Content> >
+</ContentPage>
