@@ -14,7 +14,7 @@ namespace groupProject01
 		public SettingsPage (GlobalData gd)
 		{
             _gd = gd;
-			            NavigationPage.SetHasNavigationBar(this, false);
+			NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
 		}
 
@@ -50,7 +50,7 @@ namespace groupProject01
 
         void OnCurApartment(object sender, EventArgs e)
         {
-            //TODO show current apartment
+            DisplayAlert("Apartment ID", "Your apartment ID is " + _gd.CurrentApartment.id + ".", "OK");
         }
     }
 }

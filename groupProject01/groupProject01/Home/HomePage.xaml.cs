@@ -44,10 +44,5 @@ namespace groupProject01
             InitializeComponent();                                      //initializes UI objects with values provided, initializes elements
             _gd = gd;                                                   //sets private instance of global data
         }
-
-        public void onRoomateClicked(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
