@@ -37,11 +37,11 @@ namespace groupProject01
             }
         }
 
-        public ApartmentObject findApartment(List<ApartmentObject> apt, int apartmentID)
+        public ApartmentObject findApartment(List<ApartmentObject> apt, int apartmentID)        //finds the apartment specified
         {
-            foreach(ApartmentObject ap in apt)
+            foreach(ApartmentObject ap in apt)  //searches every apartment that was returned
             {
-                if(ap.id == apartmentID)
+                if(ap.id == apartmentID) //checks to see if 
                 {
                     return ap;
                 }

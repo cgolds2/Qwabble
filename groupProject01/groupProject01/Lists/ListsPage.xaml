@@ -6,59 +6,54 @@
 
 
 
-	<ContentPage.Content>
-	  <StackLayout BackgroundColor="#dddddd" >
-		<StackLayout VerticalOptions="Start">
-				<AbsoluteLayout Padding = "0,0,0,-70">
-					<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375" 
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#dddddd" >
+            <StackLayout VerticalOptions="Start">
+                <AbsoluteLayout Padding = "0,0,0,-70">
+                    <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375" 
 				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
-			<Label Text="Lists" x:Name="Lists" TextColor="#ffffff" FontSize="24" 
+                    <Label Text="Lists" x:Name="Lists" TextColor="#ffffff" FontSize="24" 
 				LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100" 
 				AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold"/>
-				</AbsoluteLayout>
-
-			</StackLayout>
-			<StackLayout VerticalOptions="StartAndExpand">
-				<!-- START PAGE CODE ****************************************************** -->
-
-				<ListView  x:Name="lstView" RowHeight="60" ItemTapped="OnTap" >
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <StackLayout  BackgroundColor="#dddddd" >
-                <Label Text = "{Binding Name}" Margin="20,15,0,0" FontSize="20" HorizontalOptions="Start"/>
-
+                </AbsoluteLayout>
             </StackLayout>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
+            <StackLayout VerticalOptions="StartAndExpand">
+                <!-- START PAGE CODE ****************************************************** -->
+                <ListView  x:Name="lstView" RowHeight="60" ItemTapped="OnTap" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout  BackgroundColor="#dddddd" >
+                                    <Label Text = "{Binding Name}" Margin="20,15,0,0" FontSize="20" HorizontalOptions="Start"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <!-- END PAGE CODE ****************************************************** -->
+            </StackLayout>
 
-				<!-- END PAGE CODE ****************************************************** -->
-			</StackLayout>
-
-      <StackLayout VerticalOptions="End">
-        <AbsoluteLayout>
-          <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,1"
-            AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
-          <Button Image="homebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderRadius="30"
-            BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70"
-            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome" />
-          <Button Image="notebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
-            BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.3,68,68"
-            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList"/>
-          <Button Image="calbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
-          BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.3,68,68"
-          AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnCalendar"/>
-          <Button Image="msgbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
-            BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.3,68,68"
-            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnMessaging"/>
-          <Button Image="setbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
-            BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.996,68,68"
-            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting"/>
-        </AbsoluteLayout>
-      </StackLayout>
-	</StackLayout>
-  </ContentPage.Content>
-    
+            <StackLayout VerticalOptions="End">
+                <AbsoluteLayout>
+                    <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,1"
+                AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+                    <Button Image="homebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderRadius="30"
+                BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70"
+                AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome" />
+                    <Button Image="notebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+                BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.3,68,68"
+                AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList"/>
+                    <Button Image="calbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+                BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.3,68,68"
+                AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnCalendar"/>
+                    <Button Image="msgbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+                BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.3,68,68"
+                AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnMessaging"/>
+                    <Button Image="setbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+                BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.996,68,68"
+                AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting"/>
+                </AbsoluteLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
