@@ -16,7 +16,8 @@ namespace groupProject01
         
         public MessagingPage (GlobalData gd)                //MessagingPage constructor
 		{
-			InitializeComponent ();                          //loads the UI elements
+            NavigationPage.SetHasNavigationBar(this, false);
+            InitializeComponent();                          //loads the UI elements
             _gd = gd;                                        //sets private instance of global data
             groups = _gd.MessagingDataInstance.groups;       //gets the messaging data from the data file
             msgView.ItemsSource = groups;                    //sets the messaging UI
@@ -39,6 +40,10 @@ namespace groupProject01
         async public void OnSetting(object sender, EventArgs e)                       //if setting button is pressed
         {
             await Navigation.PushAsync(new groupProject01.SettingsPage(_gd));            //if setting button is pressed
+        }
+        async public void OnMessaging(object sender, EventArgs e)                      //if messaging button is pressed
+        {
+           // await Navigation.PushAsync(new groupProject01.MessagingPage(_gd));         //direct to messaging page
         }
 
         #endregion

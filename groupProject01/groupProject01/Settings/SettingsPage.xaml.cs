@@ -14,7 +14,8 @@ namespace groupProject01
 		public SettingsPage (GlobalData gd)
 		{
             _gd = gd;
-			            NavigationPage.SetHasNavigationBar(this, false); InitializeComponent();
+			            NavigationPage.SetHasNavigationBar(this, false);
+            InitializeComponent();
 		}
 
         #region BottomBarButtons
@@ -34,6 +35,10 @@ namespace groupProject01
         async public void OnCalendar(object sender, EventArgs e)                       //if setting button is pressed
         {
             await Navigation.PushAsync(new groupProject01.CalendarPage());            //if setting button is pressed
+        }
+        async public void OnSetting(object sender, EventArgs e)                       //if setting button is pressed
+        {
+            //await Navigation.PushAsync(new groupProject01.SettingsPage(_gd));   //if setting button is pressed
         }
         #endregion
 

@@ -30,12 +30,18 @@ namespace groupProject01
             await Navigation.PushAsync(new groupProject01.SettingsPage(_gd));            //if setting button is pressed
         }
 
+        async public void OnHome(object sender, EventArgs e)                       //if setting button is pressed
+        {
+            //await Navigation.PushAsync(new groupProject01.HomePage(_gd));            //if setting button is pressed
+        }
+
         #endregion
         private GlobalData _gd;                                             //instantiates global variable GlobalData to store the global data
 
         public HomePage (GlobalData gd)
 		{
-			InitializeComponent();                                      //initializes UI objects with values provided, initializes elements
+            NavigationPage.SetHasNavigationBar(this, false);
+            InitializeComponent();                                      //initializes UI objects with values provided, initializes elements
             _gd = gd;                                                   //sets private instance of global data
         }
 

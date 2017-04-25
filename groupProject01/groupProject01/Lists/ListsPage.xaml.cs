@@ -34,12 +34,17 @@ namespace groupProject01
         {
             await Navigation.PushAsync(new groupProject01.SettingsPage(_gd));   //if setting button is pressed
         }
+        async public void OnList(object sender, EventArgs e)                          //if lists button is pressed
+        {
+           // await Navigation.PushAsync(new groupProject01.ListsPage(_gd));            //if lists button is pressed
+        }
 
         #endregion
 
 
         public ListsPage(GlobalData gd)                                             //ListsPage constructor
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();                                                  //initializes UI objects with values provided, initializes elements
             _gd = gd;                                                               //sets private instance of global data
             lists =  _gd.ListsDataInstance.lists;                                   //gets the lists data from data file
