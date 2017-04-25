@@ -9,6 +9,10 @@
     <Import_RootNamespace>groupProject01</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Calendars\AddEventPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AddEventPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Calendars\CalendarData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Calendars\CalendarPage.xaml.cs">
       <SubType>Code</SubType>
@@ -98,6 +102,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Other\ApartmentObject.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Calendars\AddEventPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Calendars\CalendarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
