@@ -42,7 +42,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Home\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Home\RoomatesData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Home\RoomatesPage.xaml.cs">
       <DependentUpon>RoomatesPage.xaml</DependentUpon>
       <SubType>Code</SubType>
