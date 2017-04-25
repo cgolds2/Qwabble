@@ -51,45 +51,45 @@ namespace groupProject01
         
         async void OnSetting(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new groupProject01.SettingsPage(_gd));
+            await Navigation.PushAsync(new groupProject01.SettingsPage(_gd),false);
         }
         async void OnList(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new groupProject01.ListsPage(_gd));
+            await Navigation.PushAsync(new groupProject01.ListsPage(_gd),false);
 
         }
         async void OnCalendar(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new groupProject01.CalendarPage(_gd));
+            await Navigation.PushAsync(new groupProject01.CalendarPage(_gd),false);
 
         }
         async void OnMessaging(object sender, EventArgs e)
         {
 
-          await Navigation.PushAsync(new groupProject01.MessagingPage(_gd));
+          await Navigation.PushAsync(new groupProject01.MessagingPage(_gd),false);
         }
         async void OnHome(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new groupProject01.HomePage(_gd));
+            await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);
 
         }
         async void OnLogin(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new groupProject01.LoginPage(_gd));
+            await Navigation.PushAsync(new groupProject01.LoginPage(_gd),false);
 
         }
         async void OnServer(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new groupProject01.Settings.ServerTester());
+            await Navigation.PushAsync(new groupProject01.Settings.ServerTester(),false);
 
         }
         async void OnInitial(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new groupProject01.InitialPage(_gd));
+            await Navigation.PushAsync(new groupProject01.InitialPage(_gd),false);
 
         }
     }

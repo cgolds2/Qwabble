@@ -21,8 +21,8 @@ namespace groupProject01
         async void OnSubmit(object sender, EventArgs e)
         {
             //TODO something to check username and password
-            await Navigation.PushAsync(new groupProject01.MainPage(_gd));
-            //await Navigation.PushAsync(new groupProject01.HomePage(_gd));
+            await Navigation.PushAsync(new groupProject01.MainPage(_gd),false);
+            //await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);
 
 
         }

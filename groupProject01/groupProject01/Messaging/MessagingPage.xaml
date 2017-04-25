@@ -35,47 +35,27 @@
 				<!-- END PAGE CODE ****************************************************** -->
 			</StackLayout>
 
-			<StackLayout VerticalOptions="End">
-				<AbsoluteLayout>
-			<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,1" 
-				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
-          <!-- *** iOS *** -->
-
-          <Button OnPlatform="iOS" Image="homebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderRadius="30"
-           BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70"
-           AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome" />
-          <Button OnPlatform="iOS" Image="notebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
-				BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.3,68,68"
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList"/>
-          <Button OnPlatform="iOS" Image="calbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
-				BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.3,68,68"
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnCalendar"/>
-          <Button OnPlatform="iOS" Image="msgbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
-				BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.3,68,68"
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnMessaging"/>
-          <Button OnPlatform="iOS" Image="setbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
-				BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.996,68,68"
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting"/>
-
-          <!-- *** Android *** -->
-
-          <Button OnPlatform="Android" Text="Home" FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderRadius="30"
-				BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70"
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome" />
-          <Button OnPlatform="Android" Text="Notes" FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderWidth="2"
-				BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.3,68,68"
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList"/>
-          <Button OnPlatform="Android" Text="Calendar" FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderWidth="2"
-				BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.3,68,68"
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnCalendar"/>
-          <Button OnPlatform="Android" Text="Messaging" FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderWidth="2"
-				BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.3,68,68"
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnMessaging"/>
-          <Button OnPlatform="Android" Text="Settings" FontSize="15" FontColor="White" BackgroundColor="#60cc60" BorderWidth="2"
-				BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.996,68,68"
-				AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting"/>
-			</AbsoluteLayout>
-		</StackLayout>
+      <StackLayout VerticalOptions="End">
+        <AbsoluteLayout>
+          <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,1"
+            AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+          <Button Image="homebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderRadius="30"
+            BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70"
+            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome" />
+          <Button Image="notebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+            BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.3,68,68"
+            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList"/>
+          <Button Image="calbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+          BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.3,68,68"
+          AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnCalendar"/>
+          <Button Image="msgbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+            BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.3,68,68"
+            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnMessaging"/>
+          <Button Image="setbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+            BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.996,68,68"
+            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting"/>
+        </AbsoluteLayout>
+      </StackLayout>
 	</StackLayout>
   </ContentPage.Content>
 

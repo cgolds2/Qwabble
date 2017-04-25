@@ -3,12 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="groupProject01.SettingsPage"
              xmlns:local="clr-namespace:groupProject01">
-    <ContentPage.Content>
-        <ScrollView>
-            <StackLayout VerticalOptions="StartAndExpand">
-                <Button x:Name="Logout" Text="Logout" Clicked="OnLogout" />
-                <Button x:Name="CurApartment" Text="Current Apartment ID" Clicked="OnCurApartment" />
-            </StackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+  <ContentPage.Content>
+
+
+    <StackLayout BackgroundColor="#dddddd" >
+      <StackLayout VerticalOptions="Start">
+        <AbsoluteLayout Padding = "0,0,0,-70">
+          <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375"
+          AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+
+          <Label Text="Page name" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24"
+            LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".55,.7,150,100"
+            AbsoluteLayout.LayoutFlags="PositionProportional" />
+        </AbsoluteLayout>
+
+      </StackLayout>
+      <StackLayout VerticalOptions="StartAndExpand">
+        <!-- START PAGE CODE ****************************************************** -->
+
+        <Button x:Name="Logout" Text="Logout" Clicked="OnLogout" />
+        <Button x:Name="CurApartment" Text="Current Apartment ID" Clicked="OnCurApartment" />
+
+        <!-- END PAGE CODE ****************************************************** -->
+      </StackLayout>
+
+      <StackLayout VerticalOptions="End">
+        <AbsoluteLayout>
+          <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,1"
+            AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+          <Button Image="homebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderRadius="30"
+            BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70"
+            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome" />
+          <Button Image="notebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+            BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.3,68,68"
+            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList"/>
+          <Button Image="calbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+          BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.3,68,68"
+          AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnCalendar"/>
+          <Button Image="msgbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+            BorderColor="Black" AbsoluteLayout.LayoutBounds=".745,.3,68,68"
+            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnMessaging"/>
+          <Button Image="setbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+            BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.996,68,68"
+            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting"/>
+        </AbsoluteLayout>
+      </StackLayout>
+    </StackLayout>
+
+  </ContentPage.Content>
 </ContentPage>
