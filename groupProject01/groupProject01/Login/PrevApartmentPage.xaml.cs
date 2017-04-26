@@ -17,6 +17,7 @@ namespace groupProject01
 
         public PrevApartmentPage (GlobalData gd)                        //constructor for PrevApartment page
 		{
+            NavigationPage.SetHasNavigationBar(this, false);    //hides the default navigation bar
             _gd = gd;                                                   //sets the private instance of global variable
 			InitializeComponent ();                                     //initialize the UI
 		}
@@ -29,6 +30,7 @@ namespace groupProject01
             if(aptObj != null)                                                      //if apartmentid is not null
             {
                 await ServerHandeler.addUserToApartment(_gd.CurrentUser.UserID, apartmentID);
+                _gd.CurrentApartment = aptObj;
                 await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);       //direct to home page
             }
             else                              //if apartmentid is null
@@ -37,16 +39,21 @@ namespace groupProject01
             }
         }
 
+        async void OnBack(object sender, EventArgs e)               //when the back button is pushed
+        {
+            await Navigation.PushAsync(new groupProject01.CreationPage(_gd), false);         //go back to the create user page
+        }
+
         public ApartmentObject findApartment(List<ApartmentObject> apt, int apartmentID)        //finds the apartment specified
         {
             foreach(ApartmentObject ap in apt)  //searches every apartment that was returned
             {
-                if(ap.id == apartmentID) //checks to see if 
+                if(ap.id == apartmentID) //checks to see if given id matches the apartmentid of the current 
                 {
-                    return ap;
+                    return ap;          //returns the current apartment if true
                 }
             }
-            return null;
+            return null;                //if no apartment is found returns null
         }
     }
 }
