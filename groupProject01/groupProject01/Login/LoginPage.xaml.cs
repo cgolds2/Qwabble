@@ -19,7 +19,7 @@ namespace groupProject01
             _gd = gd;
             string username = _gd.SettingsDataInstance.getCredentials(keysInt.userName);
             string password = _gd.SettingsDataInstance.getCredentials(keysInt.password);
-            if(( username==null || password==null))
+            if(!( username==null || password==null))
             {
                 usernameTextField.Text = username;
                 passwordTextField.Text = password;
@@ -41,9 +41,9 @@ namespace groupProject01
             {
                 int ID = Int32.Parse(x);
                 _gd.CurrentUser.ApartmentID = ID;
-                _gd.SettingsDataInstance.setCredentials(keysInt.userName, "username");
-                _gd.SettingsDataInstance.setCredentials(keysInt.password, "password");
-                await Navigation.PushAsync(new groupProject01.MainPage(_gd), false);
+                _gd.SettingsDataInstance.setCredentials(keysInt.userName, usernameTextField.Text);
+                _gd.SettingsDataInstance.setCredentials(keysInt.password, passwordTextField.Text);
+                await Navigation.PushAsync(new groupProject01.HomePage(_gd), false);
             }
             catch (Exception)
             {
