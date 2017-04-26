@@ -43,8 +43,13 @@ namespace groupProject01
         #endregion
 
 
-        async void OnLogout(object sender, EventArgs e)         //when logout is clicked on
+
+       async void OnLogout(object sender, EventArgs e)
+
         {
+            _gd.SettingsDataInstance.setCredentials(keysInt.userName, "");
+            _gd.SettingsDataInstance.setCredentials(keysInt.password, "");
+            await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);
             //TODO logout user
             await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);            //pushes to the initial page
         }

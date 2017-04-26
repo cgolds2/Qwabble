@@ -21,9 +21,12 @@ namespace groupProject01
             string password = _gd.SettingsDataInstance.getCredentials(keysInt.password);
             if(!( username==null || password==null))
             {
-                usernameTextField.Text = username;
-                passwordTextField.Text = password;
-                submit();
+                if (!(username.Equals("") || password.Equals("")))
+                {
+                    usernameTextField.Text = username;
+                    passwordTextField.Text = password;
+                    submit();
+                }
             }
         }
 
