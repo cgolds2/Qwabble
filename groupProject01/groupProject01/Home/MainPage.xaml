@@ -10,7 +10,7 @@
 				<AbsoluteLayout Padding = "0,0,0,-106" >
 				<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375" 
 				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
-			<Label Text="Home" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24" 
+			<Label Text="Home" x:Name="Main" TextColor="#ffffff" FontSize="24" 
 				LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100" 
 				AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold"/>
 					</AbsoluteLayout>
