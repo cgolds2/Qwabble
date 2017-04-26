@@ -22,7 +22,7 @@
 
         <StackLayout VerticalOptions="StartAndExpand"> 
            
-            <Entry x:Name="usernameTextField" Text="Enter your username" Margin="10,10,10,10" BackgroundColor="#efefef" />
+            <Entry x:Name="usernameTextField" Text="Enter your email" Margin="10,10,10,10" BackgroundColor="#efefef" />
             <Entry x:Name="passwordTextField" Text="Enter your password" Margin="10,0,10,10" BackgroundColor="#efefef" />  
             
             <Button x:Name="Submit" Text="Submit" Clicked="OnSubmit" />
