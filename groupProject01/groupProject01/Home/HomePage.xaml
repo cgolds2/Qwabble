@@ -47,7 +47,7 @@
           <Image Source="msgbtn.png"  AbsoluteLayout.LayoutBounds=".745,.3,68,68" AbsoluteLayout.LayoutFlags="PositionProportional">
             <Image.GestureRecognizers>
               <TapGestureRecognizer
-                      Tapped="OnMessaging"  />
+                      Tapped="OnMessaginggith"  />
             </Image.GestureRecognizers>
           </Image>
           <Image Source="setbtn.png"  AbsoluteLayout.LayoutBounds=".984,.996,68,68" AbsoluteLayout.LayoutFlags="PositionProportional">

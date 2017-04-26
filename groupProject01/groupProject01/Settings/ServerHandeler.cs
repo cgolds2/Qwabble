@@ -215,7 +215,7 @@ namespace groupProject01
 
         //LOGIN
         //createList(username, userID, apartmentID, noteName, listType, data, )
-        public async static Task<string> sendList(string email, string password)
+        public async static Task<string> login(string email, string password)
         {
             //createList(username, userID, apartmentID, noteName, listType, data)
             JObject ob = new JObject();
