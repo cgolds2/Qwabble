@@ -32,8 +32,6 @@
     <MtouchUseLlvm>False</MtouchUseLlvm>
     <MtouchUseThumb>False</MtouchUseThumb>
     <MtouchEnableBitcode>False</MtouchEnableBitcode>
-    <MtouchUseSGen>False</MtouchUseSGen>
-    <MtouchUseRefCounting>False</MtouchUseRefCounting>
     <OptimizePNGs>True</OptimizePNGs>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -111,20 +109,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default-568h%402x.png" />
-    <BundleResource Include="Resources\Default-Portrait.png" />
-    <BundleResource Include="Resources\Default-Portrait%402x.png" />
-    <BundleResource Include="Resources\Default.png" />
-    <BundleResource Include="Resources\Default%402x.png" />
-    <BundleResource Include="Resources\Icon-60%402x.png" />
     <BundleResource Include="Resources\Icon-60%403x.png" />
-    <BundleResource Include="Resources\Icon-76.png" />
-    <BundleResource Include="Resources\Icon-76%402x.png" />
-    <BundleResource Include="Resources\Icon-Small-40.png" />
-    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
-    <BundleResource Include="Resources\Icon-Small-40%403x.png" />
-    <BundleResource Include="Resources\Icon-Small.png" />
-    <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\calbtn.png" />
@@ -142,6 +127,23 @@
     <BundleResource Include="Resources\setbtn.png" />
     <BundleResource Include="Resources\setbtn%402x.png" />
     <BundleResource Include="Resources\setbtn%403x.png" />
+    <BundleResource Include="Resources\Icon-60.png" />
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+    <BundleResource Include="Resources\Icon-72.png" />
+    <BundleResource Include="Resources\Icon-72%402x.png" />
+    <BundleResource Include="Resources\Icon-Small-50.png" />
+    <BundleResource Include="Resources\Icon-Small-50%402x.png" />
+    <BundleResource Include="Resources\Icon-Small.png" />
+    <BundleResource Include="Resources\Icon-Small%402x.png" />
+    <BundleResource Include="Resources\Icon-Spotlight-40.png" />
+    <BundleResource Include="Resources\Icon-Spotlight-40%402x.png" />
+    <BundleResource Include="Resources\Icon-Spotlight-40%403x.png" />
+    <BundleResource Include="Resources\Icon.png" />
+    <BundleResource Include="Resources\Icon%402x.png" />
+    <BundleResource Include="Resources\Icon-76.png" />
+    <BundleResource Include="Resources\Icon-76%402x.png" />
+    <BundleResource Include="Resources\Icon-76%403x.png" />
+    <BundleResource Include="Resources\Icon-iPadPro%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -171,6 +173,22 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small-40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small-40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-568h%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait%402x.png" />
   </ItemGroup>
   <Import Project="..\groupProject01\groupProject01.projitems" Label="Shared" Condition="Exists('..\groupProject01\groupProject01.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
