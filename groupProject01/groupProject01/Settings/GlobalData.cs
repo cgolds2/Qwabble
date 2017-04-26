@@ -10,7 +10,7 @@ namespace groupProject01
     public class GlobalData
     {
         #region DataPagesVars
-        private SettingsData settingsDataInstance;
+        private SettingsData settingsDataInstance = new SettingsData();
         private HomeData homeDataInstance;
         private MessagingData messagingDataInstance = new MessagingData();
         private ListsData listsDataInstance = new ListsData();
@@ -85,6 +85,19 @@ namespace groupProject01
             set
             {
                 currentApartment = value;
+            }
+        }
+
+        public SettingsData SettingsDataInstance
+        {
+            get
+            {
+                return settingsDataInstance;
+            }
+
+            set
+            {
+                settingsDataInstance = value;
             }
         }
         #endregion

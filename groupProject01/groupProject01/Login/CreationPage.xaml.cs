@@ -21,9 +21,8 @@ namespace groupProject01
         async void OnNewApartment(object sender, EventArgs e)
         {
             createUser();
-            //TODO generate apartment id
-            //TODO make sure finding apartment id is findable in settings
-            await Navigation.PushAsync(new groupProject01.MainPage(_gd),false);
+            createApartment();
+            await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);
 
         }
 
@@ -33,12 +32,20 @@ namespace groupProject01
             await Navigation.PushAsync(new groupProject01.PrevApartmentPage(_gd),false);
         }
 
-        async public void createUser()
+        async void createUser()
         {
             _gd.CurrentUser = new UserObject();
             _gd.CurrentUser.Username = usernameTextField.Text;
             _gd.CurrentUser.email = emailTextField.Text;
-            await(ServerHandeler.createUser(_gd.CurrentUser, passwordTextField.Text));
+            int id = int.Parse(await(ServerHandeler.createUser(_gd.CurrentUser, passwordTextField.Text)));
+            _gd.CurrentUser.UserID = id;
+        }
+
+        async void createApartment()
+        {
+            _gd.CurrentApartment = new ApartmentObject();
+            int apmtid = int.Parse(await (ServerHandeler.createApartment(_gd.CurrentApartment, _gd)));
+            _gd.CurrentApartment.id = apmtid;
         }
     }
 }

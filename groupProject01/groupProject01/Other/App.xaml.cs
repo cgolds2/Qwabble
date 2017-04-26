@@ -18,8 +18,10 @@ namespace groupProject01
             //ListPage = new groupProject01.ListPage();
             // Other.CustomFormBase cb = new Other.CustomFormBase();
             //MainPage = new groupProject01.ListsPage();
-            MainPage = new NavigationPage(new groupProject01.LoginPage(gd));
-            //MainPage = new NavigationPage(new groupProject01.InitialPage(gd));
+
+            // MainPage = new NavigationPage(new groupProject01.HomePage(gd));
+            MainPage = new NavigationPage(new groupProject01.InitialPage(gd));
+
 
             //MainPage = new groupProject01.MainPage(gd);
         }
