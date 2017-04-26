@@ -4,14 +4,31 @@
              x:Class="groupProject01.PrevApartmentPage">
 
     <ContentView.Content>
-        <StackLayout VerticalOptions="StartAndExpand">
-            <Label Text="Previous Apartment" VerticalOptions="Center" HorizontalOptions="Center" />
-            <Label Text="You can find the apartment id in settings." VerticalOptions="Center" HorizontalOptions="Center" />
+        <StackLayout BackgroundColor="#dddddd" >
+            <StackLayout VerticalOptions="Start">
+                <AbsoluteLayout Padding = "0,0,0,-70">
+                    <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.425"
+          AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
 
-            <Entry x:Name="apartment" Text="Enter your apartment id" />
+                    <Label Text="Settings" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24"
+            LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".55,.7,150,100"
+            AbsoluteLayout.LayoutFlags="PositionProportional" />
+                </AbsoluteLayout>
 
-            <Button x:Name="Submit" Text="Submit" Clicked="OnSubmit" />
+            </StackLayout>
+            <!-- START PAGE CODE ****************************************************** -->
+
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Label Text="Previous Apartment" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Label Text="You can find the apartment id in settings." VerticalOptions="Center" HorizontalOptions="Center" />
+
+                <Entry x:Name="apartment" Text="Enter your apartment id" />
+
+                <Button x:Name="Submit" Text="Submit" Clicked="OnSubmit" />
+
+                <!-- END PAGE CODE ****************************************************** -->
+
+            </StackLayout>
         </StackLayout>
-
     </ContentView.Content>
 </ContentPage>

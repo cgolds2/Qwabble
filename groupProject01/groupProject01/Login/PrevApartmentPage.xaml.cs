@@ -17,6 +17,7 @@ namespace groupProject01
 
         public PrevApartmentPage (GlobalData gd)                        //constructor for PrevApartment page
 		{
+            NavigationPage.SetHasNavigationBar(this, false);    //hides the default navigation bar
             _gd = gd;                                                   //sets the private instance of global variable
 			InitializeComponent ();                                     //initialize the UI
 		}
