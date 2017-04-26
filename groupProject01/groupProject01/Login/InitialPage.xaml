@@ -11,7 +11,7 @@
                     <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.425"
           AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
 
-                    <Label Text="Settings" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24"
+                    <Label Text="Welcome to Qwabble" x:Name="TitleLabel" TextColor="#ffffff" FontSize="18"
             LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".55,.7,150,100"
             AbsoluteLayout.LayoutFlags="PositionProportional" />
                 </AbsoluteLayout>

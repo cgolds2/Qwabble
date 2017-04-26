@@ -10,7 +10,7 @@
                     <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375" 
 				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
                     <Button Text="  ➙" Rotation="180" BackgroundColor="Transparent" FontSize="24" TextColor="White" AbsoluteLayout.LayoutBounds=".01,.05,60,40" 
-                AbsoluteLayout.LayoutFlags="PositionProportional" />
+                AbsoluteLayout.LayoutFlags="PositionProportional" Clicked="OnBack"/>
                     <Label Text="Create New User" x:Name="TitleLabel" TextColor="#ffffff" FontSize="20" 
 				LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100" 
 				AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold"/>

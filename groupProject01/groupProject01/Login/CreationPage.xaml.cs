@@ -33,6 +33,11 @@ namespace groupProject01
             await Navigation.PushAsync(new groupProject01.PrevApartmentPage(_gd),false);    //pushes to the previous apartment page
         }
 
+        async void OnBack(object sender, EventArgs e)               //when the back button is pushed
+        {
+            await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);         //go back to the initial page
+        }
+
         async void createUser()         //creates a new user
         {
             _gd.CurrentUser = new UserObject();         //sets the current user in global data to a new user object

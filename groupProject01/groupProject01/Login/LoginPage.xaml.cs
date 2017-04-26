@@ -35,6 +35,11 @@ namespace groupProject01
             submit();
 
         }
+
+        async void OnBack(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);
+        }
         async private void submit()
         {
             //TODO something to check username and password
