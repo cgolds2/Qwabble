@@ -29,6 +29,7 @@ namespace groupProject01
             if(aptObj != null)                                                      //if apartmentid is not null
             {
                 await ServerHandeler.addUserToApartment(_gd.CurrentUser.UserID, apartmentID);
+                _gd.CurrentApartment = aptObj;
                 await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);       //direct to home page
             }
             else                              //if apartmentid is null
@@ -41,12 +42,12 @@ namespace groupProject01
         {
             foreach(ApartmentObject ap in apt)  //searches every apartment that was returned
             {
-                if(ap.id == apartmentID) //checks to see if 
+                if(ap.id == apartmentID) //checks to see if given id matches the apartmentid of the current 
                 {
-                    return ap;
+                    return ap;          //returns the current apartment if true
                 }
             }
-            return null;
+            return null;                //if no apartment is found returns null
         }
     }
 }
