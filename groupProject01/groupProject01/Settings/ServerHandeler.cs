@@ -212,5 +212,19 @@ namespace groupProject01
 			 * createApartment(userID (creator/owner), name, location) //return apartment ID
 			 */
         }
+
+        //LOGIN
+        //createList(username, userID, apartmentID, noteName, listType, data, )
+        public async static Task<string> sendList(string email, string password)
+        {
+            //createList(username, userID, apartmentID, noteName, listType, data)
+            JObject ob = new JObject();
+            //JObject ob = JObject.Parse(jsonString);
+            ob["email"] = email;
+            ob["password"] = password;
+            string result = await (RestService.PostCall(ob.ToString(), baseuri + "login.php"));
+            return result;
+
+        }
     }
 }

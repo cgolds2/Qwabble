@@ -33,13 +33,13 @@ namespace groupProject01
         /// Fills the Message with the necessary data.
         /// </summary>
         /// <param name="apartmentID"></param>
-        async public void getItemsInMessage(GlobalData gd, int apartmentID)
+        async public void getItemsInMessage(GlobalData gd)
         {
+            messages = new List<MessageObject>();
+
             messages = await (ServerHandeler.getMessages(gd));
 
-            messages = new List<MessageObject>();
-            messages.Add(new MessageObject { MessageName = "Message1", apartmentID = messages.Count });
-            messages.Add(new MessageObject { MessageName = "Message2", apartmentID = messages.Count });
+            
         }
     }
     public class GroupObject
