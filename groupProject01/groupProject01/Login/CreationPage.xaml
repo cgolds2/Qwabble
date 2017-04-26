@@ -4,7 +4,21 @@
              x:Class="groupProject01.CreationPage"
              xmlns:local="clr-namespace:groupProject01">
   <ContentView.Content>
-        <StackLayout VerticalOptions="StartAndExpand">
+        <StackLayout BackgroundColor="#dddddd" >
+            <StackLayout VerticalOptions="Start">
+                <AbsoluteLayout Padding = "0,0,0,-70">
+                    <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375" 
+				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+                    <Button Text="  ➙" Rotation="180" BackgroundColor="Transparent" FontSize="24" TextColor="White" AbsoluteLayout.LayoutBounds=".01,.05,60,40" 
+                AbsoluteLayout.LayoutFlags="PositionProportional" Clicked="OnBack"/>
+                    <Label Text="Create New User" x:Name="TitleLabel" TextColor="#ffffff" FontSize="20" 
+				LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100" 
+				AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold"/>
+                </AbsoluteLayout>
+
+            </StackLayout>
+            <!-- START PAGE CODE ****************************************************** -->
+            <StackLayout VerticalOptions="StartAndExpand">
             <Label Text="Create Account" VerticalOptions="Center" HorizontalOptions="Center" />
 
             <Entry x:Name="usernameTextField" Text="Enter your username" />
@@ -13,6 +27,9 @@
 
             <Button x:Name="prevApartment" Text="Apartment Already Created" Clicked="OnPrevApartment" />
             <Button x:Name="newApartment" Text="Create New Apartment" Clicked="OnNewApartment" />
+            </StackLayout>
+
+            <!-- END PAGE CODE ****************************************************** -->
         </StackLayout>
     </ContentView.Content>
 </ContentPage>

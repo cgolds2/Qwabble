@@ -11,34 +11,47 @@ namespace groupProject01
 {
 	public partial class CreationPage : ContentPage
 	{
-        GlobalData _gd;
-		public CreationPage (GlobalData gd)
+        GlobalData _gd;     //declares local instances of global data
+		public CreationPage (GlobalData gd)     //creation page constructor
 		{
-            _gd = gd;
-			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);    //hides the default navigation bar
+            _gd = gd;       //sets local instance of global data
+			InitializeComponent ();     //initializes ui elements of the page
 		}
 
-        async void OnNewApartment(object sender, EventArgs e)
+        async void OnNewApartment(object sender, EventArgs e)   //when new apartment button is clicked
         {
-            createUser();
-            //TODO generate apartment id
-            //TODO make sure finding apartment id is findable in settings
-            await Navigation.PushAsync(new groupProject01.MainPage(_gd),false);
+            createUser();       //creates a new user
+            createApartment();  //creates a new apartment for user
+            await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);     //pushes to the home page
 
         }
 
-        async void OnPrevApartment(object sender, EventArgs e)
+        async void OnPrevApartment(object sender, EventArgs e)      //when already have apartment button is clicked
         {
-            createUser();
-            await Navigation.PushAsync(new groupProject01.PrevApartmentPage(_gd),false);
+            createUser();       //creates a new user
+            await Navigation.PushAsync(new groupProject01.PrevApartmentPage(_gd),false);    //pushes to the previous apartment page
         }
 
-        async public void createUser()
+        async void OnBack(object sender, EventArgs e)               //when the back button is pushed
         {
-            _gd.CurrentUser = new UserObject();
-            _gd.CurrentUser.Username = usernameTextField.Text;
-            _gd.CurrentUser.email = emailTextField.Text;
-            await(ServerHandeler.createUser(_gd.CurrentUser, passwordTextField.Text));
+            await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);         //go back to the initial page
+        }
+
+        async void createUser()         //creates a new user
+        {
+            _gd.CurrentUser = new UserObject();         //sets the current user in global data to a new user object
+            _gd.CurrentUser.Username = usernameTextField.Text;      //sets the username to the user's input username
+            _gd.CurrentUser.email = emailTextField.Text;            //sets the email to the user's input email
+            int id = int.Parse(await(ServerHandeler.createUser(_gd.CurrentUser, passwordTextField.Text)));  //creates user in database and recieves user id back
+            _gd.CurrentUser.UserID = id;                            //sets the user id
+        }
+
+        async void createApartment()        //creates a new apartment
+        {
+            _gd.CurrentApartment = new ApartmentObject();       //sets global data current apartment to a new apartment object
+            int apmtid = int.Parse(await (ServerHandeler.createApartment(_gd.CurrentApartment, _gd)));  //cretes a new apartment in the database and recieves the apartment id back
+            _gd.CurrentApartment.id = apmtid;       //sets the apartment id
         }
     }
 }

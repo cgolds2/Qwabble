@@ -17,27 +17,47 @@ namespace groupProject01
 			NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             _gd = gd;
-		}
+            string username = _gd.SettingsDataInstance.getCredentials(keysInt.userName);
+            string password = _gd.SettingsDataInstance.getCredentials(keysInt.password);
+            if(!( username==null || password==null))
+            {
+                if (!(username.Equals("") || password.Equals("")))
+                {
+                    usernameTextField.Text = username;
+                    passwordTextField.Text = password;
+                    submit();
+                }
+            }
+        }
 
         async void OnSubmit(object sender, EventArgs e)
         {
+            submit();
+
+        }
+
+        async void OnBack(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);
+        }
+        async private void submit()
+        {
             //TODO something to check username and password
-            string x = await(ServerHandeler.sendList(usernameTextField.Text, passwordTextField.Text));
+            string x = await(ServerHandeler.login(usernameTextField.Text, passwordTextField.Text));
             x.Replace("\n", "");
             try
             {
                 int ID = Int32.Parse(x);
                 _gd.CurrentUser.ApartmentID = ID;
-                await Navigation.PushAsync(new groupProject01.MainPage(_gd), false);
+                _gd.SettingsDataInstance.setCredentials(keysInt.userName, usernameTextField.Text);
+                _gd.SettingsDataInstance.setCredentials(keysInt.password, passwordTextField.Text);
+                await Navigation.PushAsync(new groupProject01.HomePage(_gd), false);
             }
             catch (Exception)
             {
 
-                throw;
+
             }
-            //await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);
-
-
         }
     }
 }

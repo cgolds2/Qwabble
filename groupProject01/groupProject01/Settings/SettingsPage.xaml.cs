@@ -11,11 +11,11 @@ namespace groupProject01
 	public partial class SettingsPage : ContentPage
 	{
         GlobalData _gd;
-		public SettingsPage (GlobalData gd)
+		public SettingsPage (GlobalData gd)         //constructor for settings page
 		{
-            _gd = gd;
-			            NavigationPage.SetHasNavigationBar(this, false);
-            InitializeComponent();
+            _gd = gd;           //sets a local instance of global data
+			NavigationPage.SetHasNavigationBar(this, false);
+            InitializeComponent();      //initializes the UI
 		}
 
         #region BottomBarButtons
@@ -43,14 +43,20 @@ namespace groupProject01
         #endregion
 
 
-        void OnLogout(object sender, EventArgs e)
+
+       async void OnLogout(object sender, EventArgs e)
+
         {
+            _gd.SettingsDataInstance.setCredentials(keysInt.userName, "");
+            _gd.SettingsDataInstance.setCredentials(keysInt.password, "");
+            await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);
             //TODO logout user
+            await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);            //pushes to the initial page
         }
 
-        void OnCurApartment(object sender, EventArgs e)
+        void OnCurApartment(object sender, EventArgs e)         //when the apartment id info is clicked on
         {
-            //TODO show current apartment
+            DisplayAlert("Apartment ID", "Your apartment ID is " + _gd.CurrentApartment.id + ".", "OK");    //displays an alert with the current apartment id
         }
     }
 }
