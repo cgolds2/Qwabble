@@ -50,7 +50,7 @@
                       Tapped="OnMessaging"  />
             </Image.GestureRecognizers>
           </Image>
-          <Image Source="setbtn.png"  AbsoluteLayout.LayoutBounds=".984,.996,68,68" AbsoluteLayout.LayoutFlags="PositionProportional">
+          <Image Source="setbtn.png"  AbsoluteLayout.LayoutBounds=".984,.3,68,68" AbsoluteLayout.LayoutFlags="PositionProportional">
             <Image.GestureRecognizers>
               <TapGestureRecognizer
                       Tapped="OnSetting"  />
