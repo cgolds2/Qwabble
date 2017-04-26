@@ -22,7 +22,7 @@ namespace groupProject01
         {
             createUser();
             createApartment();
-            await Navigation.PushAsync(new groupProject01.MainPage(_gd),false);
+            await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);
 
         }
 
