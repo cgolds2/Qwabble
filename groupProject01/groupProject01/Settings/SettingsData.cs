@@ -32,7 +32,7 @@ namespace groupProject01
 
         public void refreshAll()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
 

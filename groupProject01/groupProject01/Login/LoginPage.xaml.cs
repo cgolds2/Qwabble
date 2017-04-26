@@ -19,7 +19,7 @@ namespace groupProject01
             _gd = gd;
             string username = _gd.SettingsDataInstance.getCredentials(keysInt.userName);
             string password = _gd.SettingsDataInstance.getCredentials(keysInt.password);
-            if(!( username.Equals("") || password.Equals("")))
+            if(( username==null || password==null))
             {
                 usernameTextField.Text = username;
                 passwordTextField.Text = password;
