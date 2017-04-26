@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="groupProject01.SettingsPage"
@@ -9,7 +9,7 @@
     <StackLayout BackgroundColor="#dddddd" >
       <StackLayout VerticalOptions="Start">
         <AbsoluteLayout Padding = "0,0,0,-70">
-          <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375"
+          <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.425"
           AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
 
           <Label Text="Settings" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24"
@@ -29,9 +29,41 @@
 
       <StackLayout VerticalOptions="End">
         <AbsoluteLayout>
-          <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,1"
-            AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
-          <Button Image="homebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderRadius="30"
+          <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+
+          <Image Source="homebtn.png"  AbsoluteLayout.LayoutBounds=".505,.996,70,70" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer
+                      Tapped="OnHome"  />
+            </Image.GestureRecognizers>
+          </Image>
+          <Image Source="notebtn.png"  AbsoluteLayout.LayoutBounds=".26,.3,68,68" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer
+                      Tapped="OnList"  />
+            </Image.GestureRecognizers>
+          </Image>
+          <Image Source="calbtn.png"  AbsoluteLayout.LayoutBounds=".02,.3,68,68" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer
+                      Tapped="OnCalendar"  />
+            </Image.GestureRecognizers>
+          </Image>
+          <Image Source="msgbtn.png"  AbsoluteLayout.LayoutBounds=".745,.3,68,68" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer
+                      Tapped="OnMessaging"  />
+            </Image.GestureRecognizers>
+          </Image>
+          <Image Source="setbtn.png"  AbsoluteLayout.LayoutBounds=".984,.996,68,68" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer
+                      Tapped="OnSetting"  />
+            </Image.GestureRecognizers>
+          </Image>
+
+                    
+          <!--<Button Image="homebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderRadius="30"
             BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70"
             AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome" />
           <Button Image="notebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
@@ -45,7 +77,7 @@
             AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnMessaging"/>
           <Button Image="setbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
             BorderColor="Black" AbsoluteLayout.LayoutBounds=".984,.996,68,68"
-            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting"/>
+            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnSetting"/>-->
         </AbsoluteLayout>
       </StackLayout>
     </StackLayout>
