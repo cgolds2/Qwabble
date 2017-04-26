@@ -30,5 +30,10 @@ namespace groupProject01
             int index = ((CalendarOptionObject)e.Item).ID;
             //show details in fill-outable form
         }
+
+        async void OnAddEvent(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new groupProject01.AddEventPage(_gd));
+        }
     }
 }

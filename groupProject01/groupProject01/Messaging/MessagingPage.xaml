@@ -10,6 +10,7 @@
 				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
 			<Label Text="Messaging" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24" 
 				LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100" 
+
 				AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold" />
 					</AbsoluteLayout>
 			</StackLayout>

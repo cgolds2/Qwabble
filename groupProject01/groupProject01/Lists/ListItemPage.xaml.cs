@@ -35,6 +35,10 @@ namespace groupProject01
                 await Navigation.PushAsync(new groupProject01.Lists.ListItemDetail(item, _gd),false);     //directs to the page to view the details of the item
             }
         }
+        async void OnAddItem(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new groupProject01.AddItemPage(_gd));
+        }
 
         void SwitchToggled(object sender, EventArgs e)
         {
