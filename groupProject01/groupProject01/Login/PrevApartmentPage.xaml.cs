@@ -31,7 +31,7 @@ namespace groupProject01
                 await ServerHandeler.addUserToApartment(_gd.CurrentUser.UserID, apartmentID);
                 await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);       //direct to home page
             }
-            else                                                                    //if apartmentid is null
+            else                              //if apartmentid is null
             {
                 await DisplayAlert("Invalid Apartment ID", "The apartment ID you input is not valid. Please try again.", "OK");   //shows error message
             }

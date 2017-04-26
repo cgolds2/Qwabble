@@ -30,9 +30,9 @@ namespace groupProject01
             await Navigation.PushAsync(new groupProject01.SettingsPage(_gd),false);            //if setting button is pressed
         }
 
-        async public void OnHome(object sender, EventArgs e)                       //if setting button is pressed
+        async public void OnHome(object sender, EventArgs e)                       //if home button is pressed
         {
-            //await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);            //if setting button is pressed
+            //await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);            //do nothing
         }
 
         #endregion
