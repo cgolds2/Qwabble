@@ -32,7 +32,7 @@ namespace groupProject01
 
         public void refreshAll()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
 
@@ -66,6 +66,10 @@ namespace groupProject01
         }
         public string getCredentials(string key){
             return credService.getPrefs(key);
+        }
+        public string getCredentials(keysInt keyy)
+        {
+            return credService.getPrefs(getStringFromKey(keyy));
         }
         #endregion
 
