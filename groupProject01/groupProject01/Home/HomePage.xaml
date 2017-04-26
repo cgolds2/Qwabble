@@ -29,9 +29,12 @@
           <Button Image="homebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderRadius="30"
             BorderWidth="2" BorderColor="Black" AbsoluteLayout.LayoutBounds=".505,.996,70,70"
             AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnHome" />
-          <Button Image="notebtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
+          <Button FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
             BorderColor="Black" AbsoluteLayout.LayoutBounds=".26,.3,68,68"
-            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList"/>
+            AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnList">
+            <Image Source="notebtn2.png" Aspect ="xamarin button image not appearing on android
+                   AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+          </Button>
           <Button Image="calbtn.png" FontSize="15" BackgroundColor="#60cc60" BorderWidth="2"
           BorderColor="Black" AbsoluteLayout.LayoutBounds=".02,.3,68,68"
           AbsoluteLayout.LayoutFlags="PositionProportional" Margin="2" Clicked="OnCalendar"/>

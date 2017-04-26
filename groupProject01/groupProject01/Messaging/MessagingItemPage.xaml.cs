@@ -16,11 +16,11 @@ namespace groupProject01.Messaging
 
 		public MessagingItemPage (int ListID, GlobalData gd)
 		{
-			InitializeComponent ();
-            _gd = gd;
-            _gd.MessagingDataInstance.getItemsInMessage(_gd, ListID);
-            messages = _gd.MessagingDataInstance.messages;
-            msgView.ItemsSource = messages;
+			//InitializeComponent ();
+   //         _gd = gd;
+   //         _gd.MessagingDataInstance.getItemsInMessage(_gd, ListID);
+   //         messages = _gd.MessagingDataInstance.messages;
+   //         msgView.ItemsSource = messages;
 		}
         
 	}

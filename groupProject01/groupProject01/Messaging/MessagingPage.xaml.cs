@@ -11,15 +11,16 @@ namespace groupProject01
 {
 	public partial class MessagingPage : ContentPage        //MessagingPage class
 	{
-        public List<GroupObject> groups { get; set; }       //creates an instance of messages
+        public List<MessageObject> groups { get; set; }       //creates an instance of messages
         private GlobalData _gd;                             //global variable GlobalData initialzed
         
         public MessagingPage (GlobalData gd)                //MessagingPage constructor
 		{
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();                          //loads the UI elements
-            _gd = gd;                                        //sets private instance of global data
-            groups = _gd.MessagingDataInstance.groups;       //gets the messaging data from the data file
+            _gd = gd;
+            _gd.MessagingDataInstance.getItemsInMessage(_gd); //sets private instance of global data
+            groups = _gd.MessagingDataInstance.messages;       //gets the messaging data from the data file
             msgView.ItemsSource = groups;                    //sets the messaging UI
 		}
 
