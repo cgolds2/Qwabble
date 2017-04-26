@@ -11,6 +11,8 @@
 				<AbsoluteLayout Padding = "0,0,0,-70">
 					<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375" 
 				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+                    <Button Text="  ➙" Rotation="180" BackgroundColor="Transparent" FontSize="24" TextColor="White" AbsoluteLayout.LayoutBounds=".01,.05,60,40" 
+                AbsoluteLayout.LayoutFlags="PositionProportional" />
 			<Label Text="Log in" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24" 
 				LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100" 
 				AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold"/>
@@ -22,8 +24,10 @@
 
         <StackLayout VerticalOptions="StartAndExpand"> 
            
-            <Entry x:Name="usernameTextField" Text="Enter your email" Margin="10,10,10,10" BackgroundColor="#efefef" />
-            <Entry x:Name="passwordTextField" Text="Enter your password" Margin="10,0,10,10" BackgroundColor="#efefef" />  
+
+            <Entry x:Name="usernameTextField" Text="Enter your email" TextColor="#4a4a4a" Margin="10,10,10,10" BackgroundColor="#efefef" />
+            <Entry x:Name="passwordTextField" Text="Enter your password" TextColor="#4a4a4a" Margin="10,0,10,10" BackgroundColor="#efefef" />  
+
             
             <Button x:Name="Submit" Text="Submit" Clicked="OnSubmit" />
         </StackLayout>
