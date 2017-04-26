@@ -7,8 +7,8 @@
   <ContentView.Content>
         <StackLayout VerticalOptions="StartAndExpand">
 
-            <Button x:Name="Login" Text="Log In" Clicked="OnLogin" />
-            <Button x:Name="CreateUser" Text="Create User" Clicked ="OnCreateUser"/>
+            <Button x:Name="Login" Text="LogIn" Clicked="OnLogin" />
+            <Button x:Name="CreateUser" Text="Create New Account" Clicked ="OnCreateUser"/>
 
         </StackLayout>
     </ContentView.Content>

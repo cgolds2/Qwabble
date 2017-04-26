@@ -17,10 +17,13 @@
       </StackLayout>
       <StackLayout VerticalOptions="CenterAndExpand">
         <!-- START PAGE CODE ****************************************************** -->
-        
+                <StackLayout VerticalOptions="Start">
+                    <Label Text="Welcome User!" x:Name="HomeWelcome" FontSize="32"
+            LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100"
+            AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </StackLayout>
 
-
-        <!-- END PAGE CODE ****************************************************** -->
+                <!-- END PAGE CODE ****************************************************** -->
       </StackLayout>
 
       <StackLayout VerticalOptions="End">
