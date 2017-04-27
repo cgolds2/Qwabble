@@ -26,7 +26,6 @@ namespace groupProject01
             {
                 return;
             }
-            await(createApartment());  //creates a new apartment for user
             Application.Current.MainPage = new NavigationPage(new groupProject01.HomePage(_gd));       //direct to home page
 
 
