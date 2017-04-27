@@ -7,7 +7,7 @@
         <StackLayout BackgroundColor="#dddddd" >
             <StackLayout VerticalOptions="Start">
                 <AbsoluteLayout Padding = "0,0,0,-70">
-                    <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375" 
+                    <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.5" 
 				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
                     <Button Text="  ➙" Rotation="180" BackgroundColor="Transparent" FontSize="24" TextColor="White" AbsoluteLayout.LayoutBounds=".01,.05,60,40" 
                 AbsoluteLayout.LayoutFlags="PositionProportional" Clicked="OnBack"/>
