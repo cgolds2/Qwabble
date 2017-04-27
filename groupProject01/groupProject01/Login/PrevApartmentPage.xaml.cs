@@ -31,7 +31,7 @@ namespace groupProject01
             {
                 await ServerHandeler.addUserToApartment(_gd.CurrentUser.UserID, apartmentID);
                 _gd.CurrentApartment = aptObj;
-                Application.Current.MainPage = new groupProject01.HomePage(_gd);       //direct to home page
+                Application.Current.MainPage = new NavigationPage(new groupProject01.HomePage(_gd));       //direct to home page
             }
             else                              //if apartmentid is null
             {
@@ -41,10 +41,10 @@ namespace groupProject01
 
         async void OnBack(object sender, EventArgs e)               //when the back button is pushed
         {
-            await Navigation.PushAsync(new groupProject01.CreationPage(_gd), false);         //go back to the create user page
+            await Navigation.PopAsync();
         }
 
-        public ApartmentObject findApartment(List<ApartmentObject> apt, int apartmentID)        //finds the apartment specified
+        public static ApartmentObject findApartment(List<ApartmentObject> apt, int apartmentID)        //finds the apartment specified
         {
             foreach(ApartmentObject ap in apt)  //searches every apartment that was returned
             {

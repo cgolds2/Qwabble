@@ -17,5 +17,10 @@ namespace groupProject01.Lists
             lblLabel.Text = currentItem.noteName;
 
         }
-	}
+        async void OnBack(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+            // await Navigation.PushAsync(new groupProject01.ListsPage(_gd));
+        }
+    }
 }

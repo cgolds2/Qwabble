@@ -18,6 +18,10 @@
       <SubType>Code</SubType>
       <DependentUpon>CalendarPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Calendars\EventDetailPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>EventDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Calendars\EventPage.xaml.cs">
       <DependentUpon>EventPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -39,9 +43,6 @@
       <SubType>Code</SubType>
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Home\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Home\RoomatesPage.xaml.cs">
       <DependentUpon>RoomatesPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -50,6 +51,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Lists\ListsPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>ListsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Login\CreateNewApartmentPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>CreateNewApartmentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Login\CreationPage.xaml.cs">
       <SubType>Code</SubType>
@@ -109,11 +114,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Home\HomePage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Calendars\EventDetailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Home\MainPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Home\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -122,6 +127,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Lists\ListsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Login\CreateNewApartmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

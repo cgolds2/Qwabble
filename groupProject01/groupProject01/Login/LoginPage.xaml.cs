@@ -19,45 +19,52 @@ namespace groupProject01
             _gd = gd;
             string username = _gd.SettingsDataInstance.getCredentials(keysInt.userName);
             string password = _gd.SettingsDataInstance.getCredentials(keysInt.password);
-            if(!( username==null || password==null))
+            if(!( username==null || password==null ||username.Equals("")  || password.Equals("")))
             {
-                if (!(username.Equals("") || password.Equals("")))
-                {
+                
                     usernameTextField.Text = username;
                     passwordTextField.Text = password;
                     submit();
-                }
+                
             }
         }
 
         async void OnSubmit(object sender, EventArgs e)
         {
-            submit();
+           await(submit());
 
         }
  
         async void OnBack(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);
+            await Navigation.PopAsync();
         }
-        async private void submit()
+        async private Task submit()
         {
-            //TODO something to check username and password
             string x = await(ServerHandeler.login(usernameTextField.Text, passwordTextField.Text));
             x.Replace("\n", "");
             try
             {
                 int ID = Int32.Parse(x);
-                _gd.CurrentUser.ApartmentID = ID;
+                if(ID == -1)
+                {
+                    await DisplayAlert("Login Failed", "Email or Password Incorrect", "OK");   //shows error message
+                    return;
+                }
+               
                 _gd.SettingsDataInstance.setCredentials(keysInt.userName, usernameTextField.Text);
                 _gd.SettingsDataInstance.setCredentials(keysInt.password, passwordTextField.Text);
-                Application.Current.MainPage = new groupProject01.HomePage(_gd);
+               // gd.SettingsDataInstance.setCredentials("UserID", ID);
+                await(_gd.refreshUser(ID));
+                Application.Current.MainPage = new NavigationPage(new groupProject01.HomePage(_gd));
+                
                // await Navigation.PushAsync(new groupProject01.HomePage(_gd));
             
                //new NavigationPage(new groupProject01.HomePage(_gd));
             }
             catch (Exception)
             {
+                await DisplayAlert("Login Failed", "Email or Password Incorrect", "OK");   //shows error message
 
 
             }

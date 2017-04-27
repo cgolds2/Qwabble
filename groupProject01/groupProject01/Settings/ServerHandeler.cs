@@ -54,7 +54,9 @@ namespace groupProject01
             foreach (string s in result)
             {
                 if (s.Equals("")) { continue; }
+                
                 ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(s);
+                if(deserializedProduct.listType != listid) { continue; }
                 ret.Add(deserializedProduct);
             }
             //  ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(output);
@@ -121,6 +123,7 @@ namespace groupProject01
             {
                 if (s.Equals("")) { continue; }
                 MessageObject deserializedProduct = JsonConvert.DeserializeObject<MessageObject>(s);
+                deserializedProduct.SenderName = await (getUsername(deserializedProduct.SenderID));
                 ret.Add(deserializedProduct);
             }
             //  ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(output);
@@ -154,6 +157,12 @@ namespace groupProject01
             string text = await (RestService.GetCall(get));
             UserObject ret = JsonConvert.DeserializeObject<UserObject>(text);
             return ret;
+        }
+
+        async public static Task<string> getUsername(int userID)
+        {
+                UserObject u = await (getUserInfo(userID));
+                return u.username;
         }
 
         //addUserToApartment(userID,apartmentID
