@@ -37,7 +37,7 @@ namespace groupProject01
  
         async void OnBack(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);
+            await Navigation.PopAsync();
         }
         async private Task submit()
         {

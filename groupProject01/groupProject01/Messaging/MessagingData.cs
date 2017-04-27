@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
@@ -33,7 +34,7 @@ namespace groupProject01
         /// Fills the Message with the necessary data.
         /// </summary>
         /// <param name="apartmentID"></param>
-        async public void getItemsInMessage(GlobalData gd)
+        async public Task getItemsInMessage(GlobalData gd)
         {
             messages = new List<MessageObject>();
 
@@ -108,7 +109,7 @@ namespace groupProject01
             }
         }
 
-        public string MessageName
+        public string SenderName
         {
             get
             {

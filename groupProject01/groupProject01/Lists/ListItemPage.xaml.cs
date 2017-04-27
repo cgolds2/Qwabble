@@ -41,7 +41,8 @@ namespace groupProject01
         }
         async void OnBack(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new groupProject01.ListsPage(_gd));
+            await Navigation.PopAsync();
+           // await Navigation.PushAsync(new groupProject01.ListsPage(_gd));
         }
 
         void SwitchToggled(object sender, EventArgs e)

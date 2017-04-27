@@ -41,7 +41,7 @@ namespace groupProject01
 
         async void OnBack(object sender, EventArgs e)               //when the back button is pushed
         {
-            await Navigation.PushAsync(new groupProject01.CreationPage(_gd), false);         //go back to the create user page
+            await Navigation.PopAsync();
         }
 
         public static ApartmentObject findApartment(List<ApartmentObject> apt, int apartmentID)        //finds the apartment specified
