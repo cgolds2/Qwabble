@@ -18,7 +18,7 @@ namespace groupProject01
 		{
             NavigationPage.SetHasNavigationBar(this, false);                                        //hides the default naviagion bar
             type = ListType;
-            gd = _gd;
+            _gd = gd;
 			InitializeComponent ();
 		}
         
@@ -26,7 +26,7 @@ namespace groupProject01
         {
             ListItemObject it = new ListItemObject();
             it.noteName = itemNameTextField.Text;
-            it.data = itemDetailTextField.Text; 
+            it.listType = type;
 
             it.data = itemDetailTextField.Text;
             await(ServerHandeler.sendList(it, _gd));
