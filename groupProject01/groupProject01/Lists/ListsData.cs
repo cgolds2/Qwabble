@@ -46,14 +46,7 @@ namespace groupProject01
             }*/
         }
 
-        public int addItem()
-        {
-            throw new NotImplementedException();
-        }
-
-        
-
-        public int deleteItem()
+       public int deleteItem()
         {
             throw new NotImplementedException();
         }

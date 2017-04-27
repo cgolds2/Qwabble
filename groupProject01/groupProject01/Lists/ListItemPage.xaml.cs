@@ -34,7 +34,7 @@ namespace groupProject01
             var item = items[index];                                                                //items.get(index), gets the item at that specified index
             if (item.listType==0)                                                                      //if the item has additional info
             {
-                await Navigation.PushAsync(new groupProject01.Lists.ListItemDetail(item, _gd),false);     //directs to the page to view the details of the item
+                //await Navigation.PushAsync(new groupProject01.Lists.ListItemDetail(item, _gd),false);     //directs to the page to view the details of the item
             }
         }
         async void OnAddItem(object sender, EventArgs e)
