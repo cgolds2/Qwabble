@@ -37,6 +37,13 @@
 			</StackLayout>
 
       <StackLayout VerticalOptions="End">
+        <!--LRTB-->
+        <AbsoluteLayout>
+          <BoxView Color="#AAAAAA" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+          <Entry x:Name="usernameTextField" AbsoluteLayout.LayoutBounds=".04,.3,280,40" TextColor="#4a4a4a"  BackgroundColor="#efefef" />
+          <Button x:Name="SEND" Text="-->" Clicked="OnHome" AbsoluteLayout.LayoutBounds=".9,.3,70,40" />
+          
+        </AbsoluteLayout>
         <AbsoluteLayout>
           <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
 
@@ -64,7 +71,7 @@
                       Tapped="OnMessaging"  />
             </Image.GestureRecognizers>
           </Image>
-          <Image Source="setbtn.png"  AbsoluteLayout.LayoutBounds=".984,.996,68,68" AbsoluteLayout.LayoutFlags="PositionProportional">
+          <Image Source="setbtn.png"  AbsoluteLayout.LayoutBounds=".984,.3,68,68" AbsoluteLayout.LayoutFlags="PositionProportional">
             <Image.GestureRecognizers>
               <TapGestureRecognizer
                       Tapped="OnSetting"  />
