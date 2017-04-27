@@ -54,7 +54,9 @@ namespace groupProject01
             foreach (string s in result)
             {
                 if (s.Equals("")) { continue; }
+                
                 ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(s);
+                if(deserializedProduct.listType != listid) { continue; }
                 ret.Add(deserializedProduct);
             }
             //  ListItemObject deserializedProduct = JsonConvert.DeserializeObject<ListItemObject>(output);
