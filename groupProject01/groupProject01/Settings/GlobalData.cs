@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace groupProject01
 {
@@ -107,7 +108,18 @@ namespace groupProject01
             //currentUser.username = settingsDataInstance.getUserName();
 
         }
-      
-    }
+        public async Task refreshUser(int ID)
+        {
+            currentUser = await(ServerHandeler.getUserInfo(ID));
+            await(refreshApartment());
+        }
+        public async Task refreshApartment()
+        {
+            //public static ApartmentObject findApartment(List<ApartmentObject> apt, int apartmentID)        //finds the apartment specified
+            List<ApartmentObject> l = await(ServerHandeler.getApartments());
+            currentApartment =  PrevApartmentPage.findApartment(l, CurrentUser.ApartmentID);
+        }
+
+}
 
 }

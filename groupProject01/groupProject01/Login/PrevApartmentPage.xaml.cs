@@ -44,7 +44,7 @@ namespace groupProject01
             await Navigation.PushAsync(new groupProject01.CreationPage(_gd), false);         //go back to the create user page
         }
 
-        public ApartmentObject findApartment(List<ApartmentObject> apt, int apartmentID)        //finds the apartment specified
+        public static ApartmentObject findApartment(List<ApartmentObject> apt, int apartmentID)        //finds the apartment specified
         {
             foreach(ApartmentObject ap in apt)  //searches every apartment that was returned
             {
