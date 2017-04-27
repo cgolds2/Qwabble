@@ -22,24 +22,24 @@ namespace groupProject01
 
         async public void OnHome(object sender, EventArgs e)                          //if home button is pressed
         {
-            Application.Current.MainPage = new groupProject01.HomePage(_gd);       //direct to home page
+            Application.Current.MainPage = new NavigationPage(new groupProject01.HomePage(_gd));       //direct to home page
          //direct to home page
         }
         async public void OnMessaging(object sender, EventArgs e)                      //if messaging button is pressed
         {
-            Application.Current.MainPage = new groupProject01.MessagingPage(_gd);        //direct to messaging page
+            Application.Current.MainPage = new NavigationPage(new groupProject01.MessagingPage(_gd));        //direct to messaging page
         }
         async public void OnList(object sender, EventArgs e)                          //if lists button is pressed
         {
-            Application.Current.MainPage = new groupProject01.ListsPage(_gd);           //if lists button is pressed
+            Application.Current.MainPage = new NavigationPage(new groupProject01.ListsPage(_gd));           //if lists button is pressed
         }
         async public void OnCalendar(object sender, EventArgs e)                       //if setting button is pressed
         {
-            Application.Current.MainPage = new groupProject01.CalendarPage(_gd);          //if setting button is pressed
+            Application.Current.MainPage = new NavigationPage(new groupProject01.CalendarPage(_gd));          //if setting button is pressed
         }
         async public void OnSetting(object sender, EventArgs e)                       //if setting button is pressed
         {
-            // Application.Current.MainPage = new groupProject01.SettingsPage(_gd)    //if setting button is pressed
+            // Application.Current.MainPage = new NavigationPage(new groupProject01.SettingsPage(_gd)    //if setting button is pressed
         }
         #endregion
 
@@ -50,7 +50,7 @@ namespace groupProject01
         {
             _gd.SettingsDataInstance.setCredentials(keysInt.userName, "");
             _gd.SettingsDataInstance.setCredentials(keysInt.password, "");
-            Application.Current.MainPage = new groupProject01.InitialPage(_gd);
+            Application.Current.MainPage = new NavigationPage(new groupProject01.InitialPage(_gd));
             //TODO logout user
            // await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);            //pushes to the initial page
         }
