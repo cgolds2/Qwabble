@@ -24,16 +24,21 @@ namespace groupProject01
         }
 
 
-        //ontap for events? shouldn't we just allow edit?
-        void OnTap(object sender, ItemTappedEventArgs e)
+        async void OnTap(object sender, ItemTappedEventArgs e)          //when an event is tapped
         {
-            int index = ((CalendarOptionObject)e.Item).ID;
-            //show details in fill-outable form
+            int index = ((CalendarOptionObject)e.Item).ID;              //finds the index of the vent
+            var eve = events[index];                                    //gets the specific event
+            await Navigation.PushAsync(new groupProject01.EventDetailPage(eve, _gd), false);    //sends to that event's detail page
         }
 
-        async void OnAddEvent(object sender, EventArgs e)
+        async void OnBack(object sender, EventArgs e)                   //when the back button is pressed
         {
-            await Navigation.PushAsync(new groupProject01.AddEventPage(_gd));
+            await Navigation.PushAsync(new groupProject01.CalendarPage(_gd));       //sends to the calendar page
+        }
+
+        async void OnAddEvent(object sender, EventArgs e)               //when add event is pressed
+        {
+            await Navigation.PushAsync(new groupProject01.AddEventPage(_gd));       //sends to the add event page
         }
         async void OnBack(object sender, EventArgs e)                   //when the back button is pressed
         {

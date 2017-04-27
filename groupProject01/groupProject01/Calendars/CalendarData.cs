@@ -26,10 +26,8 @@ namespace groupProject01
         public void refreshAll()                                             //refreshes all data on the page
         {
             options = new ObservableCollection<CalendarOptionObject>();         //instantiates calendar options ObservableCollection that will notify when calendar options are added, removed, and refreshed
-
-            //HARD-CODED, WILL CHANGE
+            
             options.Add(new CalendarOptionObject { Name = "View Calendar", ID = options.Count });              //adds the View Calendar option to the page
-            options.Add(new CalendarOptionObject { Name = "Create New Event", ID = options.Count });           //adds the Create New Event to the page
         }
 
         //make different objects for each type, be able to access all

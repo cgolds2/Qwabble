@@ -41,7 +41,6 @@ namespace groupProject01
         }
         async private Task submit()
         {
-            //TODO something to check username and password
             string x = await(ServerHandeler.login(usernameTextField.Text, passwordTextField.Text));
             x.Replace("\n", "");
             try

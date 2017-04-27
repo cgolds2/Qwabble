@@ -11,13 +11,13 @@ using Xamarin.Forms;
 namespace groupProject01
 {
 
-        public partial class CalendarPage : ContentPage                           //begins the CalendarPage class
-        {
+    public partial class CalendarPage : ContentPage                           //begins the CalendarPage class
+    {
 
-            public CalendarPage()
+        public CalendarPage()               //calendar page constructor
         {
-            NavigationPage.SetHasNavigationBar(this, false);
-            InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);        //hides the default navigation bar          
+            InitializeComponent();          //intializes the UI components
         }
        
             public ObservableCollection<CalendarOptionObject> calendar { get; set; } //declares calendars ObservableCollection that will notify when calendars are added, removed, and refreshed
@@ -64,6 +64,7 @@ namespace groupProject01
                 int index = ((CalendarOptionObject)e.Item).ID;                           //gets the ID of the calendar item
                 await Navigation.PushAsync(new groupProject01.EventPage(index, _gd),false); //opens the event page as current page continues to run
             }
+        
 
     }
 }

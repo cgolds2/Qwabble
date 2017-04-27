@@ -29,6 +29,7 @@ namespace groupProject01
             await(createApartment());  //creates a new apartment for user
             Application.Current.MainPage = new NavigationPage(new groupProject01.HomePage(_gd));       //direct to home page
 
+
         }
 
         async void OnPrevApartment(object sender, EventArgs e)      //when already have apartment button is clicked
@@ -39,6 +40,7 @@ namespace groupProject01
                 return;
             }
             Application.Current.MainPage = new NavigationPage(new groupProject01.HomePage(_gd));       //direct to home page
+
 
         }
 
@@ -56,11 +58,6 @@ namespace groupProject01
             _gd.CurrentUser.UserID = id;                            //sets the user id
         }
 
-        async Task createApartment()        //creates a new apartment
-        {
-            _gd.CurrentApartment = new ApartmentObject();       //sets global data current apartment to a new apartment object
-            int apmtid = int.Parse(await (ServerHandeler.createApartment(_gd.CurrentApartment, _gd)));  //cretes a new apartment in the database and recieves the apartment id back
-            _gd.CurrentApartment.id = apmtid;       //sets the apartment id
-        }
+        
     }
 }
