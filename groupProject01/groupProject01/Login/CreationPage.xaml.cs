@@ -11,25 +11,24 @@ namespace groupProject01
 {
 	public partial class CreationPage : ContentPage
 	{
-        GlobalData _gd;     //declares local instances of global data
+        GlobalData _gd;                         //declares local instances of global data
 		public CreationPage (GlobalData gd)     //creation page constructor
 		{
             NavigationPage.SetHasNavigationBar(this, false);    //hides the default navigation bar
-            _gd = gd;       //sets local instance of global data
-			InitializeComponent ();     //initializes ui elements of the page
+            _gd = gd;                                           //sets local instance of global data
+			InitializeComponent ();                             //initializes ui elements of the page
 		}
 
         async void OnNewApartment(object sender, EventArgs e)   //when new apartment button is clicked
         {
-            createUser();       //creates a new user
-            createApartment();  //creates a new apartment for user
+            createUser();                                       //creates a new user
+            createApartment();                                  //creates a new apartment for user
             await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);     //pushes to the home page
-
         }
 
         async void OnPrevApartment(object sender, EventArgs e)      //when already have apartment button is clicked
         {
-            createUser();       //creates a new user
+            createUser();                                           //creates a new user
             await Navigation.PushAsync(new groupProject01.PrevApartmentPage(_gd),false);    //pushes to the previous apartment page
         }
 
@@ -38,7 +37,7 @@ namespace groupProject01
             await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);         //go back to the initial page
         }
 
-        async void createUser()         //creates a new user
+        async void createUser()                                     //creates a new user
         {
             _gd.CurrentUser = new UserObject();         //sets the current user in global data to a new user object
             _gd.CurrentUser.Username = usernameTextField.Text;      //sets the username to the user's input username
