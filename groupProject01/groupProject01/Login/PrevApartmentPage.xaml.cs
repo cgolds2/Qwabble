@@ -31,7 +31,7 @@ namespace groupProject01
             {
                 await ServerHandeler.addUserToApartment(_gd.CurrentUser.UserID, apartmentID);
                 _gd.CurrentApartment = aptObj;
-                await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);       //direct to home page
+                Application.Current.MainPage = new groupProject01.HomePage(_gd);       //direct to home page
             }
             else                              //if apartmentid is null
             {

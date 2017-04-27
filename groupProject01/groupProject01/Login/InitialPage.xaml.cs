@@ -21,14 +21,13 @@ namespace groupProject01
 
         async void OnLogin(object sender, EventArgs e)      //when the login button is pressed
         {
-
             await Navigation.PushAsync(new groupProject01.LoginPage(_gd),false);    //push to the login page
 
         }
         async void OnCreateUser(object sender, EventArgs e)     //when the create user button is pressed
         {
 
-            await Navigation.PushAsync(new groupProject01.CreationPage(_gd),false);     //push to the create user page
+            await Navigation.PushAsync(new groupProject01.CreationPage(_gd), false);     //push to the create user page
 
         }
     }
