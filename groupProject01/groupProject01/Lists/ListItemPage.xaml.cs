@@ -13,13 +13,15 @@ namespace groupProject01
     public partial class ListItemPage : ContentPage                                                 //class that controls the list items
 	{
         public List<ListItemObject> items { get; set; }                                             //creates a list of list item objects
-        private GlobalData _gd;                                                                     //instantiates global variable GlobalData to store the global data
+        private GlobalData _gd;
+        private int id = 0;//instantiates global variable GlobalData to store the global data
 
         public ListItemPage (int ListID, GlobalData gd)                                             //ListItemPage constructor
 		{
             NavigationPage.SetHasNavigationBar(this, false);                                        //hides the default naviagion bar
             InitializeComponent();                                                                  //initializes UI objects
-            _gd = gd;                                                                               //sets private instance of global data
+            _gd = gd;
+            id = ListID;//sets private instance of global data
             _gd.ListsDataInstance.getItemsInList(_gd, ListID);                                      //populates the instance with the items in the list that was clicked on previously
             items = _gd.ListsDataInstance.items;                                                    //gets the item data from the data file
             lstView.ItemsSource = items;                                                            //sets the source of items to display
@@ -37,7 +39,7 @@ namespace groupProject01
         }
         async void OnAddItem(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new groupProject01.AddItemPage(_gd));
+            await Navigation.PushAsync(new groupProject01.AddItemPage(_gd, id));
         }
         async void OnBack(object sender, EventArgs e)
         {
