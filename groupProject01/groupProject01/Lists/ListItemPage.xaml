@@ -6,6 +6,7 @@
              Title="Notes">
 
   <ContentPage.Content>
+    <StackLayout> 
         <StackLayout VerticalOptions="Start">
                 <AbsoluteLayout Padding = "0,0,0,-70">
                     <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.5" 
@@ -37,5 +38,6 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+    </StackLayout>
   </ContentPage.Content>
 </ContentPage>
