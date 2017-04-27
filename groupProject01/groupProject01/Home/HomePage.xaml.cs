@@ -15,23 +15,23 @@ namespace groupProject01
 
         async public void OnHome(object sender, EventArgs e)                          //if home button is pressed
         {
-          //  Application.Current.MainPage = new groupProject01.HomePage(_gd);      //direct to home page
+          //  Application.Current.MainPage = new NavigationPage(new groupProject01.HomePage(_gd);      //direct to home page
         }
         async public void OnCalendar(object sender, EventArgs e)                      //if calendar button is pressed
         {
-            Application.Current.MainPage = new groupProject01.CalendarPage(_gd);  //direct to calendar page
+            Application.Current.MainPage = new NavigationPage(new groupProject01.CalendarPage(_gd));  //direct to calendar page
         }
         async public void OnMessaging(object sender, EventArgs e)                     //if messaging button is pressed
         {
-            Application.Current.MainPage = new groupProject01.MessagingPage(_gd); //if messaging button is pressed
+            Application.Current.MainPage = new NavigationPage(new groupProject01.MessagingPage(_gd)); //if messaging button is pressed
         }
         async public void OnSetting(object sender, EventArgs e)                       //if setting button is pressed
         {
-            Application.Current.MainPage = new groupProject01.SettingsPage(_gd);    //if setting button is pressed
+            Application.Current.MainPage = new NavigationPage(new groupProject01.SettingsPage(_gd));    //if setting button is pressed
         }
         async public void OnList(object sender, EventArgs e)                          //if lists button is pressed
         {
-            Application.Current.MainPage = new groupProject01.ListsPage(_gd);            //if lists button is pressed
+            Application.Current.MainPage = new NavigationPage(new groupProject01.ListsPage(_gd));            //if lists button is pressed
         }
 
         #endregion
