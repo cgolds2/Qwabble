@@ -31,7 +31,7 @@
           <ViewCell>
             <StackLayout BackgroundColor="Gray">
               <Label Text =" {Binding name} " HorizontalOptions ="Start"/>
-              <Button Name="AddEvent" Text="Add Event" Clicked="OnAddEvent"/>
+              <!--<Button x:Name="AddEvent" Text="Add Event" Clicked="OnAddEvent"/>-->
             </StackLayout>
 
           </ViewCell>

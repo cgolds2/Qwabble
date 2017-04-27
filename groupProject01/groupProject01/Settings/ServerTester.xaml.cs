@@ -132,7 +132,7 @@ namespace groupProject01.Settings
                 g.CurrentUser.ApartmentID = 3;
 
                 MessageObject m = new MessageObject();
-                m.MessageName = "MessageName";
+
                 m.SenderID = 1;
                 m.RecieverID = 2;
                 m.apartmentID = 3;
@@ -158,10 +158,7 @@ namespace groupProject01.Settings
 
                 List<MessageObject> msg = await (ServerHandeler.getMessages(g));
                 string outputString = "";
-                foreach (MessageObject m in msg)
-                {
-                    outputString += m.MessageName;
-                }
+               
 
                 Output.Text = outputString;
             }

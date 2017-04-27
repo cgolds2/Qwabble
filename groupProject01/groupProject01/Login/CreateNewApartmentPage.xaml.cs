@@ -33,7 +33,7 @@ namespace groupProject01
 
         async void OnBack(object sender, EventArgs e)               //when the back button is pushed
         {
-            await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);         //go back to the initial page
+            await Navigation.PopAsync();
         }
 
         async Task createApartment()        //creates a new apartment

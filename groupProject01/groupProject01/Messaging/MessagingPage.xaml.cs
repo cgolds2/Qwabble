@@ -22,6 +22,8 @@ namespace groupProject01
             _gd.MessagingDataInstance.getItemsInMessage(_gd); //sets private instance of global data
             groups = _gd.MessagingDataInstance.messages;       //gets the messaging data from the data file
             msgView.ItemsSource = groups;                    //sets the messaging UI
+            var target = groups[groups.Count - 1];
+            msgView.ScrollTo(target,ScrollToPosition.Start,false);
 		}
 
         #region BottomBarButtons
@@ -54,6 +56,18 @@ namespace groupProject01
             //int index = ((MessageObject)e.Item).ID;    //gets the ID of the messaging item (sender=row)
             //await Navigation.PushAsync(new groupProject01.Messaging.MessagingItemPage(index,_gd),false); //viewing the messaging item page even while other things occur
             DisplayAlert("Item Tapped", ((MessageObject)e.Item).apartmentID.ToString(), "Ok"); //TESTING
+        }
+        async void OnSend(object sender, EventArgs e)
+        {
+            string message = messageField.Text;
+            messageField.Text = "";
+            MessageObject m = new MessageObject();
+            m.MSGText = message;
+            await(ServerHandeler.sendMessage(m, _gd));
+            await(_gd.MessagingDataInstance.getItemsInMessage(_gd));
+            groups = _gd.MessagingDataInstance.messages;       //gets the messaging data from the data file
+            msgView.ItemsSource = groups;                    //sets the messaging UI
+            Application.Current.MainPage = new NavigationPage(new groupProject01.MessagingPage(_gd));
         }
     }
 }
