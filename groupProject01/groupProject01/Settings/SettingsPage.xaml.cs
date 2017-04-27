@@ -50,9 +50,9 @@ namespace groupProject01
         {
             _gd.SettingsDataInstance.setCredentials(keysInt.userName, "");
             _gd.SettingsDataInstance.setCredentials(keysInt.password, "");
-            await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);
+            Application.Current.MainPage = new groupProject01.InitialPage(_gd);
             //TODO logout user
-            await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);            //pushes to the initial page
+           // await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);            //pushes to the initial page
         }
 
         void OnCurApartment(object sender, EventArgs e)         //when the apartment id info is clicked on
