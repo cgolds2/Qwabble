@@ -60,6 +60,7 @@ namespace groupProject01
                 int index = ((CalendarOptionObject)e.Item).ID;                           //gets the ID of the calendar item
                 await Navigation.PushAsync(new groupProject01.EventPage(index, _gd),false); //opens the event page as current page continues to run
             }
+        
 
     }
 }
