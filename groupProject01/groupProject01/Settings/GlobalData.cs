@@ -104,7 +104,7 @@ namespace groupProject01
 
         public GlobalData()
         {
-            //currentUser.Username = settingsDataInstance.getUserName();
+            //currentUser.username = settingsDataInstance.getUserName();
 
         }
       

@@ -45,7 +45,7 @@ namespace groupProject01
             /*int index = ((ListItemObject)e.Item).ListID;                                            //finds the index of the item tapped
             var item = items[index];                                                                //items.get(index), gets the item at that specified index
             item.On = !item.On;                                                                     //swaps the value fo that item's toggle*/
-        }   
-	}
+        }
+    }
   
 }

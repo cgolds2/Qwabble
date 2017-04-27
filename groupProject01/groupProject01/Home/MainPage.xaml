@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:groupProject01"
              x:Class="groupProject01.MainPage">
 
-<ContentPage.Content>
+  <ContentPage.Content>
 	  <StackLayout>
 		<StackLayout VerticalOptions="Start">
 				<AbsoluteLayout Padding = "0,0,0,-106" >
@@ -96,4 +96,6 @@
 		</StackLayout>
 	</StackLayout>
   </ContentPage.Content>
+
+
 </ContentPage>

@@ -19,11 +19,21 @@ namespace groupProject01
 
 		public MainPage(GlobalData gd)
 		{
+            //DEPRECIATED
             NavigationPage.SetHasNavigationBar(this, false);
+
+            //Children.Add(new groupProject01.CalendarPage(_gd));
+            //Children.Add(new groupProject01.ListsPage(_gd));
+            //Children.Add(new groupProject01.MessagingPage(_gd));
+            //Children.Add(new groupProject01.SettingsPage(_gd));
 
             _gd = gd;
 			InitializeComponent();
-
+            var existingPages = Navigation.NavigationStack.ToList();
+            foreach (var page in existingPages)
+            {
+                Navigation.RemovePage(page);
+            }
             service = DependencyService.Get<ICredentials>();
 		}
 
@@ -51,46 +61,30 @@ namespace groupProject01
         
         async void OnSetting(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new groupProject01.SettingsPage(_gd),false);
+              Application.Current.MainPage = new groupProject01.SettingsPage(_gd); 
+           // CurrentPage = Children[1];
         }
         async void OnList(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new groupProject01.ListsPage(_gd),false);
+             Application.Current.MainPage = new groupProject01.ListsPage(_gd);
 
         }
         async void OnCalendar(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new groupProject01.CalendarPage(_gd),false);
+             Application.Current.MainPage = new groupProject01.CalendarPage(_gd);
 
         }
         async void OnMessaging(object sender, EventArgs e)
         {
 
-          await Navigation.PushAsync(new groupProject01.MessagingPage(_gd),false);
+          Application.Current.MainPage = new groupProject01.MessagingPage(_gd);
         }
         async void OnHome(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);
+            Application.Current.MainPage = new groupProject01.HomePage(_gd);
 
         }
-        async void OnLogin(object sender, EventArgs e)
-        {
 
-            await Navigation.PushAsync(new groupProject01.LoginPage(_gd),false);
-
-        }
-        async void OnServer(object sender, EventArgs e)
-        {
-
-            await Navigation.PushAsync(new groupProject01.Settings.ServerTester(),false);
-
-        }
-        async void OnInitial(object sender, EventArgs e)
-        {
-
-            await Navigation.PushAsync(new groupProject01.InitialPage(_gd),false);
-
-        }
     }
 }

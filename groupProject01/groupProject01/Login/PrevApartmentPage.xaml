@@ -10,7 +10,7 @@
                     <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.425"
           AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
                     <Button Text="  ➙" Rotation="180" BackgroundColor="Transparent" FontSize="24" TextColor="White" AbsoluteLayout.LayoutBounds=".01,.05,60,40" 
-                AbsoluteLayout.LayoutFlags="PositionProportional" Clicked="OnBack" />s
+                AbsoluteLayout.LayoutFlags="PositionProportional" Clicked="OnBack" />
                     <Label Text="Previous Apartment" x:Name="TitleLabel" TextColor="#ffffff" FontSize="18"
             LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".55,.7,150,100"
             AbsoluteLayout.LayoutFlags="PositionProportional" />
