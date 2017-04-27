@@ -22,8 +22,8 @@
                 <Label Text="Create Apartment" VerticalOptions="Center" HorizontalOptions="Center" />
                 <Label Text="Enter your apartment information." VerticalOptions="Center" HorizontalOptions="Center" />
 
-                <Entry x:Name="aptNameTextField" Text="Apartment Name" />
-                <Entry x:Name="addressTextField" Text="Address" />
+                <Entry x:Name="aptNameTextField" Placeholder="Apartment Name" TextColor="Black" PlaceholderColor="Black"/>
+                <Entry x:Name="addressTextField" Placeholder="Address" TextColor="Black" PlaceholderColor="Black"/>
 
                 <Button x:Name="Submit" Text="Submit" Clicked="OnSubmit" />
 
