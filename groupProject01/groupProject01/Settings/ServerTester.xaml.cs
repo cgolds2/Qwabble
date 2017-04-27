@@ -17,14 +17,14 @@ namespace groupProject01.Settings
 			            NavigationPage.SetHasNavigationBar(this, false); InitializeComponent();
 		}
 
-        async void onSendList(object sender, EventArgs e)
+        async Task onSendList(object sender, EventArgs e)
         {
             try
             {
 
                 GlobalData g = new GlobalData();
                 g.CurrentUser = new Other.UserObject();
-                g.CurrentUser.Username = "MyTestName";
+                g.CurrentUser.username = "MyTestName";
                 g.CurrentUser.UserID = 1;
                 g.CurrentUser.ApartmentID = 1;
 
@@ -44,7 +44,7 @@ namespace groupProject01.Settings
             }
         }
 
-        async void onGetList(object sender, EventArgs e)
+        async Task onGetList(object sender, EventArgs e)
         {
             try
             {
@@ -68,14 +68,14 @@ namespace groupProject01.Settings
             }
         }
 
-        async void onSendEvent(object sender, EventArgs e)
+        async Task onSendEvent(object sender, EventArgs e)
         {
 
             try
             {
                 GlobalData g = new GlobalData();
                 g.CurrentUser = new UserObject();
-                g.CurrentUser.Username = "MyTestName";
+                g.CurrentUser.username = "MyTestName";
                 g.CurrentUser.UserID = 1;
                 g.CurrentUser.ApartmentID = 1;
 
@@ -96,7 +96,7 @@ namespace groupProject01.Settings
         }
 
         //THIS IS listed as get calendar in serverhandler.cs
-        async void onGetEvent(object sender, EventArgs e)
+        async Task onGetEvent(object sender, EventArgs e)
         {
             //NOT IMPLEMENTED SERVER SIDE
             try
@@ -121,13 +121,13 @@ namespace groupProject01.Settings
             }
         }
 
-        async void onSendMessage(object sender, EventArgs e)
+        async Task onSendMessage(object sender, EventArgs e)
         {
             try
             {
                 GlobalData g = new GlobalData();
                 g.CurrentUser = new UserObject();
-                g.CurrentUser.Username = "MyTestName";
+                g.CurrentUser.username = "MyTestName";
                 g.CurrentUser.UserID = 2;
                 g.CurrentUser.ApartmentID = 3;
 
@@ -147,7 +147,7 @@ namespace groupProject01.Settings
             }
         }
 
-        async void onGetMessage(object sender, EventArgs e)
+        async Task onGetMessage(object sender, EventArgs e)
         {
             try
             {
@@ -171,20 +171,20 @@ namespace groupProject01.Settings
             }
         }
 
-        async void onCreateUser(object sender, EventArgs e)
+        async Task onCreateUser(object sender, EventArgs e)
         {
             try
             {
                 GlobalData g = new GlobalData();
                 g.CurrentUser = new UserObject();
-                g.CurrentUser.Username = "MyTestName";
+                g.CurrentUser.username = "MyTestName";
                 g.CurrentUser.UserID = 1;
                 g.CurrentUser.ApartmentID = 1;
                 g.CurrentUser.email = "mymail@hotmail.gov";
                 string p = "password...hehehe";
                 
-                string text = await (ServerHandeler.createUser(g.CurrentUser, p));
-                Output.Text = text;
+                int text = await (ServerHandeler.createUser(g.CurrentUser, p));
+                Output.Text = text.ToString() ;
             }
             catch (Exception except)
             {
@@ -192,13 +192,13 @@ namespace groupProject01.Settings
             }
         }
         
-        async void onGetUser(object sender, EventArgs e)
+        async Task onGetUser(object sender, EventArgs e)
         {
             try
             {
                 GlobalData g = new GlobalData();
                 g.CurrentUser = new UserObject();
-                g.CurrentUser.Username = "pandassuck";
+                g.CurrentUser.username = "pandassuck";
                 g.CurrentUser.UserID = 1;
                 g.CurrentUser.ApartmentID = 1;
 
@@ -207,7 +207,7 @@ namespace groupProject01.Settings
 
                 string outputString = "";
 
-                outputString += u.Username;
+                outputString += u.username;
                 Output.Text = outputString;
             }
             catch (Exception except)
@@ -216,13 +216,13 @@ namespace groupProject01.Settings
             }
         }
 
-        async void onAddToApartment(object sender, EventArgs e)
+        async Task onAddToApartment(object sender, EventArgs e)
         {
             try
             {
                 GlobalData g = new GlobalData();
                 g.CurrentUser = new UserObject();
-                g.CurrentUser.Username = "MyTestName";
+                g.CurrentUser.username = "MyTestName";
                 g.CurrentUser.UserID = 1;
                 g.CurrentUser.ApartmentID = 1;
 
@@ -236,7 +236,7 @@ namespace groupProject01.Settings
             }
         }
 
-        async void onGetApartments(object sender, EventArgs e)
+        async Task onGetApartments(object sender, EventArgs e)
         {
             try
             {
@@ -257,13 +257,13 @@ namespace groupProject01.Settings
         }
 
         //not sure if tested correctly
-        async void onGetAllUsers(object sender, EventArgs e)
+        async Task onGetAllUsers(object sender, EventArgs e)
         {
             try
             {
                 GlobalData g = new GlobalData();
                 g.CurrentUser = new UserObject();
-                g.CurrentUser.Username = "pandassuck";
+                g.CurrentUser.username = "pandassuck";
                 g.CurrentUser.UserID = 1;
                 g.CurrentUser.ApartmentID = 1;
                 g.CurrentApartment = new ApartmentObject();
@@ -276,7 +276,7 @@ namespace groupProject01.Settings
                 string text="";
                 foreach (UserObject use in u)
                 {
-                    text = use.Username;
+                    text = use.username;
                 }
                 Output.Text = text;
             }
@@ -286,14 +286,14 @@ namespace groupProject01.Settings
             }
         }
 
-        async void onCreateApartment(object sender, EventArgs e)
+        async Task onCreateApartment(object sender, EventArgs e)
         {
             try
             {
                 GlobalData g = new GlobalData();
                 g.CurrentApartment = new ApartmentObject();
                 g.CurrentApartment.address = "142 SmileyFace Lane";
-                g.CurrentApartment.APTName = "AHHHHHHHHHHHHGHFHAWREHYGHUYAGHUYEWRHJG";
+                g.CurrentApartment.AptName = "AHHHHHHHHHHHHGHFHAWREHYGHUYAGHUYEWRHJG";
                 g.CurrentApartment.owner = 1;
 
 

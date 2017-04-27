@@ -34,7 +34,7 @@ namespace groupProject01
             //createList(username, userID, apartmentID, noteName, listType, data)
             string jsonString = JsonConvert.SerializeObject(ldata);
             JObject ob = JObject.Parse(jsonString);
-            ob["username"] = gd.CurrentUser.Username;
+            ob["username"] = gd.CurrentUser.username;
             ob["apartmentID"] = gd.CurrentUser.ApartmentID;
             ob["userID"] = gd.CurrentUser.UserID;
             string result = await (RestService.PostCall(ob.ToString(), baseuri + "createNote.php"));
@@ -68,7 +68,7 @@ namespace groupProject01
             //createList(username, userID, apartmentID, noteName, listType, data)
             string jsonString = JsonConvert.SerializeObject(edata);
             JObject ob = JObject.Parse(jsonString);
-            ob["username"] = gd.CurrentUser.Username;
+            ob["username"] = gd.CurrentUser.username;
             ob["userID"] = gd.CurrentUser.UserID;
             ob["apartmentID"] = gd.CurrentUser.ApartmentID;
             string result = await (RestService.PostCall(ob.ToString(), baseuri + "createEvent.php"));
@@ -129,13 +129,20 @@ namespace groupProject01
 
         //USER - NOT IMPLEMENTED
         //createUser(username,password) // returns user id
-        public async static Task<string> createUser(UserObject u, string password)
+        public async static Task<int> createUser(UserObject u, string password)
         {
             string jsonString = JsonConvert.SerializeObject(u);
             JObject ob = JObject.Parse(jsonString);
             ob["password"] = password;
             string result = await (RestService.PostCall(ob.ToString(), baseuri + "createUserSEC.php"));
-            return result;
+            try
+            {
+                return Int32.Parse(result);
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
 
         }
 
