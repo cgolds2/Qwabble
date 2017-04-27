@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="groupProject01.CreateNewApartmentPage">
+    <ContentView.Content>
+        <StackLayout BackgroundColor="#dddddd" >
+            <StackLayout VerticalOptions="Start">
+                <AbsoluteLayout Padding = "0,0,0,-70">
+                    <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.425"
+          AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+                    <Button Text="  ➙" Rotation="180" BackgroundColor="Transparent" FontSize="24" TextColor="White" AbsoluteLayout.LayoutBounds=".01,.05,60,40" 
+                AbsoluteLayout.LayoutFlags="PositionProportional" Clicked="OnBack" />
+                    <Label Text="Create Apartment" x:Name="TitleLabel" TextColor="#ffffff" FontSize="18"
+            LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".55,.7,150,100"
+            AbsoluteLayout.LayoutFlags="PositionProportional" />
+                </AbsoluteLayout>
+
+            </StackLayout>
+            <!-- START PAGE CODE ****************************************************** -->
+
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Label Text="Create Apartment" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Label Text="Enter your apartment information." VerticalOptions="Center" HorizontalOptions="Center" />
+
+                <Entry x:Name="aptNameTextField" Text="Apartment Name" />
+                <Entry x:Name="addressTextField" Text="Address" />
+
+                <Button x:Name="Submit" Text="Submit" Clicked="OnSubmit" />
+
+                <!-- END PAGE CODE ****************************************************** -->
+
+            </StackLayout>
+        </StackLayout>
+        </ContentView.Content>
+
+</ContentPage>
