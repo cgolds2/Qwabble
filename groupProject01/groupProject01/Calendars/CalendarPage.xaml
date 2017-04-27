@@ -9,13 +9,13 @@
 
     <StackLayout BackgroundColor="#dddddd" >
       <StackLayout VerticalOptions="Start">
-        <AbsoluteLayout Padding = "0,0,0,-70">
-          <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.425"
+        <AbsoluteLayout Padding = "0,0,0,-50">
+          <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.5"
           AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
 
           <Label Text="Calendar" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24"
-            LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".55,.7,150,100"
-            AbsoluteLayout.LayoutFlags="PositionProportional" />
+            LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".55,.9,150,80"
+            AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold"/>
         </AbsoluteLayout>
 
       </StackLayout>

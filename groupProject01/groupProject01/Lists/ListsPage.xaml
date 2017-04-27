@@ -9,11 +9,13 @@
 	<ContentPage.Content>
 	  <StackLayout BackgroundColor="#dddddd" >
 		<StackLayout VerticalOptions="Start">
-				<AbsoluteLayout Padding = "0,0,0,-70">
-					<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.425" 
+				<AbsoluteLayout Padding = "0,0,0,0">
+					<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.75" 
 				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
+                    <Button Text="+" FontAttributes="Bold" BackgroundColor="Transparent" FontSize="40" TextColor="White"  
+                AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".95,.4,30,20" />
 			<Label Text="Lists" x:Name="Lists" TextColor="#ffffff" FontSize="24" 
-				LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100" 
+				LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,1,150,75" 
 				AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold"/>
 				</AbsoluteLayout>
 
