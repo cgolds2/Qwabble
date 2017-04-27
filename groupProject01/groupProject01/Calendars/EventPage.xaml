@@ -13,7 +13,7 @@
                     <Button Text="  ➙" Rotation="180" BackgroundColor="Transparent" FontSize="24" TextColor="White" AbsoluteLayout.LayoutBounds=".01,.05,60,40" 
                 AbsoluteLayout.LayoutFlags="PositionProportional" Clicked="OnBack" />
                 <Button Text="+" FontAttributes="Bold" BackgroundColor="Transparent" FontSize="40" TextColor="White"  
-                AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".95,.4,30,20" />
+                AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".95,.4,30,20" Clicked="OnAddEvent"/>
             <Label Text="Events" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24" 
                 LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100" 
                 AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold"/>
@@ -25,8 +25,7 @@
         <DataTemplate>
           <ViewCell>
             <StackLayout BackgroundColor="Gray">
-              <Label Text =" {Binding name} " HorizontalOptions ="Start"/>
-                            <Button Name="AddEvent" Text="Add Event" Clicked="OnAddEvent"/>
+                            <Label Text =" {Binding name} " HorizontalOptions ="Start"/>
                         </StackLayout>
           </ViewCell>
         </DataTemplate>
