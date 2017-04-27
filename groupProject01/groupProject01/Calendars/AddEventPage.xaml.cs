@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace groupProject01
 		public AddEventPage (GlobalData gd)
 		{
             _gd = gd;
-			InitializeComponent ();
+            InitializeComponent();
 		}
 
         async void OnAddEvent(object sender, EventArgs e)

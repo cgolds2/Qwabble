@@ -4,11 +4,9 @@
              x:Class="groupProject01.EventPage"
              xmlns:local="clr-namespace:groupProject01">
   
-<ContentPage.Content>
-  <StackLayout>
-    
-
-        <StackLayout VerticalOptions="Start">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="Start">
                 <AbsoluteLayout Padding = "0,0,0,-70">
                     <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.5" 
                 AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
