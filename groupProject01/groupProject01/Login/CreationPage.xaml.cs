@@ -27,7 +27,7 @@ namespace groupProject01
                 return;
             }
             await(createApartment());  //creates a new apartment for user
-            await Navigation.PushAsync(new groupProject01.HomePage(_gd),false);     //pushes to the home page
+            Application.Current.MainPage = new groupProject01.HomePage(_gd);       //direct to home page
 
         }
 
@@ -38,7 +38,8 @@ namespace groupProject01
             {
                 return;
             }
-            await Navigation.PushAsync(new groupProject01.PrevApartmentPage(_gd),false);    //pushes to the previous apartment page
+            Application.Current.MainPage = new groupProject01.HomePage(_gd);       //direct to home page
+
         }
 
         async void OnBack(object sender, EventArgs e)               //when the back button is pushed
