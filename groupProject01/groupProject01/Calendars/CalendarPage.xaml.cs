@@ -52,10 +52,6 @@ namespace groupProject01
         {
             Application.Current.MainPage = new groupProject01.SettingsPage(_gd);           //if setting button is pressed
         }
-        async public void OnCalendar(object sender, EventArgs e)                          //if home button is pressed
-        {
-            // Application.Current.MainPage = new groupProject01.CalendarPage(_gd)             //direct to home page
-        }
 
         #endregion
 
