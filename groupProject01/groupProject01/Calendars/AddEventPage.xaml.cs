@@ -32,17 +32,17 @@ namespace groupProject01
             eve.name = eventNameTextField.Text;
             try
             {
-                eve.startDate = DateTime.ParseExact(startDate.Text, "yyyy-MM-dd HH:mm:ss,fff",
+                eve.startDate = DateTime.ParseExact(startDate.Text, "yyyyMMdd HH:mm:ss",
                                        System.Globalization.CultureInfo.InvariantCulture);
                                        
-                eve.endDate =  DateTime.ParseExact(endDate.Text, "yyyy-MM-dd HH:mm:ss,fff",
+                eve.endDate =  DateTime.ParseExact(endDate.Text, "yyyyMMdd HH:mm:ss",
                                        System.Globalization.CultureInfo.InvariantCulture);
                 
             }
             catch (Exception)
             {
 
-                throw;
+                
             }
            
 
