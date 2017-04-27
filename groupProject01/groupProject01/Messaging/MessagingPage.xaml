@@ -9,8 +9,7 @@
 				<BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.425" 
 				AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
 			<Label Text="Messaging" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24" 
-				LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100" 
-
+				LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".58,.7,150,100" 
 				AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold" />
 					</AbsoluteLayout>
 			</StackLayout>
@@ -41,7 +40,7 @@
         <AbsoluteLayout>
           <BoxView Color="#AAAAAA" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
           <Entry x:Name="usernameTextField" AbsoluteLayout.LayoutBounds=".04,.3,280,40" TextColor="#4a4a4a"  BackgroundColor="#efefef" />
-          <Button x:Name="SEND" Text="-->" Clicked="OnHome" AbsoluteLayout.LayoutBounds=".9,.3,70,40" />
+          <Button x:Name="SEND" Text="➙" Clicked="OnHome" AbsoluteLayout.LayoutBounds="1,0,70,40" AbsoluteLayout.LayoutFlags="PositionProportional" />
           
         </AbsoluteLayout>
         <AbsoluteLayout>
