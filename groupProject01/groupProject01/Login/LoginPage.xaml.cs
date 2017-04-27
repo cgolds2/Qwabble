@@ -51,10 +51,13 @@ namespace groupProject01
                     await DisplayAlert("Login Failed", "Email or Password Incorrect", "OK");   //shows error message
                     return;
                 }
-                _gd.CurrentUser.ApartmentID = ID;
+               
                 _gd.SettingsDataInstance.setCredentials(keysInt.userName, usernameTextField.Text);
                 _gd.SettingsDataInstance.setCredentials(keysInt.password, passwordTextField.Text);
+               // gd.SettingsDataInstance.setCredentials("UserID", ID);
+                await(_gd.refreshUser(ID));
                 Application.Current.MainPage = new NavigationPage(new groupProject01.HomePage(_gd));
+                
                // await Navigation.PushAsync(new groupProject01.HomePage(_gd));
             
                //new NavigationPage(new groupProject01.HomePage(_gd));
