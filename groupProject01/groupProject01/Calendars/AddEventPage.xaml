@@ -5,26 +5,28 @@
              xmlns:local="clr-namespace:groupProject01">
 
     <ContentView.Content>
-        <StackLayout VerticalOptions="Start">
+        <StackLayout>
+            <StackLayout VerticalOptions="Start">
                 <AbsoluteLayout Padding = "0,0,0,-70">
                     <BoxView Color="#90EE90" AbsoluteLayout.LayoutBounds="0,0,1,.375" 
                 AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
                     <Button Text="  ➙" Rotation="180" BackgroundColor="Transparent" FontSize="24" TextColor="White" AbsoluteLayout.LayoutBounds=".01,.05,60,40" 
                 AbsoluteLayout.LayoutFlags="PositionProportional" Clicked="OnBack" />
-            <Label Text="Add New Event" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24" 
+                    <Label Text="Add New Event" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24" 
                 LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100" 
                 AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold"/>
                 </AbsoluteLayout>
 
             </StackLayout>
-        <StackLayout VerticalOptions="StartAndExpand">
+            <StackLayout VerticalOptions="StartAndExpand">
 
-            <Entry x:Name="eventNameTextField" Text="Enter your event's name" />
-            <Entry x:Name="startDate" Text="Enter the start date" />
-            <Entry x:Name="endDate" Text="Enter the end date" />
-            <Entry x:Name="eventDetailTextField" Text="Enter extra information for your item" />
+                <Entry x:Name="eventNameTextField" Text="Enter your event's name" />
+                <Entry x:Name="startDate" Text="Enter the start date" />
+                <Entry x:Name="endDate" Text="Enter the end date" />
+                <Entry x:Name="eventDetailTextField" Text="Enter extra information for your item" />
 
-            <Button x:Name="AddEvent" Text="Add Event" Clicked="OnAddEvent" />
+                <Button x:Name="AddEvent" Text="Add Event" Clicked="OnAddEvent" />
+            </StackLayout>
         </StackLayout>
     </ContentView.Content> 
 </ContentPage>
