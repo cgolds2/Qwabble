@@ -29,7 +29,6 @@
 
               <Label Text = "{Binding noteName}"  HorizontalOptions="Start"/>
               <Label Text = "{Binding data}"  HorizontalOptions="Start"/>
-              <local:CustomSwitch IsToggled="{Binding On}" HorizontalOptions="End" Toggled ="SwitchToggled" ID ="{Binding ID}"/>
 
 
             </StackLayout>
