@@ -20,8 +20,8 @@
             </StackLayout>
         <StackLayout VerticalOptions="CenterAndExpand">
 
-            <Entry x:Name="itemNameTextField" Text="Enter your item's name"  />
-            <Entry x:Name="itemDetailTextField" Text="Enter extra information for your item" />
+                <Entry x:Name="itemNameTextField" Placeholder="Enter your item name"  />
+                <Entry x:Name="itemDetailTextField" Placeholder="Enter extra information for your item" />
             
             <Button x:Name="AddItem" Text="Add Item" Clicked="OnAddItem" />
         </StackLayout>

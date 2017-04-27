@@ -23,7 +23,7 @@
                 
                 <Label Text="You can find the apartment ID in settings." VerticalOptions="Center" HorizontalOptions="Center" />
 
-                <Entry x:Name="apartment" Text="Enter your apartment id" TextColor="#4a4a4a" />
+                <Entry x:Name="apartment" Placeholder="Apartment ID" TextColor="Black" PlaceholderColor="Black"/>
 
                 <Button x:Name="Submit" Text="Submit" Clicked="OnSubmit" />
 

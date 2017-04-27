@@ -39,7 +39,7 @@
         <!--LRTB-->
         <AbsoluteLayout>
           <BoxView Color="#AAAAAA" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
-          <Entry x:Name="messageField" AbsoluteLayout.LayoutBounds=".04,.3,280,40" TextColor="#4a4a4a"  BackgroundColor="#efefef" />
+          <Entry x:Name="messageField" AbsoluteLayout.LayoutBounds=".04,.3,280,40" TextColor="#4a4a4a"  BackgroundColor="#efefef" Placeholder="Enter Message" PlaceholderColor="Black"/>
           <Button x:Name="SEND" Text="➙" Clicked="OnSend" AbsoluteLayout.LayoutBounds="1,0,70,40" AbsoluteLayout.LayoutFlags="PositionProportional" />
           
         </AbsoluteLayout>

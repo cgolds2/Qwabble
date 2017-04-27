@@ -21,14 +21,15 @@ namespace groupProject01
             _gd.CalendarDataInstance.getEventsInCalendar(_gd, ListID);       //fills the page with all the events in the specified calendar
             events = _gd.CalendarDataInstance.events;                      //gets the lists data from data file
             calView.ItemsSource = events;                               //sets the source of items to template and display
+            NavigationPage.SetHasNavigationBar(this, false);            //hides the default navigation bar
         }
 
 
         async void OnTap(object sender, ItemTappedEventArgs e)          //when an event is tapped
         {
-            int index = ((CalendarOptionObject)e.Item).ID;              //finds the index of the vent
-            var eve = events[index];                                    //gets the specific event
-            await Navigation.PushAsync(new groupProject01.EventDetailPage(eve, _gd), false);    //sends to that event's detail page
+          //  int index = ((CalendarOptionObject)e.Item).ID;              //finds the index of the vent
+          //  var eve = events[index];                                    //gets the specific event
+          //  await Navigation.PushAsync(new groupProject01.EventDetailPage(eve, _gd), false);    //sends to that event's detail page
         }
 
         

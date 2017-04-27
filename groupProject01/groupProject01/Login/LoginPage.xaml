@@ -22,11 +22,11 @@
 			<StackLayout VerticalOptions="StartAndExpand">
 				<!-- START PAGE CODE ****************************************************** -->
 
-        <StackLayout VerticalOptions="StartAndExpand"> 
-           
+        <StackLayout VerticalOptions="StartAndExpand">
 
-            <Entry x:Name="usernameTextField" Text="Enter your email" TextColor="#4a4a4a" Margin="10,10,10,10" BackgroundColor="#efefef" />
-            <Entry x:Name="passwordTextField" Text="Enter your password" TextColor="#4a4a4a" Margin="10,0,10,10" BackgroundColor="#efefef" />  
+
+                    <Entry x:Name="usernameTextField" Placeholder="Email" Margin="10,10,10,10" BackgroundColor="#efefef" TextColor="Black" PlaceholderColor="Black"/>
+                    <Entry x:Name="passwordTextField" Placeholder="Password" Margin="10,0,10,10" BackgroundColor="#efefef" IsPassword="True" TextColor="Black" PlaceholderColor="Black"/>  
 
             
             <Button x:Name="Submit" Text="Submit" Clicked="OnSubmit" />

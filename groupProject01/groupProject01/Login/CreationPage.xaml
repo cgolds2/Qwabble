@@ -22,9 +22,9 @@
                 
             <Label Text="Create Account" VerticalOptions="Center" HorizontalOptions="Center" />
 
-            <Entry x:Name="usernameTextField" Text="Enter your username" TextColor="#4a4a4a" />
-            <Entry x:Name="emailTextField" Text="Enter your email" TextColor="#4a4a4a" />
-            <Entry x:Name="passwordTextField" Text="Enter your password" TextColor="#4a4a4a" />
+            <Entry x:Name="usernameTextField" Placeholder="Username" TextColor="Black" PlaceholderColor="Black"/>
+                <Entry x:Name="emailTextField" Placeholder="Email" TextColor="Black" PlaceholderColor="Black"/>
+                <Entry x:Name="passwordTextField" Placeholder="Password" IsPassword="True" TextColor="Black" PlaceholderColor="Black"/>
 
             <Button x:Name="prevApartment" Text="Apartment Already Created" Clicked="OnPrevApartment" />
             <Button x:Name="newApartment" Text="Create New Apartment" Clicked="OnNewApartment" />

@@ -23,9 +23,9 @@
       </StackLayout>
       <StackLayout VerticalOptions="CenterAndExpand">
 
-        <Entry x:Name="eventNameTextField" Text="Enter your event's name" />
-        <Entry x:Name="startDate" Text="Enter the start date" />
-        <Entry x:Name="endDate" Text="Enter the end date" />
+        <Entry x:Name="eventNameTextField" Placeholder="Enter your event name" />
+                <Entry x:Name="startDate" Placeholder="Enter the start date" />
+                <Entry x:Name="endDate" Placeholder="Enter the end date" />
         <!--<Entry x:Name="eventDetailTextField" Text="Enter extra information for your item" />-->
 
         <Button x:Name="AddEvent" Text="Add Event" Clicked="OnAddEvent" />
