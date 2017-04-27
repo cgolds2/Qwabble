@@ -27,9 +27,9 @@ namespace groupProject01
 
         async void OnTap(object sender, ItemTappedEventArgs e)          //when an event is tapped
         {
-            int index = ((CalendarOptionObject)e.Item).ID;              //finds the index of the vent
-            var eve = events[index];                                    //gets the specific event
-            await Navigation.PushAsync(new groupProject01.EventDetailPage(eve, _gd), false);    //sends to that event's detail page
+          //  int index = ((CalendarOptionObject)e.Item).ID;              //finds the index of the vent
+          //  var eve = events[index];                                    //gets the specific event
+          //  await Navigation.PushAsync(new groupProject01.EventDetailPage(eve, _gd), false);    //sends to that event's detail page
         }
 
         
