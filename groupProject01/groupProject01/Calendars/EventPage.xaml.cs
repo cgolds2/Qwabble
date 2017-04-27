@@ -35,5 +35,10 @@ namespace groupProject01
         {
             await Navigation.PushAsync(new groupProject01.AddEventPage(_gd));
         }
+        async void OnBack(object sender, EventArgs e)                   //when the back button is pressed
+        {
+            await Navigation.PushAsync(new groupProject01.CalendarPage(_gd));       //sends to the calendar page
+        }
+
     }
 }

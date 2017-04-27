@@ -51,7 +51,7 @@ namespace groupProject01
                 _gd.CurrentUser.ApartmentID = ID;
                 _gd.SettingsDataInstance.setCredentials(keysInt.userName, usernameTextField.Text);
                 _gd.SettingsDataInstance.setCredentials(keysInt.password, passwordTextField.Text);
-                Application.Current.MainPage = new groupProject01.HomePage(_gd);
+                Application.Current.MainPage = new NavigationPage(new groupProject01.HomePage(_gd));
                // await Navigation.PushAsync(new groupProject01.HomePage(_gd));
             
                //new NavigationPage(new groupProject01.HomePage(_gd));
