@@ -19,20 +19,19 @@ namespace groupProject01
             _gd = gd;
             string username = _gd.SettingsDataInstance.getCredentials(keysInt.userName);
             string password = _gd.SettingsDataInstance.getCredentials(keysInt.password);
-            if(!( username==null || password==null))
+            if(!( username==null || password==null ||username.Equals("")  || password.Equals("")))
             {
-                if (!(username.Equals("") || password.Equals("")))
-                {
+                
                     usernameTextField.Text = username;
                     passwordTextField.Text = password;
                     submit();
-                }
+                
             }
         }
 
         async void OnSubmit(object sender, EventArgs e)
         {
-            submit();
+           await(submit());
 
         }
  
@@ -40,7 +39,7 @@ namespace groupProject01
         {
             await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);
         }
-        async private void submit()
+        async private Task submit()
         {
             //TODO something to check username and password
             string x = await(ServerHandeler.login(usernameTextField.Text, passwordTextField.Text));
@@ -48,6 +47,11 @@ namespace groupProject01
             try
             {
                 int ID = Int32.Parse(x);
+                if(ID == -1)
+                {
+                    await DisplayAlert("Login Failed", "Email or Password Incorrect", "OK");   //shows error message
+                    return;
+                }
                 _gd.CurrentUser.ApartmentID = ID;
                 _gd.SettingsDataInstance.setCredentials(keysInt.userName, usernameTextField.Text);
                 _gd.SettingsDataInstance.setCredentials(keysInt.password, passwordTextField.Text);
@@ -58,6 +62,7 @@ namespace groupProject01
             }
             catch (Exception)
             {
+                await DisplayAlert("Login Failed", "Email or Password Incorrect", "OK");   //shows error message
 
 
             }
