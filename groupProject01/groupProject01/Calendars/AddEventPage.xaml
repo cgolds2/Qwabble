@@ -26,5 +26,5 @@
 
             <Button x:Name="AddEvent" Text="Add Event" Clicked="OnAddEvent" />
         </StackLayout>
-    </ContentView.Content> >
+    </ContentView.Content> 
 </ContentPage>
