@@ -21,6 +21,7 @@ namespace groupProject01
             _gd.CalendarDataInstance.getEventsInCalendar(_gd, ListID);       //fills the page with all the events in the specified calendar
             events = _gd.CalendarDataInstance.events;                      //gets the lists data from data file
             calView.ItemsSource = events;                               //sets the source of items to template and display
+            NavigationPage.SetHasNavigationBar(this, false);            //hides the default navigation bar
         }
 
 
