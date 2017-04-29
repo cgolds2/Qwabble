@@ -26,7 +26,7 @@ namespace groupProject01
             {
                 return;
             }
-            Application.Current.MainPage = new NavigationPage(new groupProject01.HomePage(_gd));       //direct to home page
+            Application.Current.MainPage = new NavigationPage(new groupProject01.CreateNewApartmentPage(_gd));       //direct to home page
 
 
         }
@@ -38,7 +38,7 @@ namespace groupProject01
             {
                 return;
             }
-            Application.Current.MainPage = new NavigationPage(new groupProject01.HomePage(_gd));       //direct to home page
+            Application.Current.MainPage = new NavigationPage(new groupProject01.PrevApartmentPage(_gd));       //direct to home page
 
 
         }
