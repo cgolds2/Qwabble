@@ -61,7 +61,8 @@ namespace groupProject01
             await(_gd.MessagingDataInstance.getItemsInMessage(_gd));
             groups = _gd.MessagingDataInstance.messages;       //gets the messaging data from the data file
             msgView.ItemsSource = groups;                    //sets the messaging UI
-            Application.Current.MainPage = new NavigationPage(new groupProject01.MessagingPage(_gd));
+            //;MessagingPage(_gd);
+           Application.Current.MainPage = new NavigationPage(new groupProject01.MessagingPage(_gd));
         }
     }
 }

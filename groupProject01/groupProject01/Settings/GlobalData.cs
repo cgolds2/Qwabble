@@ -12,7 +12,6 @@ namespace groupProject01
     {
         #region DataPagesVars
         private SettingsData settingsDataInstance = new SettingsData();
-        private HomeData homeDataInstance;
         private MessagingData messagingDataInstance = new MessagingData();
         private ListsData listsDataInstance = new ListsData();
         private CalendarData calendarDataInstance = new CalendarData();

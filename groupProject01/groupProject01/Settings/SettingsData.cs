@@ -76,17 +76,14 @@ namespace groupProject01
 
         public string getPassword()
         {
-            if(password==null){
-				getCredentials(getStringFromKey(keysInt.password));
-            }
-            return password;
+				return getCredentials(getStringFromKey(keysInt.password));
+            
         }
         public string getUserName()
         {
-            if(userName==null){
-                getCredentials(getStringFromKey(keysInt.userName));
-            }
-            return userName;
+              return   getCredentials(getStringFromKey(keysInt.userName));
+            
+           
         }
 
         public void changeTheme(theme defaultTheme)
