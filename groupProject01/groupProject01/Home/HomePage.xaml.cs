@@ -49,10 +49,10 @@ namespace groupProject01
             }
             _gd = gd;                                                   //sets private instance of global data
         }
-        async void OnBack(object sender, EventArgs e)               //when the back button is pushed
-        {
-            await Navigation.PopAsync();
-        }
+        //async void OnBack(object sender, EventArgs e)               //when the back button is pushed
+        //{
+        //    await Navigation.PopAsync();
+        //}
 
     }
 }
