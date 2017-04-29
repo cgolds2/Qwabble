@@ -54,8 +54,6 @@ namespace groupProject01
 
 
         //TODO dont hardcode this...really thought DONT put this in production
-        private string userName = "testUser";
-        private string password = "password1234"; //the 4 makes it safe
 
         //2 versions of setCredentials, one uses enums, one allows custom keys
         public void setCredentials(keysInt key, string value){
