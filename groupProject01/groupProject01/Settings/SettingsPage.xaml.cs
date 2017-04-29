@@ -14,7 +14,7 @@ namespace groupProject01
 		public SettingsPage (GlobalData gd)         //constructor for settings page
 		{
             _gd = gd;           //sets a local instance of global data
-			NavigationPage.SetHasNavigationBar(this, false);
+			NavigationPage.SetHasNavigationBar(this, false);    //hides the default navigation bar 
             InitializeComponent();      //initializes the UI
 		}
 
@@ -51,8 +51,6 @@ namespace groupProject01
             _gd.SettingsDataInstance.setCredentials(keysInt.userName, "");
             _gd.SettingsDataInstance.setCredentials(keysInt.password, "");
             Application.Current.MainPage = new NavigationPage(new groupProject01.InitialPage(_gd));
-            //TODO logout user
-           // await Navigation.PushAsync(new groupProject01.InitialPage(_gd), false);            //pushes to the initial page
         }
 
         void OnCurApartment(object sender, EventArgs e)         //when the apartment id info is clicked on
