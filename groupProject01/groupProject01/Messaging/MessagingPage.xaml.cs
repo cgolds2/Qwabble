@@ -51,12 +51,6 @@ namespace groupProject01
 
         #endregion
 
-        async void OnTap(object sender, ItemTappedEventArgs e)      //a listener that fires when a message is tapped
-        {
-            //int index = ((MessageObject)e.Item).ID;    //gets the ID of the messaging item (sender=row)
-            //await Navigation.PushAsync(new groupProject01.Messaging.MessagingItemPage(index,_gd),false); //viewing the messaging item page even while other things occur
-            DisplayAlert("Item Tapped", ((MessageObject)e.Item).apartmentID.ToString(), "Ok"); //TESTING
-        }
         async void OnSend(object sender, EventArgs e)
         {
             string message = messageField.Text;
