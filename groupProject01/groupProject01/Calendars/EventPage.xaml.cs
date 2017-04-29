@@ -24,16 +24,6 @@ namespace groupProject01
             NavigationPage.SetHasNavigationBar(this, false);            //hides the default navigation bar
         }
 
-
-        async void OnTap(object sender, ItemTappedEventArgs e)          //when an event is tapped
-        {
-          //  int index = ((CalendarOptionObject)e.Item).ID;              //finds the index of the vent
-          //  var eve = events[index];                                    //gets the specific event
-          //  await Navigation.PushAsync(new groupProject01.EventDetailPage(eve, _gd), false);    //sends to that event's detail page
-        }
-
-        
-
         async void OnAddEvent(object sender, EventArgs e)               //when add event is pressed
         {
             await Navigation.PushAsync(new groupProject01.AddEventPage(_gd));       //sends to the add event page

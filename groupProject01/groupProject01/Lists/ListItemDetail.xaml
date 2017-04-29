@@ -17,6 +17,9 @@
                 </AbsoluteLayout>
 
             </StackLayout>
-	<Label Text="My Test" x:Name="lblLabel" VerticalOptions="Center" HorizontalOptions="Center" />
-  </StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="My Details" x:Name="lblLabel" FontSize="32" LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100"
+            AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

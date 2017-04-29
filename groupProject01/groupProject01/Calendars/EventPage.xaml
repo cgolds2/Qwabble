@@ -12,24 +12,21 @@
                 AbsoluteLayout.LayoutFlags="PositionProportional, SizeProportional" />
                     <Button Text="  ➙" Rotation="180" BackgroundColor="Transparent" FontSize="24" TextColor="White" AbsoluteLayout.LayoutBounds=".01,.05,60,40" 
                 AbsoluteLayout.LayoutFlags="PositionProportional" Clicked="OnBack" />
-                  <Button Text="+" Rotation="180" BackgroundColor="Transparent" FontSize="24" TextColor="White" AbsoluteLayout.LayoutBounds=".99,.05,60,40"
+                    <Button Text="+" Rotation="180" BackgroundColor="Transparent" FontSize="24" TextColor="White" AbsoluteLayout.LayoutBounds=".99,.05,60,40"
               AbsoluteLayout.LayoutFlags="PositionProportional" Clicked="OnAddEvent" />
-                <!--<Button Text="+++++++" FontAttributes="Bold" BackgroundColor="Transparent" FontSize="40" TextColor="White"  
-                AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".0,.0,30,20" Clicked="OnAddEvent"/>-->
-            <Label Text="Events" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24" 
+                    <Label Text="Events" x:Name="TitleLabel" TextColor="#ffffff" FontSize="24" 
                 LineBreakMode="NoWrap" AbsoluteLayout.LayoutBounds=".68,.7,150,100" 
                 AbsoluteLayout.LayoutFlags="PositionProportional" FontAttributes="Bold"/>
                 </AbsoluteLayout>
 
             </StackLayout>
   <StackLayout VerticalOptions="CenterAndExpand">
-    <ListView x:Name="calView" RowHeight="60" ItemTapped="OnTap">
+    <ListView x:Name="calView" RowHeight="60" >
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
             <StackLayout BackgroundColor="Gray">
               <Label Text =" {Binding name} " HorizontalOptions ="Start"/>
-              <!--<Button x:Name="AddEvent" Text="Add Event" Clicked="OnAddEvent"/>-->
             </StackLayout>
 
           </ViewCell>

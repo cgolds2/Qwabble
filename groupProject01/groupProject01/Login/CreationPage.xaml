@@ -26,8 +26,8 @@
                 <Entry x:Name="emailTextField" Placeholder="Email" TextColor="Black" PlaceholderColor="Black"/>
                 <Entry x:Name="passwordTextField" Placeholder="Password" IsPassword="True" TextColor="Black" PlaceholderColor="Black"/>
 
-            <Button x:Name="prevApartment" Text="Apartment Already Created" Clicked="OnPrevApartment" />
-            <Button x:Name="newApartment" Text="Create New Apartment" Clicked="OnNewApartment" />
+            <Button x:Name="prevApartment" Text="Join Apartment" Clicked="OnPrevApartment" />
+            <Button x:Name="newApartment" Text="Create Apartment" Clicked="OnNewApartment" />
 
             </StackLayout>
 

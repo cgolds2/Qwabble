@@ -14,7 +14,7 @@ namespace groupProject01.Lists
 		{
 			            NavigationPage.SetHasNavigationBar(this, false); InitializeComponent();
 
-            lblLabel.Text = currentItem.noteName;
+            lblLabel.Text = currentItem.data;
 
         }
         async void OnBack(object sender, EventArgs e)

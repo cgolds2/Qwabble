@@ -34,7 +34,7 @@ namespace groupProject01
             var item = items[index];                                                                //items.get(index), gets the item at that specified index
             if (item.listType==0)                                                                      //if the item has additional info
             {
-                //await Navigation.PushAsync(new groupProject01.Lists.ListItemDetail(item, _gd),false);     //directs to the page to view the details of the item
+                await Navigation.PushAsync(new groupProject01.Lists.ListItemDetail(item, _gd),false);     //directs to the page to view the details of the item
             }
         }
         async void OnAddItem(object sender, EventArgs e)
@@ -44,14 +44,6 @@ namespace groupProject01
         async void OnBack(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
-           // await Navigation.PushAsync(new groupProject01.ListsPage(_gd));
-        }
-
-        void SwitchToggled(object sender, EventArgs e)
-        {
-            /*int index = ((ListItemObject)e.Item).ListID;                                            //finds the index of the item tapped
-            var item = items[index];                                                                //items.get(index), gets the item at that specified index
-            item.On = !item.On;                                                                     //swaps the value fo that item's toggle*/
         }
     }
   
